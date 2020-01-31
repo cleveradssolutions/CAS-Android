@@ -3,7 +3,7 @@
 # SDK Integration
 
 ## Before You Start
-We support Android Operating Systems Version 4.2 (API level 17) and up.
+We support Android Operating Systems Version 4.2 (API level 17) and up.  
 
 ## AndroidX
 As of SDK 18.0.0, AdMob migrated from Android Support Libraries to Jetpack (AndroidX) Libraries. Refer to the [Google Play services release notes](https://developers.google.com/android/guides/releases#june_17_2019) for more information.  
@@ -13,13 +13,13 @@ Due to this, we working with the AdMob adapter it’s required that your project
 ## Step 1. Add the CAS SDK to Your Project
 
 ### Gradle
-Coming soon!
+Coming soon!  
 
 ### Manual Download
 - Download the latest release binaries from GitHub, specifically [CleverAdsSolutions.aar](https://github.com/cleveradssolutions/CAS-Android/releases/latest)
 - Create or open your existing Android project in Android Studio.
 - Add new module and import CleverAdsSolutions.aar. Name the module "CleverAdsSolutions" for example.
-- Open Module Settings for the app and add "CleverAdsSolutions" module as a dependency.
+- Open Module Settings for the app and add "CleverAdsSolutions" module as a dependency.  
 
 ## Step 2. Add the CAS default settings file
 Follow the [link](http://psvpromo.psvgamestudio.com/cas-settings.php) to download a cas_settings.json file.
@@ -44,7 +44,7 @@ Add the following permissions to your AndroidManifest.xml file inside the manife
 ### Admob App ID
 Follow the [link](http://psvpromo.psvgamestudio.com/cas-settings.php) to get your Admob App ID.  
 
-Add your AdMob App ID to your app's AndroidManifest.xml file by adding a <meta-data> tag with name com.google.android.gms.ads.APPLICATION_ID, as shown below.
+Add your AdMob App ID to your app's AndroidManifest.xml file by adding a <meta-data> tag with name com.google.android.gms.ads.APPLICATION_ID, as shown below.  
   
 For android:value insert your own AdMob App ID in quotes, as shown below.
 ```xml
@@ -79,10 +79,10 @@ repositories {
       }
   }
 ```
-Then add following in [dependencies.md](dependencies.md) to the dependencies section. 
+Then add following in [dependencies.md](dependencies.md) to the dependencies section.  
 
 ## Step 5. For ProGuard Users Only
-If you are using ProGuard, you must add the [following code](proguard-rules.pro) to your ProGuard file (Android Studio: proguard-rules.pro or Eclipse: proguard-project.txt)
+If you are using ProGuard, you must add the [following code](proguard-rules.pro) to your ProGuard file (Android Studio: proguard-rules.pro or Eclipse: proguard-project.txt).  
 
 ## Step 6. Initialize the SDK
 ```java
@@ -105,7 +105,7 @@ class YourActivity extends Activity{
 ## Step 7. Implement our Ad Units
 ### Banner
 #### Add CASBannerView to the layout
-The first step toward displaying a banner is to place CASBannerView in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's CASBannerView:
+The first step toward displaying a banner is to place CASBannerView in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's CASBannerView:  
 ```xml
 # main_activity.xml
 ...
@@ -118,8 +118,8 @@ The first step toward displaying a banner is to place CASBannerView in the layou
       ads:bannerSize="Standard320x50"/>
 ...
 ```
-Note the following required attributes:
-ads:bannerSize - Set this to the ad size you'd like to use. If you don't want to use the standard size defined by the constant, you can set a custom size instead. See the banner size section below for details.
+Note the following required attributes:  
+ads:bannerSize - Set this to the ad size you'd like to use. If you don't want to use the standard size defined by the constant, you can set a custom size instead. See the banner size section below for details.  
 
 #### You can alternatively create CASBannerView programmatically:
 ```java
@@ -153,6 +153,7 @@ You can ask for the ad availability directly by calling the following function:
 ```java
 manager.isAdReady(AdType.Interstitial);
 ```
+
 ### Show Ad
 Invoke the following method to serve an selected ad to your users:
 ```java
