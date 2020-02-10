@@ -6,12 +6,24 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public interface MediationManager extends ApplicationPauseListener {
+   /**
+     * Event on ad types enabled processing.
+     * Use [Event.add] for subscribe listener.
+     */
    @NotNull
    Event<AdEnabledListener> getOnAdEnabledEvent();
 
+    /**
+     * Event on [AdType] load response.
+     * Use [Event.add] for subscribe listener.
+     */
    @NotNull
    Event<AdLoadCallback> getOnAdLoadEvent();
 
+    /**
+     * Event on Network unit status changed.
+     * Use [Event.add] for subscribe listener.
+     */
    @NotNull
    Event<AdStatusListener> getOnStatusChanged();
 
@@ -20,10 +32,11 @@ public interface MediationManager extends ApplicationPauseListener {
      */
    @AdTypeFlagsDef int getEnabledAdFlags();
 
+    /**
+     * Get current [AdsSettings] for read/write.
+     */
    @NotNull
    AdsSettings getSettings();
-
-   void setSettings(@NotNull AdsSettings var1);
 
    /**
      * Is visible [AdType.Interstitial] or [AdType.Rewarded] right now.
