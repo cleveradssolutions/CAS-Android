@@ -13,7 +13,7 @@ Due to this, we working with the AdMob adapter it’s required that your project
 ## Step 1. Add the CAS SDK to Your Project
 
 ### Gradle
-Coming soon!  
+There will be support in the future.  
 
 ### Manual Download
 - Download the latest release binaries from GitHub, specifically [CleverAdsSolutions.aar](https://github.com/cleveradssolutions/CAS-Android/releases/latest)
@@ -103,6 +103,9 @@ class YourActivity extends Activity{
 ```
 
 ## Step 7. Implement our Ad Units
+### Native Ads  
+There will be support in the future.  
+
 ### Banner
 #### Add CASBannerView to the layout
 The first step toward displaying a banner is to place CASBannerView in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's CASBannerView:  
