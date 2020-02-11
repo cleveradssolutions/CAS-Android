@@ -111,8 +111,16 @@ CAS.getSettings().setConsent(false);
 A detailed article on the use of user data can be found in the [Privacy Policy](/../../wiki/Privacy-Policy).
 
 ## Step 7 Initialize the SDK
-Create [MediationManager](/MediationManager.java) instance:
+You can access to SDK from any thread.  
 
+Get [AdsSettings](/AdsSettings.java) singleton instance for configure all mediation managers:
+```java
+AdsSettings settings = CAS.getSettings();
+settings.setConsent(userConsent);
+// .. other settings
+```
+
+Create [MediationManager](/MediationManager.java) instance:
 ```java
 import com.cleversolutions.ads.android.CAS;
 ...
@@ -120,19 +128,16 @@ class YourActivity extends Activity{
   MediationManager manager;
   void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
-      // Configure mediation before initialize 
-      AdsSettings settings = CAS.getSettings();
-      settings.setConsent(false);
-      
-      // Do initialize MediationManager instance with CAS.getSettings()
       manager = CAS.initialize(
             this,
             own_app_identifier, // or null when own_app_identifier matches the app package
             AdTypeFlags.Everything
       );
+      // After initialization, advertising content is loading automatically.
   }
 }
 ```
+CAS.initialize can be called for different identifiers to create different managers. 
 
 ## Step 8 Implement our Ad Units
 ### Native Ads  
