@@ -28,10 +28,20 @@ public interface MediationManager extends ApplicationPauseListener {
    Event<AdStatusListener> getOnStatusChanged();
 
    /**
-     * Get current enabled [AdTypeFlags] pattern.
+     * Get available ad types to processing.
+     * The state will not be saved between sessions.
      */
    @AdTypeFlagsDef int getEnabledAdFlags();
+   
+   /**
+     * Set available ad types to processing.
+     * The state will not be saved between sessions.
+     */
+   void setEnabledAdFlags(@AdTypeFlagsDef int flags);
 
+   @NotNull
+   String getManagerID();
+      
     /**
      * Get current [AdsSettings] for read/write.
      */
@@ -88,20 +98,6 @@ public interface MediationManager extends ApplicationPauseListener {
      * Ad [type] is processing.
      */
    boolean isEnabled(@NotNull AdType type);
-   
-    /**
-     * Set available ad types to processing of selected [types].
-     * The state will not be saved between sessions.
-     * For set available of all types use [AdTypeFlags.Everything]
-     */
-   void enableAdTypes(@AdTypeFlagsDef int types);
-
-    /**
-     * Set NOT available ad types to processing of selected [types].
-     * The state will not be saved between sessions.
-     * For set NOT available of all types use [AdTypeFlags.Everything]
-     */
-   void disableAdTypes(@AdTypeFlagsDef int types);
 
     /**
      * Hide all [AdType.Small] from the screen.
