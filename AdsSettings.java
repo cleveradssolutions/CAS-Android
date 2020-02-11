@@ -28,6 +28,22 @@ public interface AdsSettings {
    void setPluginPlatformVersion(@Nullable String version);
 
     /**
+     * Is enabled CAS analytics collection  for this app on this device.
+     * This setting is persisted across app sessions.
+     * Analytics services: Firebase Analytics
+     * By default it is disabled.
+     */
+   boolean getAnalyticsCollectionEnabled();
+
+    /**
+     * Sets CAS analytics collection is enabled for this app on this device.
+     * This setting is persisted across app sessions.
+     * Analytics services: Firebase Analytics
+     * By default it is disabled.
+     */
+   void setAnalyticsCollectionEnabled(boolean var1);
+    
+    /**
      * Interval display banner between load next ad in seconds.
      * Default: 30 seconds.
      */
