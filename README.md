@@ -16,9 +16,10 @@ Due to this, we working with the AdMob adapter it’s required that your project
  3.  [Update AndroidManifest](#step-3-update-androidmanifest)  
  4.  [Add mediation SDK and support libraries](#step-4-add-mediation-sdk-and-support-libraries)  
  5.  [For ProGuard Users Only](#step-5-for-proguard-users-only)  
- 6.  [Initialize the SDK](#step-6-initialize-the-sdk)  
- 7.  [Implement our Ad Units](#step-7-implement-our-ad-units)  
- 8.  [Adding App-ads.txt file of our partners](#step-8-adding-app-ads-txt-file-of-our-partners)  
+ 6.  [GDPR Managing Consent](#step-6-gdpr-managing-consent)
+ 7.  [Initialize the SDK](#step-7-initialize-the-sdk)  
+ 8.  [Implement our Ad Units](#step-8-implement-our-ad-units)  
+ 9.  [Adding App-ads.txt file of our partners](#step-9-adding-app-ads-txt-file-of-our-partners)  
 
 ## Step 1 Add the CAS SDK to Your Project
 
@@ -94,7 +95,20 @@ Then add following in [dependencies.md](dependencies.md) to the dependencies sec
 ## Step 5 For ProGuard Users Only
 If you are using ProGuard, you must add the [following code](proguard-rules.pro) to your ProGuard file (Android Studio: proguard-rules.pro or Eclipse: proguard-project.txt).  
 
-## Step 6 Initialize the SDK
+## Step 6 GDPR Managing Consent
+CAS mediation platform supports publisher communication of a user’s consent choice to mediated networks.  
+
+To use ironSource’s API to update a user’s consent status, use this functions:  
+```java
+CAS.getSettings().setConsent(true);
+```
+If the user provided consent, please set the following flag to true:  
+```java
+CAS.getSettings().setConsent(false);
+```
+**It’s recommended to set the API prior to SDK Initialization.**
+
+## Step 7 Initialize the SDK
 Create [MediationManager](/MediationManager.java) instance:
 
 ```java
@@ -118,7 +132,7 @@ class YourActivity extends Activity{
 }
 ```
 
-## Step 7 Implement our Ad Units
+## Step 8 Implement our Ad Units
 ### Native Ads  
 There will be support in the future.  
 
@@ -183,7 +197,7 @@ manager.show(
       );
 ```
 
-## Step 8 Adding App-ads txt file of our partners  
+## Step 9 Adding App-ads txt file of our partners  
 ### "App-ads.txt: How to Make It & Why You Need It"
 
 Last year, the ad tech industry struck back at one of its most elusive problems — widespread domain spoofing that let unauthorized developers sell premium inventory they didn’t actually have. The solution? Over two million developers adopted ads.txt — a simple-text public record of Authorized Digital Sellers for a particular publisher’s inventory — to make sure they didn’t lose money from DSPs and programmatic buyers who avoid noncompliant publishers. Thanks to buyers’ ability to [crawl ads.txt and verify seller authenticity](https://iabtechlab.com/ads-txt-about/), this has quickly become a standard for protecting brands. Ad fraud reduced by 11% in 2019 due to these efforts and publisher’s ability to implement more fraud prevention techniques.  
