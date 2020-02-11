@@ -108,6 +108,8 @@ CAS.getSettings().setConsent(false);
 ```
 **It’s recommended to set the API prior to SDK Initialization.**
 
+A detailed article on the use of user data can be found in the [Privacy Policy](/../../wiki/Privacy-Policy).
+
 ## Step 7 Initialize the SDK
 Create [MediationManager](/MediationManager.java) instance:
 
