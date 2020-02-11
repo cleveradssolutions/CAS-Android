@@ -5,12 +5,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public interface AdsSettings {
-    /**
-     * Used App ID. Can be read only after [MediationManager] initialize.
-     */
-   @NotNull
-   String getAppID();
-
    @NotNull
    Event<OptionsListener> getOptionChangedEvent();
 
