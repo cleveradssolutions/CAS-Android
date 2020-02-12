@@ -90,7 +90,27 @@ repositories {
       }
   }
 ```
+
 Then add following in [dependencies.md](dependencies.md) to the dependencies section.  
+
+At times, including the CAS SDK may cause the 64K limit on methods that can be packaged in an Android dex file to be breached. This can happen if, for example, your app packs a lot of features for your users and includes substantive code to realize this.  
+
+If this happens, you can use the multidex support library to enable building your app correctly. To do this:  
+- Modify the <strong>defaultConfig</strong> to mark your application as multidex enabled:  
+```gradle
+defaultConfig {
+   ...
+   multiDexEnabled true // add this to enable multi-dex
+}
+```
+- Add the following line to the dependencies element in your application module’s build script.  
+```gradle
+// AndroidX dependency
+implementation 'androidx.multidex:multidex:2.0.1'
+
+// OR Legacy Support dependency
+implementation 'com.android.support:multidex:1.0.3'
+```
 
 ## Step 5 For ProGuard Users Only
 If you are using ProGuard, you must add the [following code](proguard-rules.pro) to your ProGuard file (Android Studio: proguard-rules.pro or Eclipse: proguard-project.txt).  
