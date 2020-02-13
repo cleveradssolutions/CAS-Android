@@ -6,7 +6,6 @@ dependencies {
     implementation 'com.vungle:publisher-sdk-android:6.4.11'
     implementation 'com.adcolony:sdk:4.1.2'
     implementation 'tv.superawesome.sdk.publisher:superawesome:7.0.3'
-    implementation files('libs/chartboost750.jar')
     implementation 'com.startapp:inapp-sdk:4.3.2'
     implementation 'com.ironsource.sdk:mediationsdk:6.13.0.1@jar'
     implementation 'com.applovin:applovin-sdk:9.11.1'
