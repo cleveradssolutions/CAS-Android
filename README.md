@@ -48,7 +48,11 @@ Add the following permissions to your AndroidManifest.xml file inside the manife
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
    
-    <!--Recommended Permissions-->
+    <!--Optional Permissions-->
+    
+    <!--This permission is used for certain ads that vibrate during play. 
+    This is a normal level permission, so this permission just needs to be defined in the manifest to enable this ad feature.-->
+    <uses-permission android:name="android.permission.VIBRATE" />
     
     <!--This permission is used for certain ads that allow the user to save a screenshot to their phone. 
     Note that with this permission on devices running Android 6.0 (API 23) or higher, 
@@ -56,9 +60,8 @@ Add the following permissions to your AndroidManifest.xml file inside the manife
     See Requesting Permissions for more details. https://developer.android.com/training/permissions/requesting -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     
-    <!--This permission is used for certain ads that vibrate during play. 
-    This is a normal level permission, so this permission just needs to be defined in the manifest to enable this ad feature.-->
-    <uses-permission android:name="android.permission.VIBRATE" />
+    <!--This permission is not a mandatory permission, however, including it will enable accurate ad targeting-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     ...
   </application>
 </manifest>
