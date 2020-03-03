@@ -43,7 +43,6 @@ Drop the cas_settings.json into the src/res/raw/ folder in your project.
 Add the following permissions to your AndroidManifest.xml file inside the manifest tag but outside the <application> tag:
 ```xml
 <manifest>
-  <application>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -63,7 +62,6 @@ Add the following permissions to your AndroidManifest.xml file inside the manife
     <!--This permission is not a mandatory permission, however, including it will enable accurate ad targeting-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     ...
-  </application>
 </manifest>
 ```
   
