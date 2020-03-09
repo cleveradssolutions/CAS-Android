@@ -230,7 +230,7 @@ android{
 ```
 
 ## Step 5 For ProGuard Users Only
-If you are using ProGuard, you must add the [following code](proguard-rules.pro) to your ProGuard file (Android Studio: proguard-rules.pro or Eclipse: proguard-project.txt).  
+If you are using ProGuard, you must add the [following code](app/proguard-rules.pro) to your ProGuard file (Android Studio: proguard-rules.pro or Eclipse: proguard-project.txt).  
 
 ## Step 6 GDPR Managing Consent
 CAS mediation platform supports publisher communication of a user’s consent choice to mediated networks.  
@@ -293,10 +293,12 @@ CAS.initialize can be called for different identifiers to create different manag
 Optional. Subscribe listener to Ad Loading response:  
 ```java
 manager.getOnAdLoadEvent().add(new AdLoadCallback(){
+    @AnyThread
     override void onAdFailedToLoad(AdType type, String error){
         // Callback on AdType failed to load and cant be shown.
     }
-
+    
+    @AnyThread
     override void onAdLoaded(AdType type){
         // Callback on AdType loaded and ready to shown.
     }
@@ -343,22 +345,41 @@ parentView.addView(bannerView);
 activity.addContentView(bannerView, new LayoutParams(...));
 ```
 
+#### Adaptive Banners
+Adaptive banners are the next generation of responsive ads, maximizing performance by optimizing ad size for each device.  
+To pick the best ad size, adaptive banners use fixed aspect ratios instead of fixed heights. This results in banner ads that occupy a more consistent portion of the screen across devices and provide opportunities for improved performance. [You can read more in this article.](https://developers.google.com/admob/android/banner/adaptive)
+
+Use the appropriate static methods on the ad size class, such as AdSize.getAdaptiveBanner(context, maxWidthDPI) to get an adaptive AdSize object.
+```java
+// Get adaptive size in container view group:
+adaptiveSize = AdSize.getAdaptiveBanner(viewGroup);
+// Get adaptive size in full screen width:
+adaptiveSize = AdSize.getAdaptiveBannerInScreen(context);
+// Get adaptive size with width parameter:
+adaptiveSize = AdSize.getAdaptiveBanner(context, maxWidthDPI);
+
+// After create Apadtive size need call MediationManager:
+manager.setBannerSize(adaptiveSize);
+// OR same
+bannerView.setSize(adaptiveSize);
+```
+
 ### AdCallback
 ```java
 // Executed when the user clicks on an ad.
-void onClicked();
+@AnyThread void onClicked();
 
 // Executed when the interstitial ad is closed.
-void onClosed();
+@AnyThread void onClosed();
 
 // Executed when the ad is completed. Used for Rewarded Ad only.
-void onComplete();
+@AnyThread void onComplete();
 
 // Executed when the ad is failed to display.
-void onShowFailed(String message);
+@MainThread void onShowFailed(String message);
 
 // Executed when the ad is displayed.
-void onShown(com.cleversolutions.ads.AdStatusHandler ad);
+@MainThread void onShown(com.cleversolutions.ads.AdStatusHandler ad);
 ```
 
 ### Check Ad Availability
