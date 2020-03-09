@@ -17,9 +17,10 @@ Due to this, we working with the AdMob adapter it’s required that your project
  4.  [Add mediation SDK and support libraries](#step-4-add-mediation-sdk-and-support-libraries)  
  5.  [For ProGuard Users Only](#step-5-for-proguard-users-only)  
  6.  [GDPR Managing Consent](#step-6-gdpr-managing-consent)
- 7.  [Initialize the SDK](#step-7-initialize-the-sdk)  
- 8.  [Implement our Ad Units](#step-8-implement-our-ad-units)  
- 9.  [Adding App-ads.txt file of our partners](#step-9-adding-app-ads-txt-file-of-our-partners)  
+ 7.  [Verify Your Integration](#step-7-verify-your-integration)
+ 8.  [Initialize the SDK](#step-8-initialize-the-sdk)  
+ 9.  [Implement our Ad Units](#step-9-implement-our-ad-units)  
+ 10.  [Adding App-ads.txt file of our partners](#step-10-adding-app-ads-txt-file-of-our-partners)  
 
 ## Step 1 Add the CAS SDK to Your Project
 
@@ -83,29 +84,120 @@ For android:value insert your own AdMob App ID in quotes, as shown below.
 </manifest>
 ```
 
-## Step 4 Add mediation SDK and support libraries
-Add the following to your app’s **build.gradle** file inside repositories section:
+### Google Play Services
+Add the following  inside the <application> tag in your AndroidManifest:  
+```xml
+<manifest>
+    <application>
+      ...
+        <meta-data 
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+</manifest>
+```
+
+The CAS SDK requires access to the Google Advertising ID in order to operate properly. See [this guide](https://developers.google.com/android/guides/setup) on how to integrate Google Play Services.  
+
+## Step 4 Add mediation SDK and support libraries  
+Some Ad Networks target specific age ratings for your app’s content. Please select your content rating in application and follow the instructions.  
+*  G - 0+ years. General audiences. Content suitable for all audiences, including families and children.  
+*  PG - 7+ years. Parental guidance. Content suitable for most audiences with parental guidance, including topics like non-realistic, cartoonish violence.  
+*  T - 12+ years. Teen. Content suitable for teen and older audiences, including topics such as general health, social networks, scary imagery, and fight sports.  
+*  MA - 18+ years. Mature audiences. Content suitable only for mature audiences; includes topics such as alcohol, gambling, sexual content, and weapons.  
+**You can be punished if you don’t comply with the partner’s content rating restrictions!**
+
+#### Add the following to your app’s **build.gradle** file inside repositories section:
 ```gradle
 repositories {
       google()
       jcenter()
-      maven {
-          url "https://adcolony.bintray.com/AdColony"
-      }
-      maven {
-          url 'http://dl.bintray.com/gabrielcoman/maven' // SuperAwesome
-      }
-      maven {
-          url "http://dl.bintray.com/superawesome/SuperAwesomeSDK"
-      }
-      maven {
-          url "https://dl.bintray.com/ironsource-mobile/android-sdk"
-      }
-  }
+      maven { url "https://adcolony.bintray.com/AdColony" }
+      maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
+      maven { url "https://maven.google.com" }
+      maven { url "https://chartboostmobile.bintray.com/Chartboost" }
+      ...
+}
 ```
 
-Then add following in [dependencies.md](dependencies.md) to the dependencies section.  
+#### Add following dependencies of support libraries:  
+```gradle
+dependencies {
+      implementation project(path: ':CleverAdsSolutions')
 
+      // Supports:
+      implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+      implementation 'com.google.code.gson:gson:2.8.5'
+      implementation 'androidx.appcompat:appcompat:1.1.0'
+      implementation 'androidx.multidex:multidex:2.0.1'
+      // Vungle
+      implementation "androidx.core:core:1.1.0"
+      // Vungle
+      implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
+      // AppLovin
+      implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+      // Kidoz, InMobi
+      implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+      // AppLovin
+      implementation 'androidx.legacy:legacy-support-v13:1.0.0'
+      // AppLovin, InMobi, Facebook
+      implementation 'androidx.recyclerview:recyclerview:1.0.0'
+      // InMobi
+      implementation 'com.squareup.picasso:picasso:2.71828'
+      // InMobi
+      implementation 'androidx.browser:browser:1.0.0'
+      // Vungle, AdColony, Chartboost, AppLovin, InMobi
+      implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
+      // Admob, SuperAwesome
+      implementation 'com.google.android.gms:play-services-ads:18.3.0'
+      // Vungle
+      implementation 'com.google.android.gms:play-services-basement:17.1.1'
+      // Chartboost
+      implementation 'com.google.android.gms:play-services-base:17.1.0'
+      // Kidoz
+      implementation 'org.greenrobot:eventbus:3.1.1'
+}
+```
+
+#### Add following dependencies of Mediation Ad Network libraries:  
+```gradle
+dependencies {
+      ...
+      implementation 'com.kidoz.sdk:KidozSDK:0.8.8.7@aar'
+      implementation 'com.vungle:publisher-sdk-android:6.5.2'
+      implementation 'com.adcolony:sdk:4.1.4'
+      implementation 'com.startapp:inapp-sdk:4.3.2'
+      implementation 'com.ironsource.sdk:mediationsdk:6.14.0.1@jar'
+      implementation 'com.applovin:applovin-sdk:9.11.4'
+      implementation 'com.inmobi.monetization:inmobi-ads:9.0.2'
+      implementation 'com.chartboost:chartboost-sdk:8.0.1'
+}
+```
+If your content rating is MA - 18+ years then you can integrate an additional Facebook Audience and Yandex networks:  
+```gradle
+dependencies {
+      ...
+      implementation 'com.facebook.android:audience-network-sdk:5.7.1'
+      implementation 'com.yandex.android:mobileads:2.113'
+      implementation 'com.yandex.android:mobmetricalib:3.8.0'
+}
+```
+
+Or If your content rating is NOT MA - 0-13+ years then you can integrate an additional SuperAvesome network:  
+```gradle
+repositories {
+      ...
+      maven { url 'http://dl.bintray.com/gabrielcoman/maven' } // SuperAwesome
+      maven { url "http://dl.bintray.com/superawesome/SuperAwesomeSDK" }
+}
+
+dependencies {
+      ...
+      implementation 'tv.superawesome.sdk.publisher:superawesome:7.0.3'
+}
+```
+
+#### MultiDEX
 At times, including the CAS SDK may cause the 64K limit on methods that can be packaged in an Android dex file to be breached. This can happen if, for example, your app packs a lot of features for your users and includes substantive code to realize this.  
 
 If this happens, you can use the multidex support library to enable building your app correctly. To do this:  
@@ -116,13 +208,25 @@ defaultConfig {
    multiDexEnabled true // add this to enable multi-dex
 }
 ```
-- Add the following line to the dependencies element in your application module’s build script.  
+- Add the following line to the dependencies element in your application build script.  
 ```gradle
 // AndroidX dependency
 implementation 'androidx.multidex:multidex:2.0.1'
 
 // OR Legacy Support dependency
 implementation 'com.android.support:multidex:1.0.3'
+```
+
+#### Java Version  
+Our SDK requires for correct operation to determine the Java version in Gradle. Add the following line to the android element in your application module’s build script. 
+```gradle
+android{
+    ...
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
 ```
 
 ## Step 5 For ProGuard Users Only
@@ -143,17 +247,29 @@ CAS.getSettings().setConsent(false);
 
 A detailed article on the use of user data can be found in the [Privacy Policy](/../../wiki/Privacy-Policy).
 
-## Step 7 Initialize the SDK
+## Step 7 Verify Your Integration
+The CAS SDK provides an easy way to verify that you’ve successfully integrated the ironSource SDK and any additional adapters; it also makes sure all required dependencies and frameworks were added for the various mediated ad networks.  
+After you have finished your integration, call the following static method and confirm that all networks you have implemented are marked as VERIFIED:  
+```java
+CAS.validateIntegration(activity, appContentRating);
+```
+Find log information by tag: **CASIntegrationHelper**
+
+Once you’ve successfully verified your integration, please remember to remove the integration helper from your code.
+
+NOT. The Integration Helper tool reviews everything, including ad networks you may have intentionally chosen NOT to include in your application. These will appear as MISSING and there is no reason for concern. In the case the ad network’s integration has not been completed successfully, it will be marked as NOT VERIFIED.  
+
+## Step 8 Initialize the SDK
 You can access to SDK from any thread.  
 
-Get [AdsSettings](/AdsSettings.java) singleton instance for configure all mediation managers:
+Configure Ads Settings singleton instance for configure all mediation managers:  
 ```java
-AdsSettings settings = CAS.getSettings();
-settings.setConsent(userConsent);
+CAS.getSettings().setConsent(userConsent);
+CAS.getSettings().setNativeDebug(true);
 // .. other settings
 ```
 
-Create [MediationManager](/MediationManager.java) instance:
+Initialize MediationManager instance:
 ```java
 import com.cleversolutions.ads.android.CAS;
 ...
@@ -161,10 +277,12 @@ class YourActivity extends Activity{
   MediationManager manager;
   void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
+      // Configure AdsSettings before initialize
       manager = CAS.initialize(
             this,
             own_app_identifier, // or null when own_app_identifier matches the app package
-            AdTypeFlags.Everything
+            AdTypeFlags.Everything, // Set active Ad Types. 'AdTypeFlags.Banner or AdTypeFlags.Interstitial' for example.
+            true // Demo ad fill only. Set FALSE for release!
       );
       // After initialization, advertising content is loading automatically.
   }
@@ -172,7 +290,20 @@ class YourActivity extends Activity{
 ```
 CAS.initialize can be called for different identifiers to create different managers. 
 
-## Step 8 Implement our Ad Units
+Optional. Subscribe listener to Ad Loading response:  
+```java
+manager.getOnAdLoadEvent().add(new AdLoadCallback(){
+    override void onAdFailedToLoad(AdType type, String error){
+        // Callback on AdType failed to load and cant be shown.
+    }
+
+    override void onAdLoaded(AdType type){
+        // Callback on AdType loaded and ready to shown.
+    }
+})
+```
+
+## Step 9 Implement our Ad Units
 ### Native Ads  
 There will be support in the future.  
 
@@ -197,10 +328,19 @@ ads:bannerSize - Set this to the ad size you'd like to use. If you don't want to
 #### You can alternatively create CASBannerView programmatically:
 ```java
 CASBannerView bannerView = new CASBannerView(this, manager);
+
+// Select banner Size
 bannerView.setSize(AdSize.Standard320x50);
+// OR same
+// manager.bannerSize = AdSize.Standard320x50
+
 bannerView.setPosition(AdPosition.Center);
 bannerView.setListener(new AdCallback(){...});
-// TODO: Add bannerView to your view hierarchy.
+
+// Add bannerView to your view hierarchy.
+parentView.addView(bannerView);
+// OR
+activity.addContentView(bannerView, new LayoutParams(...));
 ```
 
 ### AdCallback
@@ -224,10 +364,10 @@ void onShown(com.cleversolutions.ads.AdStatusHandler ad);
 ### Check Ad Availability
 You can ask for the ad availability directly by calling the following function:
 ```java
-manager.isAdReady(AdType.Interstitial);
+manager.isAdReady(AdType.Interstitial); //Check any AdType
 ```
 
-### Show Ad
+### Show fullscreen Ad
 Invoke the following method to serve an selected ad to your users:
 ```java
 manager.show(
@@ -237,7 +377,7 @@ manager.show(
       );
 ```
 
-## Step 9 Adding App-ads txt file of our partners  
+## Step 10 Adding App-ads txt file of our partners  
 ### "App-ads.txt: How to Make It & Why You Need It"
 
 Last year, the ad tech industry struck back at one of its most elusive problems — widespread domain spoofing that let unauthorized developers sell premium inventory they didn’t actually have. The solution? Over two million developers adopted ads.txt — a simple-text public record of Authorized Digital Sellers for a particular publisher’s inventory — to make sure they didn’t lose money from DSPs and programmatic buyers who avoid noncompliant publishers. Thanks to buyers’ ability to [crawl ads.txt and verify seller authenticity](https://iabtechlab.com/ads-txt-about/), this has quickly become a standard for protecting brands. Ad fraud reduced by 11% in 2019 due to these efforts and publisher’s ability to implement more fraud prevention techniques.  

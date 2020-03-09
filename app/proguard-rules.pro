@@ -1,3 +1,4 @@
+
 # Chartboost
 -keep class com.chartboost.** { *; }
 
@@ -86,7 +87,6 @@
    *;
 }
 -dontwarn com.google.ar.core.**
-
 
 # Kidoz
 -verbose

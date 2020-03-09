@@ -1,0 +1,2 @@
+include ':app', ':CleverAdsSolutions'
+rootProject.name='SampleApp'

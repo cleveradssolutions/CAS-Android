@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CAS SampleApp</string>
+    <string name="clever_ads_solutions">Clever Ads Solutions</string>
+    <string name="banner_ad">Banner Ad</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+    <string name="banner_size">Banner Size</string>
+    <string name="default_size">Default</string>
+    <string name="adaptive_size">Adaptive</string>
+    <string name="interstitial_ad">Interstitial Ad</string>
+    <string name="rewarded_ad">Rewarded Ad</string>
+</resources>
