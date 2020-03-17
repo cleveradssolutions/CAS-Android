@@ -5,10 +5,14 @@
 ## Before You Start
 We support Android Operating Systems Version 4.2 (API level 17) and up.  
 
-## AndroidX
+### AndroidX
 As of SDK 18.0.0, AdMob migrated from Android Support Libraries to Jetpack (AndroidX) Libraries. Refer to the [Google Play services release notes](https://developers.google.com/android/guides/releases#june_17_2019) for more information.  
 
-Due to this, we working with the AdMob adapter it’s required that your project migrates from Android Support Libraries to Jetpack Libraries (Android X) if you are using any. Please refer to Migrating to AndroidX for more information.  
+Due to this, we working with the AdMob adapter it’s required that your project migrates from Android Support Libraries to Jetpack Libraries (Android X) if you are using any. Please refer to [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate) for more information.  
+
+In case you can not migrate the project using this tool, you can use the following flags in gradle.properties, to build your project using AndroidX. 
+*  android.useAndroidX = true  
+*  android.enableJetifier = true  
 
 # Table of contents
  1.  [Add the CAS SDK to Your Project](#step-1-add-the-cas-sdk-to-your-project)  
@@ -91,7 +95,7 @@ For android:value insert your own AdMob App ID in quotes, as shown below.
 </manifest>
 ```
 
-### Google Play Services
+### Google Play Services in Your Android Manifest
 Add the following  inside the <application> tag in your AndroidManifest:  
 ```xml
 <manifest>
