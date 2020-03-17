@@ -20,7 +20,14 @@ Due to this, we working with the AdMob adapter it’s required that your project
  7.  [Verify Your Integration](#step-7-verify-your-integration)
  8.  [Initialize the SDK](#step-8-initialize-the-sdk)  
  9.  [Implement our Ad Units](#step-9-implement-our-ad-units)  
+ 9.1. [Native Ads](#native_ads)  
+ 9.2. [Banner Ad](#banner_ad)  
+ 9.3. [AdCallback](#adcallback)  
+ 9.4. [Check Ad Availability](#check_ad_availability)  
+ 9.5. [Show fullscreen Ad](#show_fullscreen_ad)  
  10.  [Adding App-ads.txt file of our partners](#step-10-adding-app-ads-txt-file-of-our-partners)  
+ 11.  [Mediation partners](#mediation_partners)  
+ 12.  [Support](#support). 
 
 ## Step 1 Add the CAS SDK to Your Project
 
@@ -309,7 +316,7 @@ manager.getOnAdLoadEvent().add(new AdLoadCallback(){
 ### Native Ads  
 There will be support in the future.  
 
-### Banner
+### Banner Ad
 #### Add CASBannerView to the layout
 The first step toward displaying a banner is to place CASBannerView in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's CASBannerView:  
 ```xml
@@ -428,7 +435,7 @@ Make sure that your publisher website URL (not app specific URL)  is added in yo
 We have made it easier for you to include CAS list of entries so that don’t have to construct it on your own. Please copy and paste the following text block and include in your txt file along with entries you may have from your other monetization partners:  
 **[App-ads.txt](https://cleveradssolutions.com/app-ads.txt)**
 
-## Mediation partners:
+## Mediation partners
 * [Admob](https://admob.google.com/home)  
 * [AppLovin](https://www.applovin.com)  
 * [Chartboost](https://www.chartboost.com)  
