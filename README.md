@@ -427,3 +427,27 @@ Make sure that your publisher website URL (not app specific URL)  is added in yo
 
 We have made it easier for you to include CAS list of entries so that don’t have to construct it on your own. Please copy and paste the following text block and include in your txt file along with entries you may have from your other monetization partners:  
 **[App-ads.txt](https://cleveradssolutions.com/app-ads.txt)**
+
+## Mediation partners:
+* [Admob](https://admob.google.com/home)  
+* [AppLovin](https://www.applovin.com)  
+* [Chartboost](https://www.chartboost.com)  
+* [KIDOZ](https://kidoz.net)  
+* [UnityAds](https://unity.com/solutions/unity-ads)  
+* [Vungle](https://vungle.com)  
+* [AdColony](https://www.adcolony.com)  
+* [StartApp](https://www.startapp.com)  
+* [SuperAwesome](https://www.superawesome.com)  
+* [IronSource](https://www.ironsrc.com)  
+* [InMobi](https://www.inmobi.com)  
+* [Facebook Audience](https://www.facebook.com/business/marketing/audience-network)  
+* [Yandex Ad](https://yandex.ru/dev/mobile-ads)  
+
+## Support
+Technical support: Max  
+Skype: m.shevchenko_15  
+
+Network support: Vitaly 
+Skype: zanzavital  
+
+mailto:support@cleveradssolutions.com  
