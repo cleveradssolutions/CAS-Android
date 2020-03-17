@@ -454,7 +454,7 @@ We have made it easier for you to include CAS list of entries so that don’t ha
 Technical support: Max  
 Skype: m.shevchenko_15  
 
-Network support: Vitaly 
+Network support: Vitaly  
 Skype: zanzavital  
 
 mailto:support@cleveradssolutions.com  
