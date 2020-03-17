@@ -20,13 +20,13 @@ Due to this, we working with the AdMob adapter it’s required that your project
  7.  [Verify Your Integration](#step-7-verify-your-integration)
  8.  [Initialize the SDK](#step-8-initialize-the-sdk)  
  9.  [Implement our Ad Units](#step-9-implement-our-ad-units)  
- 9.1. [Native Ads](#native_ads)  
- 9.2. [Banner Ad](#banner_ad)  
+ 9.1. [Native Ads](#native-ads)  
+ 9.2. [Banner Ad](#banner-ad)  
  9.3. [AdCallback](#adcallback)  
- 9.4. [Check Ad Availability](#check_ad_availability)  
- 9.5. [Show fullscreen Ad](#show_fullscreen_ad)  
+ 9.4. [Check Ad Availability](#check-ad-availability)  
+ 9.5. [Show fullscreen Ad](#show-fullscreen-ad)  
  10.  [Adding App-ads.txt file of our partners](#step-10-adding-app-ads-txt-file-of-our-partners)  
- 11.  [Mediation partners](#mediation_partners)  
+ 11.  [Mediation partners](#mediation-partners)  
  12.  [Support](#support). 
 
 ## Step 1 Add the CAS SDK to Your Project
