@@ -235,7 +235,7 @@ If you are using ProGuard, you must add the [following code](app/proguard-rules.
 ## Step 6 GDPR Managing Consent
 CAS mediation platform supports publisher communication of a user’s consent choice to mediated networks.  
 
-To use ironSource’s API to update a user’s consent status, use this functions:  
+To use CAS API to update a user’s consent status, use this functions:  
 ```java
 CAS.getSettings().setConsent(true);
 ```
