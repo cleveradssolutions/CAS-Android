@@ -5,10 +5,14 @@
 ## Before You Start
 We support Android Operating Systems Version 4.2 (API level 17) and up.  
 
-## AndroidX
+### AndroidX
 As of SDK 18.0.0, AdMob migrated from Android Support Libraries to Jetpack (AndroidX) Libraries. Refer to the [Google Play services release notes](https://developers.google.com/android/guides/releases#june_17_2019) for more information.  
 
-Due to this, we working with the AdMob adapter it’s required that your project migrates from Android Support Libraries to Jetpack Libraries (Android X) if you are using any. Please refer to Migrating to AndroidX for more information.  
+Due to this, we working with the AdMob adapter it’s required that your project migrates from Android Support Libraries to Jetpack Libraries (Android X) if you are using any. Please refer to [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate) for more information.  
+
+In case you can not migrate the project using this tool, you can use the following flags in gradle.properties, to build your project using AndroidX. 
+*  android.useAndroidX = true  
+*  android.enableJetifier = true  
 
 # Table of contents
  1.  [Add the CAS SDK to Your Project](#step-1-add-the-cas-sdk-to-your-project)  
@@ -20,7 +24,14 @@ Due to this, we working with the AdMob adapter it’s required that your project
  7.  [Verify Your Integration](#step-7-verify-your-integration)
  8.  [Initialize the SDK](#step-8-initialize-the-sdk)  
  9.  [Implement our Ad Units](#step-9-implement-our-ad-units)  
+ 9.1. [Native Ads](#native-ads)  
+ 9.2. [Banner Ad](#banner-ad)  
+ 9.3. [AdCallback](#adcallback)  
+ 9.4. [Check Ad Availability](#check-ad-availability)  
+ 9.5. [Show fullscreen Ad](#show-fullscreen-ad)  
  10.  [Adding App-ads.txt file of our partners](#step-10-adding-app-ads-txt-file-of-our-partners)  
+ 11.  [Mediation partners](#mediation-partners)  
+ 12.  [Support](#support). 
 
 ## Step 1 Add the CAS SDK to Your Project
 
@@ -84,7 +95,7 @@ For android:value insert your own AdMob App ID in quotes, as shown below.
 </manifest>
 ```
 
-### Google Play Services
+### Google Play Services in Your Android Manifest
 Add the following  inside the <application> tag in your AndroidManifest:  
 ```xml
 <manifest>
@@ -230,12 +241,12 @@ android{
 ```
 
 ## Step 5 For ProGuard Users Only
-If you are using ProGuard, you must add the [following code](proguard-rules.pro) to your ProGuard file (Android Studio: proguard-rules.pro or Eclipse: proguard-project.txt).  
+If you are using ProGuard, you must add the [following code](app/proguard-rules.pro) to your ProGuard file (Android Studio: proguard-rules.pro or Eclipse: proguard-project.txt).  
 
 ## Step 6 GDPR Managing Consent
 CAS mediation platform supports publisher communication of a user’s consent choice to mediated networks.  
 
-To use ironSource’s API to update a user’s consent status, use this functions:  
+To use CAS API to update a user’s consent status, use this functions:  
 ```java
 CAS.getSettings().setConsent(true);
 ```
@@ -293,10 +304,12 @@ CAS.initialize can be called for different identifiers to create different manag
 Optional. Subscribe listener to Ad Loading response:  
 ```java
 manager.getOnAdLoadEvent().add(new AdLoadCallback(){
+    @AnyThread
     override void onAdFailedToLoad(AdType type, String error){
         // Callback on AdType failed to load and cant be shown.
     }
-
+    
+    @AnyThread
     override void onAdLoaded(AdType type){
         // Callback on AdType loaded and ready to shown.
     }
@@ -307,7 +320,7 @@ manager.getOnAdLoadEvent().add(new AdLoadCallback(){
 ### Native Ads  
 There will be support in the future.  
 
-### Banner
+### Banner Ad
 #### Add CASBannerView to the layout
 The first step toward displaying a banner is to place CASBannerView in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's CASBannerView:  
 ```xml
@@ -343,22 +356,41 @@ parentView.addView(bannerView);
 activity.addContentView(bannerView, new LayoutParams(...));
 ```
 
+#### Adaptive Banners
+Adaptive banners are the next generation of responsive ads, maximizing performance by optimizing ad size for each device.  
+To pick the best ad size, adaptive banners use fixed aspect ratios instead of fixed heights. This results in banner ads that occupy a more consistent portion of the screen across devices and provide opportunities for improved performance. [You can read more in this article.](https://developers.google.com/admob/android/banner/adaptive)
+
+Use the appropriate static methods on the ad size class, such as AdSize.getAdaptiveBanner(context, maxWidthDPI) to get an adaptive AdSize object.
+```java
+// Get adaptive size in container view group:
+adaptiveSize = AdSize.getAdaptiveBanner(viewGroup);
+// Get adaptive size in full screen width:
+adaptiveSize = AdSize.getAdaptiveBannerInScreen(context);
+// Get adaptive size with width parameter:
+adaptiveSize = AdSize.getAdaptiveBanner(context, maxWidthDPI);
+
+// After create Apadtive size need call MediationManager:
+manager.setBannerSize(adaptiveSize);
+// OR same
+bannerView.setSize(adaptiveSize);
+```
+
 ### AdCallback
 ```java
 // Executed when the user clicks on an ad.
-void onClicked();
+@AnyThread void onClicked();
 
 // Executed when the interstitial ad is closed.
-void onClosed();
+@AnyThread void onClosed();
 
 // Executed when the ad is completed. Used for Rewarded Ad only.
-void onComplete();
+@AnyThread void onComplete();
 
 // Executed when the ad is failed to display.
-void onShowFailed(String message);
+@MainThread void onShowFailed(String message);
 
 // Executed when the ad is displayed.
-void onShown(com.cleversolutions.ads.AdStatusHandler ad);
+@MainThread void onShown(com.cleversolutions.ads.AdStatusHandler ad);
 ```
 
 ### Check Ad Availability
@@ -406,3 +438,27 @@ Make sure that your publisher website URL (not app specific URL)  is added in yo
 
 We have made it easier for you to include CAS list of entries so that don’t have to construct it on your own. Please copy and paste the following text block and include in your txt file along with entries you may have from your other monetization partners:  
 **[App-ads.txt](https://cleveradssolutions.com/app-ads.txt)**
+
+## Mediation partners
+* [Admob](https://admob.google.com/home)  
+* [AppLovin](https://www.applovin.com)  
+* [Chartboost](https://www.chartboost.com)  
+* [KIDOZ](https://kidoz.net)  
+* [UnityAds](https://unity.com/solutions/unity-ads)  
+* [Vungle](https://vungle.com)  
+* [AdColony](https://www.adcolony.com)  
+* [StartApp](https://www.startapp.com)  
+* [SuperAwesome](https://www.superawesome.com)  
+* [IronSource](https://www.ironsrc.com)  
+* [InMobi](https://www.inmobi.com)  
+* [Facebook Audience](https://www.facebook.com/business/marketing/audience-network)  
+* [Yandex Ad](https://yandex.ru/dev/mobile-ads)  
+
+## Support
+Technical support: Max  
+Skype: m.shevchenko_15  
+
+Network support: Vitaly  
+Skype: zanzavital  
+
+mailto:support@cleveradssolutions.com  
