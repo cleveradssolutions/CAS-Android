@@ -98,7 +98,6 @@
 -keepattributes *Annotation*
 -keepattributes Signature,RuntimeVisibleAnnotations,AnnotationDefault
 
-
 -keepclassmembers class ** {
     @org.greenrobot.eventbus.Subscribe <methods>;
 }
@@ -121,12 +120,10 @@
     public <init>(android.content.Context, android.util.AttributeSet, int);
 }
 
-
 -keepclassmembers enum * {
     public static **[] values();
     public static ** valueOf(java.lang.String);
 }
-
 
 -keepclassmembers class fqcn.of.javascript.interface.for.webview {
     public *;
@@ -149,3 +146,12 @@
 -keep public class android.net.http.SslError
 -keep public class android.webkit.WebViewClient
 -keep public class android.webkit.WebView
+
+# StartApp
+-keep class com.startapp.** { *; }
+-keep class com.truenet.** { *; }
+
+-keepattributes Exceptions, InnerClasses, Signature, Deprecated, SourceFile, LineNumberTable, *Annotation*, EnclosingMethod
+-dontwarn android.webkit.JavascriptInterface
+-dontwarn com.startapp.**
+-dontwarn org.jetbrains.annotations.**

@@ -70,7 +70,7 @@ dependencies {
     // Vungle, AdColony, Chartboost, AppLovin, InMobi
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
     // Admob, SuperAwesome
-    implementation 'com.google.android.gms:play-services-ads:18.3.0'
+    implementation 'com.google.android.gms:play-services-ads:19.0.1'
     // Vungle
     implementation 'com.google.android.gms:play-services-basement:17.1.1'
     // Chartboost
@@ -80,20 +80,20 @@ dependencies {
 
     // Networks:
     implementation 'com.kidoz.sdk:KidozSDK:0.8.8.7@aar'
-    implementation 'com.vungle:publisher-sdk-android:6.5.2'
+    implementation 'com.vungle:publisher-sdk-android:6.5.3'
     implementation 'com.adcolony:sdk:4.1.4'
-    implementation 'com.startapp:inapp-sdk:4.3.2'
-    implementation 'com.ironsource.sdk:mediationsdk:6.14.0.1@jar'
-    implementation 'com.applovin:applovin-sdk:9.11.4'
+    implementation 'com.startapp:inapp-sdk:4.4.1'
+    implementation 'com.ironsource.sdk:mediationsdk:6.15.0.1@jar'
+    implementation 'com.applovin:applovin-sdk:9.11.6'
     implementation 'com.inmobi.monetization:inmobi-ads:9.0.2'
-    implementation 'com.chartboost:chartboost-sdk:8.0.1'
+    implementation 'com.chartboost:chartboost-sdk:8.0.2'
 
     // Children ad only
     implementation 'tv.superawesome.sdk.publisher:superawesome:7.0.3'
 
     // Not childish
-    implementation 'com.facebook.android:audience-network-sdk:5.7.1'
-    implementation 'com.yandex.android:mobileads:2.113'
-    implementation 'com.yandex.android:mobmetricalib:3.8.0'
+    implementation 'com.facebook.android:audience-network-sdk:5.8.0'
+    implementation 'com.yandex.android:mobileads:2.140'
+    implementation 'com.yandex.android:mobmetricalib:3.13.1'
 
 }
