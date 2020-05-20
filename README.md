@@ -160,7 +160,7 @@ dependencies {
       // Vungle, AdColony, Chartboost, AppLovin, InMobi
       implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
       // Admob, SuperAwesome
-      implementation 'com.google.android.gms:play-services-ads:19.0.1'
+      implementation 'com.google.android.gms:play-services-ads:19.1.0'
       // Vungle
       implementation 'com.google.android.gms:play-services-basement:17.1.1'
       // Chartboost
@@ -178,9 +178,9 @@ dependencies {
       implementation 'com.vungle:publisher-sdk-android:6.5.3'
       implementation 'com.adcolony:sdk:4.1.4'
       implementation 'com.startapp:inapp-sdk:4.4.1'
-      implementation 'com.ironsource.sdk:mediationsdk:6.15.0.1@jar'
-      implementation 'com.applovin:applovin-sdk:9.11.6'
-      implementation 'com.inmobi.monetization:inmobi-ads:9.0.2'
+      implementation 'com.ironsource.sdk:mediationsdk:6.16.1'
+      implementation 'com.applovin:applovin-sdk:9.12.6'
+      implementation 'com.inmobi.monetization:inmobi-ads:9.0.4'
       implementation 'com.chartboost:chartboost-sdk:8.0.2'
 }
 ```
@@ -188,9 +188,9 @@ If your content rating is MA - 18+ years then you can integrate an additional Fa
 ```gradle
 dependencies {
       ...
-      implementation 'com.facebook.android:audience-network-sdk:5.8.0'
-      implementation 'com.yandex.android:mobileads:2.140'
-      implementation 'com.yandex.android:mobmetricalib:3.13.1'
+      implementation 'com.facebook.android:audience-network-sdk:5.9.0'
+      implementation 'com.yandex.android:mobileads:2.143'
+      implementation 'com.yandex.android:mobmetricalib:3.13.3'
 }
 ```
 
@@ -204,7 +204,7 @@ repositories {
 
 dependencies {
       ...
-      implementation 'tv.superawesome.sdk.publisher:superawesome:7.0.3'
+      implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.6'
 }
 ```
 
