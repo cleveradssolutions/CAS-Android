@@ -95,21 +95,6 @@ For android:value insert your own AdMob App ID in quotes, as shown below.
 </manifest>
 ```
 
-### Google Play Services in Your Android Manifest
-Add the following  inside the <application> tag in your AndroidManifest:  
-```xml
-<manifest>
-    <application>
-      ...
-        <meta-data 
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
-    </application>
-</manifest>
-```
-
-The CAS SDK requires access to the Google Advertising ID in order to operate properly. See [this guide](https://developers.google.com/android/guides/setup) on how to integrate Google Play Services.  
-
 ## Step 4 Add mediation SDK and support libraries  
 Some Ad Networks target specific age ratings for your app’s content. Please select your content rating in application and follow the instructions.  
 *  G - 0+ years. General audiences. Content suitable for all audiences, including families and children.  
