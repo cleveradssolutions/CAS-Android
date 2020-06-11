@@ -95,7 +95,7 @@ Add the following to your app’s **build.gradle** file inside repositories sect
 repositories {
       google()
       jcenter()
-       maven { url "https://dl.bintray.com/cleveradssolutions/CAS-Android/" }
+      maven { url "https://dl.bintray.com/cleveradssolutions/CAS-Android" }
       maven { url "https://adcolony.bintray.com/AdColony" }
       maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
       maven { url "https://maven.google.com" }
