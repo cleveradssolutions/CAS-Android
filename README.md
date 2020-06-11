@@ -14,12 +14,20 @@ In case you can not migrate the project using this tool, you can use the followi
 *  android.useAndroidX = true  
 *  android.enableJetifier = true  
 
+### Ad audiences
+Some Ad Networks target specific age ratings for your app’s content. Please select your content rating in application and follow the instructions.  
+*  G - 0+ years. General audiences. Content suitable for all audiences, including families and children.  
+*  PG - 7+ years. Parental guidance. Content suitable for most audiences with parental guidance, including topics like non-realistic, cartoonish violence.  
+*  T - 12+ years. Teen. Content suitable for teen and older audiences, including topics such as general health, social networks, scary imagery, and fight sports.  
+*  MA - 18+ years. Mature audiences. Content suitable only for mature audiences; includes topics such as alcohol, gambling, sexual content, and weapons.  
+**You can be punished if you don’t comply with the partner’s content rating restrictions!**
+
 # Table of contents
  1.  [Add the CAS SDK to Your Project](#step-1-add-the-cas-sdk-to-your-project)  
- 2.  [Add the CAS default settings file](#step-2-add-the-cas-default-settings-file)  
- 3.  [Update AndroidManifest](#step-3-update-androidmanifest)  
- 4.  [Add mediation SDK and support libraries](#step-4-add-mediation-sdk-and-support-libraries)  
- 5.  [For ProGuard Users Only](#step-5-for-proguard-users-only)  
+ 2.  [Gradle settings](#step-2-gradle-settings)
+ 3.  [Add mediation SDK](#step-3-add-mediation-sdk)  
+ 4.  [Add Cross Promotion SDK](#step-4-add-cross-promotion-sdk)  
+ 5.  [Update AndroidManifest](#step-5-update-androidmanifest)  
  6.  [GDPR Managing Consent](#step-6-gdpr-managing-consent)
  7.  [Verify Your Integration](#step-7-verify-your-integration)
  8.  [Initialize the SDK](#step-8-initialize-the-sdk)  
@@ -35,21 +43,156 @@ In case you can not migrate the project using this tool, you can use the followi
 
 ## Step 1 Add the CAS SDK to Your Project
 
-### Gradle
-There will be support in the future.  
+### Option 1 Gradle Integration
+Add one of the following sdk to the dependencies section for your ad audience.
+- G - 0+ years General audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
+```gradle
+dependencies {
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.3.0' 
+}
+```
+- T - 12+ years. Teen audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
+```gradle
+dependencies {
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.3.0' 
+}
+```
+- SDK without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk)  for network SDK integration.
+```gradle
+dependencies {
+    implementation 'com.cleversolutions.ads:cas-sdk:1.3.0' 
+}
+```
 
-### Manual Download
-- Download the latest release binaries from GitHub, specifically [CleverAdsSolutions.aar](https://github.com/cleveradssolutions/CAS-Android/releases/latest)
-- Create or open your existing Android project in Android Studio.
-- Add new module and import CleverAdsSolutions.aar. Name the module "CleverAdsSolutions" for example.
-- Open Module Settings for the app and add "CleverAdsSolutions" module as a dependency.  
+### Option 2 Manual Integration
+1.  Download the latest release binaries from GitHub, specifically [CleverAdsSolutions.aar](https://github.com/cleveradssolutions/CAS-Android/releases/latest)
+2.  Create or open your existing Android project in Android Studio.
+3.  Add new module and import CleverAdsSolutions.aar. Name the module "CleverAdsSolutions" for example.
+4.  Open Module Settings for the app and add "CleverAdsSolutions" module as a dependency.  
+5.  Add following dependencies of support libraries:  
+```gradle
+dependencies {
+      ...
+      implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+      implementation 'com.google.code.gson:gson:2.8.5'
+      implementation 'androidx.appcompat:appcompat:1.1.0'
+      implementation 'androidx.multidex:multidex:2.0.1'
+      implementation 'androidx.core:core:1.1.0'
+      implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+      implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+      implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+      implementation 'androidx.recyclerview:recyclerview:1.0.0'
+      implementation 'com.squareup.picasso:picasso:2.71828'
+      implementation 'androidx.browser:browser:1.2.0'
+      implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
+      implementation 'com.google.android.gms:play-services-basement:17.3.0'
+      implementation 'com.google.android.gms:play-services-base:17.3.0'
+      implementation 'org.greenrobot:eventbus:3.1.1'
+}
+```
 
-## Step 2 Add the CAS default settings file
-Follow the [link](http://psvpromo.psvgamestudio.com/cas-settings.php) to download a cas_settings.json file.
+## Step 2 Gradle settings
+Add the following to your app’s **build.gradle** file inside repositories section:
+```gradle
+repositories {
+      google()
+      jcenter()
+       maven { url "https://dl.bintray.com/cleveradssolutions/CAS-Android/" }
+      maven { url "https://adcolony.bintray.com/AdColony" }
+      maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
+      maven { url "https://maven.google.com" }
+      maven { url "https://chartboostmobile.bintray.com/Chartboost" }
+      maven { url 'http://dl.bintray.com/gabrielcoman/maven' }
+      maven { url "http://dl.bintray.com/superawesome/SuperAwesomeSDK" }
+      ...
+}
+```
 
-Drop the cas_settings.json into the src/res/raw/ folder in your project.  
+#### MultiDEX
+At times, including the CAS SDK may cause the 64K limit on methods that can be packaged in an Android dex file to be breached. This can happen if, for example, your app packs a lot of features for your users and includes substantive code to realize this.  
 
-## Step 3 Update AndroidManifest
+If this happens, you can use the multidex support library to enable building your app correctly. To do this:  
+- Modify the **defaultConfig** to mark your application as multidex enabled:  
+```gradle
+defaultConfig {
+   ...
+   multiDexEnabled true // add this to enable multi-dex
+}
+```
+- Add the following line to the dependencies element in your application build script. 
+```gradle
+dependencies {
+    // AndroidX dependency
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    // OR Legacy Support dependency
+    implementation 'com.android.support:multidex:1.0.3'
+}
+```
+
+#### Java Version  
+Our SDK requires for correct operation to determine the Java version in Gradle. Add the following line to the android element in your application module’s build script. 
+```gradle
+android{
+    ...
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+```
+
+## Step 3 Add mediation SDK  
+The CAS Mediation platform supports interstitial and video ads from 12 leading ad networks, equipped with smart loading, ad placement technology and ad delivery optimization. Our Mediation solution is a new monetization tool that enhances user experience, offers better control on ad performance and significantly increases revenue!
+
+Skip Step 3 if use gradle integrate **cas-sdk-general** or **cas-sdk-teen**
+
+Add following dependencies of Mediation Ad Network SDK:  
+```gradle
+dependencies {
+      ...
+      implementation 'com.google.android.gms:play-services-ads:19.1.0'
+      implementation 'com.kidoz.sdk:KidozSDK:0.8.8.7@aar'
+      implementation 'com.vungle:publisher-sdk-android:6.5.3'
+      implementation 'com.adcolony:sdk:4.1.4'
+      implementation 'com.startapp:inapp-sdk:4.4.1'
+      implementation 'com.ironsource.sdk:mediationsdk:6.16.2'
+      implementation 'com.applovin:applovin-sdk:9.12.+'
+      implementation 'com.inmobi.monetization:inmobi-ads:9.0.4'
+      implementation 'com.chartboost:chartboost-sdk:8.0.3'
+}
+```
+If your content rating is MA - 18+ years then you can integrate an additional Facebook Audience and Yandex networks:  
+```gradle
+dependencies {
+      ...
+      implementation 'com.facebook.android:audience-network-sdk:5.9.0'
+      implementation 'com.yandex.android:mobileads:2.150'
+      implementation 'com.yandex.android:mobmetricalib:3.13.3'
+}
+```
+
+Or If your content rating is NOT MA - 0-13 years then you can integrate an additional SuperAvesome network:  
+```gradle
+dependencies {
+      ...
+      implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.6'
+}
+```
+
+## Step 4 Add Cross Promotion SDK
+Cross promotion is an app marketing strategy in which app developers promote one of their titles on another one of their titles. Cross promoting is especially effective for developers with large portfolios of games as a means to move users across titles and use the opportunity to scale each of their apps. This is most commonly used by hyper-casual publishers who have relatively low retention, and use cross promotion to keep users within their app portfolio.
+
+Start your cross promotion campaign with CAS [here](https://cleveradssolutions.com).
+
+```gradle
+dependencies {
+      ...
+      implementation 'com.cleversolutions.ads:cas-promo:1.3.0'
+}
+```
+
+## Step 5 Update AndroidManifest
 
 ### Manifest Permissions
 Add the following permissions to your AndroidManifest.xml file inside the manifest tag but outside the <application> tag:
@@ -95,138 +238,10 @@ For android:value insert your own AdMob App ID in quotes, as shown below.
 </manifest>
 ```
 
-## Step 4 Add mediation SDK and support libraries  
-Some Ad Networks target specific age ratings for your app’s content. Please select your content rating in application and follow the instructions.  
-*  G - 0+ years. General audiences. Content suitable for all audiences, including families and children.  
-*  PG - 7+ years. Parental guidance. Content suitable for most audiences with parental guidance, including topics like non-realistic, cartoonish violence.  
-*  T - 12+ years. Teen. Content suitable for teen and older audiences, including topics such as general health, social networks, scary imagery, and fight sports.  
-*  MA - 18+ years. Mature audiences. Content suitable only for mature audiences; includes topics such as alcohol, gambling, sexual content, and weapons.  
-**You can be punished if you don’t comply with the partner’s content rating restrictions!**
+### Add the CAS default settings file
+Follow the [link](http://psvpromo.psvgamestudio.com/cas-settings.php) to download a cas_settings.json file.
 
-#### Add the following to your app’s **build.gradle** file inside repositories section:
-```gradle
-repositories {
-      google()
-      jcenter()
-      maven { url "https://adcolony.bintray.com/AdColony" }
-      maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
-      maven { url "https://maven.google.com" }
-      maven { url "https://chartboostmobile.bintray.com/Chartboost" }
-      ...
-}
-```
-
-#### Add following dependencies of support libraries:  
-```gradle
-dependencies {
-      implementation project(path: ':CleverAdsSolutions')
-
-      // Supports:
-      implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-      implementation 'com.google.code.gson:gson:2.8.5'
-      implementation 'androidx.appcompat:appcompat:1.1.0'
-      implementation 'androidx.multidex:multidex:2.0.1'
-      // Vungle
-      implementation "androidx.core:core:1.1.0"
-      // Vungle
-      implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
-      // AppLovin
-      implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-      // Kidoz, InMobi
-      implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-      // AppLovin
-      implementation 'androidx.legacy:legacy-support-v13:1.0.0'
-      // AppLovin, InMobi, Facebook
-      implementation 'androidx.recyclerview:recyclerview:1.0.0'
-      // InMobi
-      implementation 'com.squareup.picasso:picasso:2.71828'
-      // InMobi
-      implementation 'androidx.browser:browser:1.0.0'
-      // Vungle, AdColony, Chartboost, AppLovin, InMobi
-      implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-      // Admob, SuperAwesome
-      implementation 'com.google.android.gms:play-services-ads:19.1.0'
-      // Vungle
-      implementation 'com.google.android.gms:play-services-basement:17.1.1'
-      // Chartboost
-      implementation 'com.google.android.gms:play-services-base:17.1.0'
-      // Kidoz
-      implementation 'org.greenrobot:eventbus:3.1.1'
-}
-```
-
-#### Add following dependencies of Mediation Ad Network libraries:  
-```gradle
-dependencies {
-      ...
-      implementation 'com.kidoz.sdk:KidozSDK:0.8.8.7@aar'
-      implementation 'com.vungle:publisher-sdk-android:6.5.3'
-      implementation 'com.adcolony:sdk:4.1.4'
-      implementation 'com.startapp:inapp-sdk:4.4.1'
-      implementation 'com.ironsource.sdk:mediationsdk:6.16.1'
-      implementation 'com.applovin:applovin-sdk:9.12.6'
-      implementation 'com.inmobi.monetization:inmobi-ads:9.0.4'
-      implementation 'com.chartboost:chartboost-sdk:8.0.2'
-}
-```
-If your content rating is MA - 18+ years then you can integrate an additional Facebook Audience and Yandex networks:  
-```gradle
-dependencies {
-      ...
-      implementation 'com.facebook.android:audience-network-sdk:5.9.0'
-      implementation 'com.yandex.android:mobileads:2.143'
-      implementation 'com.yandex.android:mobmetricalib:3.13.3'
-}
-```
-
-Or If your content rating is NOT MA - 0-13+ years then you can integrate an additional SuperAvesome network:  
-```gradle
-repositories {
-      ...
-      maven { url 'http://dl.bintray.com/gabrielcoman/maven' } // SuperAwesome
-      maven { url "http://dl.bintray.com/superawesome/SuperAwesomeSDK" }
-}
-
-dependencies {
-      ...
-      implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.6'
-}
-```
-
-#### MultiDEX
-At times, including the CAS SDK may cause the 64K limit on methods that can be packaged in an Android dex file to be breached. This can happen if, for example, your app packs a lot of features for your users and includes substantive code to realize this.  
-
-If this happens, you can use the multidex support library to enable building your app correctly. To do this:  
-- Modify the <strong>defaultConfig</strong> to mark your application as multidex enabled:  
-```gradle
-defaultConfig {
-   ...
-   multiDexEnabled true // add this to enable multi-dex
-}
-```
-- Add the following line to the dependencies element in your application build script.  
-```gradle
-// AndroidX dependency
-implementation 'androidx.multidex:multidex:2.0.1'
-
-// OR Legacy Support dependency
-implementation 'com.android.support:multidex:1.0.3'
-```
-
-#### Java Version  
-Our SDK requires for correct operation to determine the Java version in Gradle. Add the following line to the android element in your application module’s build script. 
-```gradle
-android{
-    ...
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-}
-```
-
-## Step 5 For ProGuard Users Only
-If you are using ProGuard, you must add the [following code](app/proguard-rules.pro) to your ProGuard file (Android Studio: proguard-rules.pro or Eclipse: proguard-project.txt).  
+Drop the cas_settings.json into the src/res/raw/ folder in your project.  
 
 ## Step 6 GDPR Managing Consent
 CAS mediation platform supports publisher communication of a user’s consent choice to mediated networks.  
@@ -257,6 +272,12 @@ NOT. The Integration Helper tool reviews everything, including ad networks you m
 
 ## Step 8 Initialize the SDK
 You can access to SDK from any thread.  
+
+Import the CAS SDK
+```java
+import com.cleversolutions.ads.*
+import com.cleversolutions.ads.android.CAS
+```
 
 Configure Ads Settings singleton instance for configure all mediation managers:  
 ```java
@@ -440,6 +461,8 @@ We have made it easier for you to include CAS list of entries so that don’t ha
 * [Yandex Ad](https://yandex.ru/dev/mobile-ads)  
 
 ## Support
+Site: [https://cleveradssolutions.com](https://cleveradssolutions.com)
+
 Technical support: Max  
 Skype: m.shevchenko_15  
 

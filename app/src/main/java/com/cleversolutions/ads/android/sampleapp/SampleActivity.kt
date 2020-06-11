@@ -10,6 +10,7 @@ import android.widget.TextView
 import com.cleversolutions.ads.*
 import com.cleversolutions.ads.android.CAS
 import com.cleversolutions.ads.android.CASBannerView
+import com.cleversolutions.basement.CallHandler
 import kotlinx.android.synthetic.main.activity_main.*
 
 class SampleActivity : AppCompatActivity(), AdLoadCallback {
@@ -45,7 +46,7 @@ class SampleActivity : AppCompatActivity(), AdLoadCallback {
 
         // Set Ads Settings
         CAS.settings.consent = userConsent
-        CAS.settings.nativeDebug = true
+        CAS.settings.debugMode = true
 
         // Initialize SDK
         val manager = CAS.initialize(

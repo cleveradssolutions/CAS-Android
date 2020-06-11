@@ -6,7 +6,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.cleversolutions.ads.android.sampleapp"
         minSdkVersion 17
@@ -16,8 +16,12 @@ android {
         multiDexEnabled = true
     }
     buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -32,6 +36,7 @@ android {
 repositories {
     google()
     jcenter()
+    maven { url "https://dl.bintray.com/cleveradssolutions/CAS-Android" }
     maven { url "https://adcolony.bintray.com/AdColony" }
     maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
     maven { url "https://maven.google.com" }
@@ -44,56 +49,8 @@ repositories {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    implementation project(path: ':CleverAdsSolutions')
+    // implementation project(path: ':CleverAdsSolutions')
 
-    // Supports:
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.multidex:multidex:2.0.1'
-    // Vungle
-    implementation "androidx.core:core:1.1.0"
-    // Vungle
-    implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
-    // AppLovin
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    // Kidoz, InMobi
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    // AppLovin
-    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
-    // AppLovin, InMobi, Facebook
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
-    // InMobi
-    implementation 'com.squareup.picasso:picasso:2.71828'
-    // InMobi
-    implementation 'androidx.browser:browser:1.0.0'
-    // Vungle, AdColony, Chartboost, AppLovin, InMobi
-    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-    // Admob, SuperAwesome
-    implementation 'com.google.android.gms:play-services-ads:19.1.0'
-    // Vungle
-    implementation 'com.google.android.gms:play-services-basement:17.1.1'
-    // Chartboost
-    implementation 'com.google.android.gms:play-services-base:17.1.0'
-    // Kidoz
-    implementation 'org.greenrobot:eventbus:3.1.1'
-
-    // Networks:
-    implementation 'com.kidoz.sdk:KidozSDK:0.8.8.7@aar'
-    implementation 'com.vungle:publisher-sdk-android:6.5.3'
-    implementation 'com.adcolony:sdk:4.1.4'
-    implementation 'com.startapp:inapp-sdk:4.4.1'
-    implementation 'com.ironsource.sdk:mediationsdk:6.16.1'
-    implementation 'com.applovin:applovin-sdk:9.12.6'
-    implementation 'com.inmobi.monetization:inmobi-ads:9.0.4'
-    implementation 'com.chartboost:chartboost-sdk:8.0.2'
-
-    // Children ad only
-    implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.6'
-
-    // Not childish
-    implementation 'com.facebook.android:audience-network-sdk:5.9.0'
-    implementation 'com.yandex.android:mobileads:2.143'
-    implementation 'com.yandex.android:mobmetricalib:3.13.3'
-
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.3.+'
+    implementation 'com.cleversolutions.ads:cas-promo:1.3.+'
 }
