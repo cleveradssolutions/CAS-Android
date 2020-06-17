@@ -1,4 +1,5 @@
-# CleverAdsSolutions-Android SDK Integration
+# CleverAdsSolutions-Android SDK Integration 
+[ ![Downlaod](https://api.bintray.com/packages/cleveradssolutions/CAS-Android/cas-sdk/images/download.svg) ](https://bintray.com/cleveradssolutions/CAS-Android)
 
 ## Before You Start
 We support Android Operating Systems Version 4.2 (API level 17) and up.  
@@ -46,19 +47,19 @@ Add one of the following sdk to the dependencies section for your ad audience.
 - G - 0+ years General audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.3.0' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.3.1' 
 }
 ```
 - T - 12+ years. Teen audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.3.0' 
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.3.1' 
 }
 ```
 - SDK without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk)  for network SDK integration.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.3.0' 
+    implementation 'com.cleversolutions.ads:cas-sdk:1.3.1' 
 }
 ```
 
@@ -186,7 +187,7 @@ Start your cross promotion campaign with CAS [here](https://cleveradssolutions.c
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.3.0'
+      implementation 'com.cleversolutions.ads:cas-promo:1.3.1'
 }
 ```
 
