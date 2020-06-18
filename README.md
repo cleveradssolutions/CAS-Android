@@ -382,20 +382,26 @@ bannerView.setSize(adaptiveSize);
 
 ### AdCallback
 ```java
+// Executed when the ad is displayed.
+// @param ad Information of displayed ad.
+@MainThread void onShown(com.cleversolutions.ads.AdStatusHandler ad);
+
+// Executed when the ad is failed to display.
+// The Banner may automatically appear when the Ad is ready again.
+// This will trigger the [onShown] callback again.
+@MainThread void onShowFailed(String message);
+
 // Executed when the user clicks on an ad.
 @AnyThread void onClicked();
 
-// Executed when the interstitial ad is closed.
-@AnyThread void onClosed();
-
-// Executed when the ad is completed. Used for Rewarded Ad only.
+// Executed when the Ad is completed.
+// Banner Ad does not use this callback.
 @AnyThread void onComplete();
 
-// Executed when the ad is failed to display.
-@MainThread void onShowFailed(String message);
-
-// Executed when the ad is displayed.
-@MainThread void onShown(com.cleversolutions.ads.AdStatusHandler ad);
+// Executed when the ad is closed.
+// The Banner Ad cannot be displayed automatically after this callback for the current view.
+// If you decide to show the Banner Ad on this view then you need refresh view visibility.
+@AnyThread void onClosed();
 ```
 
 ### Check Ad Availability
