@@ -47,19 +47,19 @@ Add one of the following sdk to the dependencies section for your ad audience.
 - G - 0+ years General audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.3.3' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.3.4' 
 }
 ```
 - T - 12+ years. Teen audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.3.3'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.3.4'
 }
 ```
 - SDK without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk)  for network SDK integration.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.3.3' 
+    implementation 'com.cleversolutions.ads:cas-sdk:1.3.4' 
 }
 ```
 
@@ -150,8 +150,8 @@ Add following dependencies of Mediation Ad Network SDK:
 ```gradle
 dependencies {
       ...
-      implementation 'com.google.android.gms:play-services-ads:19.1.0'
-      implementation 'com.kidoz.sdk:KidozSDK:0.8.8.7@aar'
+      implementation 'com.google.android.gms:play-services-ads:19.2.0'
+      implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
       implementation 'com.vungle:publisher-sdk-android:6.7.0'
       implementation 'com.adcolony:sdk:4.1.4'
       implementation 'com.startapp:inapp-sdk:4.4.1'
@@ -165,7 +165,7 @@ If your content rating is MA - 18+ years then you can integrate an additional Fa
 ```gradle
 dependencies {
       ...
-      implementation 'com.facebook.android:audience-network-sdk:5.9.0'
+      implementation 'com.facebook.android:audience-network-sdk:5.9.1'
       implementation 'com.yandex.android:mobileads:2.150'
       implementation 'com.yandex.android:mobmetricalib:3.13.3'
 }
@@ -187,7 +187,7 @@ Start your cross promotion campaign with CAS [here](https://cleveradssolutions.c
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.3.3'
+      implementation 'com.cleversolutions.ads:cas-promo:1.3.4'
 }
 ```
 
