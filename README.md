@@ -56,7 +56,7 @@ dependencies {
     implementation 'com.cleversolutions.ads:cas-sdk-teen:1.3.5'
 }
 ```
-- SDK without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk)  for network SDK integration.
+- SDK without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
 ```gradle
 dependencies {
     implementation 'com.cleversolutions.ads:cas-sdk:1.3.5' 
