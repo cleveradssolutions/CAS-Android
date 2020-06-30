@@ -47,19 +47,19 @@ Add one of the following sdk to the dependencies section for your ad audience.
 - G - 0+ years General audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.3.4' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.3.5' 
 }
 ```
 - T - 12+ years. Teen audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.3.4'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.3.5'
 }
 ```
 - SDK without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk)  for network SDK integration.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.3.4' 
+    implementation 'com.cleversolutions.ads:cas-sdk:1.3.5' 
 }
 ```
 
@@ -154,7 +154,7 @@ dependencies {
       implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
       implementation 'com.vungle:publisher-sdk-android:6.7.0'
       implementation 'com.adcolony:sdk:4.1.4'
-      implementation 'com.startapp:inapp-sdk:4.4.1'
+      implementation 'com.startapp:inapp-sdk:4.6.+'
       implementation 'com.ironsource.sdk:mediationsdk:6.17.0'
       implementation 'com.applovin:applovin-sdk:9.12.+'
       implementation 'com.inmobi.monetization:inmobi-ads:9.0.4'
@@ -187,7 +187,7 @@ Start your cross promotion campaign with CAS [here](https://cleveradssolutions.c
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.3.4'
+      implementation 'com.cleversolutions.ads:cas-promo:1.3.5'
 }
 ```
 
