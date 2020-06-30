@@ -448,7 +448,7 @@ You must list your **Developer Website URL** in the GooglePlay and iTunes app st
 Make sure that your publisher website URL (not app specific URL)  is added in your app store listings. Advertising platforms will use this site to verify the app-ads.txt file.
 
 We have made it easier for you to include CAS list of entries so that don’t have to construct it on your own. Please copy and paste the following text block and include in your txt file along with entries you may have from your other monetization partners:  
-**[App-ads.txt](https://cleveradssolutions.com/app-ads.txt)** Updated 11.06.2020
+**[App-ads.txt](https://cleveradssolutions.com/app-ads.txt)** Updated 30.06.2020
 
 ## Mediation partners
 * [Admob](https://admob.google.com/home)  
