@@ -454,7 +454,9 @@ We have made it easier for you to include CAS list of entries so that don’t ha
 **If your content rating G - 0+ years General audiences then please replace first line:**  
 ~~google.com, pub-7022579750037037, DIRECT, f08c47fec0942fa0~~  
 to:  
-google.com, pub-8858162097015410, DIRECT, f08c47fec0942fa0  
+```
+google.com, pub-8858162097015410, DIRECT, f08c47fec0942fa0
+```
 
 ## Mediation partners
 * [Admob](https://admob.google.com/home)  
