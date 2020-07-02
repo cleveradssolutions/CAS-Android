@@ -161,7 +161,7 @@ dependencies {
       implementation 'com.chartboost:chartboost-sdk:8.0.3'
 }
 ```
-If your content rating is MA - 18+ years then you can integrate an additional Facebook Audience and Yandex networks:  
+If your content rating is Teen - 13+ years then you can integrate an additional Facebook Audience and Yandex networks:  
 ```gradle
 dependencies {
       ...
@@ -171,7 +171,7 @@ dependencies {
 }
 ```
 
-Or If your content rating is NOT MA - 0-13 years then you can integrate an additional SuperAvesome network:  
+Or If your content rating is G - 0+ years General audiences then you can integrate an additional SuperAvesome network:  
 ```gradle
 dependencies {
       ...
@@ -451,7 +451,7 @@ We have made it easier for you to include CAS list of entries so that don’t ha
 
 **[App-ads.txt](https://cleveradssolutions.com/app-ads.txt)** Updated 2.07.2020.  
 
-**If your content rating is NOT MA - 0-13 years then please replace first line:**  
+**If your content rating G - 0+ years General audiences then please replace first line:**  
 ~~google.com, pub-7022579750037037, DIRECT, f08c47fec0942fa0~~  
 to:  
 google.com, pub-8858162097015410, DIRECT, f08c47fec0942fa0  
