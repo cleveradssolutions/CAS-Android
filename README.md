@@ -449,14 +449,7 @@ Make sure that your publisher website URL (not app specific URL)  is added in yo
 
 We have made it easier for you to include CAS list of entries so that don’t have to construct it on your own. Please copy and paste the following text block and include in your txt file along with entries you may have from your other monetization partners:  
 
-**[App-ads.txt](https://cleveradssolutions.com/app-ads.txt)** Updated 2.07.2020.  
-
-**If your content rating G - 0+ years General audiences then please replace first line:**  
-~~google.com, pub-7022579750037037, DIRECT, f08c47fec0942fa0~~  
-to:  
-```
-google.com, pub-8858162097015410, DIRECT, f08c47fec0942fa0
-```
+**[App-ads.txt](https://cleveradssolutions.com/app-ads.txt)** Updated July 16, 2020.  
 
 ## Mediation partners
 * [Admob](https://admob.google.com/home)  
