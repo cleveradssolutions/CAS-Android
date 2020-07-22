@@ -10,7 +10,6 @@ import android.widget.TextView
 import com.cleversolutions.ads.*
 import com.cleversolutions.ads.android.CAS
 import com.cleversolutions.ads.android.CASBannerView
-import com.cleversolutions.basement.CallHandler
 import kotlinx.android.synthetic.main.activity_main.*
 
 class SampleActivity : AppCompatActivity(), AdLoadCallback {
@@ -18,7 +17,6 @@ class SampleActivity : AppCompatActivity(), AdLoadCallback {
         const val TAG = "CAS Sample"
     }
 
-    var userConsent = false
     var manager: MediationManager? = null
     var bannerView: CASBannerView? = null
     var statusAdViews: Map<AdType, TextView> = emptyMap()
@@ -45,17 +43,17 @@ class SampleActivity : AppCompatActivity(), AdLoadCallback {
         casVersionText.text = "version: " + CAS.getSDKVersion()
 
         // Set Ads Settings
-        CAS.settings.consent = userConsent
         CAS.settings.debugMode = true
 
         // Initialize SDK
         val manager = CAS.initialize(
             this,
-            null, // Set CAS Application ID or null for select current bundle
-            AdTypeFlags.Everything, // Set active Ad Types. 'AdTypeFlags.Banner or AdTypeFlags.Interstitial' for example.
-            true // Demo ad fill only. Set FALSE for release!
+            null,
+            AdTypeFlags.Everything,
+            true
         )
         this.manager = manager
+        manager.bannerSize = AdSize.BANNER
 
         // Subscribe loading ad event
         manager.onAdLoadEvent.add(this)
@@ -64,10 +62,6 @@ class SampleActivity : AppCompatActivity(), AdLoadCallback {
         val bannerView = CASBannerView(this, manager)
         this.bannerView = bannerView
 
-        // Set banner settings
-        bannerView.size = AdSize.Standard320x50
-        // OR same
-        // manager.bannerSize = AdSize.Standard320x50
         bannerView.position = AdPosition.BottomCenter
         bannerView.listener = AdListener(this, AdType.Banner)
 
@@ -81,11 +75,19 @@ class SampleActivity : AppCompatActivity(), AdLoadCallback {
         )
 
         setDefaultSizeBtn.setOnClickListener {
-            manager.bannerSize = AdSize.Standard320x50
+            manager.bannerSize = AdSize.BANNER
         }
 
         setAdaptiveSizeBtn.setOnClickListener {
             manager.bannerSize = AdSize.getAdaptiveBannerInScreen(this)
+        }
+
+        setLedearboardSizeBtn.setOnClickListener {
+            manager.bannerSize = AdSize.LEADERBOARD
+        }
+
+        setMrecSizeBtn.setOnClickListener {
+            manager.bannerSize = AdSize.MEDIUM_RECTANGLE
         }
 
         showBannerBtn.setOnClickListener {

@@ -5,8 +5,11 @@
     <string name="show">Show</string>
     <string name="hide">Hide</string>
     <string name="banner_size">Banner Size</string>
-    <string name="default_size">Default</string>
+    <string name="default_size">BANNER</string>
     <string name="adaptive_size">Adaptive</string>
     <string name="interstitial_ad">Interstitial Ad</string>
     <string name="rewarded_ad">Rewarded Ad</string>
+    <string name="ledearboard">LEDEARBOARD</string>
+    <string name="mrec">MREC</string>
+    <string name="smart">SMART</string>
 </resources>

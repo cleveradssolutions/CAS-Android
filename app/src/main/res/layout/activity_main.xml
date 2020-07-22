@@ -76,6 +76,18 @@
                 android:text="@string/default_size" />
 
             <Button
+                android:id="@+id/setLedearboardSizeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ledearboard" />
+
+            <Button
+                android:id="@+id/setMrecSizeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/mrec" />
+
+            <Button
                 android:id="@+id/setAdaptiveSizeBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
