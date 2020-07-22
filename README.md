@@ -23,25 +23,25 @@ Some Ad Networks target specific age ratings for your app’s content. Please se
 
 # Table of contents
  1.  [Add the CAS SDK to Your Project](#step-1-add-the-cas-sdk-to-your-project)  
- 2.  [Gradle settings](#step-2-gradle-settings)
+ 2.  [Gradle settings](#step-2-gradle-settings)  
  3.  [Add mediation SDK](#step-3-add-mediation-sdk)  
  4.  [Add Cross Promotion SDK](#step-4-add-cross-promotion-sdk)  
  5.  [Update AndroidManifest](#step-5-update-androidmanifest)  
- 6.  [Privacy Laws](#step-6-privacy-laws)
- 6.1.  [GDPR Managing Consent](#gdpr-managing-consent)
- 6.2.  [CCPA Compliance](#ccpa-compliance)
- 6.3.  [COPPA and EEA Compliance](#coppa-and-eea-compliance)
- 7.  [Verify Your Integration](#step-7-verify-your-integration)
+ 6.  [Privacy Laws](#step-6-privacy-laws)  
+ 6.1.  [GDPR Managing Consent](#gdpr-managing-consent)  
+ 6.2.  [CCPA Compliance](#ccpa-compliance)  
+ 6.3.  [COPPA and EEA Compliance](#coppa-and-eea-compliance)  
+ 7.  [Verify Your Integration](#step-7-verify-your-integration)  
  8.  [Initialize the SDK](#step-8-initialize-the-sdk)  
  9.  [Implement our Ad Units](#step-9-implement-our-ad-units)  
  9.1. [Banner Ad](#banner-ad)  
- 9.2. [Ad Size](#ad-size)
+ 9.2. [Ad Size](#ad-size)  
  9.3. [Ad Callback](#ad-callback)  
  9.4. [Check Ad Availability](#check-ad-availability)  
  9.5. [Show fullscreen Ad](#show-fullscreen-ad)  
  10.  [Adding App-ads.txt file of our partners](#step-10-adding-app-ads-txt-file-of-our-partners)  
  11.  [Mediation partners](#mediation-partners)  
- 12.  [Support](#support). 
+ 12.  [Support](#support)  
 
 ## Step 1 Add the CAS SDK to Your Project
 
@@ -424,7 +424,7 @@ parentView.addView(bannerView);
 activity.addContentView(bannerView, new LayoutParams(...));
 ```
 
-**Load Ad**  
+#### Load Ad
 Manual load manager mode require call `loadNextAd()` after create `CASBannerView` and change banner size.  
 You can use `loadNextAd()` for cancel current impression and load next ad.
 ```java
