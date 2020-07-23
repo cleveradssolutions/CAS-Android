@@ -462,12 +462,12 @@ Typically, Smart Banners on phones have a BANNER size. Or on tablets a LEADERBOA
 
 Use the static method in the AdSize.getAdaptiveBanner (context, maxWidthDPI) ad size class to get the smart AdSize object.
 ```java
-adaptiveSize = AdSize.getSmartBanner(context);
+smartSize = AdSize.getSmartBanner(context);
 
 // After create Smart size need call MediationManager:
-manager.setBannerSize(adaptiveSize);
+manager.setBannerSize(smartSize);
 // OR same
-bannerView.setSize(adaptiveSize);
+bannerView.setSize(smartSize);
 ```
 
 #### Banner refresh rate
