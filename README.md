@@ -156,7 +156,7 @@ dependencies {
       implementation 'com.google.android.gms:play-services-ads:19.3.0'
       implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
       implementation 'com.vungle:publisher-sdk-android:6.7.0'
-      implementation 'com.adcolony:sdk:4.2.0'
+      implementation 'com.adcolony:sdk:4.2.1'
       implementation 'com.startapp:inapp-sdk:4.6.1'
       implementation 'com.ironsource.sdk:mediationsdk:6.17.0'
       implementation 'com.applovin:applovin-sdk:9.13.+'
