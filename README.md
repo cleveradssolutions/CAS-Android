@@ -50,19 +50,19 @@ Add one of the following sdk to the dependencies section for your ad audience.
 - G - 0+ years General audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.4.2' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.4.2.1' 
 }
 ```
 - T - 12+ years. Teen audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.4.2'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.4.2.1'
 }
 ```
 - SDK without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.4.2' 
+    implementation 'com.cleversolutions.ads:cas-sdk:1.4.2.1' 
 }
 ```
 
