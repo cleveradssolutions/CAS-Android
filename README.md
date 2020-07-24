@@ -358,7 +358,7 @@ class YourActivity extends Activity{
             true, 
             // Optional subscribe to initialization done  
             new OnInitializationListener(){  
-                void onInitialization(success: Boolean, error: String){  
+                void onInitialization(boolean success, String error){  
                     // CAS manager initialization done  
                 }  
             }  
@@ -480,7 +480,7 @@ manager = CAS.initialize(...);
 Or **after** initialization to override the web application settings for a given session.
 ```java
 manager = CAS.initialize(..., new OnInitializationListener(){  
-    void onInitialization(success: Boolean, error: String){  
+    void onInitialization(boolean success, String error){  
         // CAS manager initialization done  
         CAS.getSettings().setBannerRefreshInterval(interval);
     }  
@@ -547,7 +547,7 @@ manager = CAS.initialize(...);
 Or **after** initialization to override the web application settings for a given session.
 ```java
 manager = CAS.initialize(..., new OnInitializationListener(){  
-    void onInitialization(success: Boolean, error: String){  
+    void onInitialization(boolean success, String error){  
         // CAS manager initialization done  
         CAS.getSettings().setInterstitialInterval(interval);
     }  
