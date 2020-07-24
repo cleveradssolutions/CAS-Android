@@ -13,13 +13,10 @@ In case you can not migrate the project using this tool, you can use the followi
 *  android.useAndroidX = true  
 *  android.enableJetifier = true  
 
-### Ad audiences
-Some Ad Networks target specific age ratings for your app’s content. Please select your content rating in application and follow the instructions.  
-*  G - 0+ years. General audiences. Content suitable for all audiences, including families and children.  
-*  PG - 7+ years. Parental guidance. Content suitable for most audiences with parental guidance, including topics like non-realistic, cartoonish violence.  
-*  T - 12+ years. Teen. Content suitable for teen and older audiences, including topics such as general health, social networks, scary imagery, and fight sports.  
-*  MA - 18+ years. Mature audiences. Content suitable only for mature audiences; includes topics such as alcohol, gambling, sexual content, and weapons.  
-**You can be punished if you don’t comply with the partner’s content rating restrictions!**
+### Families Ads Program
+Google is focused on providing a great experience for families on Google Play and wants to help make sure that any ads served to children are appropriate.  
+[More about Families Ads Program.](https://support.google.com/googleplay/android-developer/answer/9283445)  
+**If your app's target audience includes children and serves ads using an ad Clever General Ads Solutions only.**
 
 # Table of contents
  1.  [Add the CAS SDK to Your Project](#step-1-add-the-cas-sdk-to-your-project)  
@@ -47,19 +44,19 @@ Some Ad Networks target specific age ratings for your app’s content. Please se
 
 ### Option 1 Gradle Integration
 Add one of the following sdk to the dependencies section for your ad audience.
-- G - 0+ years General audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
+- Families Ads Program solutions and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
     implementation 'com.cleversolutions.ads:cas-sdk-general:1.4.2.1' 
 }
 ```
-- T - 12+ years. Teen audiences SDK and skip [Step 3](#step-3-add-mediation-sdk)  
+- Teen audiences solutions with additional mediation networks, not for Families Ads Program, and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
     implementation 'com.cleversolutions.ads:cas-sdk-teen:1.4.2.1'
 }
 ```
-- SDK without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
+- CAS without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
 ```gradle
 dependencies {
     implementation 'com.cleversolutions.ads:cas-sdk:1.4.2.1' 
@@ -164,21 +161,20 @@ dependencies {
       implementation 'com.chartboost:chartboost-sdk:8.1.0'
 }
 ```
-If your content rating is Teen - 13+ years then you can integrate an additional Facebook Audience and Yandex networks:  
+If your app's target audience includes children then you can integrate an additional SuperAvesome network:
+```gradle
+dependencies {
+      ...
+      implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.6'
+}
+```
+If your app's target audience **not** includes children then you can integrate an additional Facebook Audience and Yandex networks:  
 ```gradle
 dependencies {
       ...
       implementation 'com.facebook.android:audience-network-sdk:5.10.1'
       implementation 'com.yandex.android:mobileads:2.160'
       implementation 'com.yandex.android:mobmetricalib:3.13.3'
-}
-```
-
-Or If your content rating is G - 0+ years General audiences then you can integrate an additional SuperAvesome network:  
-```gradle
-dependencies {
-      ...
-      implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.6'
 }
 ```
 
