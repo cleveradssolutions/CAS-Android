@@ -47,19 +47,19 @@ Add one of the following sdk to the dependencies section for your ad audience.
 - Families Ads Program solutions and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.4.2.1' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.4.3' 
 }
 ```
 - Teen audiences solutions with additional mediation networks, not for Families Ads Program, and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.4.2.1'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.4.3'
 }
 ```
 - CAS without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.4.2.1' 
+    implementation 'com.cleversolutions.ads:cas-sdk:1.4.3' 
 }
 ```
 
@@ -155,7 +155,7 @@ dependencies {
       implementation 'com.vungle:publisher-sdk-android:6.7.0'
       implementation 'com.adcolony:sdk:4.2.1'
       implementation 'com.startapp:inapp-sdk:4.6.1'
-      implementation 'com.ironsource.sdk:mediationsdk:6.17.0'
+      implementation 'com.ironsource.sdk:mediationsdk:6.18.0'
       implementation 'com.applovin:applovin-sdk:9.13.+'
       implementation 'com.inmobi.monetization:inmobi-ads:9.0.7'
       implementation 'com.chartboost:chartboost-sdk:8.1.0'
@@ -172,6 +172,7 @@ If your app's target audience **not** includes children then you can integrate a
 ```gradle
 dependencies {
       ...
+      implementation 'com.cleversolutions.ads:mediation-teen:1.4.3'
       implementation 'com.facebook.android:audience-network-sdk:5.10.1'
       implementation 'com.yandex.android:mobileads:2.160'
       implementation 'com.yandex.android:mobmetricalib:3.13.3'
@@ -186,7 +187,7 @@ Start your cross promotion campaign with CAS [here](https://cleveradssolutions.c
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.4.2'
+      implementation 'com.cleversolutions.ads:cas-promo:1.4.3'
 }
 ```
 
