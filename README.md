@@ -47,19 +47,19 @@ Add one of the following sdk to the dependencies section for your ad audience.
 - Families Ads Program solutions and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.4.6' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.4.7' 
 }
 ```
 - Teen audiences solutions with additional mediation networks, not for Families Ads Program, and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.4.6'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.4.7'
 }
 ```
 - CAS without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.4.6' 
+    implementation 'com.cleversolutions.ads:cas-sdk:1.4.7' 
 }
 ```
 
@@ -150,13 +150,13 @@ Add following dependencies of Mediation Ad Network SDK:
 ```gradle
 dependencies {
       ...
-      implementation 'com.google.android.gms:play-services-ads:19.3.0'
+      implementation 'com.google.android.gms:play-services-ads:19.4.0'
       implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
       implementation 'com.vungle:publisher-sdk-android:6.7.1'
-      implementation 'com.adcolony:sdk:4.2.3'
+      implementation 'com.adcolony:sdk:4.2.4'
       implementation 'com.startapp:inapp-sdk:4.6.1'
       implementation 'com.ironsource.sdk:mediationsdk:7.0.1.1'
-      implementation 'com.applovin:applovin-sdk:9.13.+'
+      implementation 'com.applovin:applovin-sdk:9.14.+'
       implementation 'com.inmobi.monetization:inmobi-ads:9.0.9'
       implementation 'com.chartboost:chartboost-sdk:8.1.0'
       implementation 'com.unity3d.ads:unity-ads:3.4.8'
@@ -188,7 +188,7 @@ Start your cross promotion campaign with CAS [here](https://cleveradssolutions.c
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.4.6'
+      implementation 'com.cleversolutions.ads:cas-promo:1.4.7'
 }
 ```
 
