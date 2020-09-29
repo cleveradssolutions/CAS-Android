@@ -121,11 +121,8 @@ defaultConfig {
 - Add the following line to the dependencies element in your application build script. 
 ```gradle
 dependencies {
-    // AndroidX dependency
     implementation 'androidx.multidex:multidex:2.0.1'
-
-    // OR Legacy Support dependency
-    implementation 'com.android.support:multidex:1.0.3'
+    ...
 }
 ```
 
