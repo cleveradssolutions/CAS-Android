@@ -1,5 +1,6 @@
 # CleverAdsSolutions-Android SDK Integration 
-[ ![Downlaod](https://api.bintray.com/packages/cleveradssolutions/CAS-Android/cas-sdk/images/download.svg) ](https://bintray.com/cleveradssolutions/CAS-Android)
+[![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/cas-sdk?label=CAS%20SDK)](https://bintray.com/cleveradssolutions/CAS-Android)
+[![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/cas-promo?label=CAS%20Promo)](https://bintray.com/cleveradssolutions/CAS-Android)
 
 ## Before You Start
 We support Android Operating Systems Version 4.2 (API level 17) and up.  
