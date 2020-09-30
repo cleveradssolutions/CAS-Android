@@ -1,6 +1,8 @@
 # CleverAdsSolutions-Android SDK Integration 
-[![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/cas-sdk?label=CAS%20SDK)](https://bintray.com/cleveradssolutions/CAS-Android)
-[![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/cas-promo?label=CAS%20Promo)](https://bintray.com/cleveradssolutions/CAS-Android)
+[![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/cas-sdk?label=SDK)](https://bintray.com/cleveradssolutions/CAS-Android)
+[![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/cas-promo?label=Promo)](https://bintray.com/cleveradssolutions/CAS-Android)
+[![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/mediation-teen?label=Mediation%20Teen)](https://bintray.com/cleveradssolutions/CAS-Android)
+[![App-ads.txt](https://img.shields.io/badge/App--ads.txt-Sep%2017%2C%202020-orange)](https://cleveradssolutions.com/app-ads.txt)
 
 ## Before You Start
 We support Android Operating Systems Version 4.2 (API level 17) and up.  
@@ -588,7 +590,7 @@ Make sure that your publisher website URL (not app specific URL)  is added in yo
 
 We have made it easier for you to include CAS list of entries so that don’t have to construct it on your own. Please copy and paste the following text block and include in your txt file along with entries you may have from your other monetization partners:  
 
-**[App-ads.txt](https://cleveradssolutions.com/app-ads.txt)** Updated Sep 17, 2020.  
+**[App-ads.txt](https://cleveradssolutions.com/app-ads.txt)**.  
 
 ## Mediation partners
 * [Admob](https://admob.google.com/home)  
