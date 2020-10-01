@@ -50,19 +50,19 @@ Add one of the following sdk to the dependencies section for your ad audience.
 - Families Ads Program solutions and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.5.0' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.6.0' 
 }
 ```
 - Teen audiences solutions with additional mediation networks, not for Families Ads Program, and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.5.0'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.6.0'
 }
 ```
 - CAS without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.5.0' 
+    implementation 'com.cleversolutions.ads:cas-sdk:1.6.0' 
 }
 ```
 
@@ -77,7 +77,7 @@ dependencies {
       ...
       implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
       implementation 'com.google.code.gson:gson:2.8.6'
-      implementation 'androidx.appcompat:appcompat:1.1.0'
+      implementation 'androidx.appcompat:appcompat:1.2.0'
       implementation 'androidx.multidex:multidex:2.0.1'
       implementation 'androidx.core:core:1.1.0'
       implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
@@ -87,8 +87,8 @@ dependencies {
       implementation 'com.squareup.picasso:picasso:2.71828'
       implementation 'androidx.browser:browser:1.2.0'
       implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-      implementation 'com.google.android.gms:play-services-basement:17.3.0'
-      implementation 'com.google.android.gms:play-services-base:17.3.0'
+      implementation 'com.google.android.gms:play-services-basement:17.4.0'
+      implementation 'com.google.android.gms:play-services-base:17.4.0'
       implementation 'org.greenrobot:eventbus:3.1.1'
 }
 ```
@@ -155,11 +155,11 @@ dependencies {
       implementation 'com.vungle:publisher-sdk-android:6.8.0'
       implementation 'com.adcolony:sdk:4.2.4'
       implementation 'com.startapp:inapp-sdk:4.6.1'
-      implementation 'com.ironsource.sdk:mediationsdk:7.0.1.1'
+      implementation 'com.ironsource.sdk:mediationsdk:7.0.2'
       implementation 'com.applovin:applovin-sdk:9.14.+'
-      implementation 'com.inmobi.monetization:inmobi-ads:9.0.9'
+      implementation 'com.inmobi.monetization:inmobi-ads:9.1.0'
       implementation 'com.chartboost:chartboost-sdk:8.1.0'
-      implementation 'com.unity3d.ads:unity-ads:3.4.8'
+      implementation 'com.unity3d.ads:unity-ads:3.5.0'
 }
 ```
 If your app's target audience includes children then you can integrate an additional SuperAvesome network:
@@ -173,9 +173,9 @@ If your app's target audience **not** includes children then you can integrate a
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:mediation-teen:1.5.0'
-      implementation 'com.facebook.android:audience-network-sdk:6.0.0'
-      implementation 'com.yandex.android:mobileads:2.180'
+      implementation 'com.cleversolutions.ads:mediation-teen:1.6.0'
+      implementation 'com.facebook.android:audience-network-sdk:6.1.0'
+      implementation 'com.yandex.android:mobileads:3.0.0'
       implementation 'com.yandex.android:mobmetricalib:3.13.3'
 }
 ```
@@ -188,7 +188,7 @@ Start your cross promotion campaign with CAS [here](https://cleveradssolutions.c
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.5.0'
+      implementation 'com.cleversolutions.ads:cas-promo:1.6.0'
 }
 ```
 
