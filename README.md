@@ -5,7 +5,7 @@
 [![App-ads.txt](https://img.shields.io/badge/App--ads.txt-Sep%2017%2C%202020-orange)](https://cleveradssolutions.com/app-ads.txt)
 
 ## Before You Start
-We support Android Operating Systems Version 4.2 (API level 17) and up.  
+We support Android Operating Systems Version 4.4 (API level 19) and up.  
 
 ### AndroidX
 As of SDK 18.0.0, AdMob migrated from Android Support Libraries to Jetpack (AndroidX) Libraries. Refer to the [Google Play services release notes](https://developers.google.com/android/guides/releases#june_17_2019) for more information.  
