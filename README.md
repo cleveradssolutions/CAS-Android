@@ -129,6 +129,8 @@ dependencies {
 }
 ```
 
+> You can read more about MuliDex on the [Android Deleveloper page](https://developer.android.com/studio/build/multidex).
+
 #### Java Version  
 Our SDK requires for correct operation to determine the Java version in Gradle. Add the following line to the android element in your application module’s build script. 
 ```gradle
