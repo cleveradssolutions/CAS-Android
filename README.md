@@ -2,7 +2,7 @@
 [![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/cas-sdk?label=SDK)](https://bintray.com/cleveradssolutions/CAS-Android)
 [![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/cas-promo?label=Promo)](https://bintray.com/cleveradssolutions/CAS-Android)
 [![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/mediation-teen?label=Mediation%20Teen)](https://bintray.com/cleveradssolutions/CAS-Android)
-[![App-ads.txt](https://img.shields.io/badge/App--ads.txt-Sep%2017%2C%202020-orange)](https://cleveradssolutions.com/app-ads.txt)
+[![App-ads.txt](https://img.shields.io/endpoint?url=https://cleveradssolutions.com/AppAdsTxtShiled.json)](https://cleveradssolutions.com/app-ads.txt)
 
 ## Before You Start
 We support Android Operating Systems Version 4.4 (API level 19) and up.  
@@ -50,19 +50,19 @@ Add one of the following sdk to the dependencies section for your ad audience.
 - Families Ads Program solutions and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.6.1' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.6.2' 
 }
 ```
 - Teen audiences solutions with additional mediation networks, not for Families Ads Program, and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.6.1'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.6.2'
 }
 ```
 - CAS without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.6.1' 
+    implementation 'com.cleversolutions.ads:cas-sdk:1.6.2' 
 }
 ```
 
@@ -175,7 +175,7 @@ If your app's target audience **not** includes children then you can integrate a
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:mediation-teen:1.6.1'
+      implementation 'com.cleversolutions.ads:mediation-teen:1.6.2'
       implementation 'com.facebook.android:audience-network-sdk:6.1.0'
       implementation 'com.yandex.android:mobileads:3.0.0'
       implementation 'com.yandex.android:mobmetricalib:3.13.3'
@@ -190,7 +190,7 @@ Start your cross promotion campaign with CAS [here](https://cleveradssolutions.c
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.6.1'
+      implementation 'com.cleversolutions.ads:cas-promo:1.6.2'
 }
 ```
 
