@@ -503,16 +503,16 @@ manager = CAS.initialize(..., new OnInitializationListener(){
 @MainThread void onShowFailed(String message);
 
 // Executed when the user clicks on an ad.
-@AnyThread void onClicked();
+@MainThread void onClicked();
 
 // Executed when the Ad is completed.
 // Banner Ad does not use this callback.
-@AnyThread void onComplete();
+@MainThread void onComplete();
 
 // Executed when the ad is closed.
 // The Banner Ad cannot be displayed automatically after this callback for the current view.
 // If you decide to show the Banner Ad on this view then you need refresh view visibility.
-@AnyThread void onClosed();
+@MainThread void onClosed();
 ```
 
 ### Check Ad Availability
