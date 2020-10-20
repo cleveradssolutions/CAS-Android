@@ -50,19 +50,19 @@ Add one of the following sdk to the dependencies section for your ad audience.
 - Families Ads Program solutions and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.6.5+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.6.8+' 
 }
 ```
 - Teen audiences solutions with additional mediation networks, not for Families Ads Program, and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.6.5+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.6.8+'
 }
 ```
 - CAS without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.6.5+' 
+    implementation 'com.cleversolutions.ads:cas-sdk:1.6.8+' 
 }
 ```
 
@@ -152,7 +152,7 @@ Add following dependencies of Mediation Ad Network SDK:
 ```gradle
 dependencies {
       ...
-      implementation 'com.google.android.gms:play-services-ads:19.4.0'
+      implementation 'com.google.android.gms:play-services-ads:19.5.0'
       implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
       implementation 'com.vungle:publisher-sdk-android:6.8.1'
       implementation 'com.adcolony:sdk:4.3.0'
@@ -168,17 +168,17 @@ If your app's target audience includes children then you can integrate an additi
 ```gradle
 dependencies {
       ...
-      implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.13'
+      implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.14'
 }
 ```
 If your app's target audience **not** includes children then you can integrate an additional Facebook Audience and Yandex networks:  
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:mediation-teen:1.6.5+'
+      implementation 'com.cleversolutions.ads:mediation-teen:1.6.8+'
       implementation 'com.facebook.android:audience-network-sdk:6.1.0'
-      implementation 'com.yandex.android:mobileads:3.0.0'
-      implementation 'com.yandex.android:mobmetricalib:3.13.3'
+      implementation 'com.yandex.android:mobileads:3.1.0'
+      implementation 'com.yandex.android:mobmetricalib:3.14.3'
 }
 ```
 
@@ -190,7 +190,7 @@ Start your cross promotion campaign with CAS [here](https://cleveradssolutions.c
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.6.5+'
+      implementation 'com.cleversolutions.ads:cas-promo:1.6.8+'
 }
 ```
 
