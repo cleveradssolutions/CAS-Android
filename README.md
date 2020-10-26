@@ -49,19 +49,19 @@ Add one of the following sdk to the dependencies section for your ad audience.
 - Families Ads Program solutions and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.6.8+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.6.9+' 
 }
 ```
 - Teen audiences solutions with additional mediation networks, not for Families Ads Program, and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.6.8+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.6.9+'
 }
 ```
 - CAS without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.6.8+' 
+    implementation 'com.cleversolutions.ads:cas-sdk:1.6.9+' 
 }
 ```
 
@@ -155,9 +155,9 @@ dependencies {
       implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
       implementation 'com.vungle:publisher-sdk-android:6.8.1'
       implementation 'com.adcolony:sdk:4.3.0'
-      implementation 'com.startapp:inapp-sdk:4.6.1'
-      implementation 'com.ironsource.sdk:mediationsdk:7.0.3'
-      implementation 'com.applovin:applovin-sdk:9.14.+'
+      implementation 'com.startapp:inapp-sdk:4.6.3+'
+      implementation 'com.ironsource.sdk:mediationsdk:7.0.3.1'
+      implementation 'com.applovin:applovin-sdk:9.14.5+'
       implementation 'com.inmobi.monetization:inmobi-ads:9.1.0'
       implementation 'com.chartboost:chartboost-sdk:8.1.0'
       implementation 'com.unity3d.ads:unity-ads:3.5.0'
@@ -167,14 +167,14 @@ If your app's target audience includes children then you can integrate an additi
 ```gradle
 dependencies {
       ...
-      implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.14'
+      implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.14+'
 }
 ```
 If your app's target audience **not** includes children then you can integrate an additional Facebook Audience and Yandex networks:  
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:mediation-teen:1.6.8+'
+      implementation 'com.cleversolutions.ads:mediation-teen:1.6.9+'
       implementation 'com.facebook.android:audience-network-sdk:6.1.0'
       implementation 'com.yandex.android:mobileads:3.1.0'
       implementation 'com.yandex.android:mobmetricalib:3.14.3'
@@ -189,7 +189,7 @@ Start your cross promotion campaign with CAS [here](https://cleveradssolutions.c
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.6.8+'
+      implementation 'com.cleversolutions.ads:cas-promo:1.6.9+'
 }
 ```
 
