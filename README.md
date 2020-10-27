@@ -175,7 +175,7 @@ If your app's target audience **not** includes children then you can integrate a
 dependencies {
       ...
       implementation 'com.cleversolutions.ads:mediation-teen:1.6.9+'
-      implementation 'com.facebook.android:audience-network-sdk:6.1.0'
+      implementation 'com.facebook.android:audience-network-sdk:6.2.0'
       implementation 'com.yandex.android:mobileads:3.1.0'
       implementation 'com.yandex.android:mobmetricalib:3.14.3'
 }
