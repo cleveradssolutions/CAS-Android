@@ -49,19 +49,19 @@ Add one of the following sdk to the dependencies section for your ad audience.
 - Families Ads Program solutions and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.6.9+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.6.11+' 
 }
 ```
 - Teen audiences solutions with additional mediation networks, not for Families Ads Program, and skip [Step 3](#step-3-add-mediation-sdk)  
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.6.9+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.6.11+'
 }
 ```
 - CAS without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.6.9+' 
+    implementation 'com.cleversolutions.ads:cas-sdk:1.6.11+' 
 }
 ```
 
@@ -157,8 +157,8 @@ dependencies {
       implementation 'com.adcolony:sdk:4.3.0'
       implementation 'com.startapp:inapp-sdk:4.6.3+'
       implementation 'com.ironsource.sdk:mediationsdk:7.0.3.1'
-      implementation 'com.applovin:applovin-sdk:9.14.5+'
-      implementation 'com.inmobi.monetization:inmobi-ads:9.1.0'
+      implementation 'com.applovin:applovin-sdk:9.14.6+'
+      implementation 'com.inmobi.monetization:inmobi-ads:9.1.1'
       implementation 'com.chartboost:chartboost-sdk:8.1.0'
       implementation 'com.unity3d.ads:unity-ads:3.5.0'
 }
@@ -174,7 +174,7 @@ If your app's target audience **not** includes children then you can integrate a
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:mediation-teen:1.6.9+'
+      implementation 'com.cleversolutions.ads:mediation-teen:1.6.11+'
       implementation 'com.facebook.android:audience-network-sdk:6.2.0'
       implementation 'com.yandex.android:mobileads:3.1.0'
       implementation 'com.yandex.android:mobmetricalib:3.14.3'
