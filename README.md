@@ -44,9 +44,10 @@ repositories {
 }
 ```
 
-### Simple integration
-Add one of the following package to the dependencies section to your application.
-
+<details><summary><b>Simple integration</b></summary>
+ 
+Add one of the following solution to the dependencies section to your application.
+ 
 1. Option. General solution of all certified mediation networks in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445):  
 Google Ads, Vungle, AdColony, Kidoz, IronsSource, AppLovin, Unity Ads, StartApp, InMobi, Chartboost, SuperAwesome.
 ```gradle
@@ -63,10 +64,14 @@ dependencies {
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
 
-### Advanced integration
+</details>
+
+<details><summary><b>Advanced integration</b></summary>
+ 
 We support partial integration of the third party mediation sdk you really need.  
-To do this, use any combination of partial dependencies. No additional code is required for each partner network.  
+To do this, use any combination of partial dependencies. No additional code is required for each partner network. 
 **Please provide us with a list of integrated dependencies so that we can make the correct settings.**
+
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
@@ -145,7 +150,10 @@ implementation 'com.android.volley:volley:1.1.1'
 ```gradle
 implementation 'com.amazon.android:mobile-ads:6.0.0'
 ```
+
 > The list of partners networks may change in the future.
+
+</details>
 
 ## Step 2 Add Cross Promotion SDK
 Cross promotion is an app marketing strategy in which app developers promote one of their titles on another one of their titles. Cross promoting is especially effective for developers with large portfolios of games as a means to move users across titles and use the opportunity to scale each of their apps. This is most commonly used by hyper-casual publishers who have relatively low retention, and use cross promotion to keep users within their app portfolio.
@@ -160,7 +168,8 @@ dependencies {
 ```
 
 ## Step 3 Gradle settings
-### AndroidX
+<details><summary><b>AndroidX</b></summary>
+ 
 As of SDK 18.0.0, AdMob migrated from Android Support Libraries to Jetpack (AndroidX) Libraries. Refer to the [Google Play services release notes](https://developers.google.com/android/guides/releases#june_17_2019) for more information.  
 
 Due to this, we working with the AdMob adapter it’s required that your project migrates from Android Support Libraries to Jetpack Libraries (Android X) if you are using any. Please refer to [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate) for more information.  
@@ -169,7 +178,10 @@ In case you can not migrate the project using this tool, you can use the followi
 *  android.useAndroidX = true  
 *  android.enableJetifier = true  
 
-#### MultiDEX
+</details>
+ 
+<details><summary><b>MultiDEX</b></summary>
+ 
 At times, including the CAS SDK may cause the 64K limit on methods that can be packaged in an Android dex file to be breached. This can happen if, for example, your app packs a lot of features for your users and includes substantive code to realize this.  
 
 If this happens, you can use the multidex support library to enable building your app correctly. To do this:  
@@ -190,7 +202,10 @@ dependencies {
 
 > You can read more about MuliDex on the [Android Deleveloper page](https://developer.android.com/studio/build/multidex).
 
-#### Java Version  
+</details>
+
+<details><summary><b>Java Version</b></summary>
+ 
 Our SDK requires for correct operation to determine the Java version in Gradle. Add the following line to the android element in your application module’s build script. 
 ```gradle
 android{
@@ -202,35 +217,46 @@ android{
 }
 ```
 
+</details>
+
 ## Step 4 Update AndroidManifest
 
-### Manifest Permissions
+<details><summary><b>Manifest Permissions</b></summary>
+ 
 Add the following permissions to your AndroidManifest.xml file inside the manifest tag but outside the <application> tag:
 ```xml
 <manifest>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-   
-    <!--Optional Permissions-->
-    
-    <!--This permission is used for certain ads that vibrate during play. 
-    This is a normal level permission, so this permission just needs to be defined in the manifest to enable this ad feature.-->
-    <uses-permission android:name="android.permission.VIBRATE" />
-    
-    <!--This permission is used for certain ads that allow the user to save a screenshot to their phone. 
-    Note that with this permission on devices running Android 6.0 (API 23) or higher, 
-    this permission must be requested from the user. 
-    See Requesting Permissions for more details. https://developer.android.com/training/permissions/requesting -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
-    <!--This permission is not a mandatory permission, however, including it will enable accurate ad targeting-->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    ...
+ <uses-permission android:name="android.permission.INTERNET" />
+ <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+ <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 </manifest>
 ```
-  
-### Admob App ID
+#### Optional Permissions
+This permission is used for certain ads that vibrate during play. This is a normal level permission, so this permission just needs to be defined in the manifest to enable this ad feature.
+```xml
+<manifest>
+ <uses-permission android:name="android.permission.VIBRATE" />
+</manifest>
+```
+This permission is used for certain ads that allow the user to save a screenshot to their phone. 
+Note that with this permission on devices running Android 6.0 (API 23) or higher, this permission must be requested from the user. 
+See [Requesting Permissions](https://developer.android.com/training/permissions/requesting) for more details. 
+```xml
+<manifest>
+ <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+</manifest>
+```
+This permission is not a mandatory permission, however, including it will enable accurate ad targeting.
+```xml
+<manifest>
+ <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+</manifest>
+```
+
+</details>
+
+<details><summary><b>Admob App ID</b></summary>
+
 Follow the [link](http://psvpromo.psvgamestudio.com/cas-settings.php) to get your Admob App ID.  
 
 Add your AdMob App ID to your app's AndroidManifest.xml file by adding a <meta-data> tag with name com.google.android.gms.ads.APPLICATION_ID, as shown below.  
@@ -248,6 +274,8 @@ For android:value insert your own AdMob App ID in quotes, as shown below.
 </manifest>
 ```
 
+</details>
+
 ## Step 5 Add the CAS default settings file
 Follow the [link](http://psvpromo.psvgamestudio.com/cas-settings.php) to download a cas_settings.json file.
 
@@ -259,6 +287,8 @@ This documentation is provided for compliance with various privacy laws. If you 
 A detailed article on the use of user data can be found in the [Privacy Policy](/../../wiki/Privacy-Policy).
 
 ### GDPR Managing Consent
+<details>
+ 
 This documentation is provided for compliance with the European Union's [General Data Protection Regulation (GDPR)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679). In order to pass GDPR consent from your users, you should make use of the APIs and methods discussed below to inform CAS and all downstream consumers of this information.  
 
 **Passing Consent** to CAS API, use this functions:  
@@ -271,7 +301,11 @@ If the user did not consent, please set the following flag to "false":
 CAS.getSettings().setConsent(false);
 ```
 
+</details>
+
 ### CCPA Compliance
+<details>
+ 
 This documentation is provided for compliance with the California Consumer Privacy Act (CCPA). In order to pass CCPA opt-outs from your users, you should make use of the APIs discussed below to inform CAS and all downstream consumers of this information.  
 
 **Passing Opt-outs**
@@ -286,7 +320,11 @@ A value of "true" means the user has opted-out to the sale of their data.
 CAS.getSettings().setDoNotSell(true);
 ```
 
+</details>
+
 ###  COPPA and EEA Compliance
+<details>
+ 
 This documentation is provided for additional compliance with the [Children’s Online Privacy Protection Act (COPPA)](https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy). Publishers may designate all inventory within their applications as being child-directed or as COPPA-applicable though our UI. Publishers who have knowledge of specific individuals as being COPPA-applicable should make use of the API discussed below to inform CAS and all downstream consumers of this information.  
 
 You can mark your ad requests to receive treatment for users in the European Economic Area (EEA) under the age of consent. This feature is designed to help facilitate compliance with the General Data Protection Regulation (GDPR). Note that you may have other legal obligations under GDPR. Please review the European Union’s guidance and consult with your own legal counsel. Please remember that CAS tools are designed to facilitate compliance and do not relieve any particular publisher of its obligations under the law.
@@ -299,6 +337,8 @@ Call "false" to indicate that you **don't** want your content treated as child-d
 ```java
 CAS.getSettings().isTaggedForChildren(false);
 ```
+
+</details>
 
 **We recommend to set Privacy API before initializing CAS SDK.**
 
@@ -323,7 +363,8 @@ import com.cleversolutions.ads.*
 import com.cleversolutions.ads.android.CAS
 ```
 
-**Configure Ads Settings singleton instance for configure all mediation managers:**
+<details><summary><b>Configure Ads Settings singleton instance</b></summary>
+ 
 ```java
 CAS.getSettings().setConsent(userConsent);
 CAS.getSettings().setNativeDebug(true);
@@ -350,10 +391,29 @@ CAS.getSettings().setLoadingMode(LoadingManagerMode.Optimal);
 > Auto control load mediation ads starts immediately after initialization and will prepare displays automatically.  
 > Manual control loading mediation ads requires manual preparation of advertising content for display. Use ad loading methods before trying to show: `MediationManager.loadInterstitial(), MediationManager.loadRewardedVideo(), CASBannerView.loadNextAd()`  
 
-**Initialize MediationManager instance:**
+</details>
+
+<details><summary><b>Configure Targeting Options singleton instance once before initialize</b></summary>
+ 
+You can now easily tailor the way you serve your ads to fit a specific audience!  
+You’ll need to inform our servers of the users’ details so the SDK will know to serve ads according to the segment the user belongs to.
+
 ```java
-import com.cleversolutions.ads.android.CAS;
-...
+// Set user age. Limitation: 1-99 and 0 is 'unknown'
+CAS.getTargetingOptions().setAge(12)
+// Set user gender
+CAS.getTargetingOptions().setGender(TargetingOptions.GENDER_MALE)
+// The user's current location.
+// Location data is not used to CAS; however, it may be used by third party ad networks.
+// Do not use Location just for advertising.
+// Your app should have a valid use case for it as well.
+CAS.getTargetingOptions().setLocation(userLocation)
+```
+</details>
+
+<details><summary><b>Initialize MediationManager instance</b></summary>
+ 
+```java
 class YourActivity extends Activity{
   MediationManager manager;
   void onCreate(Bundle savedInstanceState) {
@@ -367,7 +427,7 @@ class YourActivity extends Activity{
             // Optional set active Ad Types: 'AdTypeFlags.Banner | AdTypeFlags.Interstitial' for example.  
             AdTypeFlags.Everything, 
             // Optional Demo ad fill only. Set FALSE for release!  
-            true, 
+            isTestBuild, 
             // Optional subscribe to initialization done  
             new OnInitializationListener(){  
                 void onInitialization(boolean success, String error){  
@@ -380,7 +440,10 @@ class YourActivity extends Activity{
 ```
 CAS.initialize can be called for different identifiers to create different managers. 
 
-Optional. Subscribe listener to Ad Loading response:  
+</details>
+
+<details><summary><b>Subscribe listener to Ad Loading response</b></summary>
+ 
 ```java
 manager.getOnAdLoadEvent().add(new AdLoadCallback(){
     @AnyThread
@@ -395,9 +458,13 @@ manager.getOnAdLoadEvent().add(new AdLoadCallback(){
 })
 ```
 
+</details>
+
 ## Step 9 Implement our Ad Units
 ### Banner Ad
-#### Add CASBannerView to the layout
+
+<details><summary><b>Add CASBannerView to the layout</b></summary>
+ 
 The first step toward displaying a banner is to place CASBannerView in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's CASBannerView:  
 ```xml
 # main_activity.xml
@@ -414,7 +481,10 @@ The first step toward displaying a banner is to place CASBannerView in the layou
 Note the following required attributes:  
 ads:bannerSize - Set this to the ad size you'd like to use. If you don't want to use the standard size defined by the constant, you can set a custom size instead. See the banner size section below for details.  
 
-#### You can alternatively create CASBannerView programmatically:
+</details>
+
+<details><summary><b>Create CASBannerView programmatically</b></summary>
+ 
 ```java
 CASBannerView bannerView = new CASBannerView(this, manager);
 
@@ -432,14 +502,18 @@ parentView.addView(bannerView);
 activity.addContentView(bannerView, new LayoutParams(...));
 ```
 
-#### Load Ad
+</details>
+
+#### Load Banner Ad
 Manual load manager mode require call `loadNextAd()` after create `CASBannerView` and change banner size.  
 You can use `loadNextAd()` for cancel current impression and load next ad.
 ```java
 bannerView.loadNextAd();
 ```
 
+<details><summary><b>Ad Size</b></summary>
 ### Ad Size
+ 
 | Size in dp (WxH) |      Description     |    Availability    |  AdSize constant |
 |:----------------:|:--------------------:|:------------------:|:----------------:|
 |      320x50      |    Standard Banner   | Phones and Tablets |      BANNER      |
@@ -461,24 +535,27 @@ adaptiveSize = AdSize.getAdaptiveBanner(context, maxWidthDPI);
 
 // After create Apadtive size need call MediationManager:
 manager.setBannerSize(adaptiveSize);
-// OR same
+// OR same to CASBannerView
 bannerView.setSize(adaptiveSize);
 ```
 
 #### Smart Banners
 Typically, Smart Banners on phones have a BANNER size. Or on tablets a LEADERBOARD size.
 
-Use the static method in the AdSize.getAdaptiveBanner (context, maxWidthDPI) ad size class to get the smart AdSize object.
+Use the static method getSmartBanner(context) in the AdSize class to get the smart AdSize object.
 ```java
 smartSize = AdSize.getSmartBanner(context);
 
 // After create Smart size need call MediationManager:
 manager.setBannerSize(smartSize);
-// OR same
+// OR same to CASBannerView
 bannerView.setSize(smartSize);
 ```
 
-#### Banner refresh rate
+</details>
+
+<details><summary><b>Banner refresh rate</b></summary>
+ 
 An ad unit’s automatic refresh rate determines how often a new ad request is generated for that ad unit.  
 We recommend using 30 seconds (Default) refresh rate.  
 You may also set a custom refresh rate of 5-360 seconds.  
@@ -498,6 +575,8 @@ manager = CAS.initialize(..., new OnInitializationListener(){
     }  
 } );
 ```
+
+</details>
 
 ### AdCallback
 ```java
@@ -530,7 +609,7 @@ manager.isAdReady(AdType.Interstitial); //Check ready any AdType
 ```
 
 ### Show fullscreen Ad
-**Manual load manager mode** require call `manager.loadInterstitial()` and `manager.loadRewardedVideo()`  before try show ad.  
+**Manual load manager mode** require call `manager.loadInterstitial()` and `manager.loadRewardedVideo()` before try show ad.  
 You will also need to load new ad after the ad closed.  
 ```java
 manager.loadInterstitial();
@@ -547,7 +626,8 @@ manager.show(
       );
 ```
 
-#### Minimum interval between Interstitial ads
+<details><summary><b>Minimum interval between Interstitial ads</b></summary>
+ 
 You can limit the posting of an interstitial ad to a period of time in seconds after the ad is closed, during which display attempts will fail.  
 This setting is available for change through the web application settings.  Unlimited by default (0 seconds).
 
@@ -571,6 +651,8 @@ You can also restart the countdown interval until the next successful ad shown. 
 CAS.getSettings().restartInterstitialInterval();
 ``` 
 
+</details>
+ 
 ## Support
 Site: [https://cleveradssolutions.com](https://cleveradssolutions.com)
 
