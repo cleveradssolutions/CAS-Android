@@ -4,29 +4,15 @@
 [![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/mediation-teen?label=Mediation%20Teen)](https://bintray.com/cleveradssolutions/CAS-Android)
 [![App-ads.txt](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/cleveradssolutions/App-ads.txt/master/Shield.json)](https://github.com/cleveradssolutions/App-ads.txt)
 
-## Before You Start
+### Before You Start
 We support Android Operating Systems Version 4.4 (API level 19) and up.  
-
-### AndroidX
-As of SDK 18.0.0, AdMob migrated from Android Support Libraries to Jetpack (AndroidX) Libraries. Refer to the [Google Play services release notes](https://developers.google.com/android/guides/releases#june_17_2019) for more information.  
-
-Due to this, we working with the AdMob adapter it’s required that your project migrates from Android Support Libraries to Jetpack Libraries (Android X) if you are using any. Please refer to [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate) for more information.  
-
-In case you can not migrate the project using this tool, you can use the following flags in gradle.properties, to build your project using AndroidX. 
-*  android.useAndroidX = true  
-*  android.enableJetifier = true  
-
-### Families Ads Program
-Google is focused on providing a great experience for families on Google Play and wants to help make sure that any ads served to children are appropriate.  
-[More about Families Ads Program.](https://support.google.com/googleplay/android-developer/answer/9283445)  
-**If your app's target audience includes children and serves ads using an ad Clever General Ads Solutions only.**
 
 # Table of contents
  1.  [Add the CAS SDK to Your Project](#step-1-add-the-cas-sdk-to-your-project)  
- 2.  [Gradle settings](#step-2-gradle-settings)  
- 3.  [Add mediation SDK](#step-3-add-mediation-sdk)  
- 4.  [Add Cross Promotion SDK](#step-4-add-cross-promotion-sdk)  
- 5.  [Update AndroidManifest](#step-5-update-androidmanifest)  
+ 2.  [Add Cross Promotion SDK](#step-2-add-cross-promotion-sdk)  
+ 3.  [Gradle settings](#step-3-gradle-settings)  
+ 4.  [Update AndroidManifest](#step-4-update-androidmanifest)  
+ 5.  [Add the CAS default settings file](#step-5-add-the-cas-default-settings-file)  
  6.  [Privacy Laws](#step-6-privacy-laws)  
  6.1.  [GDPR Managing Consent](#gdpr-managing-consent)  
  6.2.  [CCPA Compliance](#ccpa-compliance)  
@@ -39,75 +25,149 @@ Google is focused on providing a great experience for families on Google Play an
  9.3. [Ad Callback](#ad-callback)  
  9.4. [Check Ad Availability](#check-ad-availability)  
  9.5. [Show fullscreen Ad](#show-fullscreen-ad)  
- 10.  [Mediation partners](#mediation-partners)  
- 11.  [Support](#support)  
+ 10.  [Support](#support)  
 
 ## Step 1 Add the CAS SDK to Your Project
-
-### Option 1 Gradle Integration
-Add one of the following sdk to the dependencies section for your ad audience.
-- Families Ads Program solutions and skip [Step 3](#step-3-add-mediation-sdk)  
-```gradle
-dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.6.11+' 
-}
-```
-- Teen audiences solutions with additional mediation networks, not for Families Ads Program, and skip [Step 3](#step-3-add-mediation-sdk)  
-```gradle
-dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.6.11+'
-}
-```
-- CAS without mediation dependencies. Follow [Step 3](#step-3-add-mediation-sdk) to integrate mediation SDK.
-```gradle
-dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.6.11+' 
-}
-```
-
-### Option 2 Manual Integration
-1.  Download the latest release binaries from GitHub, specifically [CleverAdsSolutions.aar](https://github.com/cleveradssolutions/CAS-Android/releases/latest)
-2.  Create or open your existing Android project in Android Studio.
-3.  Add new module and import CleverAdsSolutions.aar. Name the module "CleverAdsSolutions" for example.
-4.  Open Module Settings for the app and add "CleverAdsSolutions" module as a dependency.  
-5.  Add following dependencies of support libraries:  
-```gradle
-dependencies {
-      ...
-      implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-      implementation 'com.google.code.gson:gson:2.8.6'
-      implementation 'androidx.appcompat:appcompat:1.2.0'
-      implementation 'androidx.multidex:multidex:2.0.1'
-      implementation 'androidx.core:core:1.1.0'
-      implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
-      implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-      implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-      implementation 'androidx.recyclerview:recyclerview:1.0.0'
-      implementation 'com.squareup.picasso:picasso:2.71828'
-      implementation 'androidx.browser:browser:1.2.0'
-      implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
-      implementation 'com.google.android.gms:play-services-basement:17.4.0'
-      implementation 'com.google.android.gms:play-services-base:17.4.0'
-      implementation 'org.greenrobot:eventbus:3.1.1'
-}
-```
-
-## Step 2 Gradle settings
 Add the following to your app’s **build.gradle** file inside repositories section:
 ```gradle
 repositories {
       google()
       jcenter()
+      maven { url "https://jitpack.io" }
       maven { url "https://dl.bintray.com/cleveradssolutions/CAS-Android" }
       maven { url "https://adcolony.bintray.com/AdColony" }
       maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
-      maven { url "https://maven.google.com" }
       maven { url "https://chartboostmobile.bintray.com/Chartboost" }
       maven { url 'http://dl.bintray.com/gabrielcoman/maven' }
       maven { url "http://dl.bintray.com/superawesome/SuperAwesomeSDK" }
       ...
 }
 ```
+
+### Simple integration
+Add one of the following package to the dependencies section to your application.
+
+1. Option. General solution of all certified mediation networks in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445):  
+Google Ads, Vungle, AdColony, Kidoz, IronsSource, AppLovin, Unity Ads, StartApp, InMobi, Chartboost, SuperAwesome.
+```gradle
+dependencies {
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.7.0+' 
+}
+```
+
+2. Option. General solution of mediation networks that are always recommended to be used: Google Ads, Vungle, AdColony, Kidoz, IronsSource, AppLovin, Unity Ads, StartApp, InMobi, Chartboost, Facebook AN, Yandex Ads.
+```gradle
+dependencies {
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.7.0+'
+}
+```
+> Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
+
+### Advanced integration
+We support partial integration of the third party mediation sdk you really need.  
+To do this, use any combination of partial dependencies. No additional code is required for each partner network.  
+**Please provide us with a list of integrated dependencies so that we can make the correct settings.**
+#### The first step is to add a dependency to the core of our SDK:
+```gradle
+dependencies {
+    implementation 'com.cleversolutions.ads:cas-sdk:1.7.0+'
+    ...
+}
+```
+#### Then you can add dependencies for each required third party mediation SDK:
+- [Google Ads (Admob)](https://admob.google.com/home) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.google.android.gms:play-services-ads:19.5.0'
+```
+- [Unity Ads](https://unity.com/solutions/unity-ads) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.unity3d.ads:unity-ads:3.5.0'
+```
+- [Iron Source](https://www.ironsrc.com) ~~Banner~~, Interstitial, Rewarded Video
+```gradle
+implementation 'com.ironsource.sdk:mediationsdk:7.0.3.1'
+```
+- [AdColony](https://www.adcolony.com) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.adcolony:sdk:4.3.0'
+```
+- [Vungle](https://vungle.com) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.vungle:publisher-sdk-android:6.8.1'
+```
+- [AppLovin](https://www.applovin.com) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.applovin:applovin-sdk:9.14.8+'
+```
+- [InMobi](https://www.inmobi.com) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.inmobi.monetization:inmobi-ads:9.1.1'
+```
+- [StartApp](https://www.startapp.com) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.startapp:inapp-sdk:4.6.3+'
+```
+- [Kidoz](https://kidoz.net) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
+```
+- [Chartboost](https://www.chartboost.com) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.chartboost:chartboost-sdk:8.1.0'
+```
+- [SuperAwesome](https://www.superawesome.com) Banner, Interstitial, Rewarded Video. **Works to children audience only**.
+```gradle
+implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.15+'
+```
+#### To the following third party mediation SDK, be sure to add our additional support dependency `mediation-teen` for non-certified ad SDK in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445).
+```gradle
+implementation 'com.cleversolutions.ads:mediation-teen:1.7.0+'
+```
+- [Facebook AN](https://www.facebook.com/business/marketing/audience-network) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.facebook.android:audience-network-sdk:6.2.0'
+```
+- [Yandex Ads](https://yandex.ru/dev/mobile-ads) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.yandex.android:mobileads:3.1.0'
+implementation 'com.yandex.android:mobmetricalib:3.14.3'
+```
+- [MyTarget](https://target.my.com/) Banner, Interstitial, Rewarded Video. **Works to CIS countries only**.
+```gradle
+implementation 'com.my.target:mytarget-sdk:5.11.5+'
+```
+- [MobFox](https://www.mobfox.com) Banner, Interstitial, Rewarded Video
+```gradle
+implementation 'com.github.mobfox:mfx-android-sdk:4.3.2+'
+implementation 'com.android.volley:volley:1.1.1'
+```
+- [Amazon Ads](https://advertising.amazon.com) Banner, ~~Interstitial, Rewarded Video~~
+```gradle
+implementation 'com.amazon.android:mobile-ads:6.0.0'
+```
+> The list of partners networks may change in the future.
+
+## Step 2 Add Cross Promotion SDK
+Cross promotion is an app marketing strategy in which app developers promote one of their titles on another one of their titles. Cross promoting is especially effective for developers with large portfolios of games as a means to move users across titles and use the opportunity to scale each of their apps. This is most commonly used by hyper-casual publishers who have relatively low retention, and use cross promotion to keep users within their app portfolio.
+
+Start your cross promotion campaign with CAS [here](https://cleveradssolutions.com).
+
+```gradle
+dependencies {
+      ...
+      implementation 'com.cleversolutions.ads:cas-promo:1.7.0+'
+}
+```
+
+## Step 3 Gradle settings
+### AndroidX
+As of SDK 18.0.0, AdMob migrated from Android Support Libraries to Jetpack (AndroidX) Libraries. Refer to the [Google Play services release notes](https://developers.google.com/android/guides/releases#june_17_2019) for more information.  
+
+Due to this, we working with the AdMob adapter it’s required that your project migrates from Android Support Libraries to Jetpack Libraries (Android X) if you are using any. Please refer to [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate) for more information.  
+
+In case you can not migrate the project using this tool, you can use the following flags in gradle.properties, to build your project using AndroidX. 
+*  android.useAndroidX = true  
+*  android.enableJetifier = true  
 
 #### MultiDEX
 At times, including the CAS SDK may cause the 64K limit on methods that can be packaged in an Android dex file to be breached. This can happen if, for example, your app packs a lot of features for your users and includes substantive code to realize this.  
@@ -142,58 +202,7 @@ android{
 }
 ```
 
-## Step 3 Add mediation SDK  
-The CAS Mediation platform supports interstitial and video ads from 12 leading ad networks, equipped with smart loading, ad placement technology and ad delivery optimization. Our Mediation solution is a new monetization tool that enhances user experience, offers better control on ad performance and significantly increases revenue!
-
-Skip Step 3 if use gradle integrate **cas-sdk-general** or **cas-sdk-teen**
-
-Add following dependencies of Mediation Ad Network SDK:  
-```gradle
-dependencies {
-      ...
-      implementation 'com.google.android.gms:play-services-ads:19.5.0'
-      implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
-      implementation 'com.vungle:publisher-sdk-android:6.8.1'
-      implementation 'com.adcolony:sdk:4.3.0'
-      implementation 'com.startapp:inapp-sdk:4.6.3+'
-      implementation 'com.ironsource.sdk:mediationsdk:7.0.3.1'
-      implementation 'com.applovin:applovin-sdk:9.14.6+'
-      implementation 'com.inmobi.monetization:inmobi-ads:9.1.1'
-      implementation 'com.chartboost:chartboost-sdk:8.1.0'
-      implementation 'com.unity3d.ads:unity-ads:3.5.0'
-}
-```
-If your app's target audience includes children then you can integrate an additional SuperAvesome network:
-```gradle
-dependencies {
-      ...
-      implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.14+'
-}
-```
-If your app's target audience **not** includes children then you can integrate an additional Facebook Audience and Yandex networks:  
-```gradle
-dependencies {
-      ...
-      implementation 'com.cleversolutions.ads:mediation-teen:1.6.11+'
-      implementation 'com.facebook.android:audience-network-sdk:6.2.0'
-      implementation 'com.yandex.android:mobileads:3.1.0'
-      implementation 'com.yandex.android:mobmetricalib:3.14.3'
-}
-```
-
-## Step 4 Add Cross Promotion SDK
-Cross promotion is an app marketing strategy in which app developers promote one of their titles on another one of their titles. Cross promoting is especially effective for developers with large portfolios of games as a means to move users across titles and use the opportunity to scale each of their apps. This is most commonly used by hyper-casual publishers who have relatively low retention, and use cross promotion to keep users within their app portfolio.
-
-Start your cross promotion campaign with CAS [here](https://cleveradssolutions.com).
-
-```gradle
-dependencies {
-      ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.6.9+'
-}
-```
-
-## Step 5 Update AndroidManifest
+## Step 4 Update AndroidManifest
 
 ### Manifest Permissions
 Add the following permissions to your AndroidManifest.xml file inside the manifest tag but outside the <application> tag:
@@ -239,7 +248,7 @@ For android:value insert your own AdMob App ID in quotes, as shown below.
 </manifest>
 ```
 
-### Add the CAS default settings file
+## Step 5 Add the CAS default settings file
 Follow the [link](http://psvpromo.psvgamestudio.com/cas-settings.php) to download a cas_settings.json file.
 
 Drop the cas_settings.json into the src/res/raw/ folder in your project.  
@@ -561,21 +570,6 @@ You can also restart the countdown interval until the next successful ad shown. 
 ```java
 CAS.getSettings().restartInterstitialInterval();
 ``` 
-
-## Mediation partners
-* [Admob](https://admob.google.com/home)  
-* [AppLovin](https://www.applovin.com)  
-* [Chartboost](https://www.chartboost.com)  
-* [KIDOZ](https://kidoz.net)  
-* [UnityAds](https://unity.com/solutions/unity-ads)  
-* [Vungle](https://vungle.com)  
-* [AdColony](https://www.adcolony.com)  
-* [StartApp](https://www.startapp.com)  
-* [SuperAwesome](https://www.superawesome.com)  
-* [IronSource](https://www.ironsrc.com)  
-* [InMobi](https://www.inmobi.com)  
-* [Facebook Audience](https://www.facebook.com/business/marketing/audience-network)  
-* [Yandex Ad](https://yandex.ru/dev/mobile-ads)  
 
 ## Support
 Site: [https://cleveradssolutions.com](https://cleveradssolutions.com)

@@ -52,6 +52,16 @@ dependencies {
 
     // implementation project(path: ':CleverAdsSolutions')
 
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.4.+'
-    implementation 'com.cleversolutions.ads:cas-promo:1.4.+'
+    // CAS General Solution
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.7.0+'
+
+    // CAS Cross promo sdk
+    implementation 'com.cleversolutions.ads:cas-promo:1.7.0+'
+
+    // Required CAS support 
+    implementation 'com.cleversolutions.ads:mediation-teen:1.7.0+'
+
+    // Additional mediation partners...
+    implementation 'com.my.target:mytarget-sdk:5.11.5+'
+    //implementation 'com.amazon.android:mobile-ads:6.0.0'
 }
