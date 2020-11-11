@@ -21,10 +21,9 @@ We support Android Operating Systems Version 4.4 (API level 19) and up.
  8.  [Initialize the SDK](#step-8-initialize-the-sdk)  
  9.  [Implement our Ad Units](#step-9-implement-our-ad-units)  
  9.1. [Banner Ad](#banner-ad)  
- 9.2. [Ad Size](#ad-size)  
- 9.3. [Ad Callback](#adcallback)  
- 9.4. [Check Ad Availability](#check-ad-availability)  
- 9.5. [Show fullscreen Ad](#show-fullscreen-ad)  
+ 9.2. [Ad Callback](#adcallback)  
+ 9.3. [Check Ad Availability](#check-ad-availability)  
+ 9.4. [Show fullscreen Ad](#show-fullscreen-ad)  
  10.  [Support](#support)  
 
 ## Step 1 Add the CAS SDK to Your Project
@@ -343,6 +342,8 @@ CAS.getSettings().isTaggedForChildren(false);
 **We recommend to set Privacy API before initializing CAS SDK.**
 
 ## Step 7 Verify Your Integration
+<details>
+ 
 The CAS SDK provides an easy way to verify that you’ve successfully integrated the ironSource SDK and any additional adapters; it also makes sure all required dependencies and frameworks were added for the various mediated ad networks.  
 After you have finished your integration, call the following static method and confirm that all networks you have implemented are marked as VERIFIED:  
 ```java
@@ -354,9 +355,9 @@ Once you’ve successfully verified your integration, please remember to remove 
 
 NOT. The Integration Helper tool reviews everything, including ad networks you may have intentionally chosen NOT to include in your application. These will appear as MISSING and there is no reason for concern. In the case the ad network’s integration has not been completed successfully, it will be marked as NOT VERIFIED.  
 
+</details>
+ 
 ## Step 8 Initialize the SDK
-You can access to SDK from any thread.  
-
 **Import the CAS SDK**
 ```java
 import com.cleversolutions.ads.*
@@ -462,7 +463,6 @@ manager.getOnAdLoadEvent().add(new AdLoadCallback(){
 
 ## Step 9 Implement our Ad Units
 ### Banner Ad
-
 <details><summary><b>Add CASBannerView to the layout</b></summary>
  
 The first step toward displaying a banner is to place CASBannerView in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's CASBannerView:  
@@ -513,7 +513,6 @@ bannerView.loadNextAd();
 
 <details><summary><b>Ad Size</b></summary>
  
-### Ad Size
 | Size in dp (WxH) |      Description     |    Availability    |  AdSize constant |
 |:----------------:|:--------------------:|:------------------:|:----------------:|
 |      320x50      |    Standard Banner   | Phones and Tablets |      BANNER      |
@@ -579,29 +578,33 @@ manager = CAS.initialize(..., new OnInitializationListener(){
 </details>
 
 ### AdCallback
+<details>
+ 
 ```java
 // Executed when the ad is displayed.
 // @param ad Information of displayed ad.
-@MainThread void onShown(com.cleversolutions.ads.AdStatusHandler ad);
+void onShown(com.cleversolutions.ads.AdStatusHandler ad);
 
 // Executed when the ad is failed to display.
 // The Banner may automatically appear when the Ad is ready again.
 // This will trigger the [onShown] callback again.
-@MainThread void onShowFailed(String message);
+void onShowFailed(String message);
 
 // Executed when the user clicks on an ad.
-@MainThread void onClicked();
+void onClicked();
 
 // Executed when the Ad is completed.
 // Banner Ad does not use this callback.
-@MainThread void onComplete();
+void onComplete();
 
 // Executed when the ad is closed.
 // The Banner Ad cannot be displayed automatically after this callback for the current view.
 // If you decide to show the Banner Ad on this view then you need refresh view visibility.
-@MainThread void onClosed();
+void onClosed();
 ```
 
+</details>
+ 
 ### Check Ad Availability
 You can ask for the ad availability directly by calling the following function:
 ```java
