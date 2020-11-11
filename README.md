@@ -22,7 +22,7 @@ We support Android Operating Systems Version 4.4 (API level 19) and up.
  9.  [Implement our Ad Units](#step-9-implement-our-ad-units)  
  9.1. [Banner Ad](#banner-ad)  
  9.2. [Ad Size](#ad-size)  
- 9.3. [Ad Callback](#ad-callback)  
+ 9.3. [Ad Callback](#adcallback)  
  9.4. [Check Ad Availability](#check-ad-availability)  
  9.5. [Show fullscreen Ad](#show-fullscreen-ad)  
  10.  [Support](#support)  
@@ -512,8 +512,8 @@ bannerView.loadNextAd();
 ```
 
 <details><summary><b>Ad Size</b></summary>
-### Ad Size
  
+### Ad Size
 | Size in dp (WxH) |      Description     |    Availability    |  AdSize constant |
 |:----------------:|:--------------------:|:------------------:|:----------------:|
 |      320x50      |    Standard Banner   | Phones and Tablets |      BANNER      |
