@@ -23,7 +23,8 @@ We support Android Operating Systems Version 4.4 (API level 19) and up.
  9.1.  [Banner Ad](#banner-ad)  
  9.2.  [Ad Callback](#adcallback)  
  9.3.  [Check Ad Availability](#check-ad-availability)  
- 9.4.  [Show fullscreen Ad](#show-fullscreen-ad)  
+ 9.4.  [Show Interstitial Ad](#show-interstitial-ad)  
+ 9.5.  [Show Rewarded Video Ad](#show-rewarded-video-ad)  
  10.  [GitHub issue tracker](#github-issue-tracker)
  11.  [Support](#support)  
  12.  [License](#license)
@@ -466,7 +467,8 @@ manager.getOnAdLoadEvent().add(new AdLoadCallback(){
 
 ## Step 9 Implement our Ad Units
 ### Banner Ad
-<details><summary><b>Add CASBannerView to the layout</b></summary>
+Banner ads are displayed in CASBannerView objects from module CleverAdsSolutions, so the first step toward integrating banner ads is to include a CASBannerView in your view hierarchy. This is typically done either with the layout or programmatically.
+<details><summary><b>Add to the layout</b></summary>
  
 The first step toward displaying a banner is to place CASBannerView in the layout for the Activity or Fragment in which you'd like to display it. The easiest way to do this is to add one to the corresponding XML layout file. Here's an example that shows an activity's CASBannerView:  
 ```xml
@@ -486,7 +488,7 @@ ads:bannerSize - Set this to the ad size you'd like to use. If you don't want to
 
 </details>
 
-<details><summary><b>Create CASBannerView programmatically</b></summary>
+<details><summary><b>Create programmatically</b></summary>
  
 ```java
 CASBannerView bannerView = new CASBannerView(this, manager);
@@ -506,14 +508,14 @@ activity.addContentView(bannerView, new LayoutParams(...));
 ```
 
 </details>
-
-#### Load Banner Ad
+<details><summary><b>Load Banner Ad</b></summary>
+ 
 Manual load manager mode require call `loadNextAd()` after create `CASBannerView` and change banner size.  
 You can use `loadNextAd()` for cancel current impression and load next ad.
 ```java
 bannerView.loadNextAd();
 ```
-
+</details>
 <details><summary><b>Ad Size</b></summary>
  
 | Size in dp (WxH) |      Description     |    Availability    |  AdSize constant |
@@ -617,19 +619,16 @@ You can ask for the ad availability directly by calling the following function:
 manager.isAdReady(AdType.Interstitial); //Check ready any AdType
 ```
 
-### Show fullscreen Ad
-**Manual load manager mode** require call `manager.loadInterstitial()` and `manager.loadRewardedVideo()` before try show ad.  
+### Show Interstitial Ad
+**Manual load manager mode** require call `loadInterstitial` before try show ad.  
 You will also need to load new ad after the ad closed.  
 ```java
 manager.loadInterstitial();
-manager.loadRewardedVideo();
 ```
 
 Invoke the following method to serve an selected ad to your users:
 ```java
-manager.show(
-        // Ad type Interstitial or Rewarded
-        AdType.Interstitial, 
+manager.show(AdType.Interstitial, 
         // Optional. AdCallback implementation
         new AdCallback(){...}
       );
@@ -661,7 +660,32 @@ CAS.getSettings().restartInterstitialInterval();
 ``` 
 
 </details>
+
+### Show Rewarded Video Ad
+ **Manual load manager mode** require call `loadRewardedVideo` before try show ad.  
+You will also need to load new ad after the ad closed.  
+```java
+manager.loadRewardedVideo();
+```
+
+Invoke the following method to serve an selected ad to your users:
+```java
+manager.show(AdType.Rewarded, 
+        // Optional. AdCallback implementation
+        new AdCallback(){...}
+      );
+```
+
+<details><summary><b>Redirect rewarded video ad impressions to interstitial ads at higher cost per impression</b></summary>
  
+This option will compare ad cost and serve regular interstitial ads when rewarded video ads are expected to generate less revenue.  
+Interstitial Ads does not require to watch the video to the end, but the `AdCallback.onComplete` callback will be triggered in any case.  
+```java
+CAS.getSettings().setAllowInterstitialAdsWhenVideoCostAreLower(true);
+```
+Disabled by default.
+</details>
+
 ## GitHub issue tracker
 To file bugs, make feature requests, or suggest improvements for the Android SDK, please use [GitHub's issue tracker](https://github.com/cleveradssolutions/CAS-Android/issues).
 
