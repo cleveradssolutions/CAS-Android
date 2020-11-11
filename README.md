@@ -9,22 +9,24 @@ We support Android Operating Systems Version 4.4 (API level 19) and up.
 
 # Table of contents
  1.  [Add the CAS SDK to Your Project](#step-1-add-the-cas-sdk-to-your-project)  
- 2.  [Add Cross Promotion SDK](#step-2-add-cross-promotion-sdk)  
+ 2.  [Add Cross Promotion SDK (Optional)](#step-2-add-cross-promotion-sdk)  
  3.  [Gradle settings](#step-3-gradle-settings)  
  4.  [Update AndroidManifest](#step-4-update-androidmanifest)  
- 5.  [Add the CAS default settings file](#step-5-add-the-cas-default-settings-file)  
+ 5.  [Add the CAS default settings file (Optional)](#step-5-add-the-cas-default-settings-file)  
  6.  [Privacy Laws](#step-6-privacy-laws)  
  6.1.  [GDPR Managing Consent](#gdpr-managing-consent)  
  6.2.  [CCPA Compliance](#ccpa-compliance)  
  6.3.  [COPPA and EEA Compliance](#coppa-and-eea-compliance)  
- 7.  [Verify Your Integration](#step-7-verify-your-integration)  
+ 7.  [Verify Your Integration (Optional)](#step-7-verify-your-integration)  
  8.  [Initialize the SDK](#step-8-initialize-the-sdk)  
  9.  [Implement our Ad Units](#step-9-implement-our-ad-units)  
- 9.1. [Banner Ad](#banner-ad)  
- 9.2. [Ad Callback](#adcallback)  
- 9.3. [Check Ad Availability](#check-ad-availability)  
- 9.4. [Show fullscreen Ad](#show-fullscreen-ad)  
- 10.  [Support](#support)  
+ 9.1.  [Banner Ad](#banner-ad)  
+ 9.2.  [Ad Callback](#adcallback)  
+ 9.3.  [Check Ad Availability](#check-ad-availability)  
+ 9.4.  [Show fullscreen Ad](#show-fullscreen-ad)  
+ 10.  [GitHub issue tracker](#github-issue-tracker)
+ 11.  [Support](#support)  
+ 12.  [License](#license)
 
 ## Step 1 Add the CAS SDK to Your Project
 Add the following to your app’s **build.gradle** file inside repositories section:
@@ -276,6 +278,7 @@ For android:value insert your own AdMob App ID in quotes, as shown below.
 </details>
 
 ## Step 5 Add the CAS default settings file
+**Optional step.**
 Follow the [link](http://psvpromo.psvgamestudio.com/cas-settings.php) to download a cas_settings.json file.
 
 Drop the cas_settings.json into the src/res/raw/ folder in your project.  
@@ -578,8 +581,11 @@ manager = CAS.initialize(..., new OnInitializationListener(){
 </details>
 
 ### AdCallback
+Through the use of AdCallback, you can listen for lifecycle events, such as when an ad is closed or the user leaves the app.  
+
 <details>
  
+To register for ad events, set the `listener` property on CASBannerView to an object for banner or set argument on show ad, that implements the AdCallback protocol. Generally, the class that implements banner ads also acts as the listener class, in which case, the `listener` property can be set to `this`. 
 ```java
 // Executed when the ad is displayed.
 // @param ad Information of displayed ad.
@@ -656,6 +662,9 @@ CAS.getSettings().restartInterstitialInterval();
 
 </details>
  
+## GitHub issue tracker
+To file bugs, make feature requests, or suggest improvements for the Android SDK, please use [GitHub's issue tracker](https://github.com/cleveradssolutions/CAS-Android/issues).
+
 ## Support
 Site: [https://cleveradssolutions.com](https://cleveradssolutions.com)
 
@@ -666,3 +675,6 @@ Network support: Vitaly
 Skype: zanzavital  
 
 mailto:support@cleveradssolutions.com  
+
+## License
+The CAS iOS-SDK is available under a commercial license. See the LICENSE file for more info.
