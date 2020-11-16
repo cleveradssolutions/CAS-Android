@@ -54,14 +54,14 @@ Add one of the following solution to the dependencies section to your applicatio
 Google Ads, Vungle, AdColony, Kidoz, IronsSource, AppLovin, Unity Ads, StartApp, InMobi, Chartboost, SuperAwesome.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.7.0+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.7.1+' 
 }
 ```
 
 2. Option. General solution of mediation networks that are always recommended to be used: Google Ads, Vungle, AdColony, Kidoz, IronsSource, AppLovin, Unity Ads, StartApp, InMobi, Chartboost, Facebook AN, Yandex Ads.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.7.0+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.7.1+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
@@ -77,7 +77,7 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.7.0+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.7.1+'
     ...
 }
 ```
@@ -128,7 +128,7 @@ implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.15+'
 ```
 #### To the following third party mediation SDK, be sure to add our additional support dependency `mediation-teen` for non-certified ad SDK in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445).
 ```gradle
-implementation 'com.cleversolutions.ads:mediation-teen:1.7.0+'
+implementation 'com.cleversolutions.ads:mediation-teen:1.7.1+'
 ```
 - [Facebook AN](https://www.facebook.com/business/marketing/audience-network) Banner, Interstitial, Rewarded Video
 ```gradle
@@ -136,7 +136,7 @@ implementation 'com.facebook.android:audience-network-sdk:6.2.0'
 ```
 - [Yandex Ads](https://yandex.ru/dev/mobile-ads) Banner, Interstitial, Rewarded Video
 ```gradle
-implementation 'com.yandex.android:mobileads:3.1.0'
+implementation 'com.yandex.android:mobileads:3.1.1'
 implementation 'com.yandex.android:mobmetricalib:3.14.3'
 ```
 - [MyTarget](https://target.my.com/) Banner, Interstitial, Rewarded Video. **Works to CIS countries only**.
