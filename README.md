@@ -13,11 +13,11 @@ We support Android Operating Systems Version 4.4 (API level 19) and up.
  3.  [Gradle settings](#step-3-gradle-settings)  
  4.  [Update AndroidManifest](#step-4-update-androidmanifest)  
  5.  [Add the CAS default settings file (Optional)](#step-5-add-the-cas-default-settings-file)  
- 6.  [Privacy Laws](#step-6-privacy-laws)  
- 6.1.  [GDPR Managing Consent](#gdpr-managing-consent)  
- 6.2.  [CCPA Compliance](#ccpa-compliance)  
- 6.3.  [COPPA and EEA Compliance](#coppa-and-eea-compliance)  
- 7.  [Verify Your Integration (Optional)](#step-7-verify-your-integration)  
+ 6.  [Import the CAS SDK](#step-6-import-the-cas-sdk)  
+ 7.  [Privacy Laws](#step-6-privacy-laws)  
+ 7.1.  [GDPR Managing Consent](#gdpr-managing-consent)  
+ 7.2.  [CCPA Compliance](#ccpa-compliance)  
+ 7.3.  [COPPA and EEA Compliance](#coppa-and-eea-compliance)  
  8.  [Initialize the SDK](#step-8-initialize-the-sdk)  
  9.  [Implement our Ad Units](#step-9-implement-our-ad-units)  
  9.1.  [Banner Ad](#banner-ad)  
@@ -54,20 +54,19 @@ Add one of the following solution to the dependencies section to your applicatio
 Google Ads, Vungle, AdColony, Kidoz, IronsSource, AppLovin, Unity Ads, StartApp, InMobi, Chartboost, SuperAwesome.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.7.1+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.8.0+' 
 }
 ```
 
 2. Option. General solution of mediation networks that are always recommended to be used: Google Ads, Vungle, AdColony, Kidoz, IronsSource, AppLovin, Unity Ads, StartApp, InMobi, Chartboost, Facebook AN, Yandex Ads.
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.7.1+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.8.0+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
-
+***
 </details>
-
 <details><summary><b>Advanced integration</b></summary>
  
 We support partial integration of the third party mediation sdk you really need.  
@@ -77,84 +76,136 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.7.1+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.8.0+'
     ...
 }
 ```
 #### Then you can add dependencies for each required third party mediation SDK:
-- [Google Ads (Admob)](https://admob.google.com/home) Banner, Interstitial, Rewarded Video
+<details><summary><b>Google Ads (Admob)</b></summary>
+
+- [Home](https://admob.google.com/home) Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.google.android.gms:play-services-ads:19.5.0'
 ```
-- [Unity Ads](https://unity.com/solutions/unity-ads) Banner, Interstitial, Rewarded Video
+</details><details><summary>Unity Ads</summary>
+
+- [Home](https://unity.com/solutions/unity-ads) Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.unity3d.ads:unity-ads:3.5.0'
 ```
-- [Iron Source](https://www.ironsrc.com) ~~Banner~~, Interstitial, Rewarded Video
+</details><details><summary>Iron Source</summary>
+
+- [Home](https://www.ironsrc.com) ~~Banner~~, Interstitial, Rewarded Video
 ```gradle
-implementation 'com.ironsource.sdk:mediationsdk:7.0.3.1'
+implementation 'com.ironsource.sdk:mediationsdk:7.0.4'
 ```
-- [AdColony](https://www.adcolony.com) Banner, Interstitial, Rewarded Video
+</details><details><summary>AdColony</summary>
+
+- [Home](https://www.adcolony.com) Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.adcolony:sdk:4.3.0'
 ```
-- [Vungle](https://vungle.com) Banner, Interstitial, Rewarded Video
+</details><details><summary>Vungle</summary>
+
+- [Home](https://vungle.com) Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.vungle:publisher-sdk-android:6.8.1'
 ```
-- [AppLovin](https://www.applovin.com) Banner, Interstitial, Rewarded Video
+</details><details><summary>AppLovin</summary>
+
+- [Home](https://www.applovin.com) Banner, Interstitial, Rewarded Video
 ```gradle
-implementation 'com.applovin:applovin-sdk:9.14.8+'
+implementation 'com.applovin:applovin-sdk:9.14.10+'
 ```
-- [InMobi](https://www.inmobi.com) Banner, Interstitial, Rewarded Video
+</details><details><summary>InMobi</summary>
+
+- [Home](https://www.inmobi.com) Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.inmobi.monetization:inmobi-ads:9.1.1'
 ```
-- [StartApp](https://www.startapp.com) Banner, Interstitial, Rewarded Video
+</details><details><summary>StartApp</summary>
+
+- [Home](https://www.startapp.com) Banner, Interstitial, Rewarded Video
 ```gradle
-implementation 'com.startapp:inapp-sdk:4.6.3+'
+implementation 'com.startapp:inapp-sdk:4.7.5+'
 ```
-- [Kidoz](https://kidoz.net) Banner, Interstitial, Rewarded Video
+</details><details><summary>Kidoz</summary>
+
+- [Home](https://kidoz.net) Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
 ```
-- [Chartboost](https://www.chartboost.com) Banner, Interstitial, Rewarded Video
+</details><details><summary>Chartboost</summary>
+
+- [Home](https://www.chartboost.com) Banner, Interstitial, Rewarded Video
 ```gradle
-implementation 'com.chartboost:chartboost-sdk:8.1.0'
+implementation 'com.chartboost:chartboost-sdk:8.2.0'
 ```
-- [SuperAwesome](https://www.superawesome.com) Banner, Interstitial, Rewarded Video. **Works to children audience only**.
+</details><details><summary>SuperAwesome</summary>
+
+- [Home](https://www.superawesome.com) Banner, Interstitial, Rewarded Video. **Works to children audience only**.
 ```gradle
 implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.15+'
 ```
+</details>
+
 #### To the following third party mediation SDK, be sure to add our additional support dependency `mediation-teen` for non-certified ad SDK in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445).
 ```gradle
-implementation 'com.cleversolutions.ads:mediation-teen:1.7.1+'
+implementation 'com.cleversolutions.ads:mediation-teen:1.8.0+'
 ```
-- [Facebook AN](https://www.facebook.com/business/marketing/audience-network) Banner, Interstitial, Rewarded Video
+<details><summary>Facebook Audience Network</summary>
+
+- [Home](https://www.facebook.com/business/marketing/audience-network) Banner, Interstitial, Rewarded Video
 ```gradle
+//implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.facebook.android:audience-network-sdk:6.2.0'
 ```
-- [Yandex Ads](https://yandex.ru/dev/mobile-ads) Banner, Interstitial, Rewarded Video
+</details><details><summary>Yandex Ads</summary>
+
+- [Home](https://yandex.ru/dev/mobile-ads) Banner, Interstitial, Rewarded Video
 ```gradle
+//implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.yandex.android:mobileads:3.1.1'
 implementation 'com.yandex.android:mobmetricalib:3.14.3'
 ```
-- [MyTarget](https://target.my.com/) Banner, Interstitial, Rewarded Video. **Works to CIS countries only**.
+</details>
+
+Third party mediation SDK of Beta third party partners:
+> :warning: Next third party mediation SDK in closed beta and available upon invite only. If you would like to be considered for the beta, please contact Support.  
+
+</details><details><summary>Verizon Media</summary>
+
+- [Home](https://www.verizonmedia.com/advertising/solutions#/mobile) Banner, Interstitial, Rewarded Video
 ```gradle
-implementation 'com.my.target:mytarget-sdk:5.11.5+'
+//implementation 'com.cleversolutions.ads:mediation-teen:version'
+implementation 'com.verizon.ads:android-vas-standard-edition:1.8.1+'
 ```
-- [MobFox](https://www.mobfox.com) Banner, Interstitial, Rewarded Video
+</details><details><summary>MyTarget</summary>
+
+- [Home](https://target.my.com/) Banner, Interstitial, Rewarded Video. **Works to CIS countries only**.
 ```gradle
+//implementation 'com.cleversolutions.ads:mediation-teen:version'
+implementation 'com.my.target:mytarget-sdk:5.11.6+'
+```
+</details><details><summary>MobFox</summary>
+
+- [Home](https://www.mobfox.com) Banner, Interstitial, Rewarded Video
+```gradle
+//implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.github.mobfox:mfx-android-sdk:4.3.2+'
 implementation 'com.android.volley:volley:1.1.1'
 ```
-- [Amazon Ads](https://advertising.amazon.com) Banner, ~~Interstitial, Rewarded Video~~
+</details><details><summary>Amazon Ads</summary>
+
+- [Home](https://advertising.amazon.com) Banner, ~~Interstitial, Rewarded Video~~
 ```gradle
+//implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.amazon.android:mobile-ads:6.0.0'
 ```
+</details>
 
 > The list of partners networks may change in the future.
-
+***
 </details>
 
 ## Step 2 Add Cross Promotion SDK
@@ -162,12 +213,33 @@ Cross promotion is an app marketing strategy in which app developers promote one
 
 Start your cross promotion campaign with CAS [here](https://cleveradssolutions.com).
 
+<details><summary><b>Integration</b></summary>
+
 ```gradle
 dependencies {
       ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.7.0+'
+      implementation 'com.cleversolutions.ads:cas-promo:1.8.0+'
 }
 ```
+</details>
+<details><summary><b>Do not advertise installed apps to the user</b></summary>
+
+[Android 11 changes how apps can query and interact with other apps that the user has installed on a device.](https://developer.android.com/about/versions/11/privacy/package-visibility)  
+Using the `<queries>` element, apps can define the set of other packages that they can access. This element helps encourage the principle of least privilege by telling the system which other packages to make visible to your app, and it helps app stores like Google Play assess the privacy and security that your app provides for users.
+
+If your app targets Android 11 or higher, you might need to add the `<queries>` element in your app's manifest file. Within the `<queries>` element, you can specify packages by names of others applications involved in Cross promotion.
+```xml
+<manifest package="com.example.game">
+  <queries>
+      <!-- Specific apps you interact with, eg: -->
+      <package android:name="com.example.app1" />
+      <package android:name="com.example.app2" />
+  </queries>
+  ...
+</manifest>
+```
+***
+</details>
 
 ## Step 3 Gradle settings
 <details><summary><b>AndroidX</b></summary>
@@ -177,12 +249,10 @@ As of SDK 18.0.0, AdMob migrated from Android Support Libraries to Jetpack (Andr
 Due to this, we working with the AdMob adapter it’s required that your project migrates from Android Support Libraries to Jetpack Libraries (Android X) if you are using any. Please refer to [Migrating to AndroidX](https://developer.android.com/jetpack/androidx/migrate) for more information.  
 
 In case you can not migrate the project using this tool, you can use the following flags in gradle.properties, to build your project using AndroidX. 
-*  android.useAndroidX = true  
-*  android.enableJetifier = true  
-
-</details>
- 
-<details><summary><b>MultiDEX</b></summary>
+-  android.useAndroidX = true  
+-  android.enableJetifier = true  
+***
+</details><details><summary><b>MultiDEX</b></summary>
  
 At times, including the CAS SDK may cause the 64K limit on methods that can be packaged in an Android dex file to be breached. This can happen if, for example, your app packs a lot of features for your users and includes substantive code to realize this.  
 
@@ -203,10 +273,8 @@ dependencies {
 ```
 
 > You can read more about MuliDex on the [Android Deleveloper page](https://developer.android.com/studio/build/multidex).
-
-</details>
-
-<details><summary><b>Java Version</b></summary>
+***
+</details><details><summary><b>Java Version</b></summary>
  
 Our SDK requires for correct operation to determine the Java version in Gradle. Add the following line to the android element in your application module’s build script. 
 ```gradle
@@ -218,11 +286,10 @@ android{
     }
 }
 ```
-
+***
 </details>
 
 ## Step 4 Update AndroidManifest
-
 <details><summary><b>Manifest Permissions</b></summary>
  
 Add the following permissions to your AndroidManifest.xml file inside the manifest tag but outside the <application> tag:
@@ -254,10 +321,8 @@ This permission is not a mandatory permission, however, including it will enable
  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 </manifest>
 ```
-
-</details>
-
-<details><summary><b>Admob App ID</b></summary>
+***
+</details><details><summary><b>Admob App ID</b></summary>
 
 Follow the [link](http://psvpromo.psvgamestudio.com/cas-settings.php) to get your Admob App ID.  
 
@@ -275,16 +340,61 @@ For android:value insert your own AdMob App ID in quotes, as shown below.
   </application>
 </manifest>
 ```
-
+***
 </details>
 
 ## Step 5 Add the CAS default settings file
 **Optional step.**
 Follow the [link](http://psvpromo.psvgamestudio.com/cas-settings.php) to download a cas_settings.json file.
 
-Drop the cas_settings.json into the src/res/raw/ folder in your project.  
+Drop the **cas_settings.json** into the `src/res/raw/` folder to your project.  
 
-## Step 6 Privacy Laws
+## Step 6 Import the CAS SDK
+
+```java
+import com.cleversolutions.ads.*
+import com.cleversolutions.ads.android.CAS
+```
+
+<details><summary><b>Main CAS class</b></summary>
+
+The `CAS` class gives access to all the possibilities of the SDK.  
+Singleton instance of `AdsSettings` to configure all mediation managers.
+```java
+AdsSettings sdkSettings = CAS.getSettings();
+```
+Singleton instance of `TargetingOptions` to inform SDK of the users details.
+```java
+TargetingOptions targetingOptions = CAS.getTargetingOptions();
+```
+Last initialized instance of `MediationManager` stored with strong pointer. May be **null** before calling the `CAS.initialize` function.
+> :warning: It is not recommended that you rely on this static method to always return a manager reference.  
+> Your application process can be killed and all static fields cleared.  
+> Therefore, we recommend storing a non-static reference to the initialized `MediationManager` in your `Application` or `Activity` class and re-initialize if the reference is lost.
+```java
+MediationManager lastManager = CAS.getManager();
+```
+The CAS SDK version string.
+```java
+String sdkVersion = CAS.getSDKVersion();
+```
+***
+</details><summary><b>Verify Your Integration (Optional)</b></summary>
+
+The CAS SDK provides an easy way to verify that you’ve successfully integrated any additional adapters; it also makes sure all required dependencies and frameworks were added for the various mediated ad networks.   
+After you have finished your integration, call the following static method and confirm that all networks you have implemented are marked as VERIFIED:  
+```java
+CAS.validateIntegration(activity, appContentRating);
+```
+Find log information by tag: **CASIntegrationHelper**
+
+Once you’ve successfully verified your integration, please remember to **remove the integration helper from your code**.
+
+The Integration Helper tool reviews everything, including ad networks you may have intentionally chosen NOT to include in your application. These will appear as MISSING and there is no reason for concern. In the case the ad network’s integration has not been completed successfully, it will be marked as NOT VERIFIED.  
+***
+</details>
+
+## Step 7 Privacy Laws
 This documentation is provided for compliance with various privacy laws. If you are collecting consent from your users, you can make use of APIs discussed below to inform CAS and all downstream consumers of this information.  
 
 A detailed article on the use of user data can be found in the [Privacy Policy](/../../wiki/Privacy-Policy).
@@ -303,7 +413,6 @@ If the user did not consent, please set the following flag to "false":
 ```java
 CAS.getSettings().setConsent(false);
 ```
-
 </details>
 
 ### CCPA Compliance
@@ -322,7 +431,6 @@ A value of "true" means the user has opted-out to the sale of their data.
 ```java
 CAS.getSettings().setDoNotSell(true);
 ```
-
 </details>
 
 ###  COPPA and EEA Compliance
@@ -334,40 +442,17 @@ You can mark your ad requests to receive treatment for users in the European Eco
 
 Call "true" indicate that you want your content treated as child-directed for purposes of COPPA or receive treatment for users in the European Economic Area (EEA) under the age of consent. 
 ```java
-CAS.getSettings().isTaggedForChildren(true);
+CAS.getSettings().setTaggedForChildren(true);
 ```
 Call "false" to indicate that you **don't** want your content treated as child-directed for purposes of COPPA or **not** receive treatment for users in the European Economic Area (EEA) under the age of consent.
 ```java
-CAS.getSettings().isTaggedForChildren(false);
+CAS.getSettings().setTaggedForChildren(false);
 ```
-
 </details>
 
 **We recommend to set Privacy API before initializing CAS SDK.**
 
-## Step 7 Verify Your Integration
-<details>
- 
-The CAS SDK provides an easy way to verify that you’ve successfully integrated any additional adapters; it also makes sure all required dependencies and frameworks were added for the various mediated ad networks.  
-After you have finished your integration, call the following static method and confirm that all networks you have implemented are marked as VERIFIED:  
-```java
-CAS.validateIntegration(activity, appContentRating);
-```
-Find log information by tag: **CASIntegrationHelper**
-
-Once you’ve successfully verified your integration, please remember to remove the integration helper from your code.
-
-NOT. The Integration Helper tool reviews everything, including ad networks you may have intentionally chosen NOT to include in your application. These will appear as MISSING and there is no reason for concern. In the case the ad network’s integration has not been completed successfully, it will be marked as NOT VERIFIED.  
-
-</details>
- 
 ## Step 8 Initialize the SDK
-**Import the CAS SDK**
-```java
-import com.cleversolutions.ads.*
-import com.cleversolutions.ads.android.CAS
-```
-
 <details><summary><b>Configure Ads Settings singleton instance</b></summary>
  
 ```java
@@ -395,9 +480,8 @@ CAS.getSettings().setLoadingMode(LoadingManagerMode.Optimal);
 > Load*  
 > Auto control load mediation ads starts immediately after initialization and will prepare displays automatically.  
 > Manual control loading mediation ads requires manual preparation of advertising content for display. Use ad loading methods before trying to show: `MediationManager.loadInterstitial(), MediationManager.loadRewardedVideo(), CASBannerView.loadNextAd()`  
-
+***
 </details>
-
 <details><summary><b>Configure Targeting Options singleton instance once before initialize</b></summary>
  
 You can now easily tailor the way you serve your ads to fit a specific audience!  
@@ -414,8 +498,8 @@ CAS.getTargetingOptions().setGender(TargetingOptions.GENDER_MALE)
 // Your app should have a valid use case for it as well.
 CAS.getTargetingOptions().setLocation(userLocation)
 ```
+***
 </details>
-
 <details><summary><b>Initialize MediationManager instance</b></summary>
  
 ```java
@@ -444,11 +528,10 @@ class YourActivity extends Activity{
 }
 ```
 CAS.initialize can be called for different identifiers to create different managers. 
-
+***
 </details>
-
 <details><summary><b>Subscribe listener to Ad Loading response</b></summary>
- 
+
 ```java
 manager.getOnAdLoadEvent().add(new AdLoadCallback(){
     @AnyThread
@@ -462,7 +545,7 @@ manager.getOnAdLoadEvent().add(new AdLoadCallback(){
     }
 })
 ```
-
+***
 </details>
 
 ## Step 9 Implement our Ad Units
@@ -485,9 +568,8 @@ The first step toward displaying a banner is to place CASBannerView in the layou
 ```
 Note the following required attributes:  
 ads:bannerSize - Set this to the ad size you'd like to use. If you don't want to use the standard size defined by the constant, you can set a custom size instead. See the banner size section below for details.  
-
+***
 </details>
-
 <details><summary><b>Create programmatically</b></summary>
  
 ```java
@@ -506,7 +588,7 @@ parentView.addView(bannerView);
 // OR
 activity.addContentView(bannerView, new LayoutParams(...));
 ```
-
+***
 </details>
 <details><summary><b>Load Banner Ad</b></summary>
  
@@ -515,6 +597,7 @@ You can use `loadNextAd()` for cancel current impression and load next ad.
 ```java
 bannerView.loadNextAd();
 ```
+***
 </details>
 <details><summary><b>Ad Size</b></summary>
  
@@ -555,9 +638,8 @@ manager.setBannerSize(smartSize);
 // OR same to CASBannerView
 bannerView.setSize(smartSize);
 ```
-
+***
 </details>
-
 <details><summary><b>Banner refresh rate</b></summary>
  
 An ad unit’s automatic refresh rate determines how often a new ad request is generated for that ad unit.  
@@ -579,7 +661,7 @@ manager = CAS.initialize(..., new OnInitializationListener(){
     }  
 } );
 ```
-
+***
 </details>
 
 ### AdCallback
@@ -610,7 +692,7 @@ void onComplete();
 // If you decide to show the Banner Ad on this view then you need refresh view visibility.
 void onClosed();
 ```
-
+***
 </details>
  
 ### Check Ad Availability
@@ -658,7 +740,7 @@ You can also restart the countdown interval until the next successful ad shown. 
 ```java
 CAS.getSettings().restartInterstitialInterval();
 ``` 
-
+***
 </details>
 
 ### Show Rewarded Video Ad
@@ -684,6 +766,7 @@ Interstitial Ads does not require to watch the video to the end, but the `AdCall
 CAS.getSettings().setAllowInterstitialAdsWhenVideoCostAreLower(true);
 ```
 Disabled by default.
+***
 </details>
 
 ## GitHub issue tracker
