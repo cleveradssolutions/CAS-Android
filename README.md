@@ -49,7 +49,7 @@ repositories {
 ```
 ***
 </details>
-<details><summary><b>Simple integration</b></summary>
+<details><summary><b>Simple integration (Option 1)</b></summary>
  
 Add one of the following solution to the dependencies section to your application.
  
@@ -70,7 +70,7 @@ dependencies {
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
 ***
 </details>
-<details><summary><b>Advanced integration</b></summary>
+<details><summary><b>Advanced integration (Option 2)</b></summary>
  
 We support partial integration of the third party mediation sdk you really need.  
 To do this, use any combination of partial dependencies. No additional code is required for each partner network. 
