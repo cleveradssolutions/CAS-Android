@@ -30,6 +30,8 @@ We support Android Operating Systems Version 4.4 (API level 19) and up.
  12.  [License](#license)
 
 ## Step 1 Add the CAS SDK to Your Project
+<details><summary><b>Add repositories to resolve CAS dependencies</b></summary>
+
 Add the following to your app’s **build.gradle** file inside repositories section:
 ```gradle
 repositories {
@@ -45,7 +47,8 @@ repositories {
       ...
 }
 ```
-
+***
+</details>
 <details><summary><b>Simple integration</b></summary>
  
 Add one of the following solution to the dependencies section to your application.
@@ -83,67 +86,67 @@ dependencies {
 #### Then you can add dependencies for each required third party mediation SDK:
 <details><summary>Google Ads (Admob)</summary>
 
-- [Home](https://admob.google.com/home) - Banner, Interstitial, Rewarded Video
+[Home](https://admob.google.com/home) - Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.google.android.gms:play-services-ads:19.5.0'
 ```
 </details><details><summary>Unity Ads</summary>
 
-- [Home](https://unity.com/solutions/unity-ads) - Banner, Interstitial, Rewarded Video
+[Home](https://unity.com/solutions/unity-ads) - Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.unity3d.ads:unity-ads:3.5.0'
 ```
 </details><details><summary>Iron Source</summary>
 
-- [Home](https://www.ironsrc.com) - ~~Banner~~, Interstitial, Rewarded Video
+[Home](https://www.ironsrc.com) - ~~Banner~~, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.ironsource.sdk:mediationsdk:7.0.4'
 ```
 </details><details><summary>AdColony</summary>
 
-- [Home](https://www.adcolony.com) - Banner, Interstitial, Rewarded Video
+[Home](https://www.adcolony.com) - Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.adcolony:sdk:4.3.0'
 ```
 </details><details><summary>Vungle</summary>
 
-- [Home](https://vungle.com) - Banner, Interstitial, Rewarded Video
+[Home](https://vungle.com) - Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.vungle:publisher-sdk-android:6.8.1'
 ```
 </details><details><summary>AppLovin</summary>
 
-- [Home](https://www.applovin.com) - Banner, Interstitial, Rewarded Video
+[Home](https://www.applovin.com) - Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.applovin:applovin-sdk:9.14.10+'
 ```
 </details><details><summary>InMobi</summary>
 
-- [Home](https://www.inmobi.com) - Banner, Interstitial, Rewarded Video
+[Home](https://www.inmobi.com) - Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.inmobi.monetization:inmobi-ads:9.1.1'
 ```
 </details><details><summary>StartApp</summary>
 
-- [Home](https://www.startapp.com) - Banner, Interstitial, Rewarded Video
+[Home](https://www.startapp.com) - Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.startapp:inapp-sdk:4.7.5+'
 ```
 </details><details><summary>Kidoz</summary>
 
-- [Home](https://kidoz.net) - Banner, Interstitial, Rewarded Video
+[Home](https://kidoz.net) - Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
 ```
 </details><details><summary>Chartboost</summary>
 
-- [Home](https://www.chartboost.com) - Banner, Interstitial, Rewarded Video
+[Home](https://www.chartboost.com) - Banner, Interstitial, Rewarded Video
 ```gradle
 implementation 'com.chartboost:chartboost-sdk:8.2.0'
 ```
 </details><details><summary>SuperAwesome</summary>
 
-- [Home](https://www.superawesome.com) - Banner, Interstitial, Rewarded Video.  
+[Home](https://www.superawesome.com) - Banner, Interstitial, Rewarded Video.  
 **Works to children audience only**.
 ```gradle
 implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.15+'
@@ -156,14 +159,14 @@ implementation 'com.cleversolutions.ads:mediation-teen:1.8.0+'
 ```
 <details><summary>Facebook Audience Network</summary>
 
-- [Home](https://www.facebook.com/business/marketing/audience-network) - Banner, Interstitial, Rewarded Video
+[Home](https://www.facebook.com/business/marketing/audience-network) - Banner, Interstitial, Rewarded Video
 ```gradle
 //implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.facebook.android:audience-network-sdk:6.2.0'
 ```
 </details><details><summary>Yandex Ads</summary>
 
-- [Home](https://yandex.ru/dev/mobile-ads) - Banner, Interstitial, Rewarded Video
+[Home](https://yandex.ru/dev/mobile-ads) - Banner, Interstitial, Rewarded Video
 ```gradle
 //implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.yandex.android:mobileads:3.1.1'
@@ -176,14 +179,14 @@ Third party mediation SDK of Beta third party partners:
 
 <details><summary>Verizon Media</summary>
 
-- [Home](https://www.verizonmedia.com/advertising/solutions#/mobile) - Banner, Interstitial, Rewarded Video
+[Home](https://www.verizonmedia.com/advertising/solutions#/mobile) - Banner, Interstitial, Rewarded Video
 ```gradle
 //implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.verizon.ads:android-vas-standard-edition:1.8.1+'
 ```
 </details><details><summary>MyTarget</summary>
 
-- [Home](https://target.my.com/) - Banner, Interstitial, Rewarded Video  
+[Home](https://target.my.com/) - Banner, Interstitial, Rewarded Video  
 **Works to CIS countries only**.
 ```gradle
 //implementation 'com.cleversolutions.ads:mediation-teen:version'
@@ -191,7 +194,7 @@ implementation 'com.my.target:mytarget-sdk:5.11.6+'
 ```
 </details><details><summary>MobFox</summary>
 
-- [Home](https://www.mobfox.com) - Banner, Interstitial, Rewarded Video
+[Home](https://www.mobfox.com) - Banner, Interstitial, Rewarded Video
 ```gradle
 //implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.github.mobfox:mfx-android-sdk:4.3.2+'
@@ -199,7 +202,7 @@ implementation 'com.android.volley:volley:1.1.1'
 ```
 </details><details><summary>Amazon Ads</summary>
 
-- [Home](https://advertising.amazon.com) - Banner, ~~Interstitial, Rewarded Video~~
+[Home](https://advertising.amazon.com) - Banner, ~~Interstitial, Rewarded Video~~
 ```gradle
 //implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.amazon.android:mobile-ads:6.0.0'
