@@ -71,7 +71,7 @@ Add one of the following solution to the dependencies section to your applicatio
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.8.0+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.8.1+' 
 }
 ```
 
@@ -94,7 +94,7 @@ dependencies {
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.8.0+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.8.1+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
@@ -109,7 +109,7 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.8.0+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.8.1+'
     ...
 }
 ```
@@ -118,61 +118,81 @@ dependencies {
 
 [Home](https://admob.google.com/home) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://policies.google.com/technologies/ads)
 ```gradle
-implementation 'com.google.android.gms:play-services-ads:19.5.0'
+implementation 'com.google.android.gms:play-services-ads:19.6.0'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
 </details><details><summary>Unity Ads</summary>
 
 [Home](https://unity.com/solutions/unity-ads) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://unity3d.com/legal/privacy-policy)
 ```gradle
 implementation 'com.unity3d.ads:unity-ads:3.5.0'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
 </details><details><summary>Iron Source</summary>
 
 [Home](https://www.ironsrc.com) - ~~Banner~~, Interstitial, Rewarded Video [Privacy Policy](https://developers.ironsrc.com/ironsource-mobile/air/ironsource-mobile-privacy-policy/)
 ```gradle
 implementation 'com.ironsource.sdk:mediationsdk:7.0.4'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
 </details><details><summary>AdColony</summary>
 
 [Home](https://www.adcolony.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.adcolony.com/privacy-policy/)
 ```gradle
 implementation 'com.adcolony:sdk:4.3.0'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
 </details><details><summary>Vungle</summary>
 
 [Home](https://vungle.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://vungle.com/privacy/)
 ```gradle
 implementation 'com.vungle:publisher-sdk-android:6.8.1'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
 </details><details><summary>AppLovin</summary>
 
 [Home](https://www.applovin.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.applovin.com/privacy/)
 ```gradle
 implementation 'com.applovin:applovin-sdk:9.14.10+'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
 </details><details><summary>InMobi</summary>
 
 [Home](https://www.inmobi.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.inmobi.com/privacy-policy/)
 ```gradle
 implementation 'com.inmobi.monetization:inmobi-ads:9.1.1'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
 </details><details><summary>StartApp</summary>
 
 [Home](https://www.startapp.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.startapp.com/policy/privacy-policy/)
 ```gradle
 implementation 'com.startapp:inapp-sdk:4.7.5+'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
 </details><details><summary>Kidoz</summary>
 
 [Home](https://kidoz.net) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://kidoz.net/privacy-policy/)
 ```gradle
 implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
 </details><details><summary>Chartboost</summary>
 
 [Home](https://www.chartboost.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://answers.chartboost.com/en-us/articles/200780269)
 ```gradle
 implementation 'com.chartboost:chartboost-sdk:8.2.0'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
 </details><details><summary>SuperAwesome</summary>
 
@@ -180,27 +200,33 @@ implementation 'com.chartboost:chartboost-sdk:8.2.0'
 **Works to children audience only**.
 ```gradle
 implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.15+'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
 </details>
 
 #### To the following third party mediation SDK, be sure to add our additional support dependency `mediation-teen` for non-certified ad SDK in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445).
 ```gradle
-implementation 'com.cleversolutions.ads:mediation-teen:1.8.0+'
+implementation 'com.cleversolutions.ads:mediation-teen:1.8.1+'
 ```
 <details><summary>Facebook Audience Network</summary>
 
 [Home](https://www.facebook.com/business/marketing/audience-network) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://developers.facebook.com/docs/audience-network/policy/)
 ```gradle
-//implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.facebook.android:audience-network-sdk:6.2.0'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
+implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 ```
 </details><details><summary>Yandex Ads</summary>
 
 [Home](https://yandex.com/dev/mobile-ads/) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://yandex.com/legal/mobileads_sdk_agreement/)
 ```gradle
-//implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.yandex.android:mobileads:3.1.1'
 implementation 'com.yandex.android:mobmetricalib:3.14.3'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
+implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 ```
 </details>
 
@@ -211,31 +237,39 @@ Third party mediation SDK of Beta third party partners:
 
 [Home](https://www.verizonmedia.com/advertising/solutions#/mobile) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/)
 ```gradle
-//implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.verizon.ads:android-vas-standard-edition:1.8.1+'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
+implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 ```
 </details><details><summary>MyTarget</summary>
 
 [Home](https://target.my.com/) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://legal.my.com/us/mytarget/privacy/)  
 **Works to CIS countries only**.
 ```gradle
-//implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.my.target:mytarget-sdk:5.11.6+'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
+implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 ```
 </details><details><summary>MobFox</summary>
 
 [Home](https://www.mobfox.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.mobfox.com/privacy-policy/)
 ```gradle
-//implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.github.mobfox:mfx-android-sdk:4.3.2+'
 implementation 'com.android.volley:volley:1.1.1'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
+implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 ```
 </details><details><summary>Amazon Ads</summary>
 
 [Home](https://advertising.amazon.com) - Banner, ~~Interstitial, Rewarded Video~~ - [Privacy Policy](https://advertising.amazon.com/legal/privacy-notice)
 ```gradle
-//implementation 'com.cleversolutions.ads:mediation-teen:version'
 implementation 'com.amazon.android:mobile-ads:6.0.0'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
+implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 ```
 </details>
 
@@ -252,8 +286,9 @@ Start your cross promotion campaign with CAS [here](https://cleveradssolutions.c
 
 ```gradle
 dependencies {
-      ...
-      implementation 'com.cleversolutions.ads:cas-promo:1.8.0+'
+  ...
+  implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
+  implementation "com.cleversolutions.ads:cas-promo:$casVersion"
 }
 ```
 </details>
