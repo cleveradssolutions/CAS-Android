@@ -463,6 +463,12 @@ Once you’ve successfully verified your integration, please remember to **remov
 The Integration Helper tool reviews everything, including ad networks you may have intentionally chosen NOT to include in your application. These will appear as MISSING and there is no reason for concern. In the case the ad network’s integration has not been completed successfully, it will be marked as NOT VERIFIED.  
 ***
 </details>
+<details><summary><b>Don’t forget to implement app-ads.txt (Optional)</b></summary>
+
+For both iOS and Android integrations, we encourage our partners to adopt this file and help us combat ad fraud.  
+Read detailed instructions on [how to create and upload your app-ads.txt file](https://github.com/cleveradssolutions/App-ads.txt#cleveradssolutions-app-adstxt).
+***
+</details>
 
 ## Step 7 Privacy Laws
 This documentation is provided for compliance with various privacy laws. If you are collecting consent from your users, you can make use of APIs discussed below to inform CAS and all downstream consumers of this information.  
