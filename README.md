@@ -71,7 +71,7 @@ Add one of the following solution to the dependencies section to your applicatio
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.8.1+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.8.2+' 
 }
 ```
 
@@ -94,7 +94,7 @@ dependencies {
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.8.1+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.8.2+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
@@ -109,7 +109,7 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.8.1+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.8.2+'
     ...
 }
 ```
@@ -134,7 +134,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://www.ironsrc.com) - ~~Banner~~, Interstitial, Rewarded Video [Privacy Policy](https://developers.ironsrc.com/ironsource-mobile/air/ironsource-mobile-privacy-policy/)
 ```gradle
-implementation 'com.ironsource.sdk:mediationsdk:7.0.4'
+implementation 'com.ironsource.sdk:mediationsdk:7.0.4.1'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -142,7 +142,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://www.adcolony.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.adcolony.com/privacy-policy/)
 ```gradle
-implementation 'com.adcolony:sdk:4.3.0'
+implementation 'com.adcolony:sdk:4.3.1'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -199,7 +199,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 [Home](https://www.superawesome.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.superawesome.com/privacy-hub/privacy-policy/)   
 **Works to children audience only**.
 ```gradle
-implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.15+'
+implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.16+'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -207,7 +207,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 #### To the following third party mediation SDK, be sure to add our additional support dependency `mediation-teen` for non-certified ad SDK in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445).
 ```gradle
-implementation 'com.cleversolutions.ads:mediation-teen:1.8.1+'
+implementation 'com.cleversolutions.ads:mediation-teen:1.8.2+'
 ```
 <details><summary>Facebook Audience Network</summary>
 
@@ -237,7 +237,7 @@ Third party mediation SDK of Beta third party partners:
 
 [Home](https://www.verizonmedia.com/advertising/solutions#/mobile) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/)
 ```gradle
-implementation 'com.verizon.ads:android-vas-standard-edition:1.8.1+'
+implementation 'com.verizon.ads:android-vas-standard-edition:1.8.2+'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
@@ -247,7 +247,7 @@ implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 [Home](https://target.my.com/) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://legal.my.com/us/mytarget/privacy/)  
 **Works to CIS countries only**.
 ```gradle
-implementation 'com.my.target:mytarget-sdk:5.11.6+'
+implementation 'com.my.target:mytarget-sdk:5.11.8+'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
