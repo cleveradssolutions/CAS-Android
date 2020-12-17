@@ -603,7 +603,10 @@ class YourActivity extends Activity{
   }  
 }
 ```
-CAS.initialize can be called for different identifiers to create different managers. 
+
+An `managerID` is a unique ID number assigned to each of your ad placements when they're created in CAS. The manager ID is added to your app's code and used to identify ad requests. If you haven't created an CAS account and registered an app yet, now's a great time to do so at [cleveradssolutions.com](https://cleveradssolutions.com). In a real app, it is important that you use your actual CAS manager ID.  
+
+`CAS.initialize` can be called for different identifiers to create different managers. 
 ***
 </details>
 <details><summary><b>Subscribe listener to Ad Loading response</b></summary>
