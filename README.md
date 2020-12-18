@@ -71,7 +71,7 @@ Add one of the following solution to the dependencies section to your applicatio
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.8.2+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.8.3+' 
 }
 ```
 
@@ -94,7 +94,7 @@ dependencies {
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.8.2+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.8.3+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
@@ -109,7 +109,7 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.8.2+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.8.3+'
     ...
 }
 ```
@@ -126,7 +126,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://unity.com/solutions/unity-ads) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://unity3d.com/legal/privacy-policy)
 ```gradle
-implementation 'com.unity3d.ads:unity-ads:3.5.0'
+implementation 'com.unity3d.ads:unity-ads:3.6.0'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -207,7 +207,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 #### To the following third party mediation SDK, be sure to add our additional support dependency `mediation-teen` for non-certified ad SDK in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445).
 ```gradle
-implementation 'com.cleversolutions.ads:mediation-teen:1.8.2+'
+implementation 'com.cleversolutions.ads:mediation-teen:1.8.3+'
 ```
 <details><summary>Facebook Audience Network</summary>
 
@@ -247,7 +247,7 @@ implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 [Home](https://target.my.com/) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://legal.my.com/us/mytarget/privacy/)  
 **Works to CIS countries only**.
 ```gradle
-implementation 'com.my.target:mytarget-sdk:5.11.8+'
+implementation 'com.my.target:mytarget-sdk:5.11.9+'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
