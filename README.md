@@ -18,16 +18,18 @@ We support Android Operating Systems Version 4.4 (API level 19) and up.
  7.1.  [GDPR Managing Consent](#gdpr-managing-consent)  
  7.2.  [CCPA Compliance](#ccpa-compliance)  
  7.3.  [COPPA and EEA Compliance](#coppa-and-eea-compliance)  
- 8.  [Initialize the SDK](#step-8-initialize-the-sdk)  
- 9.  [Implement our Ad Units](#step-9-implement-our-ad-units)  
- 9.1.  [Banner Ad](#banner-ad)  
- 9.2.  [Ad Callback](#adcallback)  
- 9.3.  [Check Ad Availability](#check-ad-availability)  
- 9.4.  [Show Interstitial Ad](#show-interstitial-ad)  
- 9.5.  [Show Rewarded Video Ad](#show-rewarded-video-ad)  
- 10.  [GitHub issue tracker](#github-issue-tracker)
- 11.  [Support](#support)  
- 12.  [License](#license)
+ 8.  [Configuring CAS SDK](#step-8-configuring-cas-sdk)
+ 9.  [Initialize the SDK](#step-9-initialize-the-sdk)  
+ 10.  [Implement our Ad Units](#step-10-implement-our-ad-units)  
+ 10.1.  [Banner Ad](#banner-ad)  
+ 10.2.  [Ad Callback](#adcallback)  
+ 10.3.  [Check Ad Availability](#check-ad-availability)  
+ 10.4.  [Show Interstitial Ad](#show-interstitial-ad)  
+ 10.5.  [Show Rewarded Video Ad](#show-rewarded-video-ad)  
+ 11.  [Mediation extras](#mediation-extras)
+ 12.  [GitHub issue tracker](#github-issue-tracker)
+ 13.  [Support](#support)  
+ 14.  [License](#license)
 
 ## Step 1 Add the CAS SDK to Your Project
 <details><summary><b>Add repositories to resolve CAS dependencies</b></summary>
@@ -71,7 +73,7 @@ Add one of the following solution to the dependencies section to your applicatio
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.8.3+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.0+' 
 }
 ```
 
@@ -94,7 +96,7 @@ dependencies {
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.8.3+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.0+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
@@ -109,7 +111,7 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.8.3+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.9.0+'
     ...
 }
 ```
@@ -158,7 +160,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://www.applovin.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.applovin.com/privacy/)
 ```gradle
-implementation 'com.applovin:applovin-sdk:9.14.10+'
+implementation 'com.applovin:applovin-sdk:9.14.11+'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -207,7 +209,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 #### To the following third party mediation SDK, be sure to add our additional support dependency `mediation-teen` for non-certified ad SDK in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445).
 ```gradle
-implementation 'com.cleversolutions.ads:mediation-teen:1.8.3+'
+implementation 'com.cleversolutions.ads:mediation-teen:1.9.0+'
 ```
 <details><summary>Facebook Audience Network</summary>
 
@@ -220,7 +222,7 @@ implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 ```
 </details><details><summary>Yandex Ads</summary>
 
-[Home](https://yandex.com/dev/mobile-ads/) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://yandex.com/legal/mobileads_sdk_agreement/)
+[Home](https://yandex.com/dev/mobile-ads/) - Banner, Interstitial, ~~Rewarded Video~~ - [Privacy Policy](https://yandex.com/legal/mobileads_sdk_agreement/)
 ```gradle
 implementation 'com.yandex.android:mobileads:3.1.1'
 implementation 'com.yandex.android:mobmetricalib:3.14.3'
@@ -254,7 +256,7 @@ implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 ```
 </details><details><summary>MobFox</summary>
 
-[Home](https://www.mobfox.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.mobfox.com/privacy-policy/)
+[Home](https://www.mobfox.com) - Banner, Interstitial, ~~Rewarded Video~~ - [Privacy Policy](https://www.mobfox.com/privacy-policy/)
 ```gradle
 implementation 'com.github.mobfox:mfx-android-sdk:4.3.2+'
 implementation 'com.android.volley:volley:1.1.1'
@@ -342,7 +344,7 @@ dependencies {
 }
 ```
 
-> You can read more about MuliDex on the [Android Deleveloper page](https://developer.android.com/studio/build/multidex).
+> You can read more about MultiDex on the [Android Deleveloper page](https://developer.android.com/studio/build/multidex).
 ***
 </details><details><summary><b>Java Version</b></summary>
  
@@ -407,6 +409,10 @@ For android:value insert your own AdMob App ID in quotes, as shown below.
     <meta-data
         android:name="com.google.android.gms.ads.APPLICATION_ID"
         android:value="ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy"/>
+    <!-- Delay app measurement until MobileAds.initialize() is called. -->
+    <meta-data
+        android:name="com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT"
+        android:value="true"/>
   </application>
 </manifest>
 ```
@@ -528,16 +534,39 @@ CAS.getSettings().setTaggedForChildren(false);
 
 **We recommend to set Privacy API before initializing CAS SDK.**
 
-## Step 8 Initialize the SDK
-<details><summary><b>Configure Ads Settings singleton instance</b></summary>
- 
-```java
-CAS.getSettings().setConsent(userConsent);
-CAS.getSettings().setNativeDebug(true);
-// .. other settings
-```
+## Step 8 Configuring CAS SDK
+<details><summary><b>Debug mode</b></summary>
 
-**Select the desired load manager mode:**
+The enabled Debug Mode will display a lot of useful information for debugging about the states of the sdk with tag CAS.   
+Disabling Debug Mode may improve application performance.  
+Disabled by default.  
+```java
+CAS.getSettings().setDebugMode(true);
+```
+***
+</details>
+<details><summary><b>Test Device IDs</b></summary>
+
+Identifiers corresponding to test devices which will always request test ads.  
+The test device identifier for the current device is logged to the console when the first ad request is made.  
+
+```java
+CAS.getSettings().setTestDeviceIDs(new HashSet<String>(...));
+CAS.getSettings().getTestDeviceIDs().add("test-device-id");
+```
+***
+</details>
+<details><summary><b>Muted Ad sounds</b></summary>
+
+Indicates if the application’s audio is muted. Affects initial mute state for all ads.  
+Use this method only if your application has its own volume controls.  
+```java
+CAS.getSettings().setMutedAdSounds(true);
+```
+***
+</details>
+<details><summary><b>Waterfall Loading Mode</b></summary>
+
 |        Mode        |  Load<sup>[*1](#load-f-1)</sup>  | Impact on App performance | Memory usage |        Actual ads<sup>[*2](#actual-f-2)</sup>       |
 |:------------------:|:------:|:-------------------------:|:------------:|:------------------------:|
 |   FastestRequests  |  Auto  |         Very high         |     High     |       Most relevant      |
@@ -558,7 +587,33 @@ CAS.getSettings().setLoadingMode(LoadingManagerMode.Optimal);
 <b id="manual-f-3">^3</b>: Manual control loading mediation ads requires manual preparation of advertising content for display. Use ad loading methods before trying to show: `MediationManager.loadInterstitial(), MediationManager.loadRewardedVideo(), CASBannerView.loadNextAd()`.  
 ***
 </details>
-<details><summary><b>Configure Targeting Options singleton instance once before initialize</b></summary>
+<details><summary><b>Analytics collection</b></summary>
+
+Sets CAS analytics collection is enabled for this app on this device.    
+By default it is disabled. This setting is persisted across app sessions.  
+```java
+CAS.getSettings().setAnalyticsCollectionEnabled(true);
+```
+
+if your application uses [Firebase Analytics](https://firebase.google.com/docs/analytics)  then this service will be used by default.
+You also have the option to implement a custom analytics event handler:
+```java
+import android.os.Bundle;
+import com.cleversolutions.basement.CASAnalytics;
+class CustomCASAnalyticsHandler:CASAnalytics.Handler{
+  public override void log(String eventName, Bungle content){
+    // TODO: Handle event content
+  }
+  
+  public static void attachHandler(){
+     CASAnalytics.setHandler(new CustomCASAnalyticsHandler());
+     CAS.getSettings().setAnalyticsCollectionEnabled(true);
+  }
+}
+```
+***
+</details>
+<details><summary><b>Targeting Options</b></summary>
  
 You can now easily tailor the way you serve your ads to fit a specific audience!  
 You’ll need to inform our servers of the users’ details so the SDK will know to serve ads according to the segment the user belongs to.
@@ -576,37 +631,31 @@ CAS.getTargetingOptions().setLocation(userLocation)
 ```
 ***
 </details>
+
+## Step 9 Initialize the SDK
 <details><summary><b>Initialize MediationManager instance</b></summary>
  
+ An `managerID` is a unique ID number assigned to each of your ad placements when they're created in CAS. The manager ID is added to your app's code and used to identify ad requests. If you haven't created an CAS account and registered an app yet, now's a great time to do so at [cleveradssolutions.com](https://cleveradssolutions.com). In a real app, it is important that you use your actual CAS manager ID.  
 ```java
-class YourActivity extends Activity{
+class MainActivity extends Activity implements OnInitializationListener{
   MediationManager manager;
   void onCreate(Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       // Configure AdsSettings before initialize
-      manager = CAS.initialize(
-            // Root Activity. Warning: this activity can be memorized by some media networks.
-            this,
-            // Manager identifier. Can be NULL when matches the app package  
-            own_identifier, 
-            // Optional set active Ad Types: 'AdTypeFlags.Banner | AdTypeFlags.Interstitial' for example.  
-            AdTypeFlags.Everything, 
-            // Optional Demo ad fill only. Set FALSE for release!  
-            isTestBuild, 
-            // Optional subscribe to initialization done  
-            new OnInitializationListener(){  
-                void onInitialization(boolean success, String error){  
-                    // CAS manager initialization done  
-                }  
-            }  
+      manager = CAS.buildManager(this)
+                   .withManagerId(own_identifier)
+                   .withInitListener(this)
+                   .withEnabledAdTypes(AdTypeFlags.Everything)
+                   .withTestAdMode(isTestBuild)
+                   .initialize();
       );  
-  }  
+  }
+
+  public override void onInitialization(boolean success, @Nullable String error){
+    // CAS manager initialization done 
+  }
 }
 ```
-
-An `managerID` is a unique ID number assigned to each of your ad placements when they're created in CAS. The manager ID is added to your app's code and used to identify ad requests. If you haven't created an CAS account and registered an app yet, now's a great time to do so at [cleveradssolutions.com](https://cleveradssolutions.com). In a real app, it is important that you use your actual CAS manager ID.  
-
-`CAS.initialize` can be called for different identifiers to create different managers. 
 ***
 </details>
 <details><summary><b>Subscribe listener to Ad Loading response</b></summary>
@@ -626,8 +675,27 @@ manager.getOnAdLoadEvent().add(new AdLoadCallback(){
 ```
 ***
 </details>
+<details><summary><b>Last page Ad</b></summary>
 
-## Step 9 Implement our Ad Units
+The latest free ad page for your own promotion.  
+This ad page will be displayed when there is no paid ad to show or internet availability.  
+**Attention!** Impressions and clicks of this ad page will not be billed.  
+By default, this page will not be displayed while the ad content is NULL.  
+The Last Page Ad Content will be shown as a Banner and Interstitial ads.
+```java
+manager.setLastPageAdContent(new LastPageAdContent(
+    headline, // The message that you want users to see.
+    adText,   // A description for the app being promoted.
+    destinationURL, // The URL that CAS will direct users to when they click the ad.
+    imageURL, // The direct URL of the image to be used as the ad file.
+    iconURL   // The direct URL of the icon or logo (Small square picture).
+));
+```
+> `LastPageAdContent.destinationURL` is not visible in the ad and should always have a non-empty URL.
+***
+</details>
+
+## Step 10 Implement our Ad Units
 ### Banner Ad
 Banner ads are displayed in CASBannerView objects from module CleverAdsSolutions, so the first step toward integrating banner ads is to include a CASBannerView in your view hierarchy. This is typically done either with the layout or programmatically.
 <details><summary><b>Add to the layout</b></summary>
@@ -848,12 +916,130 @@ Disabled by default.
 ***
 </details>
 
+## Mediation extras
+The CAS mediation adapters provides the `AdNetwork` constant keys to customize parameters to be sent to networks SDK.  
+
+The following sample code demonstrates how to pass these parameters to the networks adapter:
+```java
+manager = CAS.buildManager(this)
+ .withMediationExtras(AdNetwork.ADCOLONY_MULTIWINDOW, "0")
+ .withMediationExtras(AdNetwork.VUNGLE_ANDROID_ID_OPTED_OUT, "0")
+ .initialize();
+```
+
+
+Although the GDPR and CCPA settings are used by all media adapters, you have the option to override these values for a specific network.
+<details><summary>Google Ads</summary>
+
+```java
+manager = CAS.buildManager(this)
+ // User GDPR consent "1" is accepted and "0" is rejected
+ .withMediationExtras(AdNetwork.ADMOB_GDPR_CONSENT, "0")
+ // User CCPA do not sell data "1" and "0" is use data in ad
+ .withMediationExtras(AdNetwork.ADMOB_CCPA_OPTED_OUT, "1")
+ .initialize();
+```
+See Admob [GDPR](https://developers.google.com/admob/android/eu-consent) and [CCPA](https://developers.google.com/admob/android/ccpa#rdp_signal) implementation details for more information about what values may be provided in these methods.
+***
+</details><details><summary>AppLovin</summary>
+
+```java
+manager = CAS.buildManager(this)
+ // User GDPR consent "1" is accepted and "0" is rejected
+ .withMediationExtras(AdNetwork.APPLOVIN_GDPR_CONSENT, "0")
+ // User CCPA do not sell data "1" and "0" is use data in ad
+ .withMediationExtras(AdNetwork.APPLOVIN_CCPA_OPTED_OUT, "1")
+ // Initialize MAX
+ .withMediationExtras(AdNetwork.APPLOVIN_USE_MAX, "1")
+ .initialize();
+```
+***
+</details><details><summary>AdColony</summary>
+
+```java
+manager = CAS.buildManager(this)
+ // User GDPR consent "1" is accepted and "0" is rejected
+ .withMediationExtras(AdNetwork.ADCOLONY_GDPR_CONSENT, "0")
+ // User CCPA do not sell data "1" and "0" is use data in ad
+ .withMediationExtras(AdNetwork.ADCOLONY_CCPA_OPTED_OUT, "1")
+ // Used to alert AdColony that multi-window is enabled for your app, 
+ // allowing us to adjust our interstitial layout as necessary.
+ .withMediationExtras(AdNetwork.ADCOLONY_MULTIWINDOW, "1")
+ // Optionally set the origin store for this app (default: 'google').
+ .withMediationExtras(AdNetwork.ADCOLONY_ORIGINSTORE, origin_store)
+ .initialize();
+```
+See [AdColony’s Privacy Laws implementation details](https://github.com/AdColony/AdColony-Android-SDK/wiki/Privacy-Laws) for more information about what values may be provided in these methods.
+***
+</details><details><summary>Vungle</summary>
+
+```java
+manager = CAS.buildManager(this)
+ // User GDPR consent "1" is accepted and "0" is rejected
+ .withMediationExtras(AdNetwork.VUNGLE_GDPR_CONSENT, "0")
+ // User CCPA do not sell data "1" and "0" is use data in ad
+ .withMediationExtras(AdNetwork.VUNGLE_CCPA_OPTED_OUT, "1")
+ // Set Minimum Disk Space
+ .withMediationExtras(AdNetwork.VUNGLE_MINIMUM_SPACE_FOR_INIT, String.valueOf(51L * 1024L * 1024L))
+ .withMediationExtras(AdNetwork.VUNGLE_MINIMUM_SPACE_FOR_AD, String.valueOf(50L * 1024L * 1024L))
+ // Restrict Use of Device ID
+ .withMediationExtras(AdNetwork.VUNGLE_ANDROID_ID_OPTED_OUT, "1")
+ .initialize();
+```
+See [Vungle's Advanced Settings implementation](https://support.vungle.com/hc/en-us/articles/360047780372) for more information.
+***
+</details><details><summary>IronSource</summary>
+
+```java
+manager = CAS.buildManager(this)
+ // User GDPR consent "1" is accepted and "0" is rejected
+ .withMediationExtras(AdNetwork.IRONSOURCE_GDPR_CONSENT, "0")
+ // User CCPA do not sell data "1" and "0" is use data in ad
+ .withMediationExtras(AdNetwork.IRONSOURCE_CCPA_OPTED_OUT, "1")
+ .initialize();
+```
+See [ironSource's managing consent](https://developers.ironsrc.com/ironsource-mobile/android/advanced-settings/) documentation for more details.
+***
+</details><details><summary>Unity Ads</summary>
+
+```java
+manager = CAS.buildManager(this)
+ // User GDPR consent "1" is accepted and "0" is rejected
+ .withMediationExtras(AdNetwork.UNITYADS_GDPR_CONSENT, "0")
+ // User CCPA do not sell data "1" and "0" is use data in ad
+ .withMediationExtras(AdNetwork.UNITYADS_CCPA_OPTED_OUT, "1")
+ .initialize();
+```
+See [Unity Ads data privacy and consent implementation details](https://unityads.unity3d.com/help/legal/data-privacy-and-consent) for more information about what values may be provided in these methods.
+***
+</details><details><summary>InMobi</summary>
+
+```java
+manager = CAS.buildManager(this)
+ // User GDPR consent "1" is accepted and "0" is rejected
+ .withMediationExtras(AdNetwork.APPLOVIN_GDPR_CONSENT, "0")
+ .withMediationExtras(AdNetwork.INMOBI_GDPR_IAB, iab_string)
+ .initialize();
+```
+See [InMobi's GDPR implementation details](https://support.inmobi.com/monetize/android-guidelines) for more information about the possible keys and values that InMobi accepts in this consent object.
+***
+</details><details><summary>StartApp</summary>
+
+```java
+manager = CAS.buildManager(this)
+ // User GDPR consent "1" is accepted and "0" is rejected
+ .withMediationExtras(AdNetwork.STARTAPP_GDPR_CONSENT, "0")
+ .initialize();
+```
+***
+</details>
+
+>Unique properties for each network will be added in the future.  
+
 ## GitHub issue tracker
 To file bugs, make feature requests, or suggest improvements for the Android SDK, please use [GitHub's issue tracker](https://github.com/cleveradssolutions/CAS-Android/issues).
 
 ## Support
-Site: [https://cleveradssolutions.com](https://cleveradssolutions.com)
-
 Technical support: Max  
 Skype: m.shevchenko_15  
 
