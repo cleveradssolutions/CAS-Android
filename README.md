@@ -73,7 +73,7 @@ Add one of the following solution to the dependencies section to your applicatio
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.0+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.1+' 
 }
 ```
 
@@ -96,7 +96,7 @@ dependencies {
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.0+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.1+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
@@ -111,7 +111,7 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.9.0+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.9.1+'
     ...
 }
 ```
