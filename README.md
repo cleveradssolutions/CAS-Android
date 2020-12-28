@@ -160,7 +160,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://www.applovin.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.applovin.com/privacy/)
 ```gradle
-implementation 'com.applovin:applovin-sdk:9.14.11+'
+implementation 'com.applovin:applovin-sdk:9.14.12+'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -184,7 +184,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://kidoz.net) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://kidoz.net/privacy-policy/)
 ```gradle
-implementation 'com.kidoz.sdk:KidozSDK:0.8.8.8'
+implementation 'com.kidoz.sdk:KidozSDK:8.9.0'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
