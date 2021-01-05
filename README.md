@@ -73,7 +73,7 @@ Add one of the following solution to the dependencies section to your applicatio
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.1+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.2+' 
 }
 ```
 
@@ -96,7 +96,7 @@ dependencies {
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.1+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.2+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
@@ -111,7 +111,7 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.9.1+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.9.2+'
     ...
 }
 ```
@@ -235,7 +235,17 @@ implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 Third party mediation SDK of Beta third party partners:
 > :warning: Next third party mediation SDK in closed beta and available upon invite only. If you would like to be considered for the beta, please contact Support.  
 
-<details><summary>Verizon Media</summary>
+<details><summary>MoPub</summary>
+
+[Home](https://www.mopub.com/) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.mopub.com/en/legal/privacy)
+```gradle
+implementation 'com.mopub:mopub-sdk-banner:5.15.0+'
+implementation 'com.mopub:mopub-sdk-fullscreen:5.15.0+'
+
+implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
+implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
+```
+</details><details><summary>Verizon Media</summary>
 
 [Home](https://www.verizonmedia.com/advertising/solutions#/mobile) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.verizonmedia.com/policies/us/en/verizonmedia/privacy/)
 ```gradle
@@ -256,7 +266,7 @@ implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 ```
 </details><details><summary>MobFox</summary>
 
-[Home](https://www.mobfox.com) - Banner, Interstitial, ~~Rewarded Video~~ - [Privacy Policy](https://www.mobfox.com/privacy-policy/)
+[Home](https://www.mobfox.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.mobfox.com/privacy-policy/)
 ```gradle
 implementation 'com.github.mobfox:mfx-android-sdk:4.3.2+'
 implementation 'com.android.volley:volley:1.1.1'
