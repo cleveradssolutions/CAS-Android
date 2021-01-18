@@ -73,7 +73,7 @@ Add one of the following solution to the dependencies section to your applicatio
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.2+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.3+' 
 }
 ```
 
@@ -96,7 +96,7 @@ dependencies {
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.2+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.3+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
@@ -111,7 +111,7 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.9.2+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.9.3+'
     ...
 }
 ```
@@ -144,7 +144,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://www.adcolony.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.adcolony.com/privacy-policy/)
 ```gradle
-implementation 'com.adcolony:sdk:4.3.1'
+implementation 'com.adcolony:sdk:4.4.0'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -201,7 +201,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 [Home](https://www.superawesome.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.superawesome.com/privacy-hub/privacy-policy/)   
 **Works to children audience only**.
 ```gradle
-implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.16+'
+implementation 'tv.superawesome.sdk.publisher:superawesome:7.2.18+'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -209,7 +209,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 #### To the following third party mediation SDK, be sure to add our additional support dependency `mediation-teen` for non-certified ad SDK in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445).
 ```gradle
-implementation 'com.cleversolutions.ads:mediation-teen:1.9.0+'
+implementation 'com.cleversolutions.ads:mediation-teen:1.9.3+'
 ```
 <details><summary>Facebook Audience Network</summary>
 
@@ -224,8 +224,8 @@ implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 
 [Home](https://yandex.com/dev/mobile-ads/) - Banner, Interstitial, ~~Rewarded Video~~ - [Privacy Policy](https://yandex.com/legal/mobileads_sdk_agreement/)
 ```gradle
-implementation 'com.yandex.android:mobileads:3.1.1'
-implementation 'com.yandex.android:mobmetricalib:3.14.3'
+implementation 'com.yandex.android:mobileads:3.2.0'
+implementation 'com.yandex.android:mobmetricalib:3.16.2'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
