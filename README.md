@@ -56,7 +56,7 @@ repositories {
 Add one of the following solution to the dependencies section to your application.
  
 1. Option. General solution of all certified mediation networks in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445):  
-<details><summary>Google Ads, Unity Ads, IronsSource, AdColony, Kidoz, Vungle, AppLovin, StartApp, InMobi, Chartboost, SuperAwesome</summary>
+<details><summary>Google Ads, Unity Ads, IronsSource, AdColony, Kidoz, Vungle, AppLovin, StartApp, InMobi, SuperAwesome</summary>
 
 - Google Ads - [Home](https://admob.google.com/home) - [Privacy Policy](https://policies.google.com/technologies/ads)
 - Unity Ads - [Home](https://unity.com/solutions/unity-ads) - [Privacy Policy](https://unity3d.com/legal/privacy-policy)
@@ -67,18 +67,17 @@ Add one of the following solution to the dependencies section to your applicatio
 - AppLovin - [Home](https://www.applovin.com) - [Privacy Policy](https://www.applovin.com/privacy/)
 - StartApp - [Home](https://www.startapp.com) - [Privacy Policy](https://www.startapp.com/policy/privacy-policy/)
 - InMobi - [Home](https://www.inmobi.com) - [Privacy Policy](https://www.inmobi.com/privacy-policy/)
-- Chartboost - [Home](https://www.chartboost.com) - [Privacy Policy](https://answers.chartboost.com/en-us/articles/200780269)
 - SuperAwesome - [Home](https://www.superawesome.com) - [Privacy Policy](https://www.superawesome.com/privacy-hub/privacy-policy/)   
 </details>
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.3+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.4+' 
 }
 ```
 
 2. Option. General solution of mediation networks that are always recommended to be used:  
-<details><summary>Google Ads, Vungle, AdColony, Kidoz, IronsSource, AppLovin, Unity Ads, StartApp, InMobi, Chartboost, Facebook AN, Yandex Ads</summary>
+<details><summary>Google Ads, Vungle, AdColony, Kidoz, IronsSource, AppLovin, Unity Ads, StartApp, InMobi, Facebook AN, Yandex Ads</summary>
 
 - Google Ads - [Home](https://admob.google.com/home) - [Privacy Policy](https://policies.google.com/technologies/ads)
 - Unity Ads - [Home](https://unity.com/solutions/unity-ads) - [Privacy Policy](https://unity3d.com/legal/privacy-policy)
@@ -89,14 +88,13 @@ dependencies {
 - AppLovin - [Home](https://www.applovin.com) - [Privacy Policy](https://www.applovin.com/privacy/)
 - StartApp - [Home](https://www.startapp.com) - [Privacy Policy](https://www.startapp.com/policy/privacy-policy/)
 - InMobi - [Home](https://www.inmobi.com) - [Privacy Policy](https://www.inmobi.com/privacy-policy/)
-- Chartboost - [Home](https://www.chartboost.com) - [Privacy Policy](https://answers.chartboost.com/en-us/articles/200780269)
 - Facebook Audience Network - [Home](https://www.facebook.com/business/marketing/audience-network) - [Privacy Policy](https://developers.facebook.com/docs/audience-network/policy/)
 - Yandex Ads - [Home](https://yandex.com/dev/mobile-ads/) - [Privacy Policy](https://yandex.com/legal/mobileads_sdk_agreement/)  
 </details>
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.3+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.4+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
@@ -111,7 +109,7 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.9.3+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.9.4+'
     ...
 }
 ```
@@ -136,7 +134,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://www.ironsrc.com) - ~~Banner~~, Interstitial, Rewarded Video [Privacy Policy](https://developers.ironsrc.com/ironsource-mobile/air/ironsource-mobile-privacy-policy/)
 ```gradle
-implementation 'com.ironsource.sdk:mediationsdk:7.0.4.1'
+implementation 'com.ironsource.sdk:mediationsdk:7.1.0.1'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -209,7 +207,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 #### To the following third party mediation SDK, be sure to add our additional support dependency `mediation-teen` for non-certified ad SDK in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445).
 ```gradle
-implementation 'com.cleversolutions.ads:mediation-teen:1.9.3+'
+implementation 'com.cleversolutions.ads:mediation-teen:1.9.4+'
 ```
 <details><summary>Facebook Audience Network</summary>
 
