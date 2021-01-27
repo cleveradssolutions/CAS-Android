@@ -72,7 +72,7 @@ Add one of the following solution to the dependencies section to your applicatio
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.4+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.6+' 
 }
 ```
 
@@ -94,7 +94,7 @@ dependencies {
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.4+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.6+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
@@ -109,7 +109,7 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.9.4+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.9.6+'
     ...
 }
 ```
@@ -134,7 +134,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://www.ironsrc.com) - ~~Banner~~, Interstitial, Rewarded Video [Privacy Policy](https://developers.ironsrc.com/ironsource-mobile/air/ironsource-mobile-privacy-policy/)
 ```gradle
-implementation 'com.ironsource.sdk:mediationsdk:7.1.0.1'
+implementation 'com.ironsource.sdk:mediationsdk:7.1.0.2'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -150,7 +150,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://vungle.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://vungle.com/privacy/)
 ```gradle
-implementation 'com.vungle:publisher-sdk-android:6.8.1'
+implementation 'com.vungle:publisher-sdk-android:6.9.1'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -158,7 +158,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://www.applovin.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.applovin.com/privacy/)
 ```gradle
-implementation 'com.applovin:applovin-sdk:9.14.12+'
+implementation 'com.applovin:applovin-sdk:9.15.1+'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -207,7 +207,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 #### To the following third party mediation SDK, be sure to add our additional support dependency `mediation-teen` for non-certified ad SDK in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445).
 ```gradle
-implementation 'com.cleversolutions.ads:mediation-teen:1.9.4+'
+implementation 'com.cleversolutions.ads:mediation-teen:1.9.6+'
 ```
 <details><summary>Facebook Audience Network</summary>
 
@@ -257,7 +257,7 @@ implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 [Home](https://target.my.com/) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://legal.my.com/us/mytarget/privacy/)  
 **Works to CIS countries only**.
 ```gradle
-implementation 'com.my.target:mytarget-sdk:5.11.9+'
+implementation 'com.my.target:mytarget-sdk:5.11.10+'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
@@ -1031,12 +1031,41 @@ manager = CAS.buildManager(this)
 ```
 See [InMobi's GDPR implementation details](https://support.inmobi.com/monetize/android-guidelines) for more information about the possible keys and values that InMobi accepts in this consent object.
 ***
+</details><details><summary>Cross Promotion</summary>
+
+```java
+manager = CAS.buildManager(this)
+ // Enables/disables endless impression Cross promo creative when waterfall have no loaded ad.
+ .withMediationExtras(AdNetwork.CROSSPROMO_ENDLESS, "1")
+ .initialize();
+```
+***
+</details><details><summary>MyTarget</summary>
+
+```java
+manager = CAS.buildManager(this)
+ // User GDPR consent "1" is accepted and "0" is rejected
+ .withMediationExtras(AdNetwork.MYTARGET_GDPR_CONSENT, "0")
+ // User CCPA do not sell data "1" and "0" is use data in ad
+ .withMediationExtras(AdNetwork.MYTARGET_CCPA_OPTED_OUT, "1")
+ .initialize();
+```
+***
 </details><details><summary>StartApp</summary>
 
 ```java
 manager = CAS.buildManager(this)
  // User GDPR consent "1" is accepted and "0" is rejected
  .withMediationExtras(AdNetwork.STARTAPP_GDPR_CONSENT, "0")
+ .initialize();
+```
+***
+</details><details><summary>YandexAds</summary>
+
+```java
+manager = CAS.buildManager(this)
+ // User GDPR consent "1" is accepted and "0" is rejected
+ .withMediationExtras(AdNetwork.YANDEXADS_GDPR_CONSENT, "0")
  .initialize();
 ```
 ***
