@@ -487,7 +487,7 @@ Read detailed instructions on [how to create and upload your app-ads.txt file](h
 ## Step 7 Privacy Laws
 This documentation is provided for compliance with various privacy laws. If you are collecting consent from your users, you can make use of APIs discussed below to inform CAS and all downstream consumers of this information.  
 
-A detailed article on the use of user data can be found in the [Privacy Policy](/../../wiki/Privacy-Policy).
+A detailed article on the use of user data can be found in the [Privacy Policy](https://cleveradssolutions.com/privacy-policy).
 
 ### GDPR Managing Consent
 <details>
