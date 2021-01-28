@@ -72,7 +72,7 @@ Add one of the following solution to the dependencies section to your applicatio
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.6+' 
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.7+' 
 }
 ```
 
@@ -94,7 +94,7 @@ dependencies {
 
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.6+'
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:1.9.7+'
 }
 ```
 > Some third party partners are not included and you can combine General solution with partners dependencies from Advanced integration.
@@ -109,7 +109,7 @@ To do this, use any combination of partial dependencies. No additional code is r
 #### The first step is to add a dependency to the core of our SDK:
 ```gradle
 dependencies {
-    implementation 'com.cleversolutions.ads:cas-sdk:1.9.6+'
+    implementation 'com.cleversolutions.ads:cas-sdk:1.9.7+'
     ...
 }
 ```
@@ -142,7 +142,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 [Home](https://www.adcolony.com) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://www.adcolony.com/privacy-policy/)
 ```gradle
-implementation 'com.adcolony:sdk:4.4.0'
+implementation 'com.adcolony:sdk:4.4.1'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
@@ -207,7 +207,7 @@ implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 
 #### To the following third party mediation SDK, be sure to add our additional support dependency `mediation-teen` for non-certified ad SDK in the [Families Ads program](https://support.google.com/googleplay/android-developer/answer/9283445).
 ```gradle
-implementation 'com.cleversolutions.ads:mediation-teen:1.9.6+'
+implementation 'com.cleversolutions.ads:mediation-teen:1.9.7+'
 ```
 <details><summary>Facebook Audience Network</summary>
 
