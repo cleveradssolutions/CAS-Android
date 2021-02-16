@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SampleActivity">
 
-    <LinearLayout
+    <LinearLayoutи
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
@@ -147,6 +147,6 @@
                 android:paddingEnd="5dp"
                 android:textAlignment="textEnd" />
         </LinearLayout>
-    </LinearLayout>
+    </LinearLayoutи>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

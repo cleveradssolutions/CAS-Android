@@ -17,9 +17,9 @@ class SampleActivity : AppCompatActivity(), AdLoadCallback {
         const val TAG = "CAS Sample"
     }
 
-    var manager: MediationManager? = null
-    var bannerView: CASBannerView? = null
-    var statusAdViews: Map<AdType, TextView> = emptyMap()
+    private var manager: MediationManager? = null
+    private var bannerView: CASBannerView? = null
+    private var statusAdViews: Map<AdType, TextView> = emptyMap()
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ class SampleActivity : AppCompatActivity(), AdLoadCallback {
         }
 
         // Validate Integration in log
-        CAS.validateIntegration(this, ContentRating.MA)
+        CAS.validateIntegration(this)
 
         // Get current SDK version
         casVersionText.text = "version: " + CAS.getSDKVersion()

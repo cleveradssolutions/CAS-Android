@@ -9,7 +9,7 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.cleversolutions.ads.android.sampleapp"
-        minSdkVersion 17
+        minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -53,13 +53,13 @@ dependencies {
     // implementation project(path: ':CleverAdsSolutions')
 
     // CAS General Solution
-    implementation 'com.cleversolutions.ads:cas-sdk-general:1.7.0+'
+    implementation 'com.cleversolutions.ads:cas-sdk-general:1.9.9+'
 
     // CAS Cross promo sdk
-    implementation 'com.cleversolutions.ads:cas-promo:1.7.0+'
+    implementation 'com.cleversolutions.ads:cas-promo:1.9.9+'
 
     // Required CAS support 
-    implementation 'com.cleversolutions.ads:mediation-teen:1.7.0+'
+    implementation 'com.cleversolutions.ads:mediation-teen:1.9.9+'
 
     // Additional mediation partners...
     implementation 'com.my.target:mytarget-sdk:5.11.5+'
