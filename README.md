@@ -65,7 +65,7 @@ Add one of the following solution to the dependencies section to your applicatio
 - Kidoz - [Home](https://kidoz.net) - [Privacy Policy](https://kidoz.net/privacy-policy/)
 - Vungle - [Home](https://vungle.com) - [Privacy Policy](https://vungle.com/privacy/)
 - AppLovin - [Home](https://www.applovin.com) - [Privacy Policy](https://www.applovin.com/privacy/)
-- StartApp - [Home](https://www.startapp.com) - [Privacy Policy](https://www.startapp.com/policy/privacy-policy/)
+- :warning: StartApp - [Home](https://www.startapp.com) - [Privacy Policy](https://www.startapp.com/policy/privacy-policy/)
 - InMobi - [Home](https://www.inmobi.com) - [Privacy Policy](https://www.inmobi.com/privacy-policy/)
 - SuperAwesome - [Home](https://www.superawesome.com) - [Privacy Policy](https://www.superawesome.com/privacy-hub/privacy-policy/)   
 </details>
@@ -178,6 +178,9 @@ implementation 'com.startapp:inapp-sdk:4.8.2+'
 
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 ```
+> Please note that the Startapp SDK is no longer part of the Families Certified Ad SDK Program and will no longer be approved for use in apps designed specifically for children or apps that target children or users of unknown age. You may need to make appropriate changes to your app and, where necessary, remove the non-certified ad SDK.  
+> Please visit the [Google Play Certified Ad SDKs](https://support.google.com/googleplay/android-developer/answer/9283445) page for a current list of certified ad SDKs
+
 </details><details><summary>Kidoz</summary>
 
 [Home](https://kidoz.net) - Banner, Interstitial, Rewarded Video - [Privacy Policy](https://kidoz.net/privacy-policy/)
@@ -228,6 +231,10 @@ implementation 'com.yandex.android:mobmetricalib:3.16.2'
 implementation "com.cleversolutions.ads:cas-sdk:$casVersion"
 implementation "com.cleversolutions.ads:mediation-teen:$casVersion"
 ```
+
+> :warning: Attention. You should take into account some features of the AppMetrica library during initialization. For more information, see [Features of the AppMetrica library](https://yandex.ru/dev/appmetrica/doc/mobile-sdk-dg/concepts/android-features.html).  
+
+> :warning: Attention. The code in the Application.onCreate() method runs for all processes. If you encounter an initialization error after integrating a third-party library (such as Clever Ads Solutions), make sure that the third-party library is initialized only in the main process. For more information, see [Error descriptions](https://yandex.ru/dev/appmetrica/doc/mobile-sdk-dg/concepts/android-errors.html).
 </details>
 
 Third party mediation SDK of Beta third party partners:
