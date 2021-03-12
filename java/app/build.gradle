@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    defaultConfig {
+        applicationId "com.cleversolutions.ads.android.sampleapp"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled = true
+    }
+    buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Required version
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    google()
+    jcenter()
+    maven { url "https://jitpack.io" }
+    maven { url "https://dl.bintray.com/cleveradssolutions/CAS-Android" }
+    maven { url "https://adcolony.bintray.com/AdColony" }
+    maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
+    maven { url "https://chartboostmobile.bintray.com/Chartboost" }
+    maven { url 'http://dl.bintray.com/gabrielcoman/maven' }
+    maven { url "http://dl.bintray.com/superawesome/SuperAwesomeSDK" }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    // CAS General Solution
+    implementation 'com.cleversolutions.ads:cas-sdk-teen:2.0.1'
+
+    // CAS Cross promo sdk
+    implementation 'com.cleversolutions.ads:cas-promo:2.0.1'
+}

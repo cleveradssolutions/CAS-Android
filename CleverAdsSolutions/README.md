@@ -1,1 +1,0 @@
-Put CleverAdsSolutions.aar in this folder.
