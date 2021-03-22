@@ -19,6 +19,7 @@ class SampleAppOpenAd : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Add <activity ... android:configChanges="orientation ..." /> in manifest to avoid calling onCreate() multiple times
         setContentView(R.layout.activity_sample_app_open_ad)
 
         simulationLongAppResourcesLoading()
@@ -27,7 +28,7 @@ class SampleAppOpenAd : Activity() {
     }
 
     @SuppressLint("SetTextI18n")
-    private fun createAppOpenAd(){
+    private fun createAppOpenAd() {
         // Try get last initialized MediationManager
         val initializedManager = CAS.manager
 
@@ -81,21 +82,22 @@ class SampleAppOpenAd : Activity() {
     }
 
     private fun startNextActivity() {
-        if(loadingAppResInProgress || appOpenAdVisible)
+        if (loadingAppResInProgress || appOpenAdVisible)
             return
         val intent = Intent(this, SampleActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
     }
 
-    private fun simulationLongAppResourcesLoading(){
+    private fun simulationLongAppResourcesLoading() {
         // Simulation of long application resources loading for 10 seconds.
         loadingAppResInProgress = true
         val timerText = timerView
-        val timer = object : CountDownTimer(TimeUnit.SECONDS.toMillis(10), 1000){
+        val timer = object : CountDownTimer(TimeUnit.SECONDS.toMillis(10), 1000) {
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {
-                timerText.text = "${TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished)} seconds left"
+                timerText.text =
+                    "${TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished)} seconds left"
             }
 
             override fun onFinish() {

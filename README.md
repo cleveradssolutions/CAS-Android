@@ -1,7 +1,5 @@
 # CleverAdsSolutions-Android SDK Integration 
-[![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/cas-sdk?label=SDK)](https://bintray.com/cleveradssolutions/CAS-Android)
-[![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/cas-promo?label=Promo)](https://bintray.com/cleveradssolutions/CAS-Android)
-[![Bintray](https://img.shields.io/bintray/v/cleveradssolutions/CAS-Android/mediation-teen?label=Mediation%20Teen)](https://bintray.com/cleveradssolutions/CAS-Android)
+[![Bintray](https://img.shields.io/maven-central/v/com.cleveradssolutions/cas-sdk)](https://github.com/cleveradssolutions/CAS-Android/releases)
 [![App-ads.txt](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/cleveradssolutions/App-ads.txt/master/Shield.json)](https://github.com/cleveradssolutions/App-ads.txt)
 
 ## Getting Started
