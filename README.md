@@ -9,10 +9,8 @@ To get started, here is the link to [Android SDK integration documentation](http
 To file bugs, make feature requests, or suggest improvements for the Android SDK, please use [GitHub's issue tracker](https://github.com/cleveradssolutions/CAS-Android/issues).
 
 ## Support
-support@cleveradssolutions.com
-
-Technical support Max, Skype: m.shevchenko_15  
-Network support Vitaly, Skype: zanzavital  
+support@cleveradssolutions.com  
+Skype Vitaly: zanzavital 
 
 ## License
 The CAS Android-SDK is available under a commercial license. See the LICENSE file for more info.
