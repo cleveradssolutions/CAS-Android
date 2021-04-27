@@ -13,4 +13,6 @@
     <string name="mrec">MREC</string>
     <string name="smart">SMART</string>
     <string name="loading_application_resources">Loading application resources</string>
+    <string name="native_ad">Native Ad</string>
+    <string name="back">Back to app</string>
 </resources>

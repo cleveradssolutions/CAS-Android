@@ -2,6 +2,7 @@ package com.cleversolutions.ads.android.sampleapp
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -93,6 +94,12 @@ class SampleActivity : Activity(), AdLoadCallback {
 
         showRewardedBtn.setOnClickListener {
             CAS.manager!!.showRewardedAd(this, AdContentListener(this, AdType.Rewarded))
+        }
+
+        showNativeBtn.setOnClickListener {
+            val intent = Intent(this, SampleNativeAdActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
+            startActivity(intent)
         }
     }
 
