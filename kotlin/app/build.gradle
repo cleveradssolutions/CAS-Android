@@ -35,12 +35,11 @@ android {
 
 repositories {
     google()
-    jcenter()
     mavenCentral()
-    maven { url "https://jitpack.io" }
-    maven { url "https://dl.bintray.com/ironsource-mobile/android-sdk" }
-    maven { url "https://chartboostmobile.bintray.com/Chartboost" }
-    maven { url "http://dl.bintray.com/superawesome/SuperAwesomeSDK" }
+    maven { url "https://android-sdk.is.com/" }
+    maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" }
+    maven { url "https://dl.bintray.com/superawesome/SuperAwesomeSDK" }
+    maven { url "https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo" }
 }
 
 dependencies {
@@ -50,13 +49,14 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     // CAS General Solution
-    implementation 'com.cleveradssolutions:cas:2.1.2'
+    implementation 'com.cleveradssolutions:cas:2.3.0'
 
     // CAS Cross promo sdk
-    implementation 'com.cleveradssolutions:cas-promo:2.1.2'
+    implementation 'com.cleveradssolutions:cas-promo:2.3.0'
 
     // Optional CAS mediation
-    //implementation 'com.cleveradssolutions:fyber:7.8.2.0'
-    //implementation 'com.cleveradssolutions:tapjoy:12.8.0.0'
+    //implementation 'com.my.target:mytarget-sdk:5.12.3'
+    //implementation 'com.mopub:mopub-sdk-banner:5.17.0'
+    //implementation 'com.mopub:mopub-sdk-fullscreen:5.17.0'
     //...
 }

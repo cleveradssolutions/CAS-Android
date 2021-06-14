@@ -4,6 +4,7 @@ import android.app.Application
 import android.os.Bundle
 import android.util.Log
 import com.cleversolutions.ads.AdSize
+import com.cleversolutions.ads.AdType
 import com.cleversolutions.ads.AdTypeFlags
 import com.cleversolutions.ads.OnInitializationListener
 import com.cleversolutions.ads.android.CAS

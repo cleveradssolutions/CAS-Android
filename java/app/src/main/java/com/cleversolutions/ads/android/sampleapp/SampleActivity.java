@@ -30,6 +30,7 @@ public class SampleActivity extends Activity implements AdLoadCallback {
     public static final String TAG = "CAS Sample";
 
     private HashMap<AdType, TextView> statusAdViews;
+    private boolean isActiveAppReturn = false;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -102,6 +103,10 @@ public class SampleActivity extends Activity implements AdLoadCallback {
                         SampleActivity.this,
                         new AdContentListener(this, AdType.Rewarded)
                 ));
+
+        ((Button) findViewById(R.id.enableAppReturn)).setOnClickListener((View.OnClickListener) v ->
+                changeStateOfReturnAds()
+                );
     }
 
     @SuppressLint("SetTextI18n")
@@ -121,5 +126,22 @@ public class SampleActivity extends Activity implements AdLoadCallback {
             Log.d(TAG, adType.name() + " Ad Failed to Load: " + error);
             statusAdViews.get(adType).setText(error);
         });
+    }
+
+    private void changeStateOfReturnAds() {
+        TextView statusReturnAdsTextView = findViewById(R.id.appReturnStatusText);
+        Button changeStateOfReturnAdsButton = findViewById(R.id.enableAppReturn);
+
+        if (isActiveAppReturn) {
+            statusReturnAdsTextView.setText("Disabled");
+            changeStateOfReturnAdsButton.setText("Enable");
+            CAS.getManager().disableAppReturnAds();
+            isActiveAppReturn = false;
+        } else {
+            statusReturnAdsTextView.setText("Enabled");
+            changeStateOfReturnAdsButton.setText("Disable");
+            CAS.getManager().enableAppReturnAds(new AdContentListener(this, AdType.Interstitial));
+            isActiveAppReturn = true;
+        }
     }
 }

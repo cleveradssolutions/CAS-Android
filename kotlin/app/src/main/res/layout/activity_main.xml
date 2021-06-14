@@ -153,6 +153,34 @@
                     android:paddingEnd="5dp"
                     android:textAlignment="textEnd" />
             </LinearLayout>
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:text="@string/app_return"
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/enableAppReturn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enable" />
+
+                <TextView
+                    android:id="@+id/appReturnStatusText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="5dp"
+                    android:text="@string/disabled"
+                    android:textAlignment="textEnd" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

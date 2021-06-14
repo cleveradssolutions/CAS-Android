@@ -20,6 +20,7 @@ class SampleActivity : Activity(), AdLoadCallback {
     }
 
     private var statusAdViews: Map<AdType, TextView> = emptyMap()
+    private var isActiveAppReturn: Boolean = false
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,6 +95,10 @@ class SampleActivity : Activity(), AdLoadCallback {
         showRewardedBtn.setOnClickListener {
             CAS.manager!!.showRewardedAd(this, AdContentListener(this, AdType.Rewarded))
         }
+
+        enableAppReturn.setOnClickListener {
+            changeStateOfReturnAds()
+        }
     }
 
     @AnyThread
@@ -110,6 +115,20 @@ class SampleActivity : Activity(), AdLoadCallback {
         runOnUiThread {
             Log.d(TAG, "$type Ad Failed to Load: $error")
             statusAdViews[type]?.text = error
+        }
+    }
+
+    private fun changeStateOfReturnAds() {
+        if (isActiveAppReturn) {
+            appReturnStatusText.text = "Disabled"
+            enableAppReturn.text = "Enable"
+            CAS.manager!!.disableAppReturnAds()
+            isActiveAppReturn = false
+        } else {
+            appReturnStatusText.text = "Enabled"
+            enableAppReturn.text = "Disable"
+            CAS.manager!!.enableAppReturnAds(AdContentListener(this, AdType.Interstitial))
+            isActiveAppReturn = true
         }
     }
 }

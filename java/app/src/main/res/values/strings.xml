@@ -9,6 +9,9 @@
     <string name="adaptive_size">Adaptive</string>
     <string name="interstitial_ad">Interstitial Ad</string>
     <string name="rewarded_ad">Rewarded Ad</string>
+    <string name="app_return">App Return</string>
+    <string name="enable">Enable</string>
+    <string name="disabled">Disabled</string>
     <string name="ledearboard">LEDEARBOARD</string>
     <string name="mrec">MREC</string>
     <string name="smart">SMART</string>
