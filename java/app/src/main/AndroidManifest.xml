@@ -17,7 +17,8 @@
         android:networkSecurityConfig="@xml/network_security_config">
         <activity android:name=".SampleAppOpenAd"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="locked">
+            android:screenOrientation="locked"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
