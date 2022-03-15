@@ -2,15 +2,17 @@ package com.cleversolutions.ads.android.sampleapp
 
 import android.app.Application
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
-import com.cleversolutions.ads.AdSize
-import com.cleversolutions.ads.AdType
-import com.cleversolutions.ads.AdTypeFlags
-import com.cleversolutions.ads.OnInitializationListener
+import com.cleversolutions.ads.*
 import com.cleversolutions.ads.android.CAS
 import com.cleversolutions.basement.CASAnalytics
 
 class SampleApplication : Application() {
+
+    companion object {
+        var manager: MediationManager? = null
+    }
 
     override fun onCreate() {
         super.onCreate()
@@ -31,16 +33,13 @@ class SampleApplication : Application() {
         CAS.settings.allowInterstitialAdsWhenVideoCostAreLower = true
 
         // Initialize SDK
-        val manager = CAS.buildManager()
+        manager = CAS.buildManager()
             .withManagerId("demo")
-            .withEnabledAdTypes(AdTypeFlags.Banner or AdTypeFlags.Interstitial or AdTypeFlags.Rewarded)
             .withTestAdMode(true)
+            .withAdTypes(AdType.Banner, AdType.Interstitial, AdType.Rewarded)
             .withInitListener(OnInitializationListener { success, error ->
                 Log.i(SampleActivity.TAG, "CAS initialize success: $success with error: $error")
             })
             .initialize(this)
-
-        // Set banner size
-        manager.bannerSize = AdSize.BANNER
     }
 }

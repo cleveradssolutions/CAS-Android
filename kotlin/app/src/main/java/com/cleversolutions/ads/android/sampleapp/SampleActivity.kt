@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.annotation.AnyThread
 import com.cleversolutions.ads.*
@@ -33,12 +34,12 @@ class SampleActivity : Activity(), AdLoadCallback {
             AdType.Rewarded to rewardedStatusText
         )
 
-        // Try get last initialized MediationManager
-        val manager = CAS.manager!!
-
         // Check ad available
-        statusAdViews.forEach {
-            it.value.text = if (manager.isAdReady(it.key)) "Ready" else "Loading"
+        SampleApplication.manager?.let {
+            statusAdViews.forEach { it1 ->
+                it1.value.text =
+                    if ((it.isAdReady(it1.key))) "Ready" else "Loading"
+            }
         }
 
         // Validate Integration
@@ -48,12 +49,13 @@ class SampleActivity : Activity(), AdLoadCallback {
         casVersionText.text = "version: " + CAS.getSDKVersion()
 
         // Subscribe loading ad event
-        manager.onAdLoadEvent.add(this)
+        SampleApplication.manager?.onAdLoadEvent?.add(this)
 
         // Create Banner View
         val bannerView = CASBannerView(this)
-        bannerView.listener = AdContentListener(this, AdType.Banner)
+        bannerView.contentCallback = AdContentListener(this, AdType.Banner)
         bannerView.gravity = Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL
+        bannerView.size = AdSize.BANNER
 
         // Attach banner View
         addContentView(
@@ -89,11 +91,11 @@ class SampleActivity : Activity(), AdLoadCallback {
         }
 
         showInterBtn.setOnClickListener {
-            CAS.manager!!.showInterstitial(this, AdContentListener(this, AdType.Interstitial))
+            SampleApplication.manager?.showInterstitial(this, AdContentListener(this, AdType.Interstitial))
         }
 
         showRewardedBtn.setOnClickListener {
-            CAS.manager!!.showRewardedAd(this, AdContentListener(this, AdType.Rewarded))
+            SampleApplication.manager?.showRewardedAd(this, AdContentListener(this, AdType.Rewarded))
         }
 
         enableAppReturn.setOnClickListener {
@@ -122,12 +124,12 @@ class SampleActivity : Activity(), AdLoadCallback {
         if (isActiveAppReturn) {
             appReturnStatusText.text = "Disabled"
             enableAppReturn.text = "Enable"
-            CAS.manager!!.disableAppReturnAds()
+            SampleApplication.manager?.disableAppReturnAds()
             isActiveAppReturn = false
         } else {
             appReturnStatusText.text = "Enabled"
             enableAppReturn.text = "Disable"
-            CAS.manager!!.enableAppReturnAds(AdContentListener(this, AdType.Interstitial))
+            SampleApplication.manager?.enableAppReturnAds(AdContentListener(this, AdType.Interstitial))
             isActiveAppReturn = true
         }
     }

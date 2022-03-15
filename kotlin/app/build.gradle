@@ -33,17 +33,6 @@ android {
     }
 }
 
-repositories {
-    google()
-    mavenCentral()
-    maven { url "https://android-sdk.is.com/" } //IronSource
-    maven { url "https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo" } //SuperAwesome
-    maven { url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" } //Mintegral
-    maven { url "https://artifact.bytedance.com/repository/pangle" } //Pangle
-    maven { url "https://s3.amazonaws.com/smaato-sdk-releases/" } // Smaato
-    maven { url "https://sdk.tapjoy.com/" } //TapJoy
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.multidex:multidex:2.0.1'
