@@ -10,7 +10,6 @@ To file bugs, make feature requests, or suggest improvements for the Android SDK
 
 ## Support
 support@cleveradssolutions.com  
-Skype Vitaly: zanzavital 
 
 ## License
 The CAS Android-SDK is available under a commercial license. See the LICENSE file for more info.
