@@ -7,6 +7,7 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 import com.cleversolutions.ads.AdSize;
+import com.cleversolutions.ads.AdType;
 import com.cleversolutions.ads.AdTypeFlags;
 import com.cleversolutions.ads.MediationManager;
 import com.cleversolutions.ads.OnInitializationListener;
@@ -37,14 +38,11 @@ public class SampleApplication extends Application {
         // Initialize SDK
         MediationManager manager = CAS.buildManager()
                 .withManagerId("demo")
-                .withEnabledAdTypes(AdTypeFlags.Banner | AdTypeFlags.Interstitial | AdTypeFlags.Rewarded)
+                .withAdTypes(AdType.Banner, AdType.Interstitial, AdType.Rewarded)
                 .withTestAdMode(true)
                 .withInitListener((success, error) -> {
                     Log.i(SampleActivity.TAG, "CAS initialize success: " + success + " with error: " + error);
                 })
                 .initialize(this);
-
-        // Set banner size
-        manager.setBannerSize(AdSize.BANNER);
     }
 }

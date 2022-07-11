@@ -23,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.TimeUnit;
 
-class SampleAppOpenAd extends Activity {
+public class SampleAppOpenAd extends Activity {
     private boolean loadingAppResInProgress = false;
     private boolean appOpenAdVisible = false;
 

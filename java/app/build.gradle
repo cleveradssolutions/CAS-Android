@@ -41,13 +41,14 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
 
     // CAS General Solution
-    implementation 'com.cleveradssolutions:cas:2.6.6'
+    implementation 'com.cleveradssolutions:cas:2.8.2'
 
     // CAS Cross promo sdk
-    implementation 'com.cleveradssolutions:cas-promo:2.6.6'
+    implementation 'com.cleveradssolutions:cas-promo:2.8.2'
+
 
     // Optional CAS mediation
-    // implementation 'com.cleveradssolutions:yandex:4.5.0.1'       // Yandex Ads
-    // implementation 'com.cleveradssolutions:chartboost:8.3.1.2'   // Chartboost
+    // implementation 'com.cleveradssolutions:yandex:5.1.1.0'       // Yandex Ads with API 31
+    // implementation 'com.cleveradssolutions:chartboost:8.4.3.0'   // Chartboost
     //...
 }
