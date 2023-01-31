@@ -7,76 +7,70 @@ import android.content.res.Configuration
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.widget.TextView
 import com.cleversolutions.ads.*
-import com.cleversolutions.ads.android.CAS
-import kotlinx.android.synthetic.main.activity_sample_app_open_ad.*
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-class SampleAppOpenAd : Activity() {
+class SampleAppOpenAdActivity : Activity() {
     private var loadingAppResInProgress = false
     private var appOpenAdVisible = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Add <activity ... android:configChanges="orientation ..." /> in manifest to avoid calling onCreate() multiple times
+        // Add <activity ... android:configChanges="orientation ..." />
+        // in manifest to avoid calling onCreate() multiple times
         setContentView(R.layout.activity_sample_app_open_ad)
 
         simulationLongAppResourcesLoading()
-
         createAppOpenAd()
     }
 
     @SuppressLint("SetTextI18n")
     private fun createAppOpenAd() {
         // Try get last initialized MediationManager
-        val initializedManager = CAS.manager
+        val adManager = SampleApplication.adManager
 
         // Create an Ad
-        val appOpenAd = if (initializedManager == null)
-            CASAppOpen.create("demo") // Replace demo to own identifier of MediationManager
-        else
-            CASAppOpen.create(initializedManager)
+        val appOpenAd = CASAppOpen.create(adManager)
 
         // Handle fullscreen callback events
         appOpenAd.contentCallback = object : AdCallback {
             override fun onShown(ad: AdStatusHandler) {
-                Log.d(SampleActivity.TAG, "App Open Ad shown")
-                appOpenAdStatusView.text = "Show AppOpenAd"
+                Log.d(SampleApplication.TAG, "App Open Ad shown")
             }
 
             override fun onShowFailed(message: String) {
-                Log.d(SampleActivity.TAG, "App Open Ad show failed: $message")
-                appOpenAdStatusView.text = "Show AppOpenAd failed: $message"
+                Log.e(SampleApplication.TAG, "App Open Ad show failed: $message")
                 appOpenAdVisible = false
                 startNextActivity()
             }
 
+            override fun onClicked() {
+                Log.d(SampleApplication.TAG, "App Open Ad clicked")
+            }
+
             override fun onClosed() {
-                Log.d(SampleActivity.TAG, "App Open Ad closed")
-                appOpenAdStatusView.text = "AppOpenAd closed"
+                Log.d(SampleApplication.TAG, "App Open Ad closed")
                 appOpenAdVisible = false
                 startNextActivity()
             }
         }
 
         // Load the Ad
-        appOpenAdStatusView.text = "Loading AppOpenAd..."
         appOpenAd.loadAd(
             this,
             resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE,
             object : LoadAdCallback {
                 override fun onAdFailedToLoad(error: AdError) {
-                    Log.e(SampleActivity.TAG, "App Open Ad failed to load: ${error.message}")
-                    appOpenAdStatusView.text = "Load AppOpenAd failed: ${error.message}"
+                    Log.e(SampleApplication.TAG, "App Open Ad failed to load: ${error.message}")
                     startNextActivity()
                 }
 
                 override fun onAdLoaded() {
-                    Log.d(SampleActivity.TAG, "App Open Ad loaded")
-                    appOpenAdStatusView.text = "AppOpenAd loaded"
+                    Log.d(SampleApplication.TAG, "App Open Ad loaded")
                     appOpenAdVisible = true
-                    appOpenAd.show(this@SampleAppOpenAd)
+                    appOpenAd.show(this@SampleAppOpenAdActivity)
                 }
             })
     }
@@ -92,7 +86,7 @@ class SampleAppOpenAd : Activity() {
     private fun simulationLongAppResourcesLoading() {
         // Simulation of long application resources loading for 10 seconds.
         loadingAppResInProgress = true
-        val timerText = timerView
+        val timerText = findViewById<TextView>(R.id.timerView)
         val timer = object : CountDownTimer(TimeUnit.SECONDS.toMillis(10), 1000) {
             @SuppressLint("SetTextI18n")
             override fun onTick(millisUntilFinished: Long) {

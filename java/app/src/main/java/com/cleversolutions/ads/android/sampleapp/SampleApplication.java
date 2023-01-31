@@ -1,47 +1,37 @@
 package com.cleversolutions.ads.android.sampleapp;
 
 import android.app.Application;
-import android.os.Bundle;
 import android.util.Log;
 
-import androidx.annotation.Nullable;
-
-import com.cleversolutions.ads.AdSize;
 import com.cleversolutions.ads.AdType;
-import com.cleversolutions.ads.AdTypeFlags;
+import com.cleversolutions.ads.Audience;
 import com.cleversolutions.ads.MediationManager;
-import com.cleversolutions.ads.OnInitializationListener;
 import com.cleversolutions.ads.android.CAS;
-import com.cleversolutions.basement.CASAnalytics;
-
-import org.jetbrains.annotations.NotNull;
 
 public class SampleApplication extends Application {
+    public static final String TAG = "CAS Sample";
+    public static MediationManager adManager;
 
     @Override
     public void onCreate() {
         super.onCreate();
-
-        // (Optional) Apply Analytics receiver
-        CASAnalytics.INSTANCE.setHandler((eventName, content) -> {
-            Log.i(SampleActivity.TAG, "Analytics log event " + eventName);
-            for (String key : content.keySet()) {
-                Log.i(SampleActivity.TAG, "\t $key:" + content.get(key));
-            }
-        });
-
         // Set Ads Settings
-        CAS.getSettings().setDebugMode(true);
-        CAS.getSettings().setAnalyticsCollectionEnabled(true);
-        CAS.getSettings().setAllowInterstitialAdsWhenVideoCostAreLower(true);
+        CAS.settings.setDebugMode(true);
+        CAS.settings.setTaggedAudience(Audience.NOT_CHILDREN);
+
+        // Set Manual loading mode to disable auto requests
+        //CAS.settings.setLoadingMode(LoadingManagerMode.Manual);
 
         // Initialize SDK
-        MediationManager manager = CAS.buildManager()
+        adManager = CAS.buildManager()
                 .withManagerId("demo")
                 .withAdTypes(AdType.Banner, AdType.Interstitial, AdType.Rewarded)
                 .withTestAdMode(true)
-                .withInitListener((success, error) -> {
-                    Log.i(SampleActivity.TAG, "CAS initialize success: " + success + " with error: " + error);
+                .withCompletionListener(config -> {
+                    if (config.getError() == null)
+                        Log.d(TAG, "Ad manager initialized");
+                    else
+                        Log.d(TAG, "Ad manager initialization failed: " + config.getError());
                 })
                 .initialize(this);
     }

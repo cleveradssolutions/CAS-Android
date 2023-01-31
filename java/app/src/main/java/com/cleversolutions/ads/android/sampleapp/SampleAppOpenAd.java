@@ -27,13 +27,10 @@ public class SampleAppOpenAd extends Activity {
     private boolean loadingAppResInProgress = false;
     private boolean appOpenAdVisible = false;
 
-    private TextView appOpenAdStatusView;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample_app_open_ad);
-        appOpenAdStatusView = (TextView) findViewById(R.id.appOpenAdStatusView);
 
         simulationLongAppResourcesLoading();
 
@@ -57,14 +54,12 @@ public class SampleAppOpenAd extends Activity {
         appOpenAd.setContentCallback(new AdCallback() {
             @Override
             public void onShown(@NotNull AdStatusHandler adStatusHandler) {
-                Log.d(SampleActivity.TAG, "App Open Ad shown");
-                appOpenAdStatusView.setText("Show AppOpenAd");
+                Log.d(SampleApplication.TAG, "App Open Ad shown");
             }
 
             @Override
             public void onShowFailed(@NotNull String message) {
-                Log.d(SampleActivity.TAG, "App Open Ad show failed: " + message);
-                appOpenAdStatusView.setText("Show AppOpenAd failed: " + message);
+                Log.d(SampleApplication.TAG, "App Open Ad show failed: " + message);
 
                 appOpenAdVisible = false;
                 startNextActivity();
@@ -72,8 +67,7 @@ public class SampleAppOpenAd extends Activity {
 
             @Override
             public void onClosed() {
-                Log.d(SampleActivity.TAG, "App Open Ad closed");
-                appOpenAdStatusView.setText("AppOpenAd closed");
+                Log.d(SampleApplication.TAG, "App Open Ad closed");
 
                 appOpenAdVisible = false;
                 startNextActivity();
@@ -91,7 +85,6 @@ public class SampleAppOpenAd extends Activity {
         });
 
         // Load the Ad
-        appOpenAdStatusView.setText("Loading AppOpenAd...");
         appOpenAd.loadAd(
                 this,
                 getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE,
@@ -101,8 +94,7 @@ public class SampleAppOpenAd extends Activity {
                         if (!loadingAppResInProgress)
                             return;
 
-                        Log.d(SampleActivity.TAG, "App Open Ad loaded");
-                        appOpenAdStatusView.setText("AppOpenAd loaded");
+                        Log.d(SampleApplication.TAG, "App Open Ad loaded");
 
                         appOpenAdVisible = true;
                         appOpenAd.show(SampleAppOpenAd.this);
@@ -113,8 +105,7 @@ public class SampleAppOpenAd extends Activity {
                         if (!loadingAppResInProgress)
                             return;
 
-                        Log.e(SampleActivity.TAG, "App Open Ad failed to load: " + adError.getMessage());
-                        appOpenAdStatusView.setText("Load AppOpenAd failed: " + adError.getMessage());
+                        Log.e(SampleApplication.TAG, "App Open Ad failed to load: " + adError.getMessage());
 
                         startNextActivity();
                     }
@@ -133,7 +124,7 @@ public class SampleAppOpenAd extends Activity {
     private void simulationLongAppResourcesLoading() {
         // Simulation of long application resources loading for 10 seconds.
         loadingAppResInProgress = true;
-        TextView timerText = (TextView) findViewById(R.id.timerView);
+        TextView timerText = findViewById(R.id.timerView);
         CountDownTimer timer = new CountDownTimer(TimeUnit.SECONDS.toMillis(10), 1000) {
             @SuppressLint("SetTextI18n")
             @Override

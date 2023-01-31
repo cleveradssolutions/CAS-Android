@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,15 +10,17 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="10dp"
         android:paddingBottom="60dp">
 
         <LinearLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
-                style="@style/TextAppearance.AppCompat.Menu"
+                style="@style/TextAppearance.AppCompat.Large"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/clever_ads_solutions"
@@ -33,7 +34,7 @@
                 android:textAlignment="center" />
 
             <TextView
-                style="@style/TextAppearance.AppCompat.Menu"
+                style="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/banner_ad"
@@ -42,7 +43,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/loadBannerBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Load Next" />
 
                 <Button
                     android:id="@+id/showBannerBtn"
@@ -56,52 +64,16 @@
                     android:layout_height="wrap_content"
                     android:text="@string/hide" />
 
-                <TextView
-                    android:id="@+id/bannerStatusText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="5dp"
-                    android:textAlignment="textEnd" />
             </LinearLayout>
 
             <TextView
+                android:id="@+id/bannerStatusText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/banner_size"
-                android:textAlignment="center" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/setDefaultSizeBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/default_size" />
-
-                <Button
-                    android:id="@+id/setLedearboardSizeBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ledearboard" />
-
-                <Button
-                    android:id="@+id/setMrecSizeBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/mrec" />
-
-                <Button
-                    android:id="@+id/setAdaptiveSizeBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/adaptive_size" />
-            </LinearLayout>
+                android:paddingEnd="5dp" />
 
             <TextView
-                style="@style/TextAppearance.AppCompat.Menu"
+                style="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
@@ -111,7 +83,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/loadInterBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Load" />
 
                 <Button
                     android:id="@+id/showInterBtn"
@@ -119,16 +98,17 @@
                     android:layout_height="wrap_content"
                     android:text="@string/show" />
 
-                <TextView
-                    android:id="@+id/interStatusText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="5dp"
-                    android:textAlignment="textEnd" />
+
             </LinearLayout>
 
             <TextView
-                style="@style/TextAppearance.AppCompat.Menu"
+                android:id="@+id/interStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="5dp" />
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
@@ -138,7 +118,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/loadRewardedBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Load" />
 
                 <Button
                     android:id="@+id/showRewardedBtn"
@@ -146,41 +133,15 @@
                     android:layout_height="wrap_content"
                     android:text="@string/show" />
 
-                <TextView
-                    android:id="@+id/rewardedStatusText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="5dp"
-                    android:textAlignment="textEnd" />
+
             </LinearLayout>
 
             <TextView
-                style="@style/TextAppearance.AppCompat.Menu"
+                android:id="@+id/rewardedStatusText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="20dp"
-                android:text="@string/app_return"
-                android:textAlignment="center" />
+                android:paddingEnd="5dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/enableAppReturn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/enable" />
-
-                <TextView
-                    android:id="@+id/appReturnStatusText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingEnd="5dp"
-                    android:text="@string/disabled"
-                    android:textAlignment="textEnd" />
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

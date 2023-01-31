@@ -1,147 +1,246 @@
 package com.cleversolutions.ads.android.sampleapp;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.AnyThread;
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.cleversolutions.ads.AdCallback;
+import com.cleversolutions.ads.AdError;
 import com.cleversolutions.ads.AdLoadCallback;
 import com.cleversolutions.ads.AdSize;
+import com.cleversolutions.ads.AdStatusHandler;
 import com.cleversolutions.ads.AdType;
+import com.cleversolutions.ads.AdViewListener;
+import com.cleversolutions.ads.LoadingManagerMode;
 import com.cleversolutions.ads.MediationManager;
 import com.cleversolutions.ads.android.CAS;
 import com.cleversolutions.ads.android.CASBannerView;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
-public class SampleActivity extends Activity implements AdLoadCallback {
-    public static final String TAG = "CAS Sample";
+public class SampleActivity extends Activity {
 
-    private HashMap<AdType, TextView> statusAdViews;
-    private boolean isActiveAppReturn = false;
-
-    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        statusAdViews = new HashMap<>();
-        statusAdViews.put(AdType.Banner, (TextView) findViewById(R.id.bannerStatusText));
-        statusAdViews.put(AdType.Interstitial, (TextView) findViewById(R.id.interStatusText));
-        statusAdViews.put(AdType.Rewarded, (TextView) findViewById(R.id.rewardedStatusText));
-
-        // Try get last initialized MediationManager
-        MediationManager manager = Objects.requireNonNull(CAS.getManager());
-
-        // Check ad available
-        for (Map.Entry<AdType, TextView> entry : statusAdViews.entrySet()) {
-            entry.getValue().setText(manager.isAdReady(entry.getKey()) ? "Ready" : "Loading");
-        }
-
         // Validate Integration
         CAS.validateIntegration(this);
 
         // Get current SDK version
-        ((TextView) findViewById(R.id.casVersionText)).setText("version: " + CAS.getSDKVersion());
+        ((TextView) findViewById(R.id.casVersionText)).setText(CAS.getSDKVersion());
 
-        // Subscribe loading ad event
-        manager.getOnAdLoadEvent().add(this);
-
-        // Create Banner View
-        CASBannerView bannerView = new CASBannerView(this);
-        bannerView.setListener(new AdContentListener(this, AdType.Banner));
-        bannerView.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL);
-
-        // Attach banner View
-        addContentView(
-                bannerView,
-                new ViewGroup.LayoutParams(
-                        ViewGroup.LayoutParams.MATCH_PARENT,
-                        ViewGroup.LayoutParams.MATCH_PARENT
-                )
-        );
-
-        ((Button) findViewById(R.id.setDefaultSizeBtn)).setOnClickListener((View.OnClickListener) v ->
-                bannerView.setSize(AdSize.BANNER));
-
-        ((Button) findViewById(R.id.setAdaptiveSizeBtn)).setOnClickListener((View.OnClickListener) v ->
-                bannerView.setSize(AdSize.getAdaptiveBannerInScreen(SampleActivity.this)));
-
-        ((Button) findViewById(R.id.setLedearboardSizeBtn)).setOnClickListener((View.OnClickListener) v ->
-                bannerView.setSize(AdSize.LEADERBOARD));
-
-        ((Button) findViewById(R.id.setMrecSizeBtn)).setOnClickListener((View.OnClickListener) v ->
-                bannerView.setSize(AdSize.MEDIUM_RECTANGLE));
-
-        ((Button) findViewById(R.id.showBannerBtn)).setOnClickListener((View.OnClickListener) v ->
-                bannerView.setVisibility(View.VISIBLE));
-
-        ((Button) findViewById(R.id.hideBannerBtn)).setOnClickListener((View.OnClickListener) v ->
-                bannerView.setVisibility(View.GONE));
-
-        ((Button) findViewById(R.id.showInterBtn)).setOnClickListener((View.OnClickListener) v ->
-                CAS.getManager().showInterstitial(
-                        SampleActivity.this,
-                        new AdContentListener(this, AdType.Interstitial)
-                ));
-
-        ((Button) findViewById(R.id.showRewardedBtn)).setOnClickListener((View.OnClickListener) v ->
-                CAS.getManager().showRewardedAd(
-                        SampleActivity.this,
-                        new AdContentListener(this, AdType.Rewarded)
-                ));
-
-        ((Button) findViewById(R.id.enableAppReturn)).setOnClickListener((View.OnClickListener) v ->
-                changeStateOfReturnAds()
-                );
+        MediationManager adManager = Objects.requireNonNull(SampleApplication.adManager);
+        createBanner(adManager);
+        createInterstitial(adManager);
+        createRewarded(adManager);
     }
 
-    @SuppressLint("SetTextI18n")
-    @AnyThread
-    @Override
-    public void onAdLoaded(@NotNull AdType adType) {
-        runOnUiThread(() -> {
-            Log.d(TAG, "$type Ad Loaded");
-            statusAdViews.get(adType).setText("Ready");
+    private void createBanner(MediationManager manager) {
+        CASBannerView bannerView = new CASBannerView(this, manager);
+
+        // Set required Ad size
+        bannerView.setSize(AdSize.getAdaptiveBannerInScreen(this));
+        //bannerView.setSize(AdSize.BANNER);
+        //bannerView.setSize(AdSize.LEADERBOARD);
+        //bannerView.setSize(AdSize.MEDIUM_RECTANGLE);
+
+        TextView label = findViewById(R.id.bannerStatusText);
+        // Set Ad content listener
+        bannerView.setAdListener(new AdViewListener() {
+            @Override
+            public void onAdViewPresented(@NonNull CASBannerView casBannerView, @NonNull AdStatusHandler adStatusHandler) {
+                label.setText("Presented: " + adStatusHandler.getNetwork());
+                Log.d(SampleApplication.TAG, "Banner Ad presented from " + adStatusHandler.getNetwork());
+            }
+
+            @Override
+            public void onAdViewLoaded(@NonNull CASBannerView casBannerView) {
+                label.setText("Loaded");
+                Log.d(SampleApplication.TAG, "Banner Ad loaded and ready to present");
+            }
+
+            @Override
+            public void onAdViewFailed(@NonNull CASBannerView casBannerView, @NonNull AdError adError) {
+                label.setText(adError.getMessage());
+                Log.e(SampleApplication.TAG, "Banner Ad received error: " + adError.getMessage());
+            }
+
+            @Override
+            public void onAdViewClicked(@NonNull CASBannerView casBannerView) {
+                label.setText("Clicked");
+                Log.d(SampleApplication.TAG, "Banner Ad received Click action");
+            }
         });
-    }
 
-    @AnyThread
-    @Override
-    public void onAdFailedToLoad(@NotNull AdType adType, @Nullable String error) {
-        runOnUiThread(() -> {
-            Log.d(TAG, adType.name() + " Ad Failed to Load: " + error);
-            statusAdViews.get(adType).setText(error);
+        // Set controls
+        findViewById(R.id.loadBannerBtn).setOnClickListener(v -> {
+            label.setText("Loading");
+            bannerView.loadNextAd();
         });
+
+        findViewById(R.id.showBannerBtn).setOnClickListener(v -> {
+            bannerView.setVisibility(View.VISIBLE);
+        });
+
+        findViewById(R.id.hideBannerBtn).setOnClickListener(v -> {
+            bannerView.setVisibility(View.GONE);
+        });
+
+        // Add view to container
+        LinearLayout container = findViewById(R.id.container);
+        container.addView(bannerView);
     }
 
-    private void changeStateOfReturnAds() {
-        TextView statusReturnAdsTextView = findViewById(R.id.appReturnStatusText);
-        Button changeStateOfReturnAdsButton = findViewById(R.id.enableAppReturn);
+    private void createInterstitial(MediationManager manager) {
+        TextView label = findViewById(R.id.interStatusText);
 
-        if (isActiveAppReturn) {
-            statusReturnAdsTextView.setText("Disabled");
-            changeStateOfReturnAdsButton.setText("Enable");
-            CAS.getManager().disableAppReturnAds();
-            isActiveAppReturn = false;
+        // Set Ad load callback
+        manager.getOnAdLoadEvent().add(new AdLoadCallback() {
+            @Override
+            public void onAdLoaded(@NonNull AdType adType) {
+                if (adType == AdType.Interstitial) {
+                    label.setText("Loaded");
+                    Log.d(SampleApplication.TAG, "Interstitial Ad loaded and ready to show");
+                }
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull AdType adType, @Nullable String s) {
+                if (adType == AdType.Interstitial) {
+                    label.setText(s);
+                    Log.d(SampleApplication.TAG, "Interstitial Ad received error: " + s);
+                }
+            }
+        });
+
+        // Create Ad content callback
+        AdCallback contentCallback = new AdCallback() {
+            @Override
+            public void onShown(@NonNull AdStatusHandler adStatusHandler) {
+                Log.d(SampleApplication.TAG,
+                        "Interstitial Ad shown from " + adStatusHandler.getNetwork());
+            }
+
+            @Override
+            public void onShowFailed(@NonNull String s) {
+                Log.e(SampleApplication.TAG, "Interstitial Ad show failed: " + s);
+                label.setText(s);
+            }
+
+            @Override
+            public void onClicked() {
+                Log.d(SampleApplication.TAG, "Interstitial Ad received Click");
+            }
+
+            @Override
+            public void onComplete() {
+            }
+
+            @Override
+            public void onClosed() {
+                Log.d(SampleApplication.TAG, "Interstitial Ad received Close");
+                label.setText("Closed");
+            }
+        };
+
+        // Any loading mode, except manual,
+        // automatically controls the preparation of ads for impressions.
+        if (CAS.settings.getLoadingMode() == LoadingManagerMode.Manual) {
+            findViewById(R.id.loadInterBtn).setOnClickListener(v -> {
+                label.setText("Loading");
+                manager.loadInterstitial();
+            });
         } else {
-            statusReturnAdsTextView.setText("Enabled");
-            changeStateOfReturnAdsButton.setText("Disable");
-            CAS.getManager().enableAppReturnAds(new AdContentListener(this, AdType.Interstitial));
-            isActiveAppReturn = true;
+            label.setText("Loading");
+            findViewById(R.id.loadInterBtn).setVisibility(View.GONE);
         }
+
+        findViewById(R.id.showInterBtn).setOnClickListener(v -> {
+            if (manager.isInterstitialReady())
+                manager.showInterstitial(this, contentCallback);
+            else
+                Log.e(SampleApplication.TAG, "Interstitial Ad not ready to show");
+        });
     }
+
+    private void createRewarded(MediationManager manager) {
+        TextView label = findViewById(R.id.rewardedStatusText);
+
+        // Set Ad load callback
+        manager.getOnAdLoadEvent().add(new AdLoadCallback() {
+            @Override
+            public void onAdLoaded(@NonNull AdType adType) {
+                if (adType == AdType.Rewarded) {
+                    label.setText("Loaded");
+                    Log.d(SampleApplication.TAG, "Interstitial Ad loaded and ready to show");
+                }
+            }
+
+            @Override
+            public void onAdFailedToLoad(@NonNull AdType adType, @Nullable String s) {
+                if (adType == AdType.Rewarded) {
+                    label.setText(s);
+                    Log.d(SampleApplication.TAG, "Interstitial Ad received error: " + s);
+                }
+            }
+        });
+
+        // Create Ad content callback
+        AdCallback contentCallback = new AdCallback() {
+            @Override
+            public void onShown(@NonNull AdStatusHandler adStatusHandler) {
+                Log.d(SampleApplication.TAG,
+                        "Rewarded Ad shown from " + adStatusHandler.getNetwork());
+            }
+
+            @Override
+            public void onShowFailed(@NonNull String s) {
+                Log.e(SampleApplication.TAG, "Rewarded Ad show failed: " + s);
+                label.setText(s);
+            }
+
+            @Override
+            public void onClicked() {
+                Log.d(SampleApplication.TAG, "Rewarded Ad received Click");
+            }
+
+            @Override
+            public void onComplete() {
+            }
+
+            @Override
+            public void onClosed() {
+                Log.d(SampleApplication.TAG, "Rewarded Ad received Close");
+                label.setText("Closed");
+            }
+        };
+
+        // Any loading mode, except manual,
+        // automatically controls the preparation of ads for impressions.
+        if (CAS.settings.getLoadingMode() == LoadingManagerMode.Manual) {
+            findViewById(R.id.loadRewardedBtn).setOnClickListener(v -> {
+                label.setText("Loading");
+                manager.loadRewardedAd();
+            });
+        } else {
+            label.setText("Loading");
+            findViewById(R.id.loadRewardedBtn).setVisibility(View.GONE);
+        }
+
+        findViewById(R.id.showRewardedBtn).setOnClickListener(v -> {
+            if (manager.isRewardedAdReady())
+                manager.showRewardedAd(this, contentCallback);
+            else
+                Log.e(SampleApplication.TAG, "Rewarded Ad not ready to show");
+        });
+    }
+
 }
