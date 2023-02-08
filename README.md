@@ -3,7 +3,7 @@
 [![App-ads.txt](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/cleveradssolutions/App-ads.txt/master/Shield.json)](https://github.com/cleveradssolutions/App-ads.txt)
 
 ## Getting Started
-To get started, here is the link to [Android SDK integration documentation](https://github.com/cleveradssolutions/CAS-Android/wiki).  
+To get started, here is the link to [Android SDK integration documentation](https://github.com/cleveradssolutions/CAS-Android/wiki/Project-Setup).  
 
 ## GitHub issue tracker
 To file bugs, make feature requests, or suggest improvements for the Android SDK, please use [GitHub's issue tracker](https://github.com/cleveradssolutions/CAS-Android/issues).
