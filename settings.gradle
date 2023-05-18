@@ -1,0 +1,39 @@
+include ':kotlinSample'
+include ':javaSample'
+
+
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = "https://android-sdk.is.com/" }
+        maven {
+            url = "https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo"
+            content { it.includeGroup("tv.superawesome.sdk.publisher") }
+        }
+        maven {
+            url = "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea"
+            content { it.includeGroup("com.mbridge.msdk.oversea") }
+        }
+        maven {
+            url = "https://artifact.bytedance.com/repository/pangle"
+            content { it.includeGroup("com.pangle.global") }
+        }
+        maven {
+            url = "https://s3.amazonaws.com/smaato-sdk-releases/"
+            content { it.includeGroup("com.smaato.android.sdk") }
+        }
+        maven {
+            url = "https://sdk.tapjoy.com/"
+            content { it.includeGroup("com.tapjoy") }
+        }
+        maven {
+            url = "https://hyprmx.jfrog.io/artifactory/hyprmx"
+            content { it.includeGroup("com.hyprmx.android") }
+        }
+        maven {
+            url = "https://cboost.jfrog.io/artifactory/chartboost-ads/"
+            content { it.includeGroup("com.chartboost") }
+        }
+    }
+}
