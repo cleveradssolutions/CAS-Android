@@ -1,4 +1,4 @@
-package com.cleversolutions.ads.android.sampleapp;
+package com.cleveradssolutions.sampleapp;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -18,6 +18,7 @@ import com.cleversolutions.ads.CASAppOpen;
 import com.cleversolutions.ads.LoadAdCallback;
 import com.cleversolutions.ads.MediationManager;
 import com.cleversolutions.ads.android.CAS;
+import com.cleveradssolutions.sampleapp.R;
 
 import org.jetbrains.annotations.NotNull;
 

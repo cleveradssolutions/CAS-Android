@@ -3,10 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 33
     buildToolsVersion '33.0.1'
-    namespace 'com.cleversolutions.ads.android.sampleapp'
+    namespace 'com.cleveradssolutions.sampleapp'
 
     defaultConfig {
-        applicationId "com.cleversolutions.ads.android.sampleapp"
+        applicationId "com.cleveradssolutions.sampleapp"
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 1

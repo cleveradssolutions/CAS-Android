@@ -1,4 +1,4 @@
-package com.cleversolutions.ads.android.sampleapp
+package com.cleveradssolutions.sampleapp
 
 import android.app.Activity
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import com.cleveradssolutions.sdk.android.sampleapp.R
 import com.cleversolutions.ads.*
 import com.cleversolutions.ads.android.CAS
 import com.cleversolutions.ads.android.CASBannerView
@@ -127,7 +128,7 @@ class SampleActivity : Activity() {
         }
 
         // Any loading mode, except manual,
-        // automatically controls the preparation of ads for impressions.
+        // automatically controls the preparation of sdk for impressions.
         if (CAS.settings.loadingMode == LoadingManagerMode.Manual) {
             findViewById<Button>(R.id.loadInterBtn).setOnClickListener {
                 label.text = "Loading"
@@ -203,7 +204,7 @@ class SampleActivity : Activity() {
         }
 
         // Any loading mode, except manual,
-        // automatically controls the preparation of ads for impressions.
+        // automatically controls the preparation of sdk for impressions.
         if (CAS.settings.loadingMode == LoadingManagerMode.Manual) {
             findViewById<Button>(R.id.loadRewardedBtn).setOnClickListener {
                 label.text = "Loading"

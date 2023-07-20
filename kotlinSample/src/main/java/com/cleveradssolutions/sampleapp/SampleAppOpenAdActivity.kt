@@ -1,4 +1,4 @@
-package com.cleversolutions.ads.android.sampleapp
+package com.cleveradssolutions.sampleapp
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.widget.TextView
+import com.cleveradssolutions.sampleapp.R
 import com.cleversolutions.ads.*
 import java.util.*
 import java.util.concurrent.TimeUnit

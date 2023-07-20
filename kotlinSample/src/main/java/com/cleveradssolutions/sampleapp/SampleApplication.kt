@@ -1,4 +1,4 @@
-package com.cleversolutions.ads.android.sampleapp
+package com.cleveradssolutions.sampleapp
 
 import android.app.Application
 import android.util.Log

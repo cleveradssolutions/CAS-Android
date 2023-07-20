@@ -1,4 +1,4 @@
-package com.cleversolutions.ads.android.sampleapp;
+package com.cleveradssolutions.sampleapp;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -22,6 +22,7 @@ import com.cleversolutions.ads.LoadingManagerMode;
 import com.cleversolutions.ads.MediationManager;
 import com.cleversolutions.ads.android.CAS;
 import com.cleversolutions.ads.android.CASBannerView;
+import com.cleveradssolutions.sampleapp.R;
 
 import java.util.Objects;
 
@@ -159,7 +160,7 @@ public class SampleActivity extends Activity {
         };
 
         // Any loading mode, except manual,
-        // automatically controls the preparation of ads for impressions.
+        // automatically controls the preparation of sdk for impressions.
         if (CAS.settings.getLoadingMode() == LoadingManagerMode.Manual) {
             findViewById(R.id.loadInterBtn).setOnClickListener(v -> {
                 label.setText("Loading");
@@ -237,7 +238,7 @@ public class SampleActivity extends Activity {
         };
 
         // Any loading mode, except manual,
-        // automatically controls the preparation of ads for impressions.
+        // automatically controls the preparation of sdk for impressions.
         if (CAS.settings.getLoadingMode() == LoadingManagerMode.Manual) {
             findViewById(R.id.loadRewardedBtn).setOnClickListener(v -> {
                 label.setText("Loading");

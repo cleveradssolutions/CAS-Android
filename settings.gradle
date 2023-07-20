@@ -6,7 +6,13 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url = "https://android-sdk.is.com/" }
+        maven{
+            url = "https://repsy.io/mvn/cleveradssolutions/beta"
+        }
+        maven {
+            url = "https://android-sdk.is.com/"
+            content { it.includeGroup("com.ironsource.sdk") }
+        }
         maven {
             url = "https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo"
             content { it.includeGroup("tv.superawesome.sdk.publisher") }
@@ -33,7 +39,7 @@ dependencyResolutionManagement {
         }
         maven {
             url = "https://cboost.jfrog.io/artifactory/chartboost-ads/"
-            content { it.includeGroup("com.chartboost") }
+            content { it.includeGroup("com.chartboost")}
         }
     }
 }
