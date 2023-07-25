@@ -1,5 +1,6 @@
 package com.cleveradssolutions.sampleapp
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
 import android.util.Log
@@ -8,12 +9,12 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import com.cleveradssolutions.sdk.android.sampleapp.R
 import com.cleversolutions.ads.*
 import com.cleversolutions.ads.android.CAS
 import com.cleversolutions.ads.android.CASBannerView
 
 
+@SuppressLint("SetTextI18n")
 class SampleActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

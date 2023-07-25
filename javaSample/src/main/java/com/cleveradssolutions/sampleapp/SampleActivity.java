@@ -1,5 +1,6 @@
 package com.cleveradssolutions.sampleapp;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +27,7 @@ import com.cleveradssolutions.sampleapp.R;
 
 import java.util.Objects;
 
+@SuppressLint("SetTextI18n")
 public class SampleActivity extends Activity {
 
     @Override
