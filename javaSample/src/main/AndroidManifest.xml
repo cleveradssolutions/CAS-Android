@@ -26,7 +26,8 @@
         <activity
             android:name="com.cleveradssolutions.sampleapp.SampleActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="fullSensor" />
+            android:screenOrientation="fullSensor"
+            android:exported="true" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
