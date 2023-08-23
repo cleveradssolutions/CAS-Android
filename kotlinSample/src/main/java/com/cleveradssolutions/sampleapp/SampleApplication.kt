@@ -23,19 +23,23 @@ class SampleApplication : Application() {
         //CAS.settings.loadingMode = LoadingManagerMode.Manual
 
         // Initialize SDK
-        adManager = CAS.buildManager()
+        CAS.buildManager()
             .withManagerId("demo")
             .withTestAdMode(true)
             .withAdTypes(AdType.Banner, AdType.Interstitial, AdType.Rewarded)
             .withConsentFlow(
                 ConsentFlow(isEnabled = true)
-                //.withPrivacyPolicy("https://url")
+                    .withDismissListener{
+                        Log.d(TAG, "Consent flow dismissed")
+                    }
             )
             .withCompletionListener {
-                if (it.error == null)
+                if (it.error == null) {
                     Log.d(TAG, "Ad manager initialized")
-                else
+                    adManager = it.manager
+                } else {
                     Log.d(TAG, "Ad manager initialization failed: " + it.error)
+                }
             }
             .initialize(this)
     }

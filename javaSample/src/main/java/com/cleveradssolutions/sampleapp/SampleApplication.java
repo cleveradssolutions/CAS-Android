@@ -24,19 +24,23 @@ public class SampleApplication extends Application {
         //CAS.settings.setLoadingMode(LoadingManagerMode.Manual);
 
         // Initialize SDK
-        adManager = CAS.buildManager()
+        CAS.buildManager()
                 .withManagerId("demo")
                 .withAdTypes(AdType.Banner, AdType.Interstitial, AdType.Rewarded)
                 .withTestAdMode(true)
                 .withConsentFlow(
                         new ConsentFlow(true)
-                        //.withPrivacyPolicy("http://")
+                                .withDismissListener(status -> {
+                                    Log.d(TAG, "Consent Flow dismissed");
+                                })
                 )
                 .withCompletionListener(config -> {
-                    if (config.getError() == null)
+                    if (config.getError() == null) {
                         Log.d(TAG, "Ad manager initialized");
-                    else
+                        adManager = config.getManager();
+                    } else {
                         Log.d(TAG, "Ad manager initialization failed: " + config.getError());
+                    }
                 })
                 .initialize(this);
     }
