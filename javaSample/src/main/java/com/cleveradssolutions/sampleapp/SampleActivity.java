@@ -35,9 +35,6 @@ public class SampleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Validate Integration
-        CAS.validateIntegration(this);
-
         // Get current SDK version
         ((TextView) findViewById(R.id.casVersionText)).setText(CAS.getSDKVersion());
 

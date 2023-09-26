@@ -23,7 +23,7 @@ class SampleApplication : Application() {
         //CAS.settings.loadingMode = LoadingManagerMode.Manual
 
         // Initialize SDK
-        CAS.buildManager()
+        adManager = CAS.buildManager()
             .withManagerId("demo")
             .withTestAdMode(true)
             .withAdTypes(AdType.Banner, AdType.Interstitial, AdType.Rewarded)
@@ -36,7 +36,6 @@ class SampleApplication : Application() {
             .withCompletionListener {
                 if (it.error == null) {
                     Log.d(TAG, "Ad manager initialized")
-                    adManager = it.manager
                 } else {
                     Log.d(TAG, "Ad manager initialization failed: " + it.error)
                 }
