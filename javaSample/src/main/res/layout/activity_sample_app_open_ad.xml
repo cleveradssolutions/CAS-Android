@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".SampleAppOpenAdActivity">
 
     <ImageView
         android:id="@+id/icon"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginTop="50dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@mipmap/ic_launcher_foreground" />
 
     <TextView
         android:id="@+id/timerTitleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/loading_application_resources"
+        android:text="AppOpenAd loading is carried out before the application resources are ready."
         android:textAlignment="center"
+        android:textColor="#FFF"
         android:textSize="25sp"
-        android:textStyle="bold"
-        android:layout_centerVertical="true" />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/timerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
+        android:textColor="#FFF"
         android:textSize="30sp" />
 
-</RelativeLayout>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/skipAppOpenAd"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip AppOpenAd"
+        android:textAllCaps="false" />
+</LinearLayout>

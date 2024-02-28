@@ -2,13 +2,18 @@ package com.cleveradssolutions.sampleapp
 
 import android.app.Application
 import android.util.Log
-import com.cleversolutions.ads.*
+import com.cleversolutions.ads.AdType
+import com.cleversolutions.ads.Audience
+import com.cleversolutions.ads.ConsentFlow
+import com.cleversolutions.ads.MediationManager
 import com.cleversolutions.ads.android.CAS
 
 class SampleApplication : Application() {
 
     companion object {
         const val TAG = "CAS Sample"
+        const val CAS_ID = "demo"
+
         lateinit var adManager: MediationManager
     }
 
@@ -16,7 +21,7 @@ class SampleApplication : Application() {
         super.onCreate()
 
         // Set Ads Settings
-        CAS.settings.debugMode = true
+        CAS.settings.debugMode = BuildConfig.DEBUG
         CAS.settings.taggedAudience = Audience.NOT_CHILDREN
 
         // Set Manual loading mode to disable auto requests
@@ -24,12 +29,12 @@ class SampleApplication : Application() {
 
         // Initialize SDK
         adManager = CAS.buildManager()
-            .withManagerId("demo")
-            .withTestAdMode(true)
+            .withManagerId(CAS_ID)
+            .withTestAdMode(BuildConfig.DEBUG)
             .withAdTypes(AdType.Banner, AdType.Interstitial, AdType.Rewarded)
             .withConsentFlow(
                 ConsentFlow(isEnabled = true)
-                    .withDismissListener{
+                    .withDismissListener {
                         Log.d(TAG, "Consent flow dismissed")
                     }
             )

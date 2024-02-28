@@ -6,40 +6,53 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven{
+        maven {
+            name = "CASBetaRepo"
             url = "https://repsy.io/mvn/cleveradssolutions/beta"
+            content { it.includeGroup("com.cleveradssolutions") }
         }
         maven {
+            name = "IronSourceAdsRepo"
             url = "https://android-sdk.is.com/"
             content { it.includeGroup("com.ironsource.sdk") }
         }
         maven {
-            url = "https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo"
-            content { it.includeGroup("tv.superawesome.sdk.publisher") }
-        }
-        maven {
+            name = "MintegralAdsRepo"
             url = "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea"
             content { it.includeGroup("com.mbridge.msdk.oversea") }
         }
         maven {
+            name = "PangleAdsRepo"
             url = "https://artifact.bytedance.com/repository/pangle"
             content { it.includeGroup("com.pangle.global") }
         }
         maven {
+            name = "SuperAwesomeAdsRepo"
+            url = "https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo"
+            content { it.includeGroup("tv.superawesome.sdk.publisher") }
+        }
+        maven {
+            name = "ChartboostAdsRepo"
+            url = "https://cboost.jfrog.io/artifactory/chartboost-ads/"
+            content { it.includeGroup("com.chartboost") }
+        }
+        maven {
+            name = "SmaatoAdsRepo"
             url = "https://s3.amazonaws.com/smaato-sdk-releases/"
             content { it.includeGroup("com.smaato.android.sdk") }
         }
         maven {
-            url = "https://sdk.tapjoy.com/"
-            content { it.includeGroup("com.tapjoy") }
-        }
-        maven {
+            name = "HyprMXAdsRepo"
             url = "https://hyprmx.jfrog.io/artifactory/hyprmx"
             content { it.includeGroup("com.hyprmx.android") }
         }
         maven {
-            url = "https://cboost.jfrog.io/artifactory/chartboost-ads/"
-            content { it.includeGroup("com.chartboost")}
+            name = "MadexAdsRepo"
+            url = "https://sdkpkg.sspnet.tech"
+            content {
+                it.includeGroup("sspnet.tech")
+                it.includeGroup("sspnet.tech.adapters")
+            }
         }
     }
 }

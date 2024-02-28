@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion '33.0.1'
+    compileSdk = 34
+    buildToolsVersion = '34.0.0'
     namespace 'com.cleveradssolutions.sampleapp'
 
     defaultConfig {
         applicationId "com.cleveradssolutions.sampleapp"
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 34
         versionCode 1
         versionName "1.0"
     }
@@ -28,7 +28,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
 
     implementation "com.cleveradssolutions:cas-families:$cas_version"
 }

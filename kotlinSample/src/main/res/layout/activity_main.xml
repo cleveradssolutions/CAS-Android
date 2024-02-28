@@ -11,67 +11,30 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
             style="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/clever_ads_solutions"
-            android:textAlignment="center" />
+            android:textColor="#FFF" />
 
         <TextView
             android:id="@+id/casVersionText"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp"
-            android:textAlignment="center" />
+            android:textColor="#FFF" />
 
         <TextView
             style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/banner_ad"
-            android:textAlignment="center" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/loadBannerBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Load Next" />
-
-            <Button
-                android:id="@+id/showBannerBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/show" />
-
-            <Button
-                android:id="@+id/hideBannerBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hide" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/bannerStatusText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="20dp"
             android:text="@string/interstitial_ad"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="#FFF" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -79,14 +42,16 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/loadInterBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Load" />
+                android:text="@string/load" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/showInterBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/show" />
@@ -96,16 +61,17 @@
 
         <TextView
             android:id="@+id/interStatusText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF" />
 
         <TextView
             style="@style/TextAppearance.AppCompat.Title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
             android:text="@string/rewarded_ad"
-            android:textAlignment="center" />
+            android:textColor="#FFF" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -113,14 +79,16 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/loadRewardedBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Load" />
+                android:text="@string/load" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/showRewardedBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/show" />
@@ -129,8 +97,52 @@
 
         <TextView
             android:id="@+id/rewardedStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF" />
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="@string/banner_ad"
+            android:textColor="#FFF" />
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/loadBannerBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/load" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/showBannerBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/show" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/hideBannerBtn"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hide" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/bannerStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFF" />
 
     </LinearLayout>
 </ScrollView>

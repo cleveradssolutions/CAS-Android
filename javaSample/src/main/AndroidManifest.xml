@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:networkSecurityConfig="@xml/network_security_config">
-        <activity android:name="com.cleveradssolutions.sampleapp.SampleAppOpenAd"
+        <activity android:name="com.cleveradssolutions.sampleapp.SampleAppOpenAdActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="locked"
             android:exported="true">

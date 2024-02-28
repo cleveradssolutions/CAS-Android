@@ -1,19 +1,10 @@
 <resources>
     <string name="app_name">CAS SampleApp</string>
-    <string name="clever_ads_solutions">Clever Ads Solutions</string>
+    <string name="clever_ads_solutions">CAS.AI Sample</string>
     <string name="banner_ad">Banner Ad</string>
     <string name="show">Show</string>
     <string name="hide">Hide</string>
-    <string name="banner_size">Banner Size</string>
-    <string name="default_size">BANNER</string>
-    <string name="adaptive_size">Adaptive</string>
     <string name="interstitial_ad">Interstitial Ad</string>
     <string name="rewarded_ad">Rewarded Ad</string>
-    <string name="app_return">App Return</string>
-    <string name="enable">Enable</string>
-    <string name="disabled">Disabled</string>
-    <string name="ledearboard">LEDEARBOARD</string>
-    <string name="mrec">MREC</string>
-    <string name="smart">SMART</string>
-    <string name="loading_application_resources">Loading application resources</string>
+    <string name="load">Load</string>
 </resources>

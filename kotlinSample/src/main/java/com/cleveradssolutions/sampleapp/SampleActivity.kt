@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import com.cleveradssolutions.sampleapp.SampleApplication.Companion.TAG
 import com.cleversolutions.ads.*
 import com.cleversolutions.ads.android.CAS
 import com.cleversolutions.ads.android.CASBannerView
@@ -46,22 +47,22 @@ class SampleActivity : Activity() {
         bannerView.adListener = object : AdViewListener {
             override fun onAdViewLoaded(view: CASBannerView) {
                 label.text = "Loaded"
-                Log.d(SampleApplication.TAG, "Banner Ad loaded and ready to present")
+                Log.d(TAG, "Banner Ad loaded and ready to present")
             }
 
             override fun onAdViewFailed(view: CASBannerView, error: AdError) {
                 label.text = error.message
-                Log.e(SampleApplication.TAG, "Banner Ad received error: " + error.message)
+                Log.e(TAG, "Banner Ad received error: " + error.message)
             }
 
             override fun onAdViewPresented(view: CASBannerView, info: AdImpression) {
                 label.text = "Presented: " + info.network
-                Log.d(SampleApplication.TAG, "Banner Ad presented from " + info.network)
+                Log.d(TAG, "Banner Ad presented from " + info.network)
             }
 
             override fun onAdViewClicked(view: CASBannerView) {
                 label.text = "Clicked"
-                Log.d(SampleApplication.TAG, "Banner Ad received Click action")
+                Log.d(TAG, "Banner Ad received Click action")
             }
         }
 
@@ -90,15 +91,19 @@ class SampleActivity : Activity() {
         manager.onAdLoadEvent.add(object : AdLoadCallback {
             override fun onAdLoaded(type: AdType) {
                 if (type == AdType.Interstitial) {
-                    label.text = "Loaded"
-                    Log.d(SampleApplication.TAG, "Interstitial Ad loaded and ready to show")
+                    Log.d(TAG, "Interstitial Ad loaded and ready to show")
+                    runOnUiThread {
+                        label.text = "Loaded"
+                    }
                 }
             }
 
             override fun onAdFailedToLoad(type: AdType, error: String?) {
                 if (type == AdType.Interstitial) {
-                    label.text = error
-                    Log.d(SampleApplication.TAG, "Interstitial Ad received error: $error")
+                    Log.d(TAG, "Interstitial Ad received error: $error")
+                    runOnUiThread {
+                        label.text = error
+                    }
                 }
             }
         })
@@ -106,24 +111,24 @@ class SampleActivity : Activity() {
         // Create Ad content callback
         val contentCallback = object : AdPaidCallback {
             override fun onShown(ad: AdImpression) {
-                Log.d(SampleApplication.TAG, "Interstitial Ad shown from " + ad.network)
+                Log.d(TAG, "Interstitial Ad shown from " + ad.network)
             }
 
             override fun onAdRevenuePaid(ad: AdImpression) {
-                Log.d(SampleApplication.TAG, "Interstitial Ad revenue paid from " + ad.network)
+                Log.d(TAG, "Interstitial Ad revenue paid from " + ad.network)
             }
 
             override fun onShowFailed(message: String) {
-                Log.e(SampleApplication.TAG, "Interstitial Ad show failed: $message")
+                Log.e(TAG, "Interstitial Ad show failed: $message")
                 label.text = message
             }
 
             override fun onClicked() {
-                Log.d(SampleApplication.TAG, "Interstitial Ad received Click")
+                Log.d(TAG, "Interstitial Ad received Click")
             }
 
             override fun onClosed() {
-                Log.d(SampleApplication.TAG, "Interstitial Ad received Close")
+                Log.d(TAG, "Interstitial Ad received Close")
                 label.text = "Closed"
             }
         }
@@ -136,7 +141,10 @@ class SampleActivity : Activity() {
                 manager.loadInterstitial()
             }
         } else {
-            label.text = "Loading"
+            if (manager.isInterstitialReady)
+                label.text = "Loaded"
+            else
+                label.text = "Loading"
             findViewById<Button>(R.id.loadInterBtn).visibility = View.GONE
         }
 
@@ -144,7 +152,7 @@ class SampleActivity : Activity() {
             if (manager.isInterstitialReady)
                 manager.showInterstitial(this, contentCallback)
             else
-                Log.e(SampleApplication.TAG, "Interstitial Ad not ready to show")
+                Log.e(TAG, "Interstitial Ad not ready to show")
         }
     }
 
@@ -155,15 +163,19 @@ class SampleActivity : Activity() {
         manager.onAdLoadEvent.add(object : AdLoadCallback {
             override fun onAdLoaded(type: AdType) {
                 if (type == AdType.Rewarded) {
-                    label.text = "Loaded"
-                    Log.d(SampleApplication.TAG, "Rewarded Ad loaded and ready to show")
+                    Log.d(TAG, "Rewarded Ad loaded and ready to show")
+                    runOnUiThread {
+                        label.text = "Loaded"
+                    }
                 }
             }
 
             override fun onAdFailedToLoad(type: AdType, error: String?) {
                 if (type == AdType.Rewarded) {
-                    label.text = error
-                    Log.d(SampleApplication.TAG, "Rewarded Ad received error: $error")
+                    Log.d(TAG, "Rewarded Ad received error: $error")
+                    runOnUiThread {
+                        label.text = error
+                    }
                 }
             }
         })
@@ -171,20 +183,20 @@ class SampleActivity : Activity() {
         // Create Ad content callback
         val contentCallback = object : AdPaidCallback {
             override fun onShown(ad: AdImpression) {
-                Log.d(SampleApplication.TAG, "Rewarded Ad shown from " + ad.network)
+                Log.d(TAG, "Rewarded Ad shown from " + ad.network)
             }
 
             override fun onAdRevenuePaid(ad: AdImpression) {
-                Log.d(SampleApplication.TAG, "Rewarded Ad revenue paid from " + ad.network)
+                Log.d(TAG, "Rewarded Ad revenue paid from " + ad.network)
             }
 
             override fun onShowFailed(message: String) {
-                Log.e(SampleApplication.TAG, "Rewarded Ad show failed: $message")
+                Log.e(TAG, "Rewarded Ad show failed: $message")
                 label.text = message
             }
 
             override fun onClicked() {
-                Log.d(SampleApplication.TAG, "Rewarded Ad received Click")
+                Log.d(TAG, "Rewarded Ad received Click")
             }
 
             override fun onComplete() {
@@ -199,7 +211,7 @@ class SampleActivity : Activity() {
             }
 
             override fun onClosed() {
-                Log.d(SampleApplication.TAG, "Rewarded Ad received Close")
+                Log.d(TAG, "Rewarded Ad received Close")
                 label.text = "Closed"
             }
         }
@@ -212,7 +224,10 @@ class SampleActivity : Activity() {
                 manager.loadRewardedAd()
             }
         } else {
-            label.text = "Loading"
+            if (manager.isRewardedAdReady)
+                label.text = "Loaded"
+            else
+                label.text = "Loading"
             findViewById<Button>(R.id.loadRewardedBtn).visibility = View.GONE
         }
 
@@ -220,7 +235,7 @@ class SampleActivity : Activity() {
             if (manager.isRewardedAdReady)
                 manager.showRewardedAd(this, contentCallback)
             else
-                Log.e(SampleApplication.TAG, "Rewarded Ad not ready to show")
+                Log.e(TAG, "Rewarded Ad not ready to show")
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.cleveradssolutions.sampleapp;
 
+import static com.cleveradssolutions.sampleapp.SampleApplication.TAG;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
@@ -60,25 +62,25 @@ public class SampleActivity extends Activity {
             @Override
             public void onAdViewPresented(@NonNull CASBannerView casBannerView, @NonNull AdStatusHandler adStatusHandler) {
                 label.setText("Presented: " + adStatusHandler.getNetwork());
-                Log.d(SampleApplication.TAG, "Banner Ad presented from " + adStatusHandler.getNetwork());
+                Log.d(TAG, "Banner Ad presented from " + adStatusHandler.getNetwork());
             }
 
             @Override
             public void onAdViewLoaded(@NonNull CASBannerView casBannerView) {
                 label.setText("Loaded");
-                Log.d(SampleApplication.TAG, "Banner Ad loaded and ready to present");
+                Log.d(TAG, "Banner Ad loaded and ready to present");
             }
 
             @Override
             public void onAdViewFailed(@NonNull CASBannerView casBannerView, @NonNull AdError adError) {
                 label.setText(adError.getMessage());
-                Log.e(SampleApplication.TAG, "Banner Ad received error: " + adError.getMessage());
+                Log.e(TAG, "Banner Ad received error: " + adError.getMessage());
             }
 
             @Override
             public void onAdViewClicked(@NonNull CASBannerView casBannerView) {
                 label.setText("Clicked");
-                Log.d(SampleApplication.TAG, "Banner Ad received Click action");
+                Log.d(TAG, "Banner Ad received Click action");
             }
         });
 
@@ -108,16 +110,20 @@ public class SampleActivity extends Activity {
             @Override
             public void onAdLoaded(@NonNull AdType adType) {
                 if (adType == AdType.Interstitial) {
-                    label.setText("Loaded");
-                    Log.d(SampleApplication.TAG, "Interstitial Ad loaded and ready to show");
+                    Log.d(TAG, "Interstitial Ad loaded and ready to show");
+                    runOnUiThread(() -> {
+                        label.setText("Loaded");
+                    });
                 }
             }
 
             @Override
-            public void onAdFailedToLoad(@NonNull AdType adType, @Nullable String s) {
+            public void onAdFailedToLoad(@NonNull AdType adType, @Nullable String error) {
                 if (adType == AdType.Interstitial) {
-                    label.setText(s);
-                    Log.d(SampleApplication.TAG, "Interstitial Ad received error: " + s);
+                    Log.d(TAG, "Interstitial Ad received error: " + error);
+                    runOnUiThread(() -> {
+                        label.setText(error);
+                    });
                 }
             }
         });
@@ -126,25 +132,25 @@ public class SampleActivity extends Activity {
         AdCallback contentCallback = new AdPaidCallback() {
             @Override
             public void onShown(@NonNull AdStatusHandler adStatusHandler) {
-                Log.d(SampleApplication.TAG,
+                Log.d(TAG,
                         "Interstitial Ad shown from " + adStatusHandler.getNetwork());
             }
 
             @Override
             public void onAdRevenuePaid(@NonNull AdStatusHandler adStatusHandler) {
-                Log.d(SampleApplication.TAG,
+                Log.d(TAG,
                         "Rewarded Ad revenue paid from " + adStatusHandler.getNetwork());
             }
 
             @Override
             public void onShowFailed(@NonNull String s) {
-                Log.e(SampleApplication.TAG, "Interstitial Ad show failed: " + s);
+                Log.e(TAG, "Interstitial Ad show failed: " + s);
                 label.setText(s);
             }
 
             @Override
             public void onClicked() {
-                Log.d(SampleApplication.TAG, "Interstitial Ad received Click");
+                Log.d(TAG, "Interstitial Ad received Click");
             }
 
             @Override
@@ -153,7 +159,7 @@ public class SampleActivity extends Activity {
 
             @Override
             public void onClosed() {
-                Log.d(SampleApplication.TAG, "Interstitial Ad received Close");
+                Log.d(TAG, "Interstitial Ad received Close");
                 label.setText("Closed");
             }
         };
@@ -166,7 +172,10 @@ public class SampleActivity extends Activity {
                 manager.loadInterstitial();
             });
         } else {
-            label.setText("Loading");
+            if (manager.isInterstitialReady())
+                label.setText("Loaded");
+            else
+                label.setText("Loading");
             findViewById(R.id.loadInterBtn).setVisibility(View.GONE);
         }
 
@@ -174,7 +183,7 @@ public class SampleActivity extends Activity {
             if (manager.isInterstitialReady())
                 manager.showInterstitial(this, contentCallback);
             else
-                Log.e(SampleApplication.TAG, "Interstitial Ad not ready to show");
+                Log.e(TAG, "Interstitial Ad not ready to show");
         });
     }
 
@@ -186,16 +195,20 @@ public class SampleActivity extends Activity {
             @Override
             public void onAdLoaded(@NonNull AdType adType) {
                 if (adType == AdType.Rewarded) {
-                    label.setText("Loaded");
-                    Log.d(SampleApplication.TAG, "Interstitial Ad loaded and ready to show");
+                    Log.d(TAG, "Interstitial Ad loaded and ready to show");
+                    runOnUiThread(() -> {
+                        label.setText("Loaded");
+                    });
                 }
             }
 
             @Override
-            public void onAdFailedToLoad(@NonNull AdType adType, @Nullable String s) {
+            public void onAdFailedToLoad(@NonNull AdType adType, @Nullable String error) {
                 if (adType == AdType.Rewarded) {
-                    label.setText(s);
-                    Log.d(SampleApplication.TAG, "Interstitial Ad received error: " + s);
+                    Log.d(TAG, "Interstitial Ad received error: " + error);
+                    runOnUiThread(() -> {
+                        label.setText(error);
+                    });
                 }
             }
         });
@@ -204,25 +217,25 @@ public class SampleActivity extends Activity {
         AdCallback contentCallback = new AdPaidCallback() {
             @Override
             public void onShown(@NonNull AdStatusHandler adStatusHandler) {
-                Log.d(SampleApplication.TAG,
+                Log.d(TAG,
                         "Rewarded Ad shown from " + adStatusHandler.getNetwork());
             }
 
             @Override
             public void onAdRevenuePaid(@NonNull AdStatusHandler adStatusHandler) {
-                Log.d(SampleApplication.TAG,
+                Log.d(TAG,
                         "Rewarded Ad revenue paid from " + adStatusHandler.getNetwork());
             }
 
             @Override
             public void onShowFailed(@NonNull String s) {
-                Log.e(SampleApplication.TAG, "Rewarded Ad show failed: " + s);
+                Log.e(TAG, "Rewarded Ad show failed: " + s);
                 label.setText(s);
             }
 
             @Override
             public void onClicked() {
-                Log.d(SampleApplication.TAG, "Rewarded Ad received Click");
+                Log.d(TAG, "Rewarded Ad received Click");
             }
 
             @Override
@@ -231,7 +244,7 @@ public class SampleActivity extends Activity {
 
             @Override
             public void onClosed() {
-                Log.d(SampleApplication.TAG, "Rewarded Ad received Close");
+                Log.d(TAG, "Rewarded Ad received Close");
                 label.setText("Closed");
             }
         };
@@ -244,7 +257,10 @@ public class SampleActivity extends Activity {
                 manager.loadRewardedAd();
             });
         } else {
-            label.setText("Loading");
+            if (manager.isRewardedAdReady())
+                label.setText("Loaded");
+            else
+                label.setText("Loading");
             findViewById(R.id.loadRewardedBtn).setVisibility(View.GONE);
         }
 
@@ -252,7 +268,7 @@ public class SampleActivity extends Activity {
             if (manager.isRewardedAdReady())
                 manager.showRewardedAd(this, contentCallback);
             else
-                Log.e(SampleApplication.TAG, "Rewarded Ad not ready to show");
+                Log.e(TAG, "Rewarded Ad not ready to show");
         });
     }
 

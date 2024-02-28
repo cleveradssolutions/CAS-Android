@@ -11,13 +11,14 @@ import com.cleversolutions.ads.android.CAS;
 
 public class SampleApplication extends Application {
     public static final String TAG = "CAS Sample";
+    public static final String CAS_ID = "demo";
     public static MediationManager adManager;
 
     @Override
     public void onCreate() {
         super.onCreate();
         // Set Ads Settings
-        CAS.settings.setDebugMode(true);
+        CAS.settings.setDebugMode(BuildConfig.DEBUG);
         CAS.settings.setTaggedAudience(Audience.NOT_CHILDREN);
 
         // Set Manual loading mode to disable auto requests
@@ -25,9 +26,9 @@ public class SampleApplication extends Application {
 
         // Initialize SDK
         adManager = CAS.buildManager()
-                .withManagerId("demo")
+                .withManagerId(CAS_ID)
                 .withAdTypes(AdType.Banner, AdType.Interstitial, AdType.Rewarded)
-                .withTestAdMode(true)
+                .withTestAdMode(BuildConfig.DEBUG)
                 .withConsentFlow(
                         new ConsentFlow(true)
                                 .withDismissListener(status -> {
