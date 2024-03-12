@@ -1,0 +1,131 @@
+## Mintegral Android Mediation Adapter Changelog
+`com.cleveradssolutions:mintegral:`
+
+### 16.6.41.0
+- Updated the minimum required CAS SDK version to 3.5.5.
+- Certified with Mintegral - [16.6.41](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.6.31.0
+- Updated the minimum required CAS SDK version to 3.5.3.
+- Certified with Mintegral - [16.6.31](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.5.91.0
+- Updated the minimum required CAS SDK version to 3.5.1.
+- Certified with Mintegral - [16.5.91](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+- Decrease Bid cache from 10 to 5 minutes.
+- Fixed detection of "No Fill" error.
+
+### 16.5.71.0
+- Updated the minimum required CAS SDK version to 3.5.0.
+- Certified with Mintegral - [16.5.71](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+- Fixed getting the ad creative identifier.
+
+### 16.5.51.0
+- Updated the minimum required CAS SDK version to 3.4.2.
+- Certified with Mintegral - [16.5.51](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.5.41.0
+- Updated the minimum required CAS SDK version to 3.4.1.
+- Certified with Mintegral - [16.5.41](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.5.31.0
+- Updated the minimum required CAS SDK version to 3.3.2.
+- Certified with Mintegral - [16.5.31](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.5.21.0
+- Updated the minimum required CAS SDK version to 3.3.0.
+- Certified with Mintegral - [16.5.21](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.4.91.0
+- Updated the minimum required CAS SDK version to 3.2.4.
+- Certified with Mintegral - [16.4.91](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.4.81.0
+- Updated the minimum required CAS SDK version to 3.2.0.
+- Certified with Mintegral - [16.4.81](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+- Added Native Banner Ads support.
+
+### 16.4.61.1
+- Updated the minimum required CAS SDK version to 3.1.9.
+- Certified with Mintegral - 16.4.61
+
+### 16.4.41.2
+- Updated the minimum required CAS SDK version to 3.1.7.
+- Internal improvements.
+
+### 16.4.41.0
+- Updated the minimum required CAS SDK version to 3.1.6.
+- Certified with Mintegral - [16.4.41](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.4.31.0
+- Updated the minimum required CAS SDK version to 3.1.3.
+- Certified with Mintegral - [16.4.31](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.4.21.0
+- Updated the minimum required CAS SDK version to 3.1.2.
+- Certified with Mintegral - [16.4.21](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.4.11.0
+- Updated the minimum required CAS SDK version to 3.1.1.
+- Certified with Mintegral - [16.3.11](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.3.91.0
+- Updated the minimum required CAS SDK version to 3.0.2.
+- Certified with Mintegral - [16.3.91](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.3.51.2
+- Updated the minimum required CAS SDK version to 3.0.1.
+- Internal improvements.
+
+### 16.3.51.1
+- Updated the minimum required CAS SDK version to 3.0.0.
+- Add COPPA flag to request.
+
+### 16.3.51.0
+- Updated the minimum required CAS SDK version to 2.9.9.
+- Certified with Mintegral - [16.3.51](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.3.11.0
+- Updated the minimum required CAS SDK version to 2.9.8.
+- Certified with Mintegral - [16.3.11](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.2.61.2
+- Updated the minimum required CAS SDK version to 2.9.7.
+- Minor fixes.
+
+### 16.2.61.1
+- Updated the minimum required CAS SDK version to 2.9.6.
+- Minor fixes.
+
+### 16.2.61.0
+- Updated the minimum required CAS SDK version to 2.9.5.
+- Certified with Mintegral - [16.2.61](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.2.51.0
+- Updated the minimum required CAS SDK version to 2.9.3.
+- Certified with Mintegral - [16.2.51](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+- The CCPA status update now happens before Mintegral SDK initialization.
+- Fixed rare crash from WebView on Mintegral SDK initialization.
+- Migrated to the new Interstitial implementation of Mintegral ads.
+
+### 16.2.31.0
+- Updated the minimum required CAS SDK version to 2.8.6.
+- Certified with Mintegral - [16.2.31](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-ios&lang=en)
+
+### 16.2.11.0
+- Updated the minimum required CAS SDK version to 2.8.5.
+- Certified with Mintegral - [16.2.11](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-ios&lang=en)
+
+### 16.1.81.0
+- Updated the minimum required CAS SDK version to 2.8.3.
+- Certified with Mintegral - [16.1.81](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
+### 16.1.21.0
+- Updated the minimum required CAS SDK version to 2.8.1.
+- Certified with Mintegral - [8.9.7](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+- Allowed monetization when `Audience.UNDEFINED` is selected and not available when `Audience.CHILDREN` is selected.
+
+### 16.1.11.0
+- Updated the minimum required CAS SDK version to 2.7.2.
+- Certified with Mintegral - [16.1.11](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
+
