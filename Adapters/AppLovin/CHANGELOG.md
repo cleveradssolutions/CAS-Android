@@ -9,6 +9,12 @@
 - Updated the minimum required CAS SDK version to 3.5.0.
 - Certified with AppLovin - [12.1.0](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases)
 
+### 11.11.3.2
+- Updated the minimum required CAS SDK version to 3.4.1.
+
+### 11.11.3.1
+- Updated the minimum required CAS SDK version to 3.3.0.
+
 ### 11.11.3.0
 - Updated the minimum required CAS SDK version to 3.2.5.
 - Certified with AppLovin - [11.11.3](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases)
@@ -24,6 +30,9 @@
 ### 11.11.0.0
 - Updated the minimum required CAS SDK version to 3.2.1.
 - Certified with AppLovin - [11.11.0](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases)
+
+### 11.10.1.3
+- Updated the minimum required CAS SDK version to 3.2.0.
 
 ### 11.10.1.0
 - Updated the minimum required CAS SDK version to 3.1.8.
@@ -94,4 +103,3 @@
 ### 11.3.3.0
 - Updated the minimum required CAS SDK version to 2.7.2.
 - Certified with AppLovin - [11.3.3](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases)
-

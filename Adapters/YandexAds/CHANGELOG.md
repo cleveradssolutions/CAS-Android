@@ -42,6 +42,9 @@
 - Updated the minimum required CAS SDK version to 3.1.2.
 - Improved revenue precision in impression event
 
+### 25.6.0.1
+- Updated the minimum required CAS SDK version to 3.1.1.
+
 ### 25.6.0.0
 - Updated the minimum required CAS SDK version to 3.0.2.
 - Certified with Yandex Ads - [5.6.0](https://github.com/yandexmobile/yandex-ads-sdk-android/blob/master/changelogs/mobileads/CHANGELOG.md)
@@ -82,4 +85,3 @@
 ### 5.1.0.0
 - Updated the minimum required CAS SDK version to 2.8.1.
 - Certified with Yandex Ads - [5.1.0](https://github.com/yandexmobile/yandex-ads-sdk-android/blob/master/SDK/mobileads/CHANGELOG.md)
-

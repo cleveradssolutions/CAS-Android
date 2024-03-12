@@ -49,6 +49,9 @@
 - Updated the minimum required CAS SDK version to 3.2.4.
 - Certified with IronSource - [7.4.0](https://developers.ironsrc.com/ironsource-mobile/android/sdk-change-log/)
 
+### 7.3.1.1
+- Updated the minimum required CAS SDK version to 3.2.0.
+
 ### 7.3.0.1
 - Updated the minimum required CAS SDK version to 3.1.2.
 - Certified with IronSource - [7.3.0.1](https://developers.ironsrc.com/ironsource-mobile/android/sdk-change-log/)
@@ -102,4 +105,3 @@
 ### 7.2.1.2
 - Updated the minimum required CAS SDK version to 2.7.2.
 - Improved adapter performance.
-

@@ -9,6 +9,12 @@
 - Updated the minimum required CAS SDK version to 3.5.1.
 - Certified with Chartboost - [9.6.0](https://developers.chartboost.com/docs/monetization-android-release-notes)
 
+### 9.5.0.2
+- Updated the minimum required CAS SDK version to 3.5.0.
+
+### 9.5.0.1
+- Updated the minimum required CAS SDK version to 3.4.1.
+
 ### 9.5.0.0
 - Updated the minimum required CAS SDK version to 3.3.2.
 - Certified with Chartboost - [9.5.0](https://developers.chartboost.com/docs/monetization-android-release-notes)
@@ -16,6 +22,9 @@
 ### 9.4.1.2
 - Updated the minimum required CAS SDK version to 3.3.1.
 - Minor stability improvements.
+
+### 9.4.1.1
+- Updated the minimum required CAS SDK version to 3.3.0.
 
 ### 9.4.1.0
 - Updated the minimum required CAS SDK version to 3.2.4.
@@ -51,4 +60,3 @@
 - Updated the minimum required CAS SDK version to 2.8.1.
 - Certified with Chartboost - [8.4.3](https://answers.chartboost.com/en-us/child_article/android-amazon)
 - Initialization optimization.
-

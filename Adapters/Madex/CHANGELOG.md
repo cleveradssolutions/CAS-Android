@@ -5,4 +5,3 @@
 - Updated the minimum required CAS SDK version to 3.5.6.
 - Certified with Madex - 1.2.0
 - Fixed some internal bugs.
-

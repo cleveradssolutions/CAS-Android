@@ -25,6 +25,9 @@
 - Updated the minimum required CAS SDK version to 3.3.2.
 - Certified with Google Mobile Ads - [22.4.0](https://developers.google.com/admob/android/rel-notes)
 
+### 22.3.0.1
+- Updated the minimum required CAS SDK version to 3.3.0.
+
 ### 22.3.0.0
 - Updated the minimum required CAS SDK version to 3.2.5.
 - Certified with Google Mobile Ads - [22.3.0](https://developers.google.com/admob/android/rel-notes)
@@ -99,4 +102,3 @@
 ### 20.6.0.1
 - Updated the minimum required CAS SDK version to 2.7.2.
 - Improved adapter performance.
-

@@ -13,4 +13,3 @@
 ### 2.9.3
 - Updated the minimum required CAS SDK version to 2.9.3.
 - Fixed a bug due to which some ads campaigns could not be activated for the user.
-

@@ -1,6 +1,9 @@
 ## Meta Audience Network Android Mediation Adapter Changelog
 `com.cleveradssolutions:facebook:`
 
+### 6.16.0.1
+- Updated the minimum required CAS SDK version to 3.4.1.
+
 ### 6.16.0.0
 - Updated the minimum required CAS SDK version to 3.2.5.
 - Certified with Meta Audience Network - [6.16.0](https://developers.facebook.com/docs/audience-network/setting-up/platform-setup/android/changelog)
@@ -12,6 +15,9 @@
 ### 6.15.0.0
 - Updated the minimum required CAS SDK version to 3.2.2.
 - Certified with Meta Audience Network - [6.15.0](https://developers.facebook.com/docs/audience-network/setting-up/platform-setup/android/changelog)
+
+### 6.14.0.2
+- Updated the minimum required CAS SDK version to 3.2.0.
 
 ### 6.14.0.1
 - Updated the minimum required CAS SDK version to 3.1.8.
@@ -64,4 +70,3 @@
 - Updated the minimum required CAS SDK version to 2.7.2.
 - Certified with Meta Audience Network - [6.10.0.0](https://developers.facebook.com/docs/audience-network/changelog-android)
 - Update internal configuration.
-

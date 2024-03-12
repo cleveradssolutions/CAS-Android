@@ -128,4 +128,3 @@
 ### 16.1.11.0
 - Updated the minimum required CAS SDK version to 2.7.2.
 - Certified with Mintegral - [16.1.11](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en)
-

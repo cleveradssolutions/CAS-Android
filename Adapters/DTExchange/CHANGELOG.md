@@ -9,6 +9,9 @@
 - Updated the minimum required CAS SDK version to 3.5.1.
 - Certified with DT Exchange - [8.2.5](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog)
 
+### 8.2.4.3
+- Updated the minimum required CAS SDK version to 3.5.0.
+
 ### 8.2.4.2
 - Updated the minimum required CAS SDK version to 3.4.1.
 - Fixed compliance issue with the Family Self-Certified Ads program.
@@ -68,4 +71,3 @@
 - Updated the minimum required CAS SDK version to 2.8.3.
 - ⭐ Restored support for Fyber advertising network in closed beta.
 - Certified with Fyber - [8.1.5.0](https://developer.fyber.com/hc/en-us/articles/360010922578-Marketplace-iOS-Changelog)
-

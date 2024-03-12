@@ -13,6 +13,12 @@
 - Updated the minimum required CAS SDK version to 3.4.1.
 - Certified with SuperAwesome - [9.2.3](https://dev.superawesome.com/docs/awesomeads/sdks/publisher/docs/android/releases)
 
+### 9.1.0.3
+- Updated the minimum required CAS SDK version to 3.3.0.
+
+### 9.1.0.2
+- Updated the minimum required CAS SDK version to 3.2.0.
+
 ### 9.1.0.1
 - Updated the minimum required CAS SDK version to 3.1.9.
 - Certified with SuperAwesome - 9.1.0
@@ -73,4 +79,3 @@
 - Updated the minimum required CAS SDK version to 2.7.2.
 - Certified with SuperAwesome - [8.3.0](https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android/blob/master/CHANGELOG.md)
 - Update internal configuration.
-

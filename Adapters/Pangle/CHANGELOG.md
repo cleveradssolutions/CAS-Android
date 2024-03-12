@@ -64,6 +64,9 @@
 - Updated the minimum required CAS SDK version to 3.1.2.
 - Certified with Pangle - 5.0.1.1
 
+### 5.0.0.10
+- Updated the minimum required CAS SDK version to 3.1.1.
+
 ### 5.0.0.9
 - Updated the minimum required CAS SDK version to 3.0.2.
 - Certified with Pangle - 5.0.0.9
@@ -122,4 +125,3 @@
 ### 4.3.0.8
 - Updated the minimum required CAS SDK version to 2.7.2.
 - Remove setting app name from ads.
-

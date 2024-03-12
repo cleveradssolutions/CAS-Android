@@ -5,9 +5,15 @@
 - Updated the minimum required CAS SDK version to 3.5.3.
 - Certified with InMobi - [10.6.6](https://github.com/InMobi/sdk-sample-code-android/blob/master/sdk/ChangeLog.md)
 
+### 10.6.2.1
+- Updated the minimum required CAS SDK version to 3.5.0.
+
 ### 10.6.2.0
 - Updated the minimum required CAS SDK version to 3.4.2.
 - Certified with InMobi - [10.6.2](https://github.com/InMobi/sdk-sample-code-android/blob/master/sdk/ChangeLog.md)
+
+### 10.5.9.1
+- Updated the minimum required CAS SDK version to 3.4.1.
 
 ### 10.5.9.0
 - Updated the minimum required CAS SDK version to 3.3.1.
@@ -16,6 +22,9 @@
 ### 10.5.8.0
 - Updated the minimum required CAS SDK version to 3.3.0.
 - Certified with InMobi - [10.5.8](https://github.com/InMobi/sdk-sample-code-android/blob/master/sdk/ChangeLog.md)
+
+### 10.1.4.4
+- Updated the minimum required CAS SDK version to 3.2.0.
 
 ### 10.1.4.0
 - Updated the minimum required CAS SDK version to 3.1.6.
@@ -32,6 +41,9 @@
 ### 10.1.2.6
 - Updated the minimum required CAS SDK version to 3.1.2.
 - Certified with InMobi - [10.1.3](https://github.com/InMobi/sdk-sample-code-android/blob/master/sdk/ChangeLog.md)
+
+### 10.1.2.5
+- Updated the minimum required CAS SDK version to 3.1.1.
 
 ### 10.1.2.4
 - Updated the minimum required CAS SDK version to 3.0.2.
@@ -76,4 +88,3 @@
 ### 10.0.7.0
 - Updated the minimum required CAS SDK version to 2.8.1.
 - Certified with InMobi - [10.0.7](https://support.inmobi.com/monetize/sdk-documentation/android-guidelines/android-changelogs)
-

@@ -13,10 +13,16 @@
 - Updated the minimum required CAS SDK version to 3.3.2.
 - Forcibly opt out of use the Android ID for Children audience.
 
+### 6.12.1.8
+- Updated the minimum required CAS SDK version to 3.3.0.
+
 ### 6.12.1.7
 - Updated the minimum required CAS SDK version to 3.2.0.
 - Updated Proguard rules to avoid some issues.
 - Added Native Banner Ads support.
+
+### 6.12.1.3
+- Updated the minimum required CAS SDK version to 3.1.1.
 
 ### 6.12.1.1
 - Updated the minimum required CAS SDK version to 3.0.0.
@@ -47,4 +53,3 @@
 ### 6.10.5.2
 - Updated the minimum required CAS SDK version to 2.7.3.
 - Minor stability improvements.
-

@@ -22,7 +22,9 @@
 - Updated the minimum required CAS SDK version to 3.5.0.
 - Certified with Bigo Ads - [4.2.0](https://www.bigossp.com/guide/sdk/android/version)
 
+### 4.1.2.2
+- Updated the minimum required CAS SDK version to 3.4.1.
+
 ### 4.1.2.1
 - Updated the minimum required CAS SDK version to 3.3.2.
 - Internal fixes. The adapter update was published before the CAS release.
-

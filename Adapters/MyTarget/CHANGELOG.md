@@ -9,9 +9,15 @@
 - Updated the minimum required CAS SDK version to 3.5.1.
 - Certified with MyTarget - [5.20.0](https://target.my.com/help/partners/mob/androidhistory/en)
 
+### 5.19.0.1
+- Updated the minimum required CAS SDK version to 3.5.0.
+
 ### 5.19.0.0
 - Updated the minimum required CAS SDK version to 3.4.1.
 - Certified with MyTarget - [5.19.0](https://target.my.com/help/partners/mob/androidhistory/en)
+
+### 5.17.0.2
+- Updated the minimum required CAS SDK version to 3.3.0.
 
 ### 5.17.0.1
 - Updated the minimum required CAS SDK version to 3.2.4.
@@ -25,6 +31,9 @@
 ### 5.16.5.0
 - Updated the minimum required CAS SDK version to 3.1.6.
 - Certified with MyTarget - [5.16.5](https://github.com/myTargetSDK/mytarget-android)
+
+### 5.16.4.1
+- Updated the minimum required CAS SDK version to 3.1.1.
 
 ### 5.16.4.0
 - Updated the minimum required CAS SDK version to 3.0.2.
@@ -72,4 +81,3 @@
 ### 5.15.0.3
 - Updated the minimum required CAS SDK version to 2.7.2.
 - Update internal configuration.
-
