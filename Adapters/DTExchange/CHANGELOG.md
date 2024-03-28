@@ -1,13 +1,14 @@
 ## DT Exchange Android Mediation Adapter Changelog
-`com.cleveradssolutions:fyber:`
+`com.cleveradssolutions:fyber:`  
+Read DT Exchange SDK releases [here](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog).
 
 ### 8.2.6.0
 - Updated the minimum required CAS SDK version to 3.5.3.
-- Certified with DT Exchange - [8.2.6](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog)
+- Certified with DT Exchange - 8.2.6
 
 ### 8.2.5.0
 - Updated the minimum required CAS SDK version to 3.5.1.
-- Certified with DT Exchange - [8.2.5](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog)
+- Certified with DT Exchange - 8.2.5
 
 ### 8.2.4.3
 - Updated the minimum required CAS SDK version to 3.5.0.
@@ -22,7 +23,7 @@
 
 ### 8.2.4.0
 - Updated the minimum required CAS SDK version to 3.3.0.
-- Certified with DT Exchange - [8.2.4](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog)
+- Certified with DT Exchange - 8.2.4
 
 ### 8.2.3.4
 - Updated the minimum required CAS SDK version to 3.2.0.
@@ -38,7 +39,7 @@
 
 ### 8.2.3.0
 - Updated the minimum required CAS SDK version to 3.1.3.
-- Certified with DigitalTurbine - [8.2.3](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog)
+- Certified with DigitalTurbine - 8.2.3
 
 ### 8.2.2.1
 - Updated the minimum required CAS SDK version to 3.1.2.
@@ -47,7 +48,7 @@
 
 ### 8.2.2.0
 - Updated the minimum required CAS SDK version to 3.0.2.
-- Certified with DigitalTurbine - [8.2.2](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog)
+- Certified with DigitalTurbine - 8.2.2
 
 ### 8.2.1.3
 - Updated the minimum required CAS SDK version to 3.0.1.
@@ -61,7 +62,7 @@
 
 ### 8.2.1.0
 - Updated the minimum required CAS SDK version to 2.9.8.
-- Certified with Digital Turbine - [8.2.1](https://developer.fyber.com/hc/en-us/articles/360010834177-Marketplace-Android-Changelog)
+- Certified with Digital Turbine - 8.2.1
 
 ### 8.2.0.2
 - Updated the minimum required CAS SDK version to 2.9.5.
@@ -70,4 +71,4 @@
 ### 8.1.5.0
 - Updated the minimum required CAS SDK version to 2.8.3.
 - ⭐ Restored support for Fyber advertising network in closed beta.
-- Certified with Fyber - [8.1.5.0](https://developer.fyber.com/hc/en-us/articles/360010922578-Marketplace-iOS-Changelog)
+- Certified with Fyber - 8.1.5.0

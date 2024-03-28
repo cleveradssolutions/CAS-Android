@@ -11,7 +11,7 @@
 
 ### 5.7.0.2
 - Updated the minimum required CAS SDK version to 3.5.2.
-- Certified with Pangle - [5.7.0.2]
+- Certified with Pangle - 5.7.0.2
 
 ### 5.6.0.4
 - Updated the minimum required CAS SDK version to 3.5.1.
@@ -24,7 +24,7 @@
 
 ### 5.5.0.8
 - Updated the minimum required CAS SDK version to 3.4.1.
-- Certified with Pangle - [5.5.0.8]()
+- Certified with Pangle - 5.5.0.8
 
 ### 5.5.0.5
 - Updated the minimum required CAS SDK version to 3.3.2.

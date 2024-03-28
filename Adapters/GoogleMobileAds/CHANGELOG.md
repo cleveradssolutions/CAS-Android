@@ -1,5 +1,6 @@
 ## Google Ads Android Mediation Adapter Changelog
-`com.cleveradssolutions:google:`
+`com.cleveradssolutions:google:`  
+Read Google Ads SDK releases [here](https://developers.google.com/admob/android/rel-notes).
 
 ### 22.6.0.2
 - Updated the minimum required CAS SDK version to 3.5.6.
@@ -11,11 +12,11 @@
 
 ### 22.6.0.0
 - Updated the minimum required CAS SDK version to 3.5.1.
-- Certified with Google Mobile Ads - [22.6.0](https://developers.google.com/admob/android/rel-notes)
+- Certified with Google Mobile Ads - 22.6.0
 
 ### 22.5.0.0
 - Updated the minimum required CAS SDK version to 3.5.0.
-- Certified with Google Mobile Ads - [22.5.0](https://developers.google.com/admob/android/rel-notes)
+- Certified with Google Mobile Ads - 22.5.0
 
 ### 22.4.0.1
 - Updated the minimum required CAS SDK version to 3.4.1.
@@ -23,14 +24,14 @@
 
 ### 22.4.0.0
 - Updated the minimum required CAS SDK version to 3.3.2.
-- Certified with Google Mobile Ads - [22.4.0](https://developers.google.com/admob/android/rel-notes)
+- Certified with Google Mobile Ads - 22.4.0
 
 ### 22.3.0.1
 - Updated the minimum required CAS SDK version to 3.3.0.
 
 ### 22.3.0.0
 - Updated the minimum required CAS SDK version to 3.2.5.
-- Certified with Google Mobile Ads - [22.3.0](https://developers.google.com/admob/android/rel-notes)
+- Certified with Google Mobile Ads - 22.3.0
 
 ### 22.2.0.2
 - Updated the minimum required CAS SDK version to 3.2.3.
@@ -42,7 +43,7 @@
 
 ### 22.2.0.0
 - Updated the minimum required CAS SDK version to 3.2.0.
-- Certified with Google Mobile Ads - [22.2.0](https://developers.google.com/admob/android/rel-notes)
+- Certified with Google Mobile Ads - 22.2.0
 
 ### 22.1.0.1
 - Updated the minimum required CAS SDK version to 3.1.8.
@@ -50,12 +51,12 @@
 
 ### 22.1.0.0
 - Updated the minimum required CAS SDK version to 3.1.7.
-- Certified with GoogleAds - [22.1.0](https://developers.google.com/admob/android/rel-notes)
+- Certified with GoogleAds - 22.1.0
 - Support `AdPaidCallback` in `CASAppOpen.contentCallback` to receive impression data.
 
 ### 22.0.0.0
 - Updated the minimum required CAS SDK version to 3.1.3.
-- Certified with Google Ads - [22.0.0](https://developers.google.com/admob/android/rel-notes)
+- Certified with Google Ads - 22.0.0
 
 ### 21.5.0.4
 - Updated the minimum required CAS SDK version to 3.1.2.
@@ -67,7 +68,7 @@
 
 ### 21.5.0.0
 - Updated the minimum required CAS SDK version to 3.0.1.
-- Certified with Google Ads - [21.5.0](https://developers.google.com/admob/android/rel-notes)
+- Certified with Google Ads - 21.5.0
 
 ### 21.4.0.2
 - Updated the minimum required CAS SDK version to 3.0.0.
@@ -75,11 +76,11 @@
 
 ### 21.4.0.1
 - Updated the minimum required CAS SDK version to 2.9.9.
-- Certified with Google Ads - [21.4.0](https://target.my.com/help/partners/mob/androidhistory/en)
+- Certified with Google Ads - 21.4.0
 
 ### 21.3.0.0
 - Updated the minimum required CAS SDK version to 2.9.3.
-- Certified with Google Ads - [21.3.0](https://developers.google.com/admob/android/rel-notes)
+- Certified with Google Ads - 21.3.0
 
 ### 21.1.0.1
 - Updated the minimum required CAS SDK version to 2.8.5.
@@ -87,7 +88,7 @@
 
 ### 21.1.0.0
 - Updated the minimum required CAS SDK version to 2.8.4.
-- Certified with Google Ads - [21.1.0.0](https://developers.google.com/admob/android/rel-notes)
+- Certified with Google Ads - 21.1.0
 
 ### 21.0.0.1
 - Updated the minimum required CAS SDK version to 2.8.3.
@@ -95,7 +96,7 @@
 
 ### 21.0.0.0
 - Updated the minimum required CAS SDK version to 2.8.1.
-- Certified with Google Ads - [21.0.0](https://developers.google.com/admob/android/rel-notes)
+- Certified with Google Ads - 21.0.0
 - Fixed App Open Ads with `demo` identifier.
 - Remove Child directed treatment unspecified specification.
 
