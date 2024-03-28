@@ -1,13 +1,14 @@
 ## LiftoffMonetize Android Mediation Adapter Changelog
-`com.cleveradssolutions:vungle:`
+`com.cleveradssolutions:vungle:`  
+Read Liftoff Monetize SDK releases [here](https://support.vungle.com/hc/en-us/articles/15722228922395-Download-Vungle-SDK-for-Android-Amazon).
 
 ### 7.1.0.0
 - Updated the minimum required CAS SDK version to 3.5.0.
-- Certified with Liftoff Monetize - [7.1.0](https://support.vungle.com/hc/en-us/articles/15722228922395-Download-Vungle-SDK-for-Android-Amazon)
+- Certified with Liftoff Monetize - 7.1.0
 
 ### 7.0.0.0
 - Updated the minimum required CAS SDK version to 3.4.1.
-- Certified with Liftoff Monetize - [7.0.0](https://support.vungle.com/hc/en-us/articles/15722228922395-Download-Vungle-SDK-for-Android-Amazon)
+- Certified with Liftoff Monetize - 7.0.0
 
 ### 6.12.1.9
 - Updated the minimum required CAS SDK version to 3.3.2.
@@ -36,7 +37,7 @@
 
 ### 6.12.0.0
 - Updated the minimum required CAS SDK version to 2.8.5.
-- Certified with Vungle - [6.12.0](https://github.com/Vungle/iOS-SDK/blob/master/CHANGELOG.md)
+- Certified with Vungle - 6.12.0
 
 ### 6.11.0.2
 - Updated the minimum required CAS SDK version to 2.8.4.
@@ -48,7 +49,7 @@
 
 ### 6.11.0.0
 - Updated the minimum required CAS SDK version to 2.8.1.
-- Certified with Vungle - [6.11.0](https://github.com/Vungle/Android-SDK/blob/master/CHANGELOG.md)
+- Certified with Vungle - 6.11.0
 
 ### 6.10.5.2
 - Updated the minimum required CAS SDK version to 2.7.3.

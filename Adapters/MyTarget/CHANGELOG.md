@@ -1,5 +1,6 @@
 ## MyTarget Android Mediation Adapter Changelog
-`com.cleveradssolutions:mytarget:`
+`com.cleveradssolutions:mytarget:`  
+Read MyTarget SDK releases [here](https://target.my.com/help/partners/mob/androidhistory/en).
 
 ### 5.20.0.1
 - Updated the minimum required CAS SDK version to 3.5.2.
@@ -7,14 +8,14 @@
 
 ### 5.20.0.0
 - Updated the minimum required CAS SDK version to 3.5.1.
-- Certified with MyTarget - [5.20.0](https://target.my.com/help/partners/mob/androidhistory/en)
+- Certified with MyTarget - 5.20.0
 
 ### 5.19.0.1
 - Updated the minimum required CAS SDK version to 3.5.0.
 
 ### 5.19.0.0
 - Updated the minimum required CAS SDK version to 3.4.1.
-- Certified with MyTarget - [5.19.0](https://target.my.com/help/partners/mob/androidhistory/en)
+- Certified with MyTarget - 5.19.0
 
 ### 5.17.0.2
 - Updated the minimum required CAS SDK version to 3.3.0.
@@ -25,39 +26,39 @@
 
 ### 5.17.0.0
 - Updated the minimum required CAS SDK version to 3.2.0.
-- Certified with MyTarget - [5.17.0](https://target.my.com/help/partners/mob/androidhistory/en)
+- Certified with MyTarget - 5.17.0
 - Added Native Banner Ads support.
 
 ### 5.16.5.0
 - Updated the minimum required CAS SDK version to 3.1.6.
-- Certified with MyTarget - [5.16.5](https://github.com/myTargetSDK/mytarget-android)
+- Certified with MyTarget - 5.16.5
 
 ### 5.16.4.1
 - Updated the minimum required CAS SDK version to 3.1.1.
 
 ### 5.16.4.0
 - Updated the minimum required CAS SDK version to 3.0.2.
-- Certified with MyTarget - [5.16.4](https://target.my.com/help/partners/mob/androidhistory/ru)
+- Certified with MyTarget - 5.16.4
 
 ### 5.16.3.0
 - Updated the minimum required CAS SDK version to 2.9.9.
-- Certified with MyTarget - [5.16.3](https://target.my.com/help/partners/mob/androidhistory/en)
+- Certified with MyTarget - 5.16.3
 
 ### 5.16.2.0
 - Updated the minimum required CAS SDK version to 2.9.8.
-- Certified with MyTarget - [5.16.2](https://target.my.com/help/partners/mob/androidhistory/en)
+- Certified with MyTarget - 5.16.2
 
 ### 5.16.1.0
 - Updated the minimum required CAS SDK version to 2.9.7.
-- Certified with MyTarget - [5.16.1](https://target.my.com/help/partners/mob/androidhistory/en)
+- Certified with MyTarget - 5.16.1
 
 ### 5.16.0.0
 - Updated the minimum required CAS SDK version to 2.9.6.
-- Certified with MyTarget - [5.16.0](https://target.my.com/help/partners/mob/androidhistory/en)
+- Certified with MyTarget - 5.16.0
 
 ### 5.15.5.0
 - Updated the minimum required CAS SDK version to 2.9.3.
-- Certified with MyTarget - [5.15.5](https://target.my.com/help/partners/mob/androidhistory/ru)
+- Certified with MyTarget - 5.15.5
 - Fixed a bug where `AdSize.MEDIUM_RECTANGLE` was not requested in bidding.
 
 ### 5.15.0.8

@@ -1,26 +1,27 @@
 ## Bigo Android Mediation Adapter Changelog
-`com.cleveradssolutions:bigo:`
+`com.cleveradssolutions:bigo:`  
+Read Bigo Ads SDK releases [here](https://www.bigossp.com/guide/sdk/android/version).
 
 ### 4.5.1.1
 - Updated the minimum required CAS SDK version to 3.5.4.
-- Certified with Bigo Ads - [4.5.1](https://www.bigossp.com/guide/sdk/android/version)
+- Certified with Bigo Ads - 4.5.1
 
 ### 4.5.1.0
 - Updated the minimum required CAS SDK version to 3.5.3.
-- Certified with Bigo Ads - [4.5.0](https://www.bigossp.com/guide/sdk/android/version)
+- Certified with Bigo Ads - 4.5.0
 
 ### 4.4.0.0
 - Updated the minimum required CAS SDK version to 3.5.2.
-- Certified with Bigo Ads - [4.4.0](https://www.bigossp.com/guide/sdk/android/version)
+- Certified with Bigo Ads - 4.4.0
 
 ### 4.3.2.0
 - Updated the minimum required CAS SDK version to 3.5.1.
-- Certified with Bigo Ads - [4.3.2](https://www.bigossp.com/guide/sdk/android/version)
+- Certified with Bigo Ads - 4.3.2
 - Bid cache included for up to 5 minutes.
 
 ### 4.2.0.0
 - Updated the minimum required CAS SDK version to 3.5.0.
-- Certified with Bigo Ads - [4.2.0](https://www.bigossp.com/guide/sdk/android/version)
+- Certified with Bigo Ads - 4.2.0
 
 ### 4.1.2.2
 - Updated the minimum required CAS SDK version to 3.4.1.
