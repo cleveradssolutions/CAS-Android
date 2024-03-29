@@ -1,6 +1,9 @@
 ## Pangle Android Mediation Adapter Changelog
 `com.cleveradssolutions:pangle:`
 
+### 5.8.1.0
+- Certified with Pangle - 5.8.1.0
+
 ### 5.7.0.6
 - Updated the minimum required CAS SDK version to 3.5.6.
 - Certified with Pangle - 5.7.0.6

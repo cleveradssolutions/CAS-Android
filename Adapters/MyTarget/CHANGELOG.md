@@ -2,6 +2,11 @@
 `com.cleveradssolutions:mytarget:`  
 Read MyTarget SDK releases [here](https://target.my.com/help/partners/mob/androidhistory/en).
 
+### 5.20.1.0
+- Certified with MyTarget - 5.20.1
+- Removed `MyTargetContentProvider` from the AndroidManifest. 
+CAS can initialize MyTarget Ads later if necessary.
+
 ### 5.20.0.1
 - Updated the minimum required CAS SDK version to 3.5.2.
 - Locked version `com.my.tracker:mytracker-sdk:3.0.12` to avoid conflict with `com.android.billingclient:billing` in Unity games.

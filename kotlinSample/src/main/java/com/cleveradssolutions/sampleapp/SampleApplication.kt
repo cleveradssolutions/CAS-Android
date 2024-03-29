@@ -45,7 +45,7 @@ class SampleApplication : Application() {
                     Log.d(TAG, "Ad manager initialization failed: " + it.error)
                 }
             }
-            .initialize(this)
+            .build(this)
     }
 
 }

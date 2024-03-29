@@ -2,6 +2,9 @@
 `com.cleveradssolutions:bigo:`  
 Read Bigo Ads SDK releases [here](https://www.bigossp.com/guide/sdk/android/version).
 
+### 4.6.1.0
+- Certified with Bigo Ads - 4.6.1
+
 ### 4.5.1.1
 - Updated the minimum required CAS SDK version to 3.5.4.
 - Certified with Bigo Ads - 4.5.1

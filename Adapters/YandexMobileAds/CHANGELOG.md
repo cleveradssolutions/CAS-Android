@@ -2,6 +2,9 @@
 `com.cleveradssolutions:yandex:`  
 Read Yandex Mobile Ads SDK releases [here](https://github.com/yandexmobile/yandex-ads-sdk-android/blob/master/changelogs/mobileads/CHANGELOG.md).
 
+### 26.4.1.0
+- Certified with Yandex Mobile Ads - 6.4.1
+
 ### 26.4.0.0
 - Updated the minimum required CAS SDK version to 3.5.3.
 - Certified with Yandex Mobile Ads - 6.4.0

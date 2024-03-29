@@ -1,6 +1,9 @@
 ## Cross Promo Android Mediation Adapter Changelog
 `com.cleveradssolutions:cas-promo:`
 
+### 3.6.0
+- Removed use of `com.google.code.gson:gson` dependency.
+
 ### 3.1.3
 - Updated the minimum required CAS SDK version to 3.1.3.
 - Visual update

@@ -2,6 +2,9 @@
 `com.cleveradssolutions:facebook:`  
 Read Meta Audience Network SDK releases [here](https://developers.facebook.com/docs/audience-network/setting-up/platform-setup/android/changelog).
 
+### 6.17.0.0
+- Certified with Meta Audience Network - 6.17.0
+
 ### 6.16.0.1
 - Updated the minimum required CAS SDK version to 3.4.1.
 

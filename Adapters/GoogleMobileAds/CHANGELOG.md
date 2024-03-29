@@ -2,6 +2,12 @@
 `com.cleveradssolutions:google:`  
 Read Google Ads SDK releases [here](https://developers.google.com/admob/android/rel-notes).
 
+### 23.0.0.0
+- Certified with Google Mobile Ads - 23.0.0
+- Removed `MobileAdsInitProvider` from the AndroidManifest. 
+The definition of `com.google.android.gms.ads.DELAY_APP_MEASUREMENT_INIT` in the manifest is no longer required.
+CAS can initialize Google Mobile Ads later if necessary.
+
 ### 22.6.0.2
 - Updated the minimum required CAS SDK version to 3.5.6.
 - Minor performance improvements.

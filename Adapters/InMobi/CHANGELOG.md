@@ -1,6 +1,9 @@
 ## InMobi Android Mediation Adapter Changelog
 `com.cleveradssolutions:inmobi:`  
-Read InMobi SDK releases [here](https://github.com/InMobi/sdk-sample-code-android/blob/master/sdk/ChangeLog.md).
+Read InMobi SDK releases [here](https://support.inmobi.com/monetize/sdk-documentation/android-guidelines/changelogs-android/android-changelogs-kotlin).
+
+### 10.6.7.0
+- Certified with InMobi - 10.6.7
 
 ### 10.6.6.0
 - Updated the minimum required CAS SDK version to 3.5.3.

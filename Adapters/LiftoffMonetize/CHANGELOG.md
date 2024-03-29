@@ -2,6 +2,9 @@
 `com.cleveradssolutions:vungle:`  
 Read Liftoff Monetize SDK releases [here](https://support.vungle.com/hc/en-us/articles/15722228922395-Download-Vungle-SDK-for-Android-Amazon).
 
+### 7.3.0.0
+- Certified with Liftoff Monetize - 7.3.0
+
 ### 7.1.0.0
 - Updated the minimum required CAS SDK version to 3.5.0.
 - Certified with Liftoff Monetize - 7.1.0

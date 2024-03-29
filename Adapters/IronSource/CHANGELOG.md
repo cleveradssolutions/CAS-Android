@@ -2,6 +2,10 @@
 `com.cleveradssolutions:ironsource:`  
 Read IronSource SDK releases [here](https://developers.ironsrc.com/ironsource-mobile/android/sdk-change-log/).
 
+### 7.9.0.0
+- Certified with IronSource - 7.9.0
+- Improved Banner Ad performance.
+
 ### 7.8.1.0
 - Updated the minimum required CAS SDK version to 3.5.6.
 - Certified with IronSource - 7.8.1

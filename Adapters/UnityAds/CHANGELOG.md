@@ -2,6 +2,9 @@
 `com.cleveradssolutions:unity:`  
 Read Unity Ads SDK releases [here](https://docs.unity.com/ads/en-us/manual/Changelog).
 
+### 4.10.0.0
+- Certified with Unity Ads - 4.10.0
+
 ### 4.9.3.0
 - Updated the minimum required CAS SDK version to 3.5.6.
 - Certified with Unity Ads - 4.9.3

@@ -2,6 +2,9 @@
 `com.cleveradssolutions:applovin:`  
 Read AppLovin SDK releases [here](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases).
 
+### 12.3.1.0
+- Certified with AppLovin - 12.3.1
+
 ### 12.2.0.0
 - Updated the minimum required CAS SDK version to 3.5.3.
 - Certified with AppLovin - [12.2.0]

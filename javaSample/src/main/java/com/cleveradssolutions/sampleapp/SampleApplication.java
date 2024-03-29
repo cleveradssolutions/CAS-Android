@@ -42,6 +42,6 @@ public class SampleApplication extends Application {
                         Log.d(TAG, "Ad manager initialization failed: " + config.getError());
                     }
                 })
-                .initialize(this);
+                .build(this);
     }
 }
