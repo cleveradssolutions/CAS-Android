@@ -2,6 +2,9 @@
 `com.cleveradssolutions:kidoz:`  
 Read Kidoz SDK releases [here](https://github.com/Kidoz-SDK/kidoz-mobile-sdk/tree/main/Kidoz%20Direct/Android).
 
+### 9.1.2.0
+- Certified with Kidoz - 9.1.2
+
 ### 9.1.1.0
 - Certified with Kidoz - 9.1.1
 

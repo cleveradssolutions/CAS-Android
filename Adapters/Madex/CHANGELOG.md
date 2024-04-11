@@ -1,6 +1,9 @@
 ## Madex Android Mediation Adapter Changelog
 `com.cleveradssolutions:madex:`
 
+### 1.3.3.0
+- Certified with Madex - 1.3.3
+
 ### 1.2.2.0
 - Certified with Madex - 1.2.2
 - Added critical Proguard rules.

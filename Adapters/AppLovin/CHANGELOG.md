@@ -2,6 +2,9 @@
 `com.cleveradssolutions:applovin:`  
 Read AppLovin SDK releases [here](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases).
 
+### 12.4.2.0
+- Certified with AppLovin - 12.4.2
+
 ### 12.3.1.0
 - Certified with AppLovin - 12.3.1
 

@@ -2,6 +2,9 @@
 `com.cleveradssolutions:fyber:`  
 Read DT Exchange SDK releases [here](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog).
 
+### 8.2.7.0
+- Certified with DT Exchange - 8.2.7
+
 ### 8.2.6.0
 - Updated the minimum required CAS SDK version to 3.5.3.
 - Certified with DT Exchange - 8.2.6
