@@ -80,10 +80,7 @@ public class SampleAppOpenAdActivity extends Activity {
         });
 
         // Load the Ad
-        appOpenAd.loadAd(
-                this,
-                getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE,
-                new LoadAdCallback() {
+        appOpenAd.loadAd(this, new LoadAdCallback() {
                     @Override
                     public void onAdLoaded() {
                         Log.d(TAG, "App Open Ad loaded");

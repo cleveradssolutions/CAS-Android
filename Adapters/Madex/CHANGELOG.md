@@ -1,6 +1,9 @@
 ## Madex Android Mediation Adapter Changelog
 `com.cleveradssolutions:madex:`
 
+### 1.3.5.0
+- Certified with Madex - 1.3.5
+
 ### 1.3.4.0
 - Certified with Madex - 1.3.4
 - Downgrade the dependencies to `androidx.appcompat:appcompat:1.0.0` and `com.google.android.material:material:1.3.0`.

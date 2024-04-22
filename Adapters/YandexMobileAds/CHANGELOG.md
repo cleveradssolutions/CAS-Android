@@ -2,6 +2,10 @@
 `com.cleveradssolutions:yandex:`  
 Read Yandex Mobile Ads SDK releases [here](https://github.com/yandexmobile/yandex-ads-sdk-android/blob/master/changelogs/mobileads/CHANGELOG.md).
 
+### 27.0.1.0
+- Certified with Yandex Mobile Ads - 7.0.1
+- Fixed calculations of the Adaptive Banner ad size.
+
 ### 27.0.0.0
 - Certified with Yandex Mobile Ads - 7.0.0
 

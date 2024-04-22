@@ -59,23 +59,20 @@ class SampleAppOpenAdActivity : Activity() {
         }
 
         // Load the Ad
-        appOpenAd.loadAd(
-            this,
-            resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE,
-            object : LoadAdCallback {
-                override fun onAdLoaded() {
-                    Log.d(TAG, "App Open Ad loaded")
-                    if (isLoadingAppResources) {
-                        isVisibleAppOpenAd = true
-                        appOpenAd.show(this@SampleAppOpenAdActivity)
-                    }
+        appOpenAd.loadAd(this, object : LoadAdCallback {
+            override fun onAdLoaded() {
+                Log.d(TAG, "App Open Ad loaded")
+                if (isLoadingAppResources) {
+                    isVisibleAppOpenAd = true
+                    appOpenAd.show(this@SampleAppOpenAdActivity)
                 }
+            }
 
-                override fun onAdFailedToLoad(error: AdError) {
-                    Log.e(TAG, "App Open Ad failed to load: ${error.message}")
-                    startNextActivity()
-                }
-            })
+            override fun onAdFailedToLoad(error: AdError) {
+                Log.e(TAG, "App Open Ad failed to load: ${error.message}")
+                startNextActivity()
+            }
+        })
     }
 
     private fun startNextActivity() {
