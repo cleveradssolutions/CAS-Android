@@ -1,6 +1,9 @@
 ## Madex Android Mediation Adapter Changelog
 `com.cleveradssolutions:madex:`
 
+### 1.4.0.0
+- Certified with Madex - 1.4.0
+
 ### 1.3.6.0
 - Certified with Madex - 1.3.6
 
