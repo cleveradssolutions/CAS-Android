@@ -42,11 +42,6 @@ dependencyResolutionManagement {
             content { it.includeGroup("com.smaato.android.sdk") }
         }
         maven {
-            name = "HyprMXAdsRepo"
-            url = "https://hyprmx.jfrog.io/artifactory/hyprmx"
-            content { it.includeGroup("com.hyprmx.android") }
-        }
-        maven {
             name = "MadexAdsRepo"
             url = "https://sdkpkg.sspnet.tech"
             content {

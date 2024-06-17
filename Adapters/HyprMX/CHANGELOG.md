@@ -2,6 +2,9 @@
 `com.cleveradssolutions:hyprmx:`  
 Read HyprMX SDK releases [here](https://documentation.hyprmx.com/android-sdk/).
 
+### 6.4.1.0
+- Certified with HyprMX - 6.4.1
+
 ### 6.4.0.0
 - Certified with HyprMX - 6.4.0
 
