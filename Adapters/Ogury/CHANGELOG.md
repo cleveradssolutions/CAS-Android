@@ -4,8 +4,8 @@ Read Ogury SDK releases [here](https://ogury-ltd.gitbook.io/release-notes/androi
 com.cleveradssolutions:ogury:
 ```
 
-### 5.7.0.0
-- Certified with Ogury - 5.7.0
+### 5.8.0.0
+- Certified with Ogury - 5.8.0
 
 ### 5.7.0.0
 - Certified with Ogury - 5.7.0

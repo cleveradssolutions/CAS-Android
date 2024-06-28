@@ -1,5 +1,9 @@
 ## Madex Android Mediation Adapter Changelog
+Read Madex SDK releases [here](https://madex.gitbook.io/madex-documentation/android-sdk/change-log).
 `com.cleveradssolutions:madex:`
+
+### 1.4.4.0
+- Certified with Madex - 1.4.4
 
 ### 1.4.2.0
 - Certified with Madex - 1.4.2
