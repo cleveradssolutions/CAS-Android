@@ -2,6 +2,10 @@
 `com.cleveradssolutions:yandex:`  
 Read Yandex Mobile Ads SDK releases [here](https://github.com/yandexmobile/yandex-ads-sdk-android/blob/master/changelogs/mobileads/CHANGELOG.md).
 
+### 27.2.0.0
+- Certified with Yandex Mobile Ads - 7.2.0
+- Introducing Yandex Mobile Ads bidding requests. (Closed beta)
+
 ### 27.1.0.0
 - Certified with Yandex Mobile Ads - 7.1.0
 

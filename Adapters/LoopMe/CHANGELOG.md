@@ -4,6 +4,9 @@ Read LoopMe SDK releases [here](https://github.com/loopme/android-united-sdk/rel
 com.cleveradssolutions:loopme:
 ```
 
+### 9.0.5.0
+- Certified with LoopMe - 9.0.5
+
 ### 9.0.4.0
 - Certified with LoopMe - 9.0.4
 

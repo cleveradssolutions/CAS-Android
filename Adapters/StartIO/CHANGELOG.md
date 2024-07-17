@@ -2,6 +2,9 @@
 `com.cleveradssolutions:startio:`  
 Read StartIO SDK releases [here](https://support.start.io/hc/en-us/articles/5813405015442-Android-SDK-Change-Log).
 
+### 5.0.2.0
+- Certified with Start IO - 5.0.2
+
 ### 5.0.1.0
 - Certified with Start IO - 5.0.1
 
