@@ -1,12 +1,14 @@
 plugins {
     id('com.android.application')
     id('kotlin-android')
-    id("com.cleveradssolutions.gradle-plugin") version "$cas_version"
+    id('com.cleveradssolutions.gradle-plugin')
 }
 
 cas {
-    includeFamiliesAds = true
     useAdvertisingId = true
+    adapters {
+        googleAds = true
+    }
 }
 
 android {
