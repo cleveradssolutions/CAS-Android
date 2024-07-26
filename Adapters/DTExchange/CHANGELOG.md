@@ -2,6 +2,9 @@
 `com.cleveradssolutions:fyber:`  
 Read DT Exchange SDK releases [here](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog).
 
+### 8.3.0.0
+- Certified with DT Exchange - 8.3.0
+
 ### 8.2.7.1
 - Migration ads requests to Bidding. (Closed beta)
 

@@ -2,6 +2,9 @@
 `com.cleveradssolutions:bigo:`  
 Read Bigo Ads SDK releases [here](https://www.bigossp.com/guide/sdk/android/version).
 
+### 4.8.2.0
+- Certified with Bigo Ads - 4.8.2
+
 ### 4.8.1.0
 - Certified with Bigo Ads - 4.8.1
 - Fixed an issue where banner ads were loading at the wrong size.

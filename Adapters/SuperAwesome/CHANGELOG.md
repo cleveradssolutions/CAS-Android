@@ -2,6 +2,9 @@
 `com.cleveradssolutions:superawesome:`  
 Read SuperAwesome SDK releases [here](https://dev.superawesome.com/docs/awesomeads/sdks/publisher/docs/android/releases).
 
+### 9.4.0.0
+- Certified with SuperAwesome - 9.4.0
+
 ### 9.3.2.0
 - Updated the minimum required CAS SDK version to 3.5.3.
 - Certified with SuperAwesome - 9.3.2
