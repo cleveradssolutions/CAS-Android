@@ -7,7 +7,7 @@ cas {
     useAdvertisingId = true
     adapters {
         googleAds = true
-        ironsource = true
+        ironSource = true
     }
 }
 
