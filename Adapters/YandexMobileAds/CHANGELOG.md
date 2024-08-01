@@ -2,6 +2,9 @@
 `com.cleveradssolutions:yandex:`  
 Read Yandex Mobile Ads SDK releases [here](https://github.com/yandexmobile/yandex-ads-sdk-android/blob/master/changelogs/mobileads/CHANGELOG.md).
 
+### 27.2.0.2
+- The Yandex App Metrica version 7 is not allowed for use with Yandex Mobile Ads SDK. If you are adding the App Metrica SDK to your application, make sure to use version 6. We will notify when version 7 becomes available for use.
+
 ### 27.2.0.1
 - Rollback of Yandex Mobile Ad version to 7.1.0 due to build problems with Java 8.
 
