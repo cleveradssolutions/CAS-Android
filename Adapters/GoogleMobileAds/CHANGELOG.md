@@ -2,6 +2,9 @@
 `com.cleveradssolutions:google:`  
 Read Google Ads SDK releases [here](https://developers.google.com/admob/android/rel-notes).
 
+### 23.3.0.0
+- Certified with Google Mobile Ads - 23.3.0
+
 ### 23.2.0.0
 - Certified with Google Mobile Ads - 23.2.0
 

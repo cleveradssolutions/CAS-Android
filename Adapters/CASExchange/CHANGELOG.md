@@ -3,6 +3,9 @@
 com.cleveradssolutions:cas-exchange:
 ```
 
+### 3.9.3
+- Fixed critical ANR from Adapter initialization.
+
 ### 3.9.1
 - Reorganization of internal resources
 

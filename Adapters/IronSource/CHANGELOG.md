@@ -2,6 +2,9 @@
 `com.cleveradssolutions:ironsource:`  
 Read IronSource SDK releases [here](https://developers.ironsrc.com/ironsource-mobile/android/sdk-change-log/).
 
+### 8.2.1.2
+- Improved automatic refresh of banner ad.
+
 ### 8.2.1.1
 - Certified with IronSource - 8.2.1
 - Fixed an issue where the Banner 320x50 could receive the Adaptive size ad.
