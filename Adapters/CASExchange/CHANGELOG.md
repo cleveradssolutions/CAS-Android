@@ -3,6 +3,10 @@
 com.cleveradssolutions:cas-exchange:
 ```
 
+### 3.9.4
+- Added CAS marker for all advertising formats.
+- Enabled mute sounds button for Video ads.
+
 ### 3.9.3
 - Fixed critical ANR from Adapter initialization.
 

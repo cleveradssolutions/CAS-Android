@@ -2,6 +2,9 @@
 `com.cleveradssolutions:facebook:`  
 Read Meta Audience Network SDK releases [here](https://developers.facebook.com/docs/audience-network/setting-up/platform-setup/android/changelog).
 
+### 6.18.0.0
+- Certified with Meta Audience Network - 6.18.0
+
 ### 6.17.0.1
 - Internal improvements.
 

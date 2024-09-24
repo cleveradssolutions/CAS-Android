@@ -2,6 +2,9 @@
 `com.cleveradssolutions:bigo:`  
 Read Bigo Ads SDK releases [here](https://www.bigossp.com/guide/sdk/android/version).
 
+### 4.9.1.0
+- Certified with Bigo Ads - 4.9.1
+
 ### 4.9.0.0
 - Certified with Bigo Ads - 4.9.0
 

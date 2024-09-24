@@ -2,6 +2,11 @@
 `com.cleveradssolutions:yandex:`  
 Read Yandex Mobile Ads SDK releases [here](https://github.com/yandexmobile/yandex-ads-sdk-android/blob/master/changelogs/mobileads/CHANGELOG.md).
 
+### 27.5.0.0
+- Certified with Yandex Mobile Ads - 7.5.0
+- [SDK] The minimum AppMetrica version is now 7.2.0. This is only important if your project already has the AppMetrica integrated. You can skip the integration if you are not using it.
+- [SDK] The minimum Android Gradle plugin version is now 7.0.
+
 ### 27.2.0.2
 - The Yandex App Metrica version 7 is not allowed for use with Yandex Mobile Ads SDK. If you are adding the App Metrica SDK to your application, make sure to use version 6. We will notify when version 7 becomes available for use.
 

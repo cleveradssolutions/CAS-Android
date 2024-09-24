@@ -2,6 +2,9 @@
 `com.cleveradssolutions:ironsource:`  
 Read IronSource SDK releases [here](https://developers.ironsrc.com/ironsource-mobile/android/sdk-change-log/).
 
+### 8.3.0.0
+- Certified with IronSource - 8.3.0
+
 ### 8.2.1.2
 - Improved automatic refresh of banner ad.
 

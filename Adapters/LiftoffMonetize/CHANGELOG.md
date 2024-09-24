@@ -2,6 +2,9 @@
 `com.cleveradssolutions:vungle:`  
 Read Liftoff Monetize SDK releases [here](https://support.vungle.com/hc/en-us/articles/15722228922395-Download-Vungle-SDK-for-Android-Amazon).
 
+### 7.4.1.0
+- Certified with Liftoff Monetize - 7.4.1
+
 ### 7.4.0.1
 - Fixed an issue where banner ads would load at the wrong size.
 
