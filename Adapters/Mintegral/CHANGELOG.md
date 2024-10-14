@@ -2,6 +2,9 @@
 `com.cleveradssolutions:mintegral:`  
 Read Mintegral SDK releases [here](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en).
 
+### 16.8.61.0
+- Certified with Mintegral - 16.8.61
+
 ### 16.8.51.0
 - Certified with Mintegral - 16.8.51
 

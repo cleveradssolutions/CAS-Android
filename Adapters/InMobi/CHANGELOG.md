@@ -2,6 +2,9 @@
 `com.cleveradssolutions:inmobi:`  
 Read InMobi SDK releases [here](https://support.inmobi.com/monetize/sdk-documentation/android-guidelines/changelogs-android/android-changelogs-kotlin).
 
+### 10.7.8.0
+- Certified with InMobi - 10.7.8
+
 ### 10.7.7.0
 - Certified with InMobi - 10.7.7
 
