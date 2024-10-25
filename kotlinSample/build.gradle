@@ -9,7 +9,11 @@ cas {
     adapters {
         googleAds = true
         ironSource = true
+        // Include more adapters here
     }
+    // Instead of defining each adapter separately,
+    // you can simply include the list of recommended adapters in one line:
+    //includeOptimalAds = true
 }
 
 android {

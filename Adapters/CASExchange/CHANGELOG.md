@@ -3,6 +3,9 @@
 com.cleveradssolutions:cas-exchange:
 ```
 
+### 3.9.6
+- Update endpoint.
+
 ### 3.9.4
 - Added CAS marker for all advertising formats.
 - Enabled mute sounds button for Video ads.
