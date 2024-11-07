@@ -3,6 +3,9 @@
 com.cleveradssolutions:cas-exchange:
 ```
 
+### 3.9.7
+- Update endpoint.
+
 ### 3.9.6
 - Update endpoint.
 
