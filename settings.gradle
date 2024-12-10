@@ -8,7 +8,7 @@ dependencyResolutionManagement {
         mavenCentral()
         maven {
             name = "CASBetaRepo"
-            url = "https://repsy.io/mvn/cleveradssolutions/beta"
+            url = "https://repo.repsy.io/mvn/cleveradssolutions/beta"
             content { it.includeGroup("com.cleveradssolutions") }
         }
         maven {
