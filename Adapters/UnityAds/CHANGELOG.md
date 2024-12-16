@@ -2,6 +2,9 @@
 `com.cleveradssolutions:unity:`  
 Read Unity Ads SDK releases [here](https://docs.unity.com/ads/en-us/manual/Changelog).
 
+### 4.12.5.0
+- Certified with Unity Ads - 4.12.5
+
 ### 4.12.4.0
 - Certified with Unity Ads - 4.12.4
 

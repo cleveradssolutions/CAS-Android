@@ -3,6 +3,9 @@
 com.cleveradssolutions:cas-exchange:
 ```
 
+### 3.9.8
+- Fixed rendering of some creatives.
+
 ### 3.9.7
 - Update endpoint.
 
