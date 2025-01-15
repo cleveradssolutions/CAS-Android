@@ -1,6 +1,9 @@
 ## Pangle Android Mediation Adapter Changelog
 `com.cleveradssolutions:pangle:`
 
+### 6.4.0.5
+- Certified with Pangle - 6.3.0.5
+
 ### 6.3.0.4
 - Certified with Pangle - 6.3.0.4
 

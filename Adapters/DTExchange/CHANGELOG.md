@@ -2,6 +2,10 @@
 `com.cleveradssolutions:fyber:`  
 Read DT Exchange SDK releases [here](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog).
 
+### 8.3.5.0
+- Certified with DT Exchange - 8.3.5
+- [SDK] Fixed usage of Android Advertising ID to be compliant with Google Play Ads policy.
+
 ### 8.3.3.0
 - Certified with DT Exchange - 8.3.3
 

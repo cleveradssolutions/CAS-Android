@@ -3,6 +3,9 @@
 Required `maven { url = "https://cboost.jfrog.io/artifactory/chartboost-ads/" }` repository.  
 Read Chartboost SDK releases [here](https://developers.chartboost.com/docs/monetization-android-release-notes).
 
+### 9.8.2.0
+- Certified with Chartboost - 9.8.2
+
 ### 9.8.1.0
 - Certified with Chartboost - 9.8.1
 

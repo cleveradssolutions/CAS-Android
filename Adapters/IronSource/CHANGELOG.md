@@ -2,6 +2,10 @@
 `com.cleveradssolutions:ironsource:`  
 Read IronSource SDK releases [here](https://developers.ironsrc.com/ironsource-mobile/android/sdk-change-log/).
 
+### 8.6.1.0
+- Certified with IronSource - 8.6.1
+- Adding Creative ID as part of ILR callbacks
+
 ### 8.5.0.0
 - Certified with IronSource - 8.5.0
 
