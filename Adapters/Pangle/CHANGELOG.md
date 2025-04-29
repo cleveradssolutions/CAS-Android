@@ -1,6 +1,12 @@
 ## Pangle Android Mediation Adapter Changelog
 `com.cleveradssolutions:pangle:`
 
+### 7.1.0.7
+- Certified with Pangle - 7.1.0.7
+- Added Native and AppOpen ad support
+
+## Legacy Versions are incompatible with CAS 4.0
+
 ### 6.5.0.4
 - Certified with Pangle - 6.5.0.4
 

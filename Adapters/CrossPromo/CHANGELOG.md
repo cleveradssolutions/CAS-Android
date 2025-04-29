@@ -1,6 +1,10 @@
 ## Cross Promo Android Mediation Adapter Changelog
 `com.cleveradssolutions:cas-promo:`
 
+### 4.0.2
+
+## Legacy Versions are incompatible with CAS 4.0
+
 ### 3.6.0
 - Removed use of `com.google.code.gson:gson` dependency.
 

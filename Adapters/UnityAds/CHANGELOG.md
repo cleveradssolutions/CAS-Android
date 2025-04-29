@@ -1,6 +1,10 @@
 ## Unity Ads Android Mediation Adapter Changelog
 `com.cleveradssolutions:unity:`  
-Read Unity Ads SDK releases [here](https://docs.unity.com/ads/en-us/manual/Changelog).
+
+### 4.14.2.0
+- Certified with Unity Ads - 4.14.2
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 4.13.2.0
 - Certified with Unity Ads - 4.13.2

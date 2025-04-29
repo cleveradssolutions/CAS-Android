@@ -1,6 +1,9 @@
 ## HyprMX Android Mediation Adapter Changelog
 `com.cleveradssolutions:hyprmx:`  
-Read HyprMX SDK releases [here](https://documentation.hyprmx.com/android-sdk/).
+
+### 6.4.2.1
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 6.4.2.0
 - Certified with HyprMX - 6.4.2

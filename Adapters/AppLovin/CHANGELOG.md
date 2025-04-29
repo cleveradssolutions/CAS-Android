@@ -1,6 +1,11 @@
 ## AppLovin Android Mediation Adapter Changelog
 `com.cleveradssolutions:applovin:`  
-Read AppLovin SDK releases [here](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases).
+
+### 13.2.0.0
+- Certified with AppLovin - 13.2.0
+- Added Native and AppOpen ad support
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 13.1.0.0
 - Certified with AppLovin - 13.1.0

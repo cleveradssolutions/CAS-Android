@@ -1,6 +1,10 @@
 ## DT Exchange Android Mediation Adapter Changelog
 `com.cleveradssolutions:fyber:`  
-Read DT Exchange SDK releases [here](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog).
+
+### 8.3.7.0
+- Certified with DT Exchange - 8.3.7
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 8.3.6.0
 - Certified with DT Exchange - 8.3.6

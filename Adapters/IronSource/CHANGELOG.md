@@ -1,6 +1,10 @@
 ## IronSource Android Mediation Adapter Changelog
 `com.cleveradssolutions:ironsource:`  
-Read IronSource SDK releases [here](https://developers.ironsrc.com/ironsource-mobile/android/sdk-change-log/).
+
+### 8.8.0.0
+- Certified with IronSource - 8.8.0
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 8.7.0.0
 - Certified with IronSource - 8.7.0

@@ -1,6 +1,10 @@
 ## Meta Audience Network Android Mediation Adapter Changelog
 `com.cleveradssolutions:facebook:`  
-Read Meta Audience Network SDK releases [here](https://developers.facebook.com/docs/audience-network/setting-up/platform-setup/android/changelog).
+
+### 6.19.0.1
+- Added Native and AppOpen ad support
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 6.19.0.0
 - Certified with Meta Audience Network - 6.19.0

@@ -1,6 +1,11 @@
 ## Mintegral Android Mediation Adapter Changelog
 `com.cleveradssolutions:mintegral:`  
-Read Mintegral SDK releases [here](http://cdn-adn.rayjump.com/cdn-adn/v2/markdown_v2/index.html?file=sdk-m_sdk-android&lang=en).
+
+### 16.9.71.0
+- Certified with Mintegral - 16.9.71
+- Added Native and AppOpen ad support
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 16.9.51.0
 - Certified with Mintegral - 16.9.51

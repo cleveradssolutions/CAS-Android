@@ -3,6 +3,11 @@
 com.cleveradssolutions:cas-exchange:
 ```
 
+### 4.0.2
+- Improved ad content requests.
+
+## Legacy Versions are incompatible with CAS 4.0
+
 ### 3.9.8
 - Fixed rendering of some creatives.
 

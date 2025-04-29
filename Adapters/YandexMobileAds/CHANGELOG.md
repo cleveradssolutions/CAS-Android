@@ -1,6 +1,11 @@
 ## Yandex Ads Android Mediation Adapter Changelog
 `com.cleveradssolutions:yandex:`  
-Read Yandex Mobile Ads SDK releases [here](https://github.com/yandexmobile/yandex-ads-sdk-android/blob/master/changelogs/mobileads/CHANGELOG.md).
+
+### 27.12.1.0
+- Certified with Yandex Mobile Ads - 7.12.1
+- Added Native and AppOpen ad support
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 27.9.0.0
 - Certified with Yandex Mobile Ads - 7.9.0

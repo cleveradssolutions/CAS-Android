@@ -1,6 +1,11 @@
 ## Google Ads Android Mediation Adapter Changelog
 `com.cleveradssolutions:google:`  
-Read Google Ads SDK releases [here](https://developers.google.com/admob/android/rel-notes).
+
+### 24.2.0.0
+- Certified with Google Mobile Ads - 24.2.0
+- Added Native and AppOpen ad support
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 23.6.0.0
 - Certified with Google Mobile Ads - 23.6.0

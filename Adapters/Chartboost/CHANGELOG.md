@@ -1,7 +1,11 @@
 ## Chartboost Android Mediation Adapter Changelog
 `com.cleveradssolutions:chartboost:`  
 Required `maven { url = "https://cboost.jfrog.io/artifactory/chartboost-ads/" }` repository.  
-Read Chartboost SDK releases [here](https://developers.chartboost.com/docs/monetization-android-release-notes).
+
+
+### 9.8.3.1
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 9.8.3.0
 - Certified with Chartboost - 9.8.3

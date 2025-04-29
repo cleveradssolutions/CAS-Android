@@ -1,6 +1,9 @@
 ## SuperAwesome Android Mediation Adapter Changelog
 `com.cleveradssolutions:superawesome:`  
-Read SuperAwesome SDK releases [here](https://dev.superawesome.com/docs/awesomeads/sdks/publisher/docs/android/releases).
+
+### 9.4.0.1
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 9.4.0.0
 - Certified with SuperAwesome - 9.4.0

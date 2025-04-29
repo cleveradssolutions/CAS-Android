@@ -1,6 +1,9 @@
 ## Kidoz Android Mediation Adapter Changelog
 `com.cleveradssolutions:kidoz:`  
-Read Kidoz SDK releases [here](https://github.com/Kidoz-SDK/kidoz-mobile-sdk/tree/main/Kidoz%20Direct/Android).
+
+### 9.1.2.1
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 9.1.2.0
 - Certified with Kidoz - 9.1.2

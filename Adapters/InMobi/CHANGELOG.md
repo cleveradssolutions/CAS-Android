@@ -1,6 +1,11 @@
 ## InMobi Android Mediation Adapter Changelog
 `com.cleveradssolutions:inmobi:`  
-Read InMobi SDK releases [here](https://support.inmobi.com/monetize/sdk-documentation/android-guidelines/changelogs-android/android-changelogs-kotlin).
+
+### 10.8.2.1
+- Certified with InMobi - 10.8.2
+- Added Native ad support
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 10.8.0.0
 - Certified with InMobi - 10.8.0

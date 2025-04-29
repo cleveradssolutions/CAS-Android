@@ -1,8 +1,12 @@
 ## Smaato Android Mediation Adapter Changelog
-Read Smaato SDK releases [here](https://developers.smaato.com/publishers/nextgen-sdk-android-changelog/).
 ```
 com.cleveradssolutions:smaato:
 ```
+
+### 22.7.2.0
+- Certified with Smaato - 22.7.2
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 22.7.1.0
 - Certified with Smaato - 22.7.1

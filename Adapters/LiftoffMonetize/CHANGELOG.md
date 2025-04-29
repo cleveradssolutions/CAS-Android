@@ -1,6 +1,10 @@
 ## LiftoffMonetize Android Mediation Adapter Changelog
 `com.cleveradssolutions:vungle:`  
-Read Liftoff Monetize SDK releases [here](https://support.vungle.com/hc/en-us/articles/15722228922395-Download-Vungle-SDK-for-Android-Amazon).
+
+### 7.4.3.1
+- Added Native and AppOpen ad support
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 7.4.3.0
 - Certified with Liftoff Monetize - 7.4.3

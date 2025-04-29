@@ -4,17 +4,13 @@ include ':javaSample'
 
 dependencyResolutionManagement {
     repositories {
+        mavenLocal()
         google()
         mavenCentral()
         maven {
             name = "CASBetaRepo"
             url = "https://repo.repsy.io/mvn/cleveradssolutions/beta"
             content { it.includeGroup("com.cleveradssolutions") }
-        }
-        maven {
-            name = "IronSourceAdsRepo"
-            url = "https://android-sdk.is.com/"
-            content { it.includeGroup("com.ironsource.sdk") }
         }
         maven {
             name = "MintegralAdsRepo"
@@ -27,14 +23,27 @@ dependencyResolutionManagement {
             content { it.includeGroup("com.pangle.global") }
         }
         maven {
+            name = "ChartboostAdsRepo"
+            url = "https://cboost.jfrog.io/artifactory/chartboost-ads/"
+            content { it.includeGroup("com.chartboost") }
+        }
+        maven {
             name = "SuperAwesomeAdsRepo"
             url = "https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo"
             content { it.includeGroup("tv.superawesome.sdk.publisher") }
         }
         maven {
-            name = "ChartboostAdsRepo"
-            url = "https://cboost.jfrog.io/artifactory/chartboost-ads/"
-            content { it.includeGroup("com.chartboost") }
+            name = "YSONetworkRepo"
+            url = "https://ysonetwork.s3.eu-west-3.amazonaws.com/sdk/android"
+            content { it.includeGroup("com.ysocorp") }
+        }
+        maven {
+            name = "OguryAdsRepo"
+            url = "https://maven.ogury.co"
+            content {
+                it.includeGroup("co.ogury")
+                it.includeGroup("co.ogury.module")
+            }
         }
         maven {
             name = "SmaatoAdsRepo"

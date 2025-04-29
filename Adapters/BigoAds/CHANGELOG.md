@@ -1,6 +1,11 @@
 ## Bigo Android Mediation Adapter Changelog
 `com.cleveradssolutions:bigo:`  
-Read Bigo Ads SDK releases [here](https://www.bigossp.com/guide/sdk/android/version).
+
+### 5.3.0.0
+- Certified with Bigo Ads - 5.3.0
+- Added Native and AppOpen ad support
+
+## Legacy Versions are incompatible with CAS 4.0
 
 ### 5.1.0.0
 - Certified with Bigo Ads - 5.1.0
