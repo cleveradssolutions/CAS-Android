@@ -18,7 +18,7 @@ To get started with the sample apps, follow the instructions below:
 To file bugs, make feature requests, or suggest improvements for the Android SDK, please use [GitHub's issue tracker](https://github.com/cleveradssolutions/CAS-Android/issues).
 
 ## Support
-support@cleveradssolutions.com  
+support@cas.ai  
 
 ## License
 The CAS Android-SDK is available under a commercial license. See the LICENSE file for more info.

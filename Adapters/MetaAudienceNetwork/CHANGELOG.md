@@ -1,6 +1,9 @@
 ## Meta Audience Network Android Mediation Adapter Changelog
 `com.cleveradssolutions:facebook:`  
 
+### 6.20.0.0
+- Certified with Meta Audience Network - 6.20.0
+
 ### 6.19.0.1
 - Added Native and AppOpen ad support
 

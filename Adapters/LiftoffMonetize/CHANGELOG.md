@@ -1,6 +1,10 @@
 ## LiftoffMonetize Android Mediation Adapter Changelog
 `com.cleveradssolutions:vungle:`  
 
+### 7.5.0.0
+- Certified with Liftoff Monetize - 7.5.0
+- Added Adaptive banner sizes support. (Closed beta)
+
 ### 7.4.3.1
 - Added Native and AppOpen ad support
 

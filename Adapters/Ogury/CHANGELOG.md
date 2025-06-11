@@ -1,7 +1,5 @@
 ## Ogury Android Mediation Adapter Changelog
-```
-com.cleveradssolutions:ogury:
-```
+`com.cleveradssolutions:ogury:`
 
 ### 6.0.1.0
 - Certified with Ogury - 6.0.1

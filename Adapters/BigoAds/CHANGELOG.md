@@ -1,6 +1,9 @@
 ## Bigo Android Mediation Adapter Changelog
 `com.cleveradssolutions:bigo:`  
 
+### 5.3.0.1
+- Added COPPA state redefinition for Bigo SDK.
+
 ### 5.3.0.0
 - Certified with Bigo Ads - 5.3.0
 - Added Native and AppOpen ad support

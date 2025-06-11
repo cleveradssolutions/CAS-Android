@@ -1,7 +1,8 @@
 ## CASExchange Android Mediation Adapter Changelog
-```
-com.cleveradssolutions:cas-exchange:
-```
+`com.cleveradssolutions:cas-exchange:`
+
+### 4.1.0
+- Fix vast regex to accept single quotes
 
 ### 4.0.2
 - Improved ad content requests.

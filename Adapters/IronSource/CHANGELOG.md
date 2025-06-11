@@ -1,6 +1,11 @@
 ## IronSource Android Mediation Adapter Changelog
 `com.cleveradssolutions:ironsource:`  
 
+### 8.9.1.0
+- Certified with IronSource - 8.9.1
+- Updated adapter implementation to match IronSource SDK changes.
+- Added implementation of floor prices for bidding requests. 
+
 ### 8.8.0.0
 - Certified with IronSource - 8.8.0
 

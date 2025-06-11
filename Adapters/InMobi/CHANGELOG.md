@@ -1,6 +1,9 @@
 ## InMobi Android Mediation Adapter Changelog
 `com.cleveradssolutions:inmobi:`  
 
+### 10.8.3.0
+- Certified with InMobi - 10.8.3
+
 ### 10.8.2.1
 - Certified with InMobi - 10.8.2
 - Added Native ad support

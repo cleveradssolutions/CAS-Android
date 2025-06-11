@@ -1,6 +1,10 @@
 ## Pangle Android Mediation Adapter Changelog
 `com.cleveradssolutions:pangle:`
 
+### 7.2.0.4
+- Certified with Pangle - 7.2.0.4
+- Added Adaptive banner sizes support.
+
 ### 7.1.0.7
 - Certified with Pangle - 7.1.0.7
 - Added Native and AppOpen ad support

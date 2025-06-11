@@ -1,6 +1,11 @@
 ## Madex Android Mediation Adapter Changelog
 `com.cleveradssolutions:madex:`
 
+### 1.7.3.0
+- Certified with Madex - 1.7.3
+- Added Banner ads support.
+- Fixed Ad Impression callback.
+
 ### 1.7.1.0
 - Certified with Madex - 1.7.1
 

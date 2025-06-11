@@ -1,6 +1,9 @@
 ## Unity Ads Android Mediation Adapter Changelog
 `com.cleveradssolutions:unity:`  
 
+### 4.15.0.0
+- Certified with Unity Ads - 4.15.0
+
 ### 4.14.2.0
 - Certified with Unity Ads - 4.14.2
 

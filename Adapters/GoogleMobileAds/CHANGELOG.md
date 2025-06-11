@@ -1,6 +1,10 @@
 ## Google Ads Android Mediation Adapter Changelog
 `com.cleveradssolutions:google:`  
 
+### 24.4.0.0
+- Certified with Google Mobile Ads - 24.4.0
+- Show Screen ads in Immersive mode to prevent the system bars from showing up.
+
 ### 24.2.0.0
 - Certified with Google Mobile Ads - 24.2.0
 - Added Native and AppOpen ad support

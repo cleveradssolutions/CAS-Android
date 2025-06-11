@@ -1,6 +1,9 @@
 ## AppLovin Android Mediation Adapter Changelog
 `com.cleveradssolutions:applovin:`  
 
+### 13.3.0.0
+- Certified with AppLovin - 13.3.0
+
 ### 13.2.0.0
 - Certified with AppLovin - 13.2.0
 - Added Native and AppOpen ad support

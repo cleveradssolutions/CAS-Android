@@ -1,6 +1,9 @@
 ## Mintegral Android Mediation Adapter Changelog
 `com.cleveradssolutions:mintegral:`  
 
+### 16.9.71.1
+- Fixed loading of native ads. 
+
 ### 16.9.71.0
 - Certified with Mintegral - 16.9.71
 - Added Native and AppOpen ad support
