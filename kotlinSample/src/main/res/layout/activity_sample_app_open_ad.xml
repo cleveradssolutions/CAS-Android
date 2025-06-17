@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".SampleAppOpenAdActivity">
+    tools:context=".appopen.AppOpenAdActivity">
 
     <ImageView
         android:id="@+id/icon"

@@ -1,3 +1,4 @@
+/*
 package com.cleveradssolutions.sampleapp
 
 import android.annotation.SuppressLint
@@ -20,12 +21,11 @@ class SampleActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.selection_activity)
 
         // Get current SDK version
         findViewById<TextView>(R.id.casVersionText).text = CAS.getSDKVersion()
 
-        val adManager = SampleApplication.adManager
         createBanner(adManager)
         createInterstitial(adManager)
         createRewarded(adManager)
@@ -239,3 +239,4 @@ class SampleActivity : Activity() {
         }
     }
 }
+*/

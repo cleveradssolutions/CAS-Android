@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.cleveradssolutions.sampleapp.SampleAppOpenAdActivity"
+            android:name="com.cleveradssolutions.sampleapp.appopen.SampleAppOpenAdActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:screenOrientation="locked">

@@ -5,7 +5,6 @@ import android.util.Log
 import com.cleversolutions.ads.AdType
 import com.cleversolutions.ads.Audience
 import com.cleversolutions.ads.ConsentFlow
-import com.cleversolutions.ads.MediationManager
 import com.cleversolutions.ads.android.CAS
 
 class SampleApplication : Application() {
@@ -13,8 +12,6 @@ class SampleApplication : Application() {
     companion object {
         const val TAG = "CAS Sample"
         const val CAS_ID = "demo"
-
-        lateinit var adManager: MediationManager
     }
 
     override fun onCreate() {
@@ -28,10 +25,9 @@ class SampleApplication : Application() {
         //CAS.settings.loadingMode = LoadingManagerMode.Manual
 
         // Initialize SDK
-        adManager = CAS.buildManager()
+        CAS.buildManager()
             .withManagerId(CAS_ID)
             .withTestAdMode(BuildConfig.DEBUG)
-            .withAdTypes(AdType.Banner, AdType.Interstitial, AdType.Rewarded)
             .withConsentFlow(
                 ConsentFlow(isEnabled = true)
                     .withDismissListener {

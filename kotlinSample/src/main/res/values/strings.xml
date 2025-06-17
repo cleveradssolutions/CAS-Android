@@ -7,4 +7,14 @@
     <string name="interstitial_ad">Interstitial Ad</string>
     <string name="rewarded_ad">Rewarded Ad</string>
     <string name="load">Load</string>
+
+    <string name="adFormats_title">Ad Formats</string>
+    <string name="adFormats_bannerAd">Banner Ad</string>
+    <string name="adFormats_adaptiveBannerAd">Adaptive Banner Ad</string>
+    <string name="adFormats_mrecBannerAd">Medium Rectangle Ad</string>
+    <string name="adFormats_nativeAd">Native Ad</string>
+    <string name="adFormats_nativeTemplateAd">Native Ad Template</string>
+    <string name="adFormats_appOpenAd">AppOpen Ad</string>
+    <string name="adFormats_interstitialAd">Interstitial Ad</string>
+    <string name="adFormats_rewardedAd">Rewarded Ad</string>
 </resources>

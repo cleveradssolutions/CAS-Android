@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/TextAppearance.Material3.BodyLarge"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:padding="12dp"
+    android:textColor="@color/colorAccent"
+    android:textSize="18sp"
+    tools:background="@color/colorPrimaryContainer"
+    tools:text="@string/adFormats_bannerAd" />
