@@ -26,7 +26,7 @@ class SampleApplication : Application() {
 
         // Initialize SDK
         CAS.buildManager()
-            .withManagerId(CAS_ID)
+            .withCasId(CAS_ID)
             .withTestAdMode(BuildConfig.DEBUG)
             .withConsentFlow(
                 ConsentFlow(isEnabled = true)
@@ -38,7 +38,7 @@ class SampleApplication : Application() {
                 if (it.error == null) {
                     Log.d(TAG, "Ad manager initialized")
                 } else {
-                    Log.d(TAG, "Ad manager initialization failed: " + it.error)
+                    Log.e(TAG, "Ad manager initialization failed: " + it.error)
                 }
             }
             .build(this)

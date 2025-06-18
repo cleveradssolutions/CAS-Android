@@ -1,13 +1,21 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="AppTheme" parent="Theme.Material3.DayNight">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
         <item name="colorPrimaryContainer">@color/colorPrimaryContainer</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryContainer">@color/colorSecondaryContainer</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
     </style>
 
 </resources>

@@ -3,20 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".appopen.AppOpenAdActivity">
+    tools:context=".SplashAppOpenAdActivity">
 
     <ImageView
-        android:id="@+id/icon"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:src="@mipmap/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/timerTitleView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="AppOpenAd loading is carried out before the application resources are ready."
@@ -33,11 +30,9 @@
         android:textColor="#FFF"
         android:textSize="30sp" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/skipAppOpenAd"
-        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Skip AppOpenAd"
-        android:textAllCaps="false" />
+        android:text="Skip AppOpenAd" />
 </LinearLayout>

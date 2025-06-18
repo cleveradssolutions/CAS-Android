@@ -1,6 +1,6 @@
 package com.cleveradssolutions.sampleapp.native
 
-import android.app.Activity
+import com.cleveradssolutions.sampleapp.util.BackNavigationActivity
 
-class NativeTemplateAdActivity : Activity() {
+class NativeTemplateAdActivity : BackNavigationActivity() {
 }

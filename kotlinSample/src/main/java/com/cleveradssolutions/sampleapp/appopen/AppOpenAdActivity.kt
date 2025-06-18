@@ -1,118 +1,64 @@
 package com.cleveradssolutions.sampleapp.appopen
 
-import android.annotation.SuppressLint
-import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
-import android.os.CountDownTimer
-import android.util.Log
-import android.view.View
-import android.widget.TextView
+import android.widget.Button
 import com.cleveradssolutions.sampleapp.R
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.CAS_ID
-import com.cleveradssolutions.sampleapp.SampleApplication.Companion.TAG
-import com.cleveradssolutions.sampleapp.selection.SelectionActivity
+import com.cleveradssolutions.sampleapp.util.BackNavigationActivity
+import com.cleveradssolutions.sampleapp.util.toast
+import com.cleveradssolutions.sampleapp.util.toastError
 import com.cleveradssolutions.sdk.AdContentInfo
 import com.cleveradssolutions.sdk.AdFormat
 import com.cleveradssolutions.sdk.OnAdImpressionListener
 import com.cleveradssolutions.sdk.screen.CASAppOpen
 import com.cleveradssolutions.sdk.screen.ScreenAdContentCallback
 import com.cleversolutions.ads.AdError
-import java.util.concurrent.TimeUnit
 
-class AppOpenAdActivity : Activity() {
-    private var isLoadingAppResources = false
-    private var isVisibleAppOpenAd = false
-    private var isCompletedSplash = false
+class AppOpenAdActivity : BackNavigationActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Add <activity ... android:configChanges="orientation ..." />
-        // in manifest to avoid calling onCreate() multiple times
-        setContentView(R.layout.activity_sample_app_open_ad)
+        setContentView(R.layout.screen_ad_activity)
 
-        simulationLongAppResourcesLoading()
-        createAppOpenAd()
-    }
-
-    @SuppressLint("SetTextI18n")
-    private fun createAppOpenAd() {
-        // Create an Ad
         val appOpenAd = CASAppOpen(CAS_ID)
 
-        // Handle fullscreen callback events
         appOpenAd.contentCallback = object : ScreenAdContentCallback() {
             override fun onAdLoaded(ad: AdContentInfo) {
-                Log.d(TAG, "App Open Ad loaded")
-                if (isLoadingAppResources) {
-                    isVisibleAppOpenAd = true
-                    appOpenAd.show(this@AppOpenAdActivity)
-                }
+                toast("App Open Ad loaded")
             }
 
             override fun onAdFailedToLoad(format: AdFormat, error: AdError) {
-                Log.e(TAG, "App Open Ad failed to load: ${error.message}")
-                startNextActivity()
+                toastError("App Open Ad failed to load: ${error.message}")
             }
 
             override fun onAdFailedToShow(format: AdFormat, error: AdError) {
-                Log.e(TAG, "App Open Ad show failed: ${error.message}")
-                isVisibleAppOpenAd = false
-                startNextActivity()
+                toastError("App Open Ad show failed: ${error.message}")
             }
 
             override fun onAdShowed(ad: AdContentInfo) {
-                Log.d(TAG, "App Open Ad shown")
+                toast("App Open Ad shown")
             }
 
             override fun onAdClicked(ad: AdContentInfo) {
-                Log.d(TAG, "App Open Ad clicked")
+                toast("App Open Ad clicked")
             }
 
             override fun onAdDismissed(ad: AdContentInfo) {
-                Log.d(TAG, "App Open Ad closed")
-                isVisibleAppOpenAd = false
-                startNextActivity()
+                toast("App Open Ad closed")
             }
         }
 
         appOpenAd.onImpressionListener = OnAdImpressionListener { ad ->
-            Log.d(TAG, "App Open Ad impression: ${ad.revenue}")
+            toast("App Open Ad impression: ${ad.revenue}")
         }
 
-        appOpenAd.load(this)
-    }
-
-    private fun startNextActivity() {
-        if (isLoadingAppResources || isVisibleAppOpenAd || isCompletedSplash)
-            return
-        isCompletedSplash = true
-        val intent = Intent(this, SelectionActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        startActivity(intent)
-    }
-
-    private fun simulationLongAppResourcesLoading() {
-        // Simulation of long application resources loading for 5 seconds.
-        isLoadingAppResources = true
-        val timerText = findViewById<TextView>(R.id.timerView)
-        val timer = object : CountDownTimer(TimeUnit.SECONDS.toMillis(7), 1000) {
-            @SuppressLint("SetTextI18n")
-            override fun onTick(millisUntilFinished: Long) {
-                timerText.text =
-                    "${TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished)} seconds left"
-            }
-
-            override fun onFinish() {
-                isLoadingAppResources = false
-                startNextActivity()
-            }
+        findViewById<Button>(R.id.load).setOnClickListener {
+            appOpenAd.load(this)
         }
-        timer.start()
 
-        findViewById<View>(R.id.skipAppOpenAd).setOnClickListener { v: View? ->
-            isLoadingAppResources = false
-            startNextActivity()
+        findViewById<Button>(R.id.show).setOnClickListener {
+            appOpenAd.show(this)
         }
     }
+
 }

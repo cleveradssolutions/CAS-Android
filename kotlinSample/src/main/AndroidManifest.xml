@@ -15,10 +15,11 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".selection.SelectionActivity"
+            android:name=".SplashAppOpenAdActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="locked">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,17 +28,22 @@
         </activity>
 
         <activity
-            android:name=".banner.BannerAdActivity"
+            android:name=".selection.SelectionActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="fullSensor" />
 
         <activity
-            android:name=".banner.AdaptiveBannerAdActivity"
+            android:name=".banner.xml.BannerAdActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="fullSensor" />
 
         <activity
-            android:name=".banner.MediumRectangleAdActivity"
+            android:name=".banner.xml.AdaptiveBannerAdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".banner.xml.MRECBannerAdActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="fullSensor" />
 

@@ -1,12 +1,8 @@
 <resources>
-    <string name="app_name">CAS SampleApp</string>
-    <string name="clever_ads_solutions">CAS.AI Sample</string>
-    <string name="banner_ad">Banner Ad</string>
-    <string name="show">Show</string>
-    <string name="hide">Hide</string>
-    <string name="interstitial_ad">Interstitial Ad</string>
-    <string name="rewarded_ad">Rewarded Ad</string>
+    <string name="app_name">CAS.AI Sample</string>
+
     <string name="load">Load</string>
+    <string name="show">Show</string>
 
     <string name="adFormats_title">Ad Formats</string>
     <string name="adFormats_bannerAd">Banner Ad</string>
