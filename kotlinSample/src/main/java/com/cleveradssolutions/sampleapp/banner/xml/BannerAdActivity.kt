@@ -17,6 +17,7 @@ class BannerAdActivity : BackNavigationActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.standard_banner_activity)
+        setTitle(R.string.adFormats_bannerAd)
 
         val banner = findViewById<CASBannerView>(R.id.bannerView)
         banner.casId = CAS_ID

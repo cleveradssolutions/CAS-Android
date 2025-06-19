@@ -17,6 +17,7 @@ class AdaptiveBannerAdActivity : BackNavigationActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.adaptive_ad_activity)
+        setTitle(R.string.adFormats_adaptiveBannerAd)
 
         val banner = findViewById<CASBannerView>(R.id.bannerView)
         banner.casId = CAS_ID

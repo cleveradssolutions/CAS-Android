@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.cleveradssolutions.sdk.nativead.CASNativeView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cas"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ad_app_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
+                android:padding="4dp" />
+
+            <TextView
+                android:id="@+id/ad_headline"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="4dp" />
+
+            <com.cleveradssolutions.sdk.nativead.CASChoicesView
+                android:id="@+id/ad_choices_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="4dp" />
+        </LinearLayout>
+
+        <com.cleveradssolutions.sdk.nativead.CASMediaView
+            android:id="@+id/ad_media_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.cleveradssolutions.sdk.nativead.CASStarRatingView
+            android:id="@+id/ad_star_rating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="4dp" />
+
+        <!-- Other assets such as image or call to action, etc follow. -->
+    </LinearLayout>
+</com.cleveradssolutions.sdk.nativead.CASNativeView>

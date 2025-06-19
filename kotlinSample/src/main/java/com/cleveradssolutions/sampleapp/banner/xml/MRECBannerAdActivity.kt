@@ -17,6 +17,7 @@ class MRECBannerAdActivity : BackNavigationActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.mrec_banner_activity)
+        setTitle(R.string.adFormats_mrecBannerAd)
 
         val banner = findViewById<CASBannerView>(R.id.bannerView)
         banner.casId = CAS_ID

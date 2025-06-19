@@ -19,7 +19,8 @@ class BannerAdActivity : BackNavigationActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.programmatic_banner_activity)
+        setContentView(R.layout.container_activity)
+        setTitle(R.string.adFormats_bannerAd)
 
         val container = findViewById<FrameLayout>(R.id.container)
 

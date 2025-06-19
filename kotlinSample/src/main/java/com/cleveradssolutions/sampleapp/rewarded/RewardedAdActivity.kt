@@ -19,6 +19,7 @@ class RewardedAdActivity : BackNavigationActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.screen_ad_activity)
+        setTitle(R.string.adFormats_rewardedAd)
 
         val rewardedAd = CASRewarded(CAS_ID)
 

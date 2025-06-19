@@ -19,6 +19,7 @@ class InterstitialAdActivity : BackNavigationActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.screen_ad_activity)
+        setTitle(R.string.adFormats_interstitialAd)
 
         val interstitialAd = CASInterstitial(CAS_ID)
 

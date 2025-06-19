@@ -19,6 +19,7 @@ class AppOpenAdActivity : BackNavigationActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.screen_ad_activity)
+        setTitle(R.string.adFormats_appOpenAd)
 
         val appOpenAd = CASAppOpen(CAS_ID)
 

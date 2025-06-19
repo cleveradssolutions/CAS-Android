@@ -53,7 +53,12 @@
             android:screenOrientation="fullSensor" />
 
         <activity
-            android:name=".native.NativeTemplateAdActivity"
+            android:name=".native.NativeAdTemplateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".native.MultipleNativeAdActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="fullSensor" />
 
