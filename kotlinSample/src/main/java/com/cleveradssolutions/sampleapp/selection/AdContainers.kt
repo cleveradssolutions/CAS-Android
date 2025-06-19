@@ -2,6 +2,7 @@ package com.cleveradssolutions.sampleapp.selection
 
 import com.cleveradssolutions.sampleapp.R
 import com.cleveradssolutions.sampleapp.appopen.AppOpenAdActivity
+import com.cleveradssolutions.sampleapp.appopen.SplashAppOpenAdActivity
 import com.cleveradssolutions.sampleapp.banner.xml.AdaptiveBannerAdActivity
 import com.cleveradssolutions.sampleapp.banner.xml.BannerAdActivity
 import com.cleveradssolutions.sampleapp.banner.xml.MRECBannerAdActivity
@@ -20,6 +21,7 @@ enum class AdContainers(val titleResId: Int, val activity: KClass<*>) {
     NativeTemplate(R.string.adFormats_nativeAdTemplate, NativeAdTemplateActivity::class),
     MultipleNativeTemplate(R.string.adFormats_multipleNativeAd, MultipleNativeAdActivity::class),
     AppOpen(R.string.adFormats_appOpenAd, AppOpenAdActivity::class),
+    SplashAppOpen(R.string.adFormats_splashAppOpenAd, SplashAppOpenAdActivity::class),
     Interstitial(R.string.adFormats_interstitialAd, InterstitialAdActivity::class),
-    Rewarded(R.string.adFormats_rewardedAd, RewardedAdActivity::class);
+    Rewarded(R.string.adFormats_rewardedAd, RewardedAdActivity::class)
 }

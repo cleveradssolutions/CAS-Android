@@ -22,6 +22,8 @@ class AppOpenAdActivity : BackNavigationActivity() {
         setTitle(R.string.adFormats_appOpenAd)
 
         val appOpenAd = CASAppOpen(CAS_ID)
+        appOpenAd.isAutoloadEnabled = false
+        appOpenAd.isAutoshowEnabled = false
 
         appOpenAd.contentCallback = object : ScreenAdContentCallback() {
             override fun onAdLoaded(ad: AdContentInfo) {

@@ -13,6 +13,7 @@
     <string name="adFormats_nativeAdTemplate">Native Ad Template</string>
     <string name="adFormats_multipleNativeAd">Multiple Native Ad Template</string>
     <string name="adFormats_appOpenAd">AppOpen Ad</string>
+    <string name="adFormats_splashAppOpenAd">Splash AppOpen Ad</string>
     <string name="adFormats_interstitialAd">Interstitial Ad</string>
     <string name="adFormats_rewardedAd">Rewarded Ad</string>
 </resources>

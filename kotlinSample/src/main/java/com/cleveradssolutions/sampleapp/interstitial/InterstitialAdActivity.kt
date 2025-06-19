@@ -22,6 +22,8 @@ class InterstitialAdActivity : BackNavigationActivity() {
         setTitle(R.string.adFormats_interstitialAd)
 
         val interstitialAd = CASInterstitial(CAS_ID)
+        interstitialAd.isAutoloadEnabled = false
+        interstitialAd.isAutoshowEnabled = false
 
         interstitialAd.contentCallback = object : ScreenAdContentCallback() {
             override fun onAdLoaded(ad: AdContentInfo) {

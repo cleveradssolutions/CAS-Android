@@ -22,6 +22,7 @@ class RewardedAdActivity : BackNavigationActivity() {
         setTitle(R.string.adFormats_rewardedAd)
 
         val rewardedAd = CASRewarded(CAS_ID)
+        rewardedAd.isAutoloadEnabled = false
 
         rewardedAd.contentCallback = object : ScreenAdContentCallback() {
             override fun onAdLoaded(ad: AdContentInfo) {

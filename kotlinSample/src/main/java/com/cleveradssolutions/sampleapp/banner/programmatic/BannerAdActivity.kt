@@ -25,6 +25,7 @@ class BannerAdActivity : BackNavigationActivity() {
         val container = findViewById<FrameLayout>(R.id.container)
 
         val banner = CASBannerView(this, CAS_ID)
+        banner.isAutoloadEnabled = false
 //        banner.size = AdSize.BANNER
 //        banner.size = AdSize.MEDIUM_RECTANGLE
         banner.size = AdSize.getAdaptiveBannerInScreen(this)

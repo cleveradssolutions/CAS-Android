@@ -21,6 +21,7 @@ class MRECBannerAdActivity : BackNavigationActivity() {
 
         val banner = findViewById<CASBannerView>(R.id.bannerView)
         banner.casId = CAS_ID
+        banner.isAutoloadEnabled = false
 
         banner.adListener = object : AdViewListener {
             override fun onAdViewLoaded(view: CASBannerView) {

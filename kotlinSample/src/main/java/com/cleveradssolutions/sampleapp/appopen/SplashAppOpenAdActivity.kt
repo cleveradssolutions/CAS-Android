@@ -1,4 +1,4 @@
-package com.cleveradssolutions.sampleapp
+package com.cleveradssolutions.sampleapp.appopen
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -8,6 +8,7 @@ import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import com.cleveradssolutions.sampleapp.R
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.CAS_ID
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.TAG
 import com.cleveradssolutions.sampleapp.selection.SelectionActivity
