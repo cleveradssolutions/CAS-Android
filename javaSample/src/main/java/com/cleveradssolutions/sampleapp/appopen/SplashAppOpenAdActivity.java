@@ -1,4 +1,4 @@
-package com.cleveradssolutions.sampleapp;
+package com.cleveradssolutions.sampleapp.appopen;
 
 import static com.cleveradssolutions.sampleapp.SampleApplication.CAS_ID;
 import static com.cleveradssolutions.sampleapp.SampleApplication.TAG;
@@ -6,26 +6,26 @@ import static com.cleveradssolutions.sampleapp.SampleApplication.TAG;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.cleversolutions.ads.AdCallback;
+import com.cleveradssolutions.sampleapp.R;
+import com.cleveradssolutions.sampleapp.selection.SelectionActivity;
+import com.cleveradssolutions.sdk.AdContentInfo;
+import com.cleveradssolutions.sdk.AdFormat;
+import com.cleveradssolutions.sdk.screen.CASAppOpen;
+import com.cleveradssolutions.sdk.screen.ScreenAdContentCallback;
 import com.cleversolutions.ads.AdError;
-import com.cleversolutions.ads.AdStatusHandler;
-import com.cleversolutions.ads.CASAppOpen;
-import com.cleversolutions.ads.LoadAdCallback;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.TimeUnit;
 
-public class SampleAppOpenAdActivity extends Activity {
+public class SplashAppOpenAdActivity extends Activity {
+
     private boolean isLoadingAppResources = false;
     private boolean isVisibleAppOpenAd = false;
     private boolean isCompletedSplash = false;
@@ -33,7 +33,7 @@ public class SampleAppOpenAdActivity extends Activity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sample_app_open_ad);
+        setContentView(R.layout.splash_app_open_ad_activity);
 
         simulationLongAppResourcesLoading();
 
@@ -43,67 +43,66 @@ public class SampleAppOpenAdActivity extends Activity {
     @SuppressLint("SetTextI18n")
     private void createAppOpenAd() {
         // Create an Ad
-        CASAppOpen appOpenAd = CASAppOpen.create(CAS_ID);
+        CASAppOpen appOpenAd = new CASAppOpen(this, CAS_ID);
+        appOpenAd.setAutoloadEnabled(false);
+        appOpenAd.setAutoshowEnabled(false);
 
         // Handle fullscreen callback events
-        appOpenAd.setContentCallback(new AdCallback() {
+        appOpenAd.setContentCallback(new ScreenAdContentCallback() {
             @Override
-            public void onShown(@NotNull AdStatusHandler adStatusHandler) {
-                Log.d(TAG, "App Open Ad shown");
+            public void onAdLoaded(@NonNull AdContentInfo adContentInfo) {
+                Log.d(TAG, "App Open Ad loaded");
+                if (isLoadingAppResources) {
+                    isVisibleAppOpenAd = true;
+                    appOpenAd.show(SplashAppOpenAdActivity.this);
+                }
             }
 
             @Override
-            public void onShowFailed(@NotNull String message) {
-                Log.d(TAG, "App Open Ad show failed: " + message);
+            public void onAdFailedToLoad(@NonNull AdFormat adFormat, @NonNull AdError adError) {
+                Log.e(TAG, "App Open Ad failed to load: " + adError.getMessage());
+                startNextActivity();
+            }
+
+            @Override
+            public void onAdFailedToShow(@NonNull AdFormat adFormat, @NonNull AdError adError) {
+                Log.d(TAG, "App Open Ad show failed: " + adError.getMessage());
 
                 isVisibleAppOpenAd = false;
                 startNextActivity();
             }
 
             @Override
-            public void onClosed() {
+            public void onAdShowed(@NonNull AdContentInfo adContentInfo) {
+                Log.d(TAG, "App Open Ad shown");
+            }
+
+            @Override
+            public void onAdClicked(@NonNull AdContentInfo adContentInfo) {
+                Log.d(TAG, "App Open Ad clicked");
+            }
+
+            @Override
+            public void onAdDismissed(@NonNull AdContentInfo adContentInfo) {
                 Log.d(TAG, "App Open Ad closed");
 
                 isVisibleAppOpenAd = false;
                 startNextActivity();
             }
-
-            @Override
-            public void onClicked() {
-                // Not used
-            }
-
-            @Override
-            public void onComplete() {
-                // Not used
-            }
         });
 
-        // Load the Ad
-        appOpenAd.loadAd(this, new LoadAdCallback() {
-                    @Override
-                    public void onAdLoaded() {
-                        Log.d(TAG, "App Open Ad loaded");
-                        if (isLoadingAppResources) {
-                            isVisibleAppOpenAd = true;
-                            appOpenAd.show(SampleAppOpenAdActivity.this);
-                        }
-                    }
+        appOpenAd.setOnImpressionListener(adContentInfo ->
+                Log.d(TAG, "App Open Ad impression: ${ad.revenue}"));
 
-                    @Override
-                    public void onAdFailedToLoad(@NotNull AdError adError) {
-                        Log.e(TAG, "App Open Ad failed to load: " + adError.getMessage());
-                        startNextActivity();
-                    }
-                }
-        );
+        // Load the Ad
+        appOpenAd.load(this);
     }
 
     private void startNextActivity() {
         if (isLoadingAppResources || isVisibleAppOpenAd || isCompletedSplash)
             return;
         isCompletedSplash = true;
-        Intent intent = new Intent(this, SampleActivity.class);
+        Intent intent = new Intent(this, SelectionActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
@@ -132,4 +131,5 @@ public class SampleAppOpenAdActivity extends Activity {
             startNextActivity();
         });
     }
+
 }
