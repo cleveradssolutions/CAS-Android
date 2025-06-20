@@ -3,16 +3,14 @@ package com.cleveradssolutions.sampleapp;
 import android.app.Application;
 import android.util.Log;
 
-import com.cleversolutions.ads.AdType;
 import com.cleversolutions.ads.Audience;
 import com.cleversolutions.ads.ConsentFlow;
-import com.cleversolutions.ads.MediationManager;
 import com.cleversolutions.ads.android.CAS;
 
 public class SampleApplication extends Application {
+
     public static final String TAG = "CAS Sample";
     public static final String CAS_ID = "demo";
-    public static MediationManager adManager;
 
     @Override
     public void onCreate() {
@@ -25,9 +23,8 @@ public class SampleApplication extends Application {
         //CAS.settings.setLoadingMode(LoadingManagerMode.Manual);
 
         // Initialize SDK
-        adManager = CAS.buildManager()
-                .withManagerId(CAS_ID)
-                .withAdTypes(AdType.Banner, AdType.Interstitial, AdType.Rewarded)
+        CAS.buildManager()
+                .withCasId(CAS_ID)
                 .withTestAdMode(BuildConfig.DEBUG)
                 .withConsentFlow(
                         new ConsentFlow(true)
@@ -44,4 +41,5 @@ public class SampleApplication extends Application {
                 })
                 .build(this);
     }
+
 }

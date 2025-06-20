@@ -13,20 +13,68 @@
         android:networkSecurityConfig="@xml/network_security_config"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
-            android:name="com.cleveradssolutions.sampleapp.appopen.SampleAppOpenAdActivity"
+            android:name=".selection.SelectionActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
-            android:screenOrientation="locked">
+            android:screenOrientation="fullSensor">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name="com.cleveradssolutions.sampleapp.SampleActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:name=".banner.xml.BannerAdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".banner.xml.AdaptiveBannerAdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".banner.xml.MRECBannerAdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".nativead.NativeAdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".nativead.NativeAdTemplateActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".nativead.MultipleNativeAdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".appopen.SplashAppOpenAdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="locked" />
+
+        <activity
+            android:name=".appopen.AppOpenAdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".interstitial.InterstitialAdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="fullSensor" />
+
+        <activity
+            android:name=".rewarded.RewardedAdActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="fullSensor" />
     </application>
 

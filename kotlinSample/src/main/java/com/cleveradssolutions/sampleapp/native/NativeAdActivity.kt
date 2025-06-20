@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.ImageView
 import android.widget.TextView
 import com.cleveradssolutions.sampleapp.R
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.CAS_ID
@@ -69,7 +70,8 @@ class NativeAdActivity : BackNavigationActivity() {
 
     private fun inflateNativeAdView(container: FrameLayout) {
         val adView = LayoutInflater.from(container.context)
-            .inflate(R.layout.native_ad_layout, container, true) as CASNativeView
+            .inflate(R.layout.native_ad_layout, container, false) as CASNativeView
+        container.addView(adView)
         registerAdAssetViews(adView)
         this.adView = adView
     }
@@ -81,7 +83,7 @@ class NativeAdActivity : BackNavigationActivity() {
         adView.mediaView = adView.findViewById<View>(R.id.ad_media_view) as CASMediaView
 //        adView.adLabelView = adView.findViewById<View>(R.id.ad_label) as TextView
         adView.headlineView = adView.findViewById<View>(R.id.ad_headline) as TextView
-//        adView.iconView = adView.findViewById<View>(R.id.ad_icon) as ImageView
+        adView.iconView = adView.findViewById<View>(R.id.ad_icon) as ImageView
 //        adView.callToActionView = adView.findViewById<View>(R.id.ad_call_to_action) as Button
 //        adView.bodyView = adView.findViewById<View>(R.id.ad_body) as TextView
 //        adView.advertiserView = adView.findViewById<View>(R.id.ad_advertiser) as TextView

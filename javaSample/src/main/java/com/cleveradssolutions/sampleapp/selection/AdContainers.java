@@ -1,0 +1,44 @@
+package com.cleveradssolutions.sampleapp.selection;
+
+import com.cleveradssolutions.sampleapp.R;
+import com.cleveradssolutions.sampleapp.appopen.AppOpenAdActivity;
+import com.cleveradssolutions.sampleapp.appopen.SplashAppOpenAdActivity;
+import com.cleveradssolutions.sampleapp.banner.xml.AdaptiveBannerAdActivity;
+import com.cleveradssolutions.sampleapp.banner.xml.BannerAdActivity;
+import com.cleveradssolutions.sampleapp.banner.xml.MRECBannerAdActivity;
+import com.cleveradssolutions.sampleapp.interstitial.InterstitialAdActivity;
+import com.cleveradssolutions.sampleapp.nativead.MultipleNativeAdActivity;
+import com.cleveradssolutions.sampleapp.nativead.NativeAdActivity;
+import com.cleveradssolutions.sampleapp.nativead.NativeAdTemplateActivity;
+import com.cleveradssolutions.sampleapp.rewarded.RewardedAdActivity;
+
+public enum AdContainers {
+
+    Banner(R.string.adFormats_bannerAd, BannerAdActivity.class),
+    AdaptiveBanner(R.string.adFormats_adaptiveBannerAd, AdaptiveBannerAdActivity.class),
+    MrecBanner(R.string.adFormats_mrecBannerAd, MRECBannerAdActivity.class),
+    Native(R.string.adFormats_nativeAd, NativeAdActivity.class),
+    NativeTemplate(R.string.adFormats_nativeAdTemplate, NativeAdTemplateActivity.class),
+    MultipleNativeTemplate(R.string.adFormats_multipleNativeAd, MultipleNativeAdActivity.class),
+    AppOpen(R.string.adFormats_appOpenAd, AppOpenAdActivity.class),
+    SplashAppOpen(R.string.adFormats_splashAppOpenAd, SplashAppOpenAdActivity.class),
+    Interstitial(R.string.adFormats_interstitialAd, InterstitialAdActivity.class),
+    Rewarded(R.string.adFormats_rewardedAd, RewardedAdActivity.class);
+
+    private final int titleResId;
+    private final Class<?> activity;
+
+    AdContainers(int titleResId, Class<?> activity) {
+        this.titleResId = titleResId;
+        this.activity = activity;
+    }
+
+    public int getTitleResId() {
+        return titleResId;
+    }
+
+    public Class<?> getActivity() {
+        return activity;
+    }
+
+}
