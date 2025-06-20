@@ -2,10 +2,7 @@ package com.cleveradssolutions.sampleapp.native
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.FrameLayout
-import android.widget.ImageView
-import android.widget.TextView
 import com.cleveradssolutions.sampleapp.R
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.CAS_ID
 import com.cleveradssolutions.sampleapp.util.BackNavigationActivity
@@ -13,8 +10,6 @@ import com.cleveradssolutions.sampleapp.util.toast
 import com.cleveradssolutions.sampleapp.util.toastError
 import com.cleveradssolutions.sdk.AdContentInfo
 import com.cleveradssolutions.sdk.nativead.AdChoicesPlacement
-import com.cleveradssolutions.sdk.nativead.CASChoicesView
-import com.cleveradssolutions.sdk.nativead.CASMediaView
 import com.cleveradssolutions.sdk.nativead.CASNativeLoader
 import com.cleveradssolutions.sdk.nativead.CASNativeView
 import com.cleveradssolutions.sdk.nativead.NativeAdContent
@@ -78,19 +73,19 @@ class NativeAdActivity : BackNavigationActivity() {
 
     private fun registerAdAssetViews(adView: CASNativeView) {
         // You can also omit adChoicesView and it will be created automatically.
-        adView.adChoicesView = adView.findViewById<View>(R.id.ad_choices_view) as CASChoicesView
+        adView.adChoicesView = adView.findViewById(R.id.ad_choices_view)
 
-        adView.mediaView = adView.findViewById<View>(R.id.ad_media_view) as CASMediaView
-//        adView.adLabelView = adView.findViewById<View>(R.id.ad_label) as TextView
-        adView.headlineView = adView.findViewById<View>(R.id.ad_headline) as TextView
-        adView.iconView = adView.findViewById<View>(R.id.ad_icon) as ImageView
-//        adView.callToActionView = adView.findViewById<View>(R.id.ad_call_to_action) as Button
-//        adView.bodyView = adView.findViewById<View>(R.id.ad_body) as TextView
-//        adView.advertiserView = adView.findViewById<View>(R.id.ad_advertiser) as TextView
-//        adView.storeView = adView.findViewById<View>(R.id.ad_store) as TextView
-//        adView.priceView = adView.findViewById<View>(R.id.ad_price) as TextView
-//        adView.reviewCountView = adView.findViewById<View>(R.id.ad_review_count) as TextView
-        adView.starRatingView = adView.findViewById<View>(R.id.ad_star_rating)
+        adView.mediaView = adView.findViewById(R.id.ad_media_view)
+//        adView.adLabelView = adView.findViewById(R.id.ad_label)
+        adView.headlineView = adView.findViewById(R.id.ad_headline)
+        adView.iconView = adView.findViewById(R.id.ad_icon)
+//        adView.callToActionView = adView.findViewById(R.id.ad_call_to_action)
+//        adView.bodyView = adView.findViewById(R.id.ad_body)
+//        adView.advertiserView = adView.findViewById(R.id.ad_advertiser)
+//        adView.storeView = adView.findViewById(R.id.ad_store)
+//        adView.priceView = adView.findViewById(R.id.ad_price)
+//        adView.reviewCountView = adView.findViewById(R.id.ad_review_count)
+        adView.starRatingView = adView.findViewById(R.id.ad_star_rating)
     }
 
 }
