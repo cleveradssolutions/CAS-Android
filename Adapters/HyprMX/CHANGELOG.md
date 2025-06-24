@@ -1,6 +1,9 @@
 ## HyprMX Android Mediation Adapter Changelog
 `com.cleveradssolutions:hyprmx:`  
 
+### 6.4.2.2
+- Minor performance optimizations.
+
 ### 6.4.2.1
 
 ## Legacy Versions are incompatible with CAS 4.0

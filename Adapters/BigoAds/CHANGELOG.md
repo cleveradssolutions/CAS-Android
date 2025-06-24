@@ -1,6 +1,9 @@
 ## Bigo Android Mediation Adapter Changelog
 `com.cleveradssolutions:bigo:`  
 
+### 5.3.0.2
+- Fixed support for loading inline banner sizes.
+
 ### 5.3.0.1
 - Added COPPA state redefinition for Bigo SDK.
 

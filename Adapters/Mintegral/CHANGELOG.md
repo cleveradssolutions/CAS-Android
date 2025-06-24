@@ -1,6 +1,10 @@
 ## Mintegral Android Mediation Adapter Changelog
 `com.cleveradssolutions:mintegral:`  
 
+### 16.9.71.2
+- Fixed an issue where the banner remained invisible on the screen under certain configurations.
+- Fixed support for loading inline banner sizes.
+
 ### 16.9.71.1
 - Fixed loading of native ads. 
 

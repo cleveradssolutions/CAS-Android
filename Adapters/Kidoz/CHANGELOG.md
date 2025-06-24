@@ -1,6 +1,9 @@
 ## Kidoz Android Mediation Adapter Changelog
 `com.cleveradssolutions:kidoz:`  
 
+### 10.0.4.0
+- Certified with Kidoz - 10.0.4
+
 ### 10.0.2.0
 - Certified with Kidoz - 10.0.2
 

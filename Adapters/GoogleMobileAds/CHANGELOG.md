@@ -1,6 +1,10 @@
 ## Google Ads Android Mediation Adapter Changelog
 `com.cleveradssolutions:google:`  
 
+### 24.4.0.1
+- Fixed an issue where the adaptive banner did not fill the entire space under certain configurations. 
+- Added Max ad content rating flag for Google Ads requests (Closed beta)
+
 ### 24.4.0.0
 - Certified with Google Mobile Ads - 24.4.0
 - Show Screen ads in Immersive mode to prevent the system bars from showing up.

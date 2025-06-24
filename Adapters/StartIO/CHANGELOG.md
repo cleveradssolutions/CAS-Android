@@ -1,6 +1,9 @@
 ## StartIO Android Mediation Adapter Changelog
 `com.cleveradssolutions:startio:`  
 
+### 5.2.2.0
+- Certified with Start IO - 5.2.2
+
 ### 5.1.0.2
 - Updated adapter implementation to match changes in CAS 4.
 

@@ -1,21 +1,26 @@
-package com.cleveradssolutions.sampleapp
+package com.cleveradssolutions.sampleapp.appopen
 
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import android.content.res.Configuration
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
 import android.view.View
 import android.widget.TextView
+import com.cleveradssolutions.sampleapp.R
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.CAS_ID
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.TAG
-import com.cleversolutions.ads.*
-import java.util.*
+import com.cleveradssolutions.sampleapp.support.SelectionActivity
+import com.cleveradssolutions.sdk.AdContentInfo
+import com.cleveradssolutions.sdk.AdFormat
+import com.cleveradssolutions.sdk.OnAdImpressionListener
+import com.cleveradssolutions.sdk.screen.CASAppOpen
+import com.cleveradssolutions.sdk.screen.ScreenAdContentCallback
+import com.cleversolutions.ads.AdError
 import java.util.concurrent.TimeUnit
 
-class SampleAppOpenAdActivity : Activity() {
+class SplashAppOpenAdActivity : Activity() {
     private var isLoadingAppResources = false
     private var isVisibleAppOpenAd = false
     private var isCompletedSplash = false
@@ -24,7 +29,7 @@ class SampleAppOpenAdActivity : Activity() {
         super.onCreate(savedInstanceState)
         // Add <activity ... android:configChanges="orientation ..." />
         // in manifest to avoid calling onCreate() multiple times
-        setContentView(R.layout.activity_sample_app_open_ad)
+        setContentView(R.layout.splash_app_open_ad_activity)
 
         simulationLongAppResourcesLoading()
         createAppOpenAd()
@@ -33,53 +38,57 @@ class SampleAppOpenAdActivity : Activity() {
     @SuppressLint("SetTextI18n")
     private fun createAppOpenAd() {
         // Create an Ad
-        val appOpenAd = CASAppOpen.create(CAS_ID)
+        val appOpenAd = CASAppOpen(CAS_ID)
 
         // Handle fullscreen callback events
-        appOpenAd.contentCallback = object : AdCallback {
-            override fun onShown(ad: AdStatusHandler) {
-                Log.d(TAG, "App Open Ad shown")
+        appOpenAd.contentCallback = object : ScreenAdContentCallback() {
+            override fun onAdLoaded(ad: AdContentInfo) {
+                Log.d(TAG, "App Open Ad loaded")
+                if (isLoadingAppResources) {
+                    isVisibleAppOpenAd = true
+                    appOpenAd.show(this@SplashAppOpenAdActivity)
+                }
             }
 
-            override fun onShowFailed(message: String) {
-                Log.e(TAG, "App Open Ad show failed: $message")
+            override fun onAdFailedToLoad(format: AdFormat, error: AdError) {
+                Log.e(TAG, "App Open Ad failed to load: ${error.message}")
+                startNextActivity()
+            }
+
+            override fun onAdFailedToShow(format: AdFormat, error: AdError) {
+                Log.e(TAG, "App Open Ad show failed: ${error.message}")
                 isVisibleAppOpenAd = false
                 startNextActivity()
             }
 
-            override fun onClicked() {
+            override fun onAdShowed(ad: AdContentInfo) {
+                Log.d(TAG, "App Open Ad shown")
+            }
+
+            override fun onAdClicked(ad: AdContentInfo) {
                 Log.d(TAG, "App Open Ad clicked")
             }
 
-            override fun onClosed() {
+            override fun onAdDismissed(ad: AdContentInfo) {
                 Log.d(TAG, "App Open Ad closed")
                 isVisibleAppOpenAd = false
                 startNextActivity()
             }
         }
 
-        // Load the Ad
-        appOpenAd.loadAd(this, object : LoadAdCallback {
-            override fun onAdLoaded() {
-                Log.d(TAG, "App Open Ad loaded")
-                if (isLoadingAppResources) {
-                    isVisibleAppOpenAd = true
-                    appOpenAd.show(this@SampleAppOpenAdActivity)
-                }
-            }
+        // Optional set Impression listener
+        appOpenAd.onImpressionListener = OnAdImpressionListener { ad ->
+            Log.d(TAG, "App Open Ad impression: ${ad.revenue}")
+        }
 
-            override fun onAdFailedToLoad(error: AdError) {
-                Log.e(TAG, "App Open Ad failed to load: ${error.message}")
-                startNextActivity()
-            }
-        })
+        appOpenAd.load(this)
     }
 
     private fun startNextActivity() {
         if (isLoadingAppResources || isVisibleAppOpenAd || isCompletedSplash)
             return
         isCompletedSplash = true
-        val intent = Intent(this, SampleActivity::class.java)
+        val intent = Intent(this, SelectionActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
         startActivity(intent)
     }

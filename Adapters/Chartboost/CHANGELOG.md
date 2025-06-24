@@ -3,6 +3,10 @@
 Required `maven { url = "https://cboost.jfrog.io/artifactory/chartboost-ads/" }` repository.  
 
 
+### 9.8.3.2
+- Added required dependency `com.google.android.gms:play-services-ads-identifier:18.0.1`.
+Please read about known issue #26.
+
 ### 9.8.3.1
 
 ## Legacy Versions are incompatible with CAS 4.0
