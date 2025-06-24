@@ -4,10 +4,12 @@
 ### 7.2.0.6
 - Certified with Pangle - 7.2.0.6
 - Fixed support for loading inline banner sizes.
+- [SDK] No longer required to select the `App activity / Installed apps` category in the Data Safety types section.
 
 ### 7.2.0.4
 - Certified with Pangle - 7.2.0.4
 - Added Adaptive banner sizes support.
+- [SDK] Required to select the `App activity / Installed apps` category in the Data Safety types section.
 
 ### 7.1.0.7
 - Certified with Pangle - 7.1.0.7
