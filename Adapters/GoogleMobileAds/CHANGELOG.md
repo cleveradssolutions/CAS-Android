@@ -1,6 +1,10 @@
 ## Google Ads Android Mediation Adapter Changelog
 `com.cleveradssolutions:google:`  
 
+### 24.4.0.2
+- Workaround for the issue with displaying fullscreen ads on devices with Android 15+.
+- Force Impression callback after a bit in case impression data does not arrive.
+
 ### 24.4.0.1
 - Fixed an issue where the adaptive banner did not fill the entire space under certain configurations. 
 - Added Max ad content rating flag for Google Ads requests (Closed beta)

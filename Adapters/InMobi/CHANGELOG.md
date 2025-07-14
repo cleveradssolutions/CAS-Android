@@ -1,6 +1,9 @@
 ## InMobi Android Mediation Adapter Changelog
 `com.cleveradssolutions:inmobi:`  
 
+### 10.8.3.1
+- Updated adapter implementation to match changes in CAS 4.
+
 ### 10.8.3.0
 - Certified with InMobi - 10.8.3
 

@@ -1,6 +1,9 @@
 ## Yandex Ads Android Mediation Adapter Changelog
 `com.cleveradssolutions:yandex:`  
 
+### 27.14.1.0
+- Certified with Yandex Mobile Ads - 7.14.1
+
 ### 27.14.0.0
 - Certified with Yandex Mobile Ads - 7.14.0
 

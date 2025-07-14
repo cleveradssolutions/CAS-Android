@@ -3,6 +3,10 @@
 Required `maven { url = "https://cboost.jfrog.io/artifactory/chartboost-ads/" }` repository.  
 
 
+### 9.9.0.0
+- Certified with Chartboost - 9.9.0
+- Downgraded the Fragment dependency to avoid requiring Java 17.
+
 ### 9.8.3.2
 - Added required dependency `com.google.android.gms:play-services-ads-identifier:18.0.1`.
 Please read about known issue #26.

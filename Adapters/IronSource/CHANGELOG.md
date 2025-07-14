@@ -1,6 +1,10 @@
 ## IronSource Android Mediation Adapter Changelog
 `com.cleveradssolutions:ironsource:`  
 
+### 8.10.0.0
+- Certified with IronSource - 8.10.0
+- Fixed support for loading inline banner sizes.
+
 ### 8.9.1.0
 - Certified with IronSource - 8.9.1
 - Updated adapter implementation to match IronSource SDK changes.

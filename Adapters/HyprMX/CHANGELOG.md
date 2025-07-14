@@ -1,6 +1,10 @@
 ## HyprMX Android Mediation Adapter Changelog
 `com.cleveradssolutions:hyprmx:`  
 
+### 6.4.3.0
+- Certified with HyprMX - 6.4.3
+- [SDK] Added support for 16KB Page Sizes
+
 ### 6.4.2.2
 - Minor performance optimizations.
 
