@@ -1,5 +1,7 @@
 ## LiftoffMonetize Android Mediation Adapter Changelog
-`com.cleveradssolutions:vungle:`  
+```kotlin
+implementation("com.cleveradssolutions:vungle:7.5.0.0")
+``` 
 
 ### 7.5.0.0
 - Certified with Liftoff Monetize - 7.5.0

@@ -1,5 +1,7 @@
 ## Yandex Ads Android Mediation Adapter Changelog
-`com.cleveradssolutions:yandex:`  
+```kotlin
+implementation("com.cleveradssolutions:yandex:27.14.1.0")
+``` 
 
 ### 27.14.1.0
 - Certified with Yandex Mobile Ads - 7.14.1

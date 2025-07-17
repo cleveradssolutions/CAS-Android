@@ -1,5 +1,7 @@
 ## DT Exchange Android Mediation Adapter Changelog
-`com.cleveradssolutions:fyber:`  
+```kotlin
+implementation("com.cleveradssolutions:fyber:8.3.7.1")
+```
 
 ### 8.3.7.1
 - Updated adapter implementation to match changes in CAS 4.

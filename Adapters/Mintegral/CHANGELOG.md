@@ -1,5 +1,7 @@
 ## Mintegral Android Mediation Adapter Changelog
-`com.cleveradssolutions:mintegral:`  
+```kotlin
+implementation("com.cleveradssolutions:mintegral:16.9.71.2")
+```  
 
 ### 16.9.71.2
 - Fixed an issue where the banner remained invisible on the screen under certain configurations.

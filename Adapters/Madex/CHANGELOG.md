@@ -1,5 +1,7 @@
 ## Madex Android Mediation Adapter Changelog
-`com.cleveradssolutions:madex:`
+```kotlin
+implementation("com.cleveradssolutions:madex:1.7.4.0")
+```
 
 ### 1.7.4.0
 - Certified with Madex - 1.7.4

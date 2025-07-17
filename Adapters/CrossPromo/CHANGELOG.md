@@ -1,5 +1,7 @@
 ## Cross Promo Android Mediation Adapter Changelog
-`com.cleveradssolutions:cas-promo:`
+```kotlin
+implementation("com.cleveradssolutions:cas-promo:4.0.2")
+```
 
 ### 4.0.2
 

@@ -1,5 +1,7 @@
 ## InMobi Android Mediation Adapter Changelog
-`com.cleveradssolutions:inmobi:`  
+```kotlin
+implementation("com.cleveradssolutions:inmobi:10.8.3.1")
+```
 
 ### 10.8.3.1
 - Updated adapter implementation to match changes in CAS 4.

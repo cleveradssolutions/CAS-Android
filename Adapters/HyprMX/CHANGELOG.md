@@ -1,5 +1,7 @@
 ## HyprMX Android Mediation Adapter Changelog
-`com.cleveradssolutions:hyprmx:`  
+```kotlin
+implementation("com.cleveradssolutions:hyprmx:6.4.3.0")
+```
 
 ### 6.4.3.0
 - Certified with HyprMX - 6.4.3

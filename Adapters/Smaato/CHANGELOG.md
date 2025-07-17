@@ -1,6 +1,6 @@
 ## Smaato Android Mediation Adapter Changelog
-```
-com.cleveradssolutions:smaato:
+```kotlin
+implementation("com.cleveradssolutions:smaato:22.7.2.0")
 ```
 
 ### 22.7.2.0

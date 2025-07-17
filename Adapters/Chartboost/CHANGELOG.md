@@ -1,7 +1,11 @@
 ## Chartboost Android Mediation Adapter Changelog
-`com.cleveradssolutions:chartboost:`  
-Required `maven { url = "https://cboost.jfrog.io/artifactory/chartboost-ads/" }` repository.  
-
+```kotlin
+implementation("com.cleveradssolutions:chartboost:9.9.0.0")
+```  
+Required repository:
+```kotlin
+maven { url = uri("https://cboost.jfrog.io/artifactory/chartboost-ads/") }
+```
 
 ### 9.9.0.0
 - Certified with Chartboost - 9.9.0

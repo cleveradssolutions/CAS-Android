@@ -1,5 +1,7 @@
 ## CASExchange Android Mediation Adapter Changelog
-`com.cleveradssolutions:cas-exchange:`
+```kotlin
+implementation("com.cleveradssolutions:cas-exchange:4.1.0")
+```
 
 ### 4.1.0
 - Fix vast regex to accept single quotes

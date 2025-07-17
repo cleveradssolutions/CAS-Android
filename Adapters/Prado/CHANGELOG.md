@@ -1,5 +1,7 @@
 ## Prado Android Mediation Adapter Changelog
-`com.cleveradssolutions:prado:`
+```kotlin
+implementation("com.cleveradssolutions:prado:10.0.4.0")
+```
 
 ### 10.0.4.0
 - Certified with Prado - 10.0.4
