@@ -29,8 +29,16 @@ All adapters for supported networks are found in the `com.cleveradssolutions` de
 | `:smaato:22.7.2.0` |  Banner, Interstitial, Rewarded | Yes | [view](Smaato/CHANGELOG.md) | [link](https://developers.smaato.com/publishers/nextgen-sdk-android-changelog/) |
 
 
-### Adapter versioning
+## Adapter versioning
 The adapter versioning scheme for versioned adapters is `<third-party SDK version>.<adapter patch version>`. For example, if an ad network releases a new SDK version `1.2.3`, a new adapter version `1.2.3.0` will be released to Bintray after being tested against that new SDK.
 
 If an adapter needs updating outside the lifecycle of a third-party SDK release, the patch version will increase. A bug fix for adapter version `1.2.3.0` will be released in version `1.2.3.1`.
 
+## CAS compatible versions
+When integrating the CAS Gradle Plugin, compatible adapter versions are selected automatically. To change the version of a specific adapter, set false in the list of adapters for the CAS Gradle Plugin and manually add the dependency for the version you need.
+
+```kotlin
+dependencies {
+    implementation("com.cleveradssolutions:google:+")
+}
+```
