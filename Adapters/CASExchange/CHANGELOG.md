@@ -1,7 +1,10 @@
 ## CASExchange Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:cas-exchange:4.1.0")
+implementation("com.cleveradssolutions:cas-exchange:4.3.0")
 ```
+
+### 4.3.0
+- Added Native ad support
 
 ### 4.1.0
 - Fix vast regex to accept single quotes

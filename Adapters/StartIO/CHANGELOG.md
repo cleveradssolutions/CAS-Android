@@ -1,7 +1,10 @@
 ## StartIO Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:startio:5.2.3.0")
+implementation("com.cleveradssolutions:startio:5.2.3.1")
 ```  
+
+### 5.2.3.1
+- Added aspect ratio calculation for MediaView in Native Ads.
 
 ### 5.2.3.0
 - Certified with Start IO - 5.2.3

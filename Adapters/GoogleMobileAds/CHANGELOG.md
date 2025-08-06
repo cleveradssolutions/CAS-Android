@@ -1,7 +1,10 @@
 ## Google Ads Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:google:24.4.0.2")
+implementation("com.cleveradssolutions:google:24.5.0.0")
 ```
+
+### 24.5.0.0
+- Certified with Google Mobile Ads - 24.5.0
 
 ### 24.4.0.2
 - Workaround for the issue with displaying fullscreen ads on devices with Android 15+.

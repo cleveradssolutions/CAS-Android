@@ -1,7 +1,10 @@
 ## AppLovin Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:applovin:13.3.1.0")
+implementation("com.cleveradssolutions:applovin:13.3.1.1")
 ```
+
+### 13.3.1.1
+- Added additional context to ad display error logs.
 
 ### 13.3.1.0
 - Certified with AppLovin - 13.3.1

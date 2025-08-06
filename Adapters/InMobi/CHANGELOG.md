@@ -1,7 +1,11 @@
 ## InMobi Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:inmobi:10.8.3.1")
+implementation("com.cleveradssolutions:inmobi:10.8.7.0")
 ```
+
+### 10.8.7.0
+- Certified with InMobi - 10.8.7
+- Improved performance of bidding requests.
 
 ### 10.8.3.1
 - Updated adapter implementation to match changes in CAS 4.

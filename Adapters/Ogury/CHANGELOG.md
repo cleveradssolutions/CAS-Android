@@ -1,7 +1,10 @@
 ## Ogury Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:ogury:6.0.1.0")
+implementation("com.cleveradssolutions:ogury:6.1.0.0")
 ```
+
+### 6.1.0.0
+- Certified with Ogury - 6.1.0
 
 ### 6.0.1.0
 - Certified with Ogury - 6.0.1
