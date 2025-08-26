@@ -1,7 +1,11 @@
 ## CASExchange Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:cas-exchange:4.3.0")
+implementation("com.cleveradssolutions:cas-exchange:4.3.1")
 ```
+
+### 4.3.1
+- Fixed rare crash with `NullPointerException` from Interstitial ad activity. Issue [#30](https://github.com/cleveradssolutions/CAS-Android/issues/30)
+- Fixed ILRD collection for Native ads.
 
 ### 4.3.0
 - Added Native ad support

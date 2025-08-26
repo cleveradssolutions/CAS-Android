@@ -1,11 +1,15 @@
 ## Chartboost Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:chartboost:9.9.2.0")
+implementation("com.cleveradssolutions:chartboost:9.9.3.0")
 ```  
 Required repository:
 ```kotlin
 maven { url = uri("https://cboost.jfrog.io/artifactory/chartboost-ads/") }
 ```
+
+### 9.9.3.0
+- Certified with Chartboost - 9.9.3
+- Removed `isCached` checks to prevent valid ads from being blocked.
 
 ### 9.9.2.0
 - Certified with Chartboost - 9.9.2

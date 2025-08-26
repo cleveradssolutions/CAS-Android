@@ -1,7 +1,11 @@
 ## Google Ads Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:google:24.5.0.0")
+implementation("com.cleveradssolutions:google:24.5.0.1")
 ```
+
+### 24.5.0.1
+- Improved ILRD from Google Ads Manager.
+- Added support new internal configurations (Closed beta).
 
 ### 24.5.0.0
 - Certified with Google Mobile Ads - 24.5.0
