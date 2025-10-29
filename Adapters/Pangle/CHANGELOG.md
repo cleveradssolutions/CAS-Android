@@ -1,7 +1,12 @@
 ## Pangle Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:pangle:7.5.0.2")
+implementation("com.cleveradssolutions:pangle:7.7.0.2")
 ```
+
+### 7.7.0.2
+- Certified with Pangle - 7.7.0.2
+- Fixed an issue where the CCPA status was inverted in the Pangle SDK.
+- Added support alternative Bidding system with CAS 4.4.1. (Closed beta)
 
 ### 7.5.0.2
 - Certified with Pangle - 7.5.0.2

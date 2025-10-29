@@ -1,7 +1,11 @@
 ## Ogury Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:ogury:6.1.0.0")
+implementation("com.cleveradssolutions:ogury:6.1.0.1")
 ```
+
+### 6.1.0.1
+- Improvements for Bidding requests.
+- Fixed `java.util.ConcurrentModificationException` crash.
 
 ### 6.1.0.0
 - Certified with Ogury - 6.1.0

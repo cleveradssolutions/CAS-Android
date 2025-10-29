@@ -1,7 +1,12 @@
 ## Prado Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:prado:10.0.4.0")
+implementation("com.cleveradssolutions:prado:10.1.2.0")
 ```
+
+### 10.1.2.0
+- Certified with Prado - 10.1.2
+- The adapter is now out of closed beta and available to all developers.
+- Added support Bidding requests with CAS 4.4.1. (Closed beta)
 
 ### 10.0.4.0
 - Certified with Prado - 10.0.4

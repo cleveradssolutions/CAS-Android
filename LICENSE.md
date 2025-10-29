@@ -1,5 +1,5 @@
 
-# **License Agreement CAS**
+# **License Agreement CAS.AI**
 
 This Software End User License Agreement (the “Agreement”) is a legal agreement between you (either an individual or an entity) and Clear Invest Ltd., a Belize corporation (“Clear Invest”, or “Company”) regarding the use of Company’s software development kit - Clever Ads Solutions SDK (“CAS SDK”), which may include user documentation provided in online or electronic form, object code, interface declarations, assemblies, and sample source code (the “Software”).  
 By filling in the user information and clicking the button marked “Accept terms and sign up,” you agree to be bound by the terms of this Agreement. IF YOU DO NOT AGREE TO ALL OF THE TERMS OF THIS AGREEMENT, DO NOT SELECT THE “ACCEPT TERMS AND SIGN UP” BOX. YOU WILL NOT BE PROVIDED THE SOFTWARE UNLESS AND UNTIL YOU HAVE AGREED TO BE BOUND BY THESE TERMS.

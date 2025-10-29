@@ -1,7 +1,10 @@
 ## AppLovin Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:applovin:13.3.1.2")
+implementation("com.cleveradssolutions:applovin:13.5.0.0")
 ```
+
+### 13.5.0.0
+- Certified with AppLovin - 13.5.0
 
 ### 13.3.1.2
 - Fixed a rare issue where information about displayed ads could be lost, preventing ILRD from being sent.

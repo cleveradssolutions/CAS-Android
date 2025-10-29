@@ -1,7 +1,11 @@
 ## Unity Ads Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:unity:4.16.1.0")
+implementation("com.cleveradssolutions:unity:4.16.3.0")
 ``` 
+
+### 4.16.3.0
+- Certified with Unity Ads - 4.16.3
+- Compatibility improvements for CAS 4.4.1.
 
 ### 4.16.1.0
 - Certified with Unity Ads - 4.16.1

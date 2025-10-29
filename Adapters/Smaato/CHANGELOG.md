@@ -1,7 +1,10 @@
 ## Smaato Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:smaato:22.7.2.0")
+implementation("com.cleveradssolutions:smaato:22.7.2.1")
 ```
+
+### 22.7.2.1
+- Compatibility improvements for CAS 4.4.1.
 
 ### 22.7.2.0
 - Certified with Smaato - 22.7.2
