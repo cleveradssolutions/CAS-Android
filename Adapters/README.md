@@ -4,7 +4,7 @@ All adapters for supported networks are found in the `com.cleveradssolutions` de
 
 |         Adapter         |       Supported Formats        | Bidding |              Changelog               | SDK Versions |
 |:-----------------------:|:------------------------------:|:-------:|:------------------------------------:| :----------: |
-| `:ironsource:9.0.0.0` |  Banner, Interstitial, Rewarded | Yes | [view](IronSource/CHANGELOG.md) | [link](https://developers.ironsrc.com/ironsource-mobile/android/sdk-change-log/) |
+| `:ironsource:9.0.0.1` |  Banner, Interstitial, Rewarded | Yes | [view](IronSource/CHANGELOG.md) | [link](https://developers.ironsrc.com/ironsource-mobile/android/sdk-change-log/) |
 | `:google:24.7.0.0` |  Banner, Interstitial, Rewarded, AppOpen, Native | Yes | [view](GoogleMobileAds/CHANGELOG.md) | [link](https://developers.google.com/admob/android/rel-notes) |
 | `:unity:4.16.3.0` |  Banner, Interstitial, Rewarded | Yes | [view](UnityAds/CHANGELOG.md) | [link](https://docs.unity.com/ads/en-us/manual/Changelog) |
 | `:chartboost:9.10.0.0` |  Banner, Interstitial, Rewarded | Yes | [view](Chartboost/CHANGELOG.md) | [link](https://docs.chartboost.com/en/monetization/integrate/android/changelog/) |
@@ -14,7 +14,7 @@ All adapters for supported networks are found in the `com.cleveradssolutions` de
 | `:kidoz:10.1.2.0` |  Banner, Interstitial, Rewarded | Yes | [view](Kidoz/CHANGELOG.md) | [link](https://github.com/Kidoz-SDK/kidoz-mobile-sdk/tree/main/Kidoz%20Direct/Android) |
 | `:fyber:8.4.0.0` |  Banner, Interstitial, Rewarded | Yes | [view](DTExchange/CHANGELOG.md) | [link](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog) |
 | `:inmobi:10.8.8.0` |  Banner, Interstitial, Rewarded, Native | Yes | [view](InMobi/CHANGELOG.md) | [link](https://support.inmobi.com/monetize/sdk-documentation/android-guidelines/changelogs-android/android-changelogs-kotlin) |
-| `:applovin:13.5.0.0` |  Banner, Interstitial, Rewarded, AppOpen, Native | Yes | [view](AppLovin/CHANGELOG.md) | [link](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases) |
+| `:applovin:13.5.0.1` |  Banner, Interstitial, Rewarded, AppOpen, Native | Yes | [view](AppLovin/CHANGELOG.md) | [link](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases) |
 | `:pangle:7.7.0.2` |  Banner, Interstitial, Rewarded, AppOpen, Native | Yes | [view](Pangle/CHANGELOG.md) | [link](https://www.pangleglobal.com/publisher/integration) |
 | `:bigo:5.5.2.0` |  Banner, Interstitial, Rewarded, AppOpen, Native | Yes | [view](Bigo/CHANGELOG.md) | [link](https://www.bigossp.com/guide/sdk/android/version) |
 | `:yango:7.16.1.0` |  Banner, Interstitial, Rewarded, AppOpen, Native | Yes | [view](YangoAds/CHANGELOG.md) | [link](https://github.com/yandexmobile/yandex-ads-sdk-android/blob/master/changelogs/mobileads/CHANGELOG.md) |
