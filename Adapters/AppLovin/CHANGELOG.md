@@ -1,7 +1,10 @@
 ## AppLovin Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:applovin:13.5.0.1")
+implementation("com.cleveradssolutions:applovin:13.5.1.0")
 ```
+
+### 13.5.1.0
+- Certified with AppLovin - 13.5.1
 
 ### 13.5.0.1
 - Rollback AppLovin 13.4.0 to avoid build error from `com/android/vending/licensing/ILicensingService.class`.

@@ -79,8 +79,8 @@ class NativeAdTemplateActivity : BackNavigationActivity() {
         // Default values are shown below:
         adView.setBackgroundColor(Color.WHITE)
 
-        adView.callToActionView?.setBackgroundResource(com.cleveradssolutions.sdk.android.R.drawable.cas_rounded_button)
-        adView.headlineView?.setTextColor(Color.parseColor("#80000000"))
+        //adView.callToActionView?.setBackgroundResource(com.cleveradssolutions.sdk.android.R.drawable.cas_rounded_button)
+        //adView.headlineView?.setTextColor(Color.parseColor("#80000000"))
     }
 
 }

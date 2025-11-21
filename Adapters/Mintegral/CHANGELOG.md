@@ -1,7 +1,10 @@
 ## Mintegral Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:mintegral:16.10.11.0")
+implementation("com.cleveradssolutions:mintegral:17.0.31.0")
 ```  
+
+### 17.0.31.0
+- Certified with Mintegral - 17.0.31
 
 ### 16.10.11.0
 - Certified with Mintegral - 16.10.11

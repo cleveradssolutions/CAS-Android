@@ -3,59 +3,65 @@ include ':javaSample'
 
 
 dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
-        mavenLocal()
         google()
         mavenCentral()
         maven {
-            name = "CASBetaRepo"
-            url = "https://repo.repsy.io/mvn/cleveradssolutions/beta"
-            content { it.includeGroup("com.cleveradssolutions") }
-        }
-        maven {
             name = "MintegralAdsRepo"
-            url = "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea"
-            content { it.includeGroup("com.mbridge.msdk.oversea") }
+            url = uri("https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea")
+            content { includeGroup("com.mbridge.msdk.oversea") }
         }
         maven {
             name = "PangleAdsRepo"
-            url = "https://artifact.bytedance.com/repository/pangle"
-            content { it.includeGroup("com.pangle.global") }
+            url = uri("https://artifact.bytedance.com/repository/pangle")
+            content { includeGroup("com.pangle.global") }
         }
         maven {
             name = "ChartboostAdsRepo"
-            url = "https://cboost.jfrog.io/artifactory/chartboost-ads/"
-            content { it.includeGroup("com.chartboost") }
-        }
-        maven {
-            name = "SuperAwesomeAdsRepo"
-            url = "https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo"
-            content { it.includeGroup("tv.superawesome.sdk.publisher") }
+            url = uri("https://cboost.jfrog.io/artifactory/chartboost-ads/")
+            content {
+                includeGroup("com.chartboost")
+                includeGroup("com.iab.omid.library")
+            }
         }
         maven {
             name = "YSONetworkRepo"
-            url = "https://ysonetwork.s3.eu-west-3.amazonaws.com/sdk/android"
-            content { it.includeGroup("com.ysocorp") }
+            url = uri("https://ysonetwork.s3.eu-west-3.amazonaws.com/sdk/android")
+            content { includeGroup("com.ysocorp") }
         }
         maven {
             name = "OguryAdsRepo"
-            url = "https://maven.ogury.co"
+            url = uri("https://maven.ogury.co")
             content {
-                it.includeGroup("co.ogury")
-                it.includeGroup("co.ogury.module")
+                includeGroup("co.ogury")
+                includeGroup("co.ogury.module")
+            }
+        }
+        maven {
+            name = "SuperAwesomeRepo"
+            url = uri("https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo")
+            content { includeGroup("tv.superawesome.sdk.publisher") }
+        }
+        maven {
+            name = "MadexAdsRepo"
+            url = uri("https://sdkpkg.sspnet.tech")
+            content {
+                includeGroup("sspnet.tech")
+                includeGroup("sspnet.tech.adapters")
             }
         }
         maven {
             name = "SmaatoAdsRepo"
-            url = "https://s3.amazonaws.com/smaato-sdk-releases/"
-            content { it.includeGroup("com.smaato.android.sdk") }
+            url = uri("https://s3.amazonaws.com/smaato-sdk-releases/")
+            content { includeGroup("com.smaato.android.sdk") }
         }
         maven {
-            name = "MadexAdsRepo"
-            url = "https://sdkpkg.sspnet.tech"
+            name = "VerveAdsRepo"
+            url = uri("https://verve.jfrog.io/artifactory/verve-gradle-release")
             content {
-                it.includeGroup("sspnet.tech")
-                it.includeGroup("sspnet.tech.adapters")
+                includeGroup("net.pubnative")
+                includeGroup("com.verve")
             }
         }
     }

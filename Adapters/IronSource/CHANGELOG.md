@@ -1,7 +1,12 @@
 ## IronSource Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:ironsource:9.0.0.1")
+implementation("com.cleveradssolutions:ironsource:9.1.0.0")
 ```
+
+### 9.1.0.0
+- Certified with IronSource - 9.1.0
+- Updated implementation of loading ad in waterfall.
+- Added support new internal configurations (Closed beta).
 
 ### 9.0.0.1
 - Compatibility improvements for CAS 4.4.2.

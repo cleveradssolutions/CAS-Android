@@ -1,7 +1,12 @@
 ## CASExchange Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:cas-exchange:4.3.1")
+implementation("com.cleveradssolutions:cas-exchange:4.5.0")
 ```
+
+### 4.5.0
+- Fixed Google Play transition handling.
+- Added Intent URL support.
+- Added url parameter `cas_open_in_browser` to open in external browser.
 
 ### 4.3.1
 - Fixed rare crash with `NullPointerException` from Interstitial ad activity. Issue [#30](https://github.com/cleveradssolutions/CAS-Android/issues/30)

@@ -1,7 +1,10 @@
 ## Kidoz Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:kidoz:10.1.2.0")
+implementation("com.cleveradssolutions:kidoz:10.1.4.0")
 ```
+
+### 10.1.4.0
+- Certified with Kidoz - 10.1.4
 
 ### 10.1.2.0
 - Certified with Kidoz - 10.1.2
