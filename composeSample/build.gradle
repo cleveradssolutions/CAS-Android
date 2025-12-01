@@ -1,0 +1,66 @@
+plugins {
+    id('com.android.application')
+    id('kotlin-android')
+    id('com.cleveradssolutions.gradle-plugin')
+    id('org.jetbrains.kotlin.plugin.compose')
+}
+
+cas {
+    useAdvertisingId = true
+    adapters {
+        //googleAds = true
+        //ironSource = true
+        // Include more adapters here
+        verve = true
+    }
+    // Instead of defining each adapter separately,
+    // you can simply include the list of recommended adapters in one line:
+    //includeOptimalAds = true
+}
+
+android {
+    compileSdk = 36
+    namespace 'com.cleveradssolutions.sampleapp'
+
+    defaultConfig {
+        applicationId "com.cleveradssolutions.sampleapp"
+        minSdkVersion 26
+        targetSdkVersion 36
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Required version
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        compose true
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.17.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.9.4'
+    implementation 'androidx.activity:activity-compose:1.11.0'
+    implementation platform('androidx.compose:compose-bom:2024.09.00')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+}

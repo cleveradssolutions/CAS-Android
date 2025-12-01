@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">CAS.AI Sample</string>
+
+    <string name="load">Load</string>
+    <string name="show">Show</string>
+    <string name="showNext">Show Next</string>
+
+    <string name="adFormats_title">Ad Formats</string>
+    <string name="adFormats_bannerAd">Banner Ad</string>
+    <string name="adFormats_adaptiveBannerAd">Adaptive Banner Ad</string>
+    <string name="adFormats_mrecBannerAd">Medium Rectangle Ad</string>
+    <string name="adFormats_nativeAd">Native Ad</string>
+    <string name="adFormats_nativeAdTemplate">Native Ad Template</string>
+    <string name="adFormats_multipleNativeAd">Multiple Native Ad Template</string>
+    <string name="adFormats_appOpenAd">AppOpen Ad</string>
+    <string name="adFormats_splashAppOpenAd">Splash AppOpen Ad</string>
+    <string name="adFormats_interstitialAd">Interstitial Ad</string>
+    <string name="adFormats_rewardedAd">Rewarded Ad</string>
+</resources>
