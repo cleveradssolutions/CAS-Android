@@ -15,7 +15,7 @@
         android:theme="@style/Theme.CASAndroid">
 
         <activity
-            android:name=".support.SelectionActivity"
+            android:name=".main.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:screenOrientation="fullSensor">
@@ -25,56 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".banner.BannerAdActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor" />
-
-        <activity
-            android:name=".banner.AdaptiveBannerAdActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor" />
-
-        <activity
-            android:name=".banner.MRECBannerAdActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor" />
-
-        <activity
-            android:name=".nativead.NativeAdActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor" />
-
-        <activity
-            android:name=".nativead.NativeAdTemplateActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor" />
-
-        <activity
-            android:name=".nativead.MultipleNativeAdActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor" />
-
-        <activity
-            android:name=".appopen.SplashAppOpenAdActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="locked" />
-
-        <activity
-            android:name=".appopen.AppOpenAdActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor" />
-
-        <activity
-            android:name=".interstitial.InterstitialAdActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor" />
-
-        <activity
-            android:name=".rewarded.RewardedAdActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="fullSensor" />
 
     </application>
 
