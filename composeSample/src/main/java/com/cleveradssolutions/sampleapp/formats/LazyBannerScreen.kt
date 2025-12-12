@@ -122,33 +122,32 @@ private suspend fun loadBannerAd(
     widthDp: Int
 ): Result<CASBannerView> {
     return suspendCancellableCoroutine { continuation ->
-        val banner =
-            CASBannerView(context, SampleApplication.CAS_ID).apply {
-                // Inline adaptive banner: width = widthDp, height up to 250dp.
-                size = AdSize.getInlineBanner(widthDp, 250)
-                isAutoloadEnabled = false
+        val banner = CASBannerView(context, SampleApplication.CAS_ID)
 
-                adListener =
-                    object : AdViewListener {
-                        override fun onAdViewLoaded(view: CASBannerView) {
-                            Log.d(TAG, "Lazy CAS banner ad was loaded.")
-                            continuation.resume(Result.success(view))
-                        }
+        // Inline adaptive banner: width = widthDp, height up to 250dp.
+        banner.size = AdSize.getInlineBanner(widthDp, 250)
+        banner.isAutoloadEnabled = true // by default
 
-                        override fun onAdViewFailed(view: CASBannerView, error: AdError) {
-                            Log.e(TAG, "Lazy CAS banner ad failed to load: ${error.message}")
-                            view.destroy()
-                            continuation.resume(Result.failure(Error(error.message)))
-                        }
+        banner.adListener =
+            object : AdViewListener {
+                override fun onAdViewLoaded(view: CASBannerView) {
+                    Log.d(TAG, "Lazy CAS banner ad was loaded.")
+                    continuation.resume(Result.success(view))
+                }
 
-                        override fun onAdViewPresented(view: CASBannerView, info: AdImpression) {
-                            Log.d(TAG, "Lazy CAS banner impression. cpm=${info.cpm}")
-                        }
+                override fun onAdViewFailed(view: CASBannerView, error: AdError) {
+                    Log.e(TAG, "Lazy CAS banner ad failed to load: ${error.message}")
+                    view.destroy()
+                    continuation.resume(Result.failure(Error(error.message)))
+                }
 
-                        override fun onAdViewClicked(view: CASBannerView) {
-                            Log.d(TAG, "Lazy CAS banner ad was clicked.")
-                        }
-                    }
+                override fun onAdViewPresented(view: CASBannerView, info: AdImpression) {
+                    Log.d(TAG, "Lazy CAS banner impression. cpm=${info.cpm}")
+                }
+
+                override fun onAdViewClicked(view: CASBannerView) {
+                    Log.d(TAG, "Lazy CAS banner ad was clicked.")
+                }
             }
 
         continuation.invokeOnCancellation {
@@ -183,3 +182,4 @@ private fun loadFillerText(context: Context): List<String> {
     val fillerContent = context.resources.getStringArray(R.array.lazy_banner_filler_content)
     return fillerContent.toList()
 }
+

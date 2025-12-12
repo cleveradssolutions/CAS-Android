@@ -36,17 +36,19 @@ fun BannerScreen(modifier: Modifier = Modifier) {
     val screenWidthDp = LocalConfiguration.current.screenWidthDp
 
     // Create CAS banner view instance.
-    val bannerView = remember { CASBannerView(context, SampleApplication.CAS_ID) }
+    val bannerView = remember(screenWidthDp) {
+        val view = CASBannerView(context, SampleApplication.CAS_ID)
 
-    // Setup and load the banner view.
-    bannerView.apply {
         // Set the adaptive banner ad size with a given width.
-        size = AdSize.getAdaptiveBanner(context, screenWidthDp)
-
-        isAutoloadEnabled = false
+        if (!isPreview)
+            view.isAutoloadEnabled = true // by default
+        else
+            view.isAutoloadEnabled = false
+        
+        view.size = AdSize.getAdaptiveBanner(context, screenWidthDp)
 
         // [Optional] Set an AdViewListener to receive callbacks for various ad events.
-        adListener =
+        view.adListener =
             object : AdViewListener {
                 override fun onAdViewLoaded(view: CASBannerView) {
                     Log.d(TAG, "CAS Banner ad was loaded.")
@@ -66,22 +68,22 @@ fun BannerScreen(modifier: Modifier = Modifier) {
             }
 
         // Impression-level callback from CAS SDK.
-        onImpressionListener = OnAdImpressionListener { ad ->
+        view.onImpressionListener = OnAdImpressionListener { ad ->
             Log.d(TAG, "CAS Banner impression = ${ad.impressionDepth}")
         }
+
+        view
     }
 
-    // Prevent loading the AdView if the app is in preview mode.
-    if (!isPreview) {
-        // Load the banner ad.
-        DisposableEffect(Unit) {
+    // Load / destroy banner with a DisposableEffect.
+    DisposableEffect(bannerView, isPreview) {
+        // Prevent loading the AdView if the app is in preview mode.
+        if (!isPreview) {
+            // Load the banner ad.
             bannerView.load()
-            onDispose { bannerView.destroy() }
         }
-    } else {
-        DisposableEffect(Unit) {
-            onDispose { bannerView.destroy() }
-        }
+        // Destroy the AdView to prevent memory leaks when the screen is disposed.
+        onDispose { bannerView.destroy() }
     }
 
     // Place the banner at the bottom of the screen.
@@ -95,7 +97,7 @@ fun BannerScreen(modifier: Modifier = Modifier) {
     }
 }
 
-@Preview(apiLevel = 33)
+@Preview
 @Composable
 private fun BannerScreenPreview() {
     CASAndroidTheme {

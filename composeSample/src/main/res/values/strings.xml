@@ -9,7 +9,7 @@
     <string name="nav_native_template">Native Template</string>
     <string name="privacy_options_open_button">Show Privacy Options Form</string>
     <string name="text_reload">Reload Ad</string>
-
+    <string name="attribution">Ad</string>
     <string-array name="lazy_banner_filler_content">
         <item>Semper adhibitiones probationales in evolutione adhibe.</item>
         <item>Utere vexillis adaptivis in linea pro praeconiis intra materiam pascendi.</item>
