@@ -4,11 +4,22 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.view.ViewGroup
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
@@ -19,7 +30,11 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.cleveradssolutions.sampleapp.SampleApplication
 import com.cleveradssolutions.sampleapp.ui.theme.CASAndroidTheme
 import com.cleveradssolutions.sdk.AdContentInfo
-import com.cleveradssolutions.sdk.nativead.*
+import com.cleveradssolutions.sdk.nativead.AdChoicesPlacement
+import com.cleveradssolutions.sdk.nativead.CASNativeLoader
+import com.cleveradssolutions.sdk.nativead.CASNativeView
+import com.cleveradssolutions.sdk.nativead.NativeAdContent
+import com.cleveradssolutions.sdk.nativead.NativeAdContentCallback
 import com.cleversolutions.ads.AdError
 import com.cleversolutions.ads.AdSize
 
@@ -29,42 +44,42 @@ import com.cleversolutions.ads.AdSize
  *
  * This example demonstrates:
  *  • Creating a template-sized CASNativeView
- *  • Loading and binding a template-compatible native ad
- *  • Rendering the native view inside a Compose UI hierarchy
+ *  • Loading a native ad suitable for template rendering
+ *  • Rendering the native view inside a Compose hierarchy
  */
-
-@Composable
 @SuppressLint("ConfigurationScreenWidthHeight")
+@Composable
 fun NativeTemplateScreen() {
 
     val context = LocalContext.current
     val screenWidthDp = LocalConfiguration.current.screenWidthDp
 
-    // CASNativeView should be created once per configuration.
+    // Create CASNativeView once per configuration.
     val nativeView = remember(screenWidthDp) {
         createTemplateNativeView(context, screenWidthDp)
     }
 
-    var nativeAd by remember { mutableStateOf<NativeAdContent?>(null) }
+    var adContent by remember { mutableStateOf<NativeAdContent?>(null) }
     var isDisposed by remember { mutableStateOf(false) }
 
-    DisposableEffect(nativeView) {
-
+    DisposableEffect(Unit) {
         loadTemplateNativeAd(
             context = context,
             onAdLoaded = { ad ->
-                if (!isDisposed) {
-                    nativeAd = ad
-                    nativeView.setNativeAd(ad)
-                } else ad.destroy()
+                if (!isDisposed) adContent = ad else ad.destroy()
             }
         )
 
         onDispose {
             isDisposed = true
-            nativeAd?.destroy()
-            nativeAd = null
+            adContent?.destroy()
+            adContent = null
         }
+    }
+
+    // Always apply ad content to the view from Compose side.
+    SideEffect {
+        nativeView.setNativeAd(adContent)
     }
 
     Scaffold { innerPadding ->
@@ -78,7 +93,6 @@ fun NativeTemplateScreen() {
         }
     }
 }
-
 /**
  * [END cas_template_screen]
  */
@@ -86,22 +100,20 @@ fun NativeTemplateScreen() {
 /**
  * [START cas_template_view]
  * Creates a CASNativeView preconfigured for template rendering.
- *
- * The width equals device width, while height is fixed to 300dp.
  */
 private fun createTemplateNativeView(
     context: Context,
     widthDp: Int,
 ): CASNativeView {
-
     return CASNativeView(context).apply {
 
+        // Keep ViewGroup params as MATCH_PARENT. Control size in Compose using modifiers.
         layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
+            ViewGroup.LayoutParams.MATCH_PARENT
         )
 
-        // Inline template size
+        // Configure template size (width = screen width, height = 300dp).
         setAdTemplateSize(AdSize.getInlineBanner(widthDp, 300))
 
         setBackgroundColor(Color.WHITE)
@@ -119,7 +131,6 @@ private fun loadTemplateNativeAd(
     context: Context,
     onAdLoaded: (NativeAdContent) -> Unit,
 ) {
-
     val callback = object : NativeAdContentCallback() {
 
         override fun onNativeAdLoaded(nativeAd: NativeAdContent, ad: AdContentInfo) {
@@ -143,14 +154,14 @@ private fun loadTemplateNativeAd(
 
 /**
  * [START cas_template_display]
- * Renders a fully configured CASNativeView inside Compose.
+ * Renders a configured CASNativeView inside Compose.
  */
 @Composable
 private fun DisplayCasNativeTemplateView(nativeView: CASNativeView) {
     AndroidView(
         modifier = Modifier
             .fillMaxWidth()
-            .wrapContentHeight()
+            .height(300.dp) // template height
             .padding(16.dp),
         factory = { nativeView }
     )

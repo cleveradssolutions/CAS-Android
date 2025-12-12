@@ -16,7 +16,7 @@ import com.cleveradssolutions.sdk.nativead.*
 @Composable
 fun NativeScreen() {
 
-    var ad by remember { mutableStateOf<NativeAdContent?>(null) }
+    var adContent by remember { mutableStateOf<NativeAdContent?>(null) }
     val context = LocalContext.current
     var isDisposed by remember { mutableStateOf(false) }
 
@@ -29,7 +29,7 @@ fun NativeScreen() {
             object : NativeAdContentCallback() {
                 override fun onNativeAdLoaded(nativeAd: NativeAdContent, info: AdContentInfo) {
                     Log.d(TAG, "Native ad loaded.")
-                    if (!isDisposed) ad = nativeAd else nativeAd.destroy()
+                    if (!isDisposed) adContent = nativeAd else nativeAd.destroy()
                 }
 
                 override fun onNativeAdFailedToLoad(error: com.cleversolutions.ads.AdError) {
@@ -42,13 +42,13 @@ fun NativeScreen() {
 
         onDispose {
             isDisposed = true
-            ad?.destroy()
-            ad = null
+            adContent?.destroy()
+            adContent = null
         }
     }
 
     // Render ad only after successful load.
-    ad?.let { DisplayNativeAd(it) }
+    adContent?.let { DisplayNativeAd(it) }
 }
 
 /**
@@ -66,66 +66,58 @@ fun NativeScreen() {
 
 @Composable
 fun DisplayNativeAd(ad: NativeAdContent) {
-
-    CasNativeAdView(ad, modifier = Modifier.fillMaxWidth()) { native ->
+    NativeAdView(
+        adContent = ad,
+        modifier = Modifier.fillMaxWidth()
+    ) { adView ->
 
         Column(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(12.dp)
         ) {
-
-            // Header row: icon + headline
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                CasNativeIconView(native, Modifier.size(48.dp))
+                NativeAdIconView(adView, Modifier.size(48.dp))
                 Spacer(Modifier.width(8.dp))
-                CasNativeHeadlineView(native)
+                NativeAdHeadlineView(adView)
             }
 
             Spacer(Modifier.height(8.dp))
-            CasNativeBodyView(native)
+            NativeAdBodyView(adView)
 
             Spacer(Modifier.height(12.dp))
-
-            // Media (image or video)
-            CasNativeMediaView(
-                native,
+            NativeAdMediaView(
+                adView,
                 Modifier
                     .fillMaxWidth()
                     .height(180.dp)
             )
 
             Spacer(Modifier.height(12.dp))
-
-            // Price + Store + CTA button
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.End,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                CasNativePriceView(native, Modifier.padding(end = 8.dp))
-                CasNativeStoreView(native, Modifier.padding(end = 12.dp))
-                CasNativeCallToActionView(native)
+                NativeAdPriceView(adView, Modifier.padding(end = 8.dp))
+                NativeAdStoreView(adView, Modifier.padding(end = 12.dp))
+                NativeAdCallToActionView(adView)
             }
 
             Spacer(Modifier.height(16.dp))
-
-            // Star rating (centered)
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.Center
             ) {
-                CasNativeStarRatingView(
-                    native,
-                    Modifier.fillMaxWidth(0.8f)
-                )
+                NativeAdStarRatingView(adView, Modifier.fillMaxWidth(0.8f))
             }
         }
     }
 }
+
 
 /*
  * [END cas_native_template]
