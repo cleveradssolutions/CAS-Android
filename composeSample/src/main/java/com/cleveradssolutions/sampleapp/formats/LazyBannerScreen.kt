@@ -123,10 +123,10 @@ private suspend fun loadBannerAd(
 ): Result<CASBannerView> {
     return suspendCancellableCoroutine { continuation ->
         val banner = CASBannerView(context, SampleApplication.CAS_ID)
+        banner.isAutoloadEnabled = false
 
         // Inline adaptive banner: width = widthDp, height up to 250dp.
         banner.size = AdSize.getInlineBanner(widthDp, 250)
-        banner.isAutoloadEnabled = true // by default
 
         banner.adListener =
             object : AdViewListener {
@@ -167,11 +167,7 @@ private suspend fun loadBannerAds(
     supervisorScope {
         List(count) {
             async {
-                try {
-                    loadBannerAd(context, widthDp).getOrNull()
-                } catch (_: Throwable) {
-                    null
-                }
+                loadBannerAd(context, widthDp).getOrNull()
             }
         }
             .awaitAll()

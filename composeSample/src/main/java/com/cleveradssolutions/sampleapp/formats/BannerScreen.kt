@@ -39,12 +39,14 @@ fun BannerScreen(modifier: Modifier = Modifier) {
     val bannerView = remember(screenWidthDp) {
         val view = CASBannerView(context, SampleApplication.CAS_ID)
 
-        // Set the adaptive banner ad size with a given width.
-        if (!isPreview)
-            view.isAutoloadEnabled = true // by default
-        else
+        if (isPreview) {
+            // Autoload not allowed in Preview
             view.isAutoloadEnabled = false
-        
+        } else {
+            view.isAutoloadEnabled = true // by default
+        }
+
+        // Set the adaptive banner ad size with a given width.
         view.size = AdSize.getAdaptiveBanner(context, screenWidthDp)
 
         // [Optional] Set an AdViewListener to receive callbacks for various ad events.
