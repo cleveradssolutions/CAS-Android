@@ -84,7 +84,7 @@ fun NativeAdBodyView(
                 adView.bodyView = this
             }
         },
-        update = { view -> update(view) },
+        update = update,
     )
 }
 
@@ -108,7 +108,7 @@ fun NativeAdCallToActionView(
                 adView.callToActionView = this
             }
         },
-        update = { view -> update(view) },
+        update = update,
     )
 }
 
@@ -133,7 +133,7 @@ fun NativeAdHeadlineView(
                 adView.headlineView = this
             }
         },
-        update = { view -> update(view) },
+        update = update,
     )
 }
 
@@ -202,7 +202,7 @@ fun NativeAdPriceView(
                 adView.priceView = this
             }
         },
-        update = { view -> update(view) },
+        update = update,
     )
 }
 
@@ -248,6 +248,6 @@ fun NativeAdStoreView(
                 adView.storeView = this
             }
         },
-        update = { view -> update(view) },
+        update = update,
     )
 }
