@@ -9,7 +9,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.CAS_ID
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.TAG
-import com.cleveradssolutions.sampleapp.compose_util.*
+import com.cleveradssolutions.compose.*
 import com.cleveradssolutions.sdk.AdContentInfo
 import com.cleveradssolutions.sdk.nativead.*
 
@@ -82,11 +82,20 @@ fun DisplayNativeAd(ad: NativeAdContent) {
             ) {
                 NativeAdIconView(adView, Modifier.size(48.dp))
                 Spacer(Modifier.width(8.dp))
-                NativeAdHeadlineView(adView)
+                NativeAdHeadlineView(adView, onUpdate = { textView ->
+                    textView.textSize = 18f
+                    textView.setTypeface(textView.typeface, android.graphics.Typeface.BOLD)
+                    textView.setTextColor(0xFFFFFFFF.toInt())
+                    textView.maxLines = 1
+                })
+
             }
 
             Spacer(Modifier.height(8.dp))
-            NativeAdBodyView(adView)
+            NativeAdBodyView( adView, onUpdate = { textView ->
+                textView.textSize = 14f
+                textView.setTextColor(0xFFFFFFFF.toInt())
+            })
 
             Spacer(Modifier.height(12.dp))
             NativeAdMediaView(
@@ -102,8 +111,12 @@ fun DisplayNativeAd(ad: NativeAdContent) {
                 horizontalArrangement = Arrangement.End,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                NativeAdPriceView(adView, Modifier.padding(end = 8.dp))
-                NativeAdStoreView(adView, Modifier.padding(end = 12.dp))
+                NativeAdPriceView(adView, Modifier.padding(end = 8.dp), onUpdate = { textView ->
+                    textView.setTextColor(0xFFFFFFFF.toInt())
+                })
+                NativeAdStoreView(adView, Modifier.padding(end = 12.dp), onUpdate = { textView ->
+                    textView.setTextColor(0xFFFFFFFF.toInt())
+                })
                 NativeAdCallToActionView(adView)
             }
 
