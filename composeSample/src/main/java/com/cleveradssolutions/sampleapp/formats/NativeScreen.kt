@@ -82,7 +82,7 @@ fun DisplayNativeAd(ad: NativeAdContent) {
             ) {
                 NativeAdIconView(adView, Modifier.size(48.dp))
                 Spacer(Modifier.width(8.dp))
-                NativeAdHeadlineView(adView, onUpdate = { textView ->
+                NativeAdHeadlineView(adView, update = { textView ->
                     textView.textSize = 18f
                     textView.setTypeface(textView.typeface, android.graphics.Typeface.BOLD)
                     textView.setTextColor(0xFFFFFFFF.toInt())
@@ -92,7 +92,7 @@ fun DisplayNativeAd(ad: NativeAdContent) {
             }
 
             Spacer(Modifier.height(8.dp))
-            NativeAdBodyView( adView, onUpdate = { textView ->
+            NativeAdBodyView( adView, update = { textView ->
                 textView.textSize = 14f
                 textView.setTextColor(0xFFFFFFFF.toInt())
             })
@@ -111,13 +111,17 @@ fun DisplayNativeAd(ad: NativeAdContent) {
                 horizontalArrangement = Arrangement.End,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                NativeAdPriceView(adView, Modifier.padding(end = 8.dp), onUpdate = { textView ->
+                NativeAdPriceView(adView, Modifier.padding(end = 8.dp), update = { textView ->
                     textView.setTextColor(0xFFFFFFFF.toInt())
                 })
-                NativeAdStoreView(adView, Modifier.padding(end = 12.dp), onUpdate = { textView ->
+                NativeAdStoreView(adView, Modifier.padding(end = 12.dp), update = { textView ->
                     textView.setTextColor(0xFFFFFFFF.toInt())
                 })
-                NativeAdCallToActionView(adView)
+                NativeAdCallToActionView(adView, update = { btn ->
+                    btn.isAllCaps = false
+                    btn.textSize = 14f
+                })
+
             }
 
             Spacer(Modifier.height(16.dp))

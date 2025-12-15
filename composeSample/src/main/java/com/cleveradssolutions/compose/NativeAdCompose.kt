@@ -71,7 +71,11 @@ fun NativeAdView(
  * @param modifier modify the native ad view element.
  */
 @Composable
-fun NativeAdBodyView(adView: CASNativeView, modifier: Modifier = Modifier, onUpdate: (TextView) -> Unit = {},) {
+fun NativeAdBodyView(
+    adView: CASNativeView,
+    modifier: Modifier = Modifier,
+    update: (TextView) -> Unit = {}
+    ) {
     AndroidView(
         modifier = modifier,
         factory = { context ->
@@ -80,18 +84,22 @@ fun NativeAdBodyView(adView: CASNativeView, modifier: Modifier = Modifier, onUpd
                 adView.bodyView = this
             }
         },
-        update = { view -> onUpdate(view) },
+        update = { view -> update(view) },
     )
 }
 
 /**
- * The ComposeWrapper container for a callToActionView inside a CASNativeView. This composable must
- * be invoked from within a `NativeAdView`.
+ * The ComposeWrapper container for a callToActionView inside a CASNativeView. This composable must be
+ * invoked from within a `NativeAdView`.
  *
  * @param modifier modify the native ad view element.
  */
 @Composable
-fun NativeAdCallToActionView(adView: CASNativeView, modifier: Modifier = Modifier) {
+fun NativeAdCallToActionView(
+    adView: CASNativeView,
+    modifier: Modifier = Modifier,
+    update: (Button) -> Unit = {}
+) {
     AndroidView(
         modifier = modifier,
         factory = { context ->
@@ -100,8 +108,10 @@ fun NativeAdCallToActionView(adView: CASNativeView, modifier: Modifier = Modifie
                 adView.callToActionView = this
             }
         },
+        update = { view -> update(view) },
     )
 }
+
 
 /**
  * The ComposeWrapper container for a headlineView inside a CASNativeView. This composable must be
@@ -110,7 +120,11 @@ fun NativeAdCallToActionView(adView: CASNativeView, modifier: Modifier = Modifie
  * @param modifier modify the native ad view element.
  */
 @Composable
-fun NativeAdHeadlineView(adView: CASNativeView, modifier: Modifier = Modifier, onUpdate: (TextView) -> Unit = {}) {
+fun NativeAdHeadlineView(
+    adView: CASNativeView,
+    modifier: Modifier = Modifier,
+    update: (TextView) -> Unit = {}
+) {
     AndroidView(
         modifier = modifier,
         factory = { context ->
@@ -119,7 +133,7 @@ fun NativeAdHeadlineView(adView: CASNativeView, modifier: Modifier = Modifier, o
                 adView.headlineView = this
             }
         },
-        update = { view -> onUpdate(view) },
+        update = { view -> update(view) },
     )
 }
 
@@ -130,7 +144,10 @@ fun NativeAdHeadlineView(adView: CASNativeView, modifier: Modifier = Modifier, o
  * @param modifier modify the native ad view element.
  */
 @Composable
-fun NativeAdIconView(adView: CASNativeView, modifier: Modifier = Modifier) {
+fun NativeAdIconView(
+    adView: CASNativeView,
+    modifier: Modifier = Modifier
+) {
     AndroidView(
         modifier = modifier,
         factory = { context ->
@@ -150,7 +167,10 @@ fun NativeAdIconView(adView: CASNativeView, modifier: Modifier = Modifier) {
  * @param modifier modify the native ad view element.
  */
 @Composable
-fun NativeAdMediaView(adView: CASNativeView, modifier: Modifier = Modifier) {
+fun NativeAdMediaView(
+    adView: CASNativeView,
+    modifier: Modifier = Modifier
+) {
     AndroidView(
         modifier = modifier,
         factory = { context ->
@@ -169,7 +189,11 @@ fun NativeAdMediaView(adView: CASNativeView, modifier: Modifier = Modifier) {
  * @param modifier modify the native ad view element.
  */
 @Composable
-fun NativeAdPriceView(adView: CASNativeView, modifier: Modifier = Modifier,  onUpdate: (TextView) -> Unit = {},) {
+fun NativeAdPriceView(
+    adView: CASNativeView,
+    modifier: Modifier = Modifier,
+    update: (TextView) -> Unit = {}
+) {
     AndroidView(
         modifier = modifier,
         factory = { context ->
@@ -178,7 +202,7 @@ fun NativeAdPriceView(adView: CASNativeView, modifier: Modifier = Modifier,  onU
                 adView.priceView = this
             }
         },
-        update = { view -> onUpdate(view) },
+        update = { view -> update(view) },
     )
 }
 
@@ -189,7 +213,10 @@ fun NativeAdPriceView(adView: CASNativeView, modifier: Modifier = Modifier,  onU
  * @param modifier modify the native ad view element.
  */
 @Composable
-fun NativeAdStarRatingView(adView: CASNativeView, modifier: Modifier = Modifier) {
+fun NativeAdStarRatingView(
+    adView: CASNativeView,
+    modifier: Modifier = Modifier
+) {
     AndroidView(
         modifier = modifier,
         factory = { context ->
@@ -208,7 +235,11 @@ fun NativeAdStarRatingView(adView: CASNativeView, modifier: Modifier = Modifier)
  * @param modifier modify the native ad view element.
  */
 @Composable
-fun NativeAdStoreView(adView: CASNativeView, modifier: Modifier = Modifier, onUpdate: (TextView) -> Unit = {},) {
+fun NativeAdStoreView(
+    adView: CASNativeView,
+    modifier: Modifier = Modifier,
+    update: (TextView) -> Unit = {}
+) {
     AndroidView(
         modifier = modifier,
         factory = { context ->
@@ -217,6 +248,6 @@ fun NativeAdStoreView(adView: CASNativeView, modifier: Modifier = Modifier, onUp
                 adView.storeView = this
             }
         },
-        update = { view -> onUpdate(view) },
+        update = { view -> update(view) },
     )
 }
