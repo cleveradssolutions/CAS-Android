@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2A4A74</color>
+    <color name="colorPrimaryContainer">#3A5B87</color>
+    <color name="colorOnPrimary">@android:color/white</color>
+
+    <color name="colorSecondary">#2196F3</color>
+    <color name="colorSecondaryContainer">#4A90D9</color>
+    <color name="colorOnSecondary">@android:color/white</color>
+
+    <color name="colorBackground">#1A283E</color>
+    <color name="colorOnBackground">@android:color/white</color>
+
+    <color name="colorSurface">#3A5B87</color>
+    <color name="colorOnSurface">@android:color/white</color>
+
+    <color name="gray">#808080</color>
+</resources>
