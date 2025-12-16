@@ -1,7 +1,10 @@
 ## DT Exchange Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:fyber:8.4.1.0")
+implementation("com.cleveradssolutions:fyber:8.4.1.1")
 ```
+
+### 8.4.1.1
+- Fixed ILRD values from Waterfall.
 
 ### 8.4.1.0
 - Certified with DT Exchange - 8.4.1

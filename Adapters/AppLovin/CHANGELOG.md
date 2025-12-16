@@ -1,7 +1,10 @@
 ## AppLovin Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:applovin:13.5.1.0")
+implementation("com.cleveradssolutions:applovin:13.5.1.1")
 ```
+
+### 13.5.1.1
+- Fixed an issue with Waterfall banner and interstitial loading when the Unit ID was empty.
 
 ### 13.5.1.0
 - Certified with AppLovin - 13.5.1

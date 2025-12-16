@@ -2,6 +2,10 @@
 ```kotlin
 implementation("com.cleveradssolutions:smaato:22.7.2.1")
 ```
+Required repository:
+```kotlin
+maven { url = uri("https://s3.amazonaws.com/smaato-sdk-releases/") }
+```
 
 ### 22.7.2.1
 - Compatibility improvements for CAS 4.4.1.
