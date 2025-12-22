@@ -36,7 +36,6 @@ import com.cleveradssolutions.sampleapp.SampleApplication
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.TAG
 import com.cleveradssolutions.sampleapp.ui.theme.CASAndroidTheme
 import com.cleversolutions.ads.AdError
-import com.cleversolutions.ads.AdImpression
 import com.cleversolutions.ads.AdSize
 import com.cleversolutions.ads.AdViewListener
 import com.cleversolutions.ads.android.CASBannerView
@@ -123,6 +122,7 @@ private suspend fun loadBannerAd(
 ): Result<CASBannerView> {
     return suspendCancellableCoroutine { continuation ->
         val banner = CASBannerView(context, SampleApplication.CAS_ID)
+        // Disable autoload before set size
         banner.isAutoloadEnabled = false
 
         // Inline adaptive banner: width = widthDp, height up to 250dp.
@@ -139,10 +139,6 @@ private suspend fun loadBannerAd(
                     Log.e(TAG, "Lazy CAS banner ad failed to load: ${error.message}")
                     view.destroy()
                     continuation.resume(Result.failure(Error(error.message)))
-                }
-
-                override fun onAdViewPresented(view: CASBannerView, info: AdImpression) {
-                    Log.d(TAG, "Lazy CAS banner impression. cpm=${info.cpm}")
                 }
 
                 override fun onAdViewClicked(view: CASBannerView) {

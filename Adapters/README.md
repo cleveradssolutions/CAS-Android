@@ -18,10 +18,10 @@ The adapters in the table are listed in alphabetical order.
 | liftoffMonetize | `vungle` | `7.6.2.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✓** | [view](LiftoffMonetize/CHANGELOG.md) | [link](https://support.vungle.com/hc/en-us/articles/15722228922395-Download-Vungle-SDK-for-Android-Amazon) |
 | madex 🧪 | `madex` | `1.7.7.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](Madex/CHANGELOG.md) | [link](https://madex.gitbook.io/madex-documentation/android-sdk/change-log) |
 | maticoo | `maticoo` | `1.8.6.3` | Banner, Interstitial, Rewarded, AppOpen, Native | **✗** | **✗** | [view](Maticoo/CHANGELOG.md) | [link](https://www.yuque.com/maticoo/ivzbqi/qoothshaokc75cl7) |
-| mintegral | `mintegral` | `17.0.41.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | [view](Mintegral/CHANGELOG.md) | [link](https://dev.mintegral.com/doc/index.html?file=sdk-m_sdk-android&lang=en) |
+| mintegral | `mintegral` | `17.0.51.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | [view](Mintegral/CHANGELOG.md) | [link](https://dev.mintegral.com/doc/index.html?file=sdk-m_sdk-android&lang=en) |
 | monetrix 🧪 | `monetrix` | `1.2.0.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](MonetriX/CHANGELOG.md) | **✗** |
 | ogury | `ogury` | `6.2.0.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](Ogury/CHANGELOG.md) | [link](https://support.ogury.com/inapp/release-notes/ogury-sdk/android) |
-| pangle | `pangle` | `7.8.0.8` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | [view](Pangle/CHANGELOG.md) | [link](https://www.pangleglobal.com/publisher/integration) |
+| pangle | `pangle` | `7.8.0.9` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | [view](Pangle/CHANGELOG.md) | [link](https://www.pangleglobal.com/publisher/integration) |
 | prado | `prado` | `10.1.5.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](Prado/CHANGELOG.md) | [link](https://github.com/Prado-SDK/prado-mobile-sdk/tree/main/Direct/Android) |
 | pubmatic 🧪 | `pubmatic` | `4.10.0.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](PubMatic/CHANGELOG.md) | [link](https://help.pubmatic.com/openwrap/reference/changelog) |
 | smaato | `smaato` | `22.7.2.1` | Banner, Interstitial, Rewarded, Native | **✗** | **✗** | [view](Smaato/CHANGELOG.md) | [link](https://developers.smaato.com/publishers/nextgen-sdk-android-changelog/) |

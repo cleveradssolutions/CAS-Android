@@ -3,7 +3,6 @@ package com.cleveradssolutions.sampleapp;
 import android.app.Application;
 import android.util.Log;
 
-import com.cleversolutions.ads.Audience;
 import com.cleversolutions.ads.ConsentFlow;
 import com.cleversolutions.ads.android.CAS;
 

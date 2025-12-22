@@ -10,7 +10,6 @@ import com.cleveradssolutions.sampleapp.support.toast
 import com.cleveradssolutions.sampleapp.support.toastError
 import com.cleveradssolutions.sdk.OnAdImpressionListener
 import com.cleversolutions.ads.AdError
-import com.cleversolutions.ads.AdImpression
 import com.cleversolutions.ads.AdSize
 import com.cleversolutions.ads.AdViewListener
 import com.cleversolutions.ads.android.CASBannerView
@@ -24,10 +23,6 @@ class BannerAdActivity : BackNavigationActivity() {
 
         override fun onAdViewFailed(view: CASBannerView, error: AdError) {
             toastError("Banner Ad failed to load: ${error.message}")
-        }
-
-        override fun onAdViewPresented(view: CASBannerView, info: AdImpression) {
-            toast("Banner Ad shown")
         }
 
         override fun onAdViewClicked(view: CASBannerView) {

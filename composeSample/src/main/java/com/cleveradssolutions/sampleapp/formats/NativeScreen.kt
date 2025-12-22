@@ -2,14 +2,20 @@ package com.cleveradssolutions.sampleapp.formats
 
 import android.util.Log
 import androidx.compose.foundation.layout.*
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalInspectionMode
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.CAS_ID
 import com.cleveradssolutions.sampleapp.SampleApplication.Companion.TAG
 import com.cleveradssolutions.compose.*
+import com.cleveradssolutions.sampleapp.SampleApplication
+import com.cleveradssolutions.sampleapp.ui.theme.CASAndroidTheme
 import com.cleveradssolutions.sdk.AdContentInfo
 import com.cleveradssolutions.sdk.nativead.*
 
@@ -18,27 +24,35 @@ fun NativeScreen() {
 
     var adContent by remember { mutableStateOf<NativeAdContent?>(null) }
     val context = LocalContext.current
+    val isPreview = LocalInspectionMode.current
     var isDisposed by remember { mutableStateOf(false) }
 
     // Handle loading and cleanup of native ads.
     DisposableEffect(Unit) {
-
-        val loader = CASNativeLoader(
-            context,
-            CAS_ID,
-            object : NativeAdContentCallback() {
-                override fun onNativeAdLoaded(nativeAd: NativeAdContent, info: AdContentInfo) {
-                    Log.d(TAG, "Native ad loaded.")
-                    if (!isDisposed) adContent = nativeAd else nativeAd.destroy()
-                }
-
-                override fun onNativeAdFailedToLoad(error: com.cleversolutions.ads.AdError) {
-                    Log.e(TAG, "Native load failed: ${error.message}")
+        val adCallback = object : NativeAdContentCallback() {
+            override fun onNativeAdLoaded(nativeAd: NativeAdContent, info: AdContentInfo) {
+                Log.d(TAG, "Native ad loaded.")
+                if (isDisposed) {
+                    nativeAd.destroy()
+                } else {
+                    // If you ever reload, destroy previous instance.
+                    adContent?.destroy()
+                    adContent = nativeAd
                 }
             }
-        )
 
-        loader.load()
+            override fun onNativeAdFailedToLoad(error: com.cleversolutions.ads.AdError) {
+                Log.e(TAG, "Native load failed: ${error.message}")
+            }
+        }
+
+        CASNativeLoader(context, CAS_ID, adCallback).apply {
+            adChoicesPlacement = AdChoicesPlacement.TOP_RIGHT
+            isStartVideoMuted = true
+            if (!isPreview) {
+                load()
+            }
+        }
 
         onDispose {
             isDisposed = true
@@ -63,7 +77,6 @@ fun NativeScreen() {
  * Individual asset views (icon, headline, media, CTA, etc.)
  * are mapped to CASNativeView via wrappers from compose_util package.
  */
-
 @Composable
 fun DisplayNativeAd(ad: NativeAdContent) {
     NativeAdView(
@@ -92,7 +105,7 @@ fun DisplayNativeAd(ad: NativeAdContent) {
             }
 
             Spacer(Modifier.height(8.dp))
-            NativeAdBodyView( adView, update = { textView ->
+            NativeAdBodyView(adView, update = { textView ->
                 textView.textSize = 14f
                 textView.setTextColor(0xFFFFFFFF.toInt())
             })
@@ -134,7 +147,6 @@ fun DisplayNativeAd(ad: NativeAdContent) {
         }
     }
 }
-
 
 /*
  * [END cas_native_template]

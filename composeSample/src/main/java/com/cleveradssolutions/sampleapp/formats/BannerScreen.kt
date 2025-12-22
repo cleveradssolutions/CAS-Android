@@ -23,7 +23,6 @@ import com.cleveradssolutions.sampleapp.SampleApplication.Companion.TAG
 import com.cleveradssolutions.sampleapp.ui.theme.CASAndroidTheme
 import com.cleveradssolutions.sdk.OnAdImpressionListener
 import com.cleversolutions.ads.AdError
-import com.cleversolutions.ads.AdImpression
 import com.cleversolutions.ads.AdSize
 import com.cleversolutions.ads.AdViewListener
 import com.cleversolutions.ads.android.CASBannerView
@@ -38,13 +37,7 @@ fun BannerScreen(modifier: Modifier = Modifier) {
     // Create CAS banner view instance.
     val bannerView = remember(screenWidthDp) {
         val view = CASBannerView(context, SampleApplication.CAS_ID)
-
-        if (isPreview) {
-            // Autoload not allowed in Preview
-            view.isAutoloadEnabled = false
-        } else {
-            view.isAutoloadEnabled = true // by default
-        }
+        view.isAutoloadEnabled = true // by default
 
         // Set the adaptive banner ad size with a given width.
         view.size = AdSize.getAdaptiveBanner(context, screenWidthDp)
@@ -58,10 +51,6 @@ fun BannerScreen(modifier: Modifier = Modifier) {
 
                 override fun onAdViewFailed(view: CASBannerView, error: AdError) {
                     Log.e(TAG, "CAS Banner ad failed to load: ${error.message}")
-                }
-
-                override fun onAdViewPresented(view: CASBannerView, info: AdImpression) {
-                    Log.d(TAG, "CAS Banner ad recorded an impression. cpm=${info.cpm}")
                 }
 
                 override fun onAdViewClicked(view: CASBannerView) {
