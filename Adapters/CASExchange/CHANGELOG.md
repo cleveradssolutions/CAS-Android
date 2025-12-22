@@ -5,6 +5,7 @@ implementation("com.cleveradssolutions:cas-exchange:4.5.2")
 
 ### 4.5.2
 - Fixed a rare issue with impression event URL for Interstitial.
+- Requires CAS 4.5.4+ due to a known issue.
 
 ### 4.5.0
 - Fixed Google Play transition handling.

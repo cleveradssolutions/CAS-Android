@@ -5,6 +5,7 @@ implementation("com.cleveradssolutions:vungle:7.6.2.0")
 
 ### 7.6.2.0
 - Certified with Liftoff Monetize - 7.6.2
+- Requires CAS 4.5.4+ due to a known issue.
 
 ### 7.6.1.0
 - Certified with Liftoff Monetize - 7.6.1

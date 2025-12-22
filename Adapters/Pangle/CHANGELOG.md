@@ -5,9 +5,11 @@ implementation("com.cleveradssolutions:pangle:7.8.0.9")
 
 ### 7.8.0.9
 - Certified with Pangle - 7.8.0.9
+- Restored compatibility with all CAS 4+ versions.
 
 ### 7.8.0.8
 - Certified with Pangle - 7.8.0.8
+- Requires CAS 4.5.4+ due to a known issue.
 
 ### 7.8.0.7
 - Certified with Pangle - 7.8.0.7

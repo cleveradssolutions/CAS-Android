@@ -5,6 +5,7 @@ implementation("com.cleveradssolutions:startio:5.2.5.0")
 
 ### 5.2.5.0
 - Certified with Start IO - 5.2.5
+- Requires CAS 4.5.4+ due to a known issue.
 
 ### 5.2.4.0
 - Certified with Start IO - 5.2.4

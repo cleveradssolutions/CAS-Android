@@ -5,6 +5,7 @@ implementation("com.cleveradssolutions:unity:4.16.5.0")
 
 ### 4.16.5.0
 - Certified with Unity Ads - 4.16.5
+- Requires CAS 4.5.4+ due to a known issue.
 
 ### 4.16.4.0
 - Certified with Unity Ads - 4.16.4

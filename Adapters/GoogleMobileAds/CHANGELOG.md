@@ -5,6 +5,7 @@ implementation("com.cleveradssolutions:google:24.9.0.0")
 
 ### 24.9.0.0
 - Certified with Google Mobile Ads - 24.9.0
+- Requires CAS 4.5.4+ due to a known issue.
 
 ### 24.8.0.0
 - Certified with Google Mobile Ads - 24.8.0

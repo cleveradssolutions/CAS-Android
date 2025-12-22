@@ -5,6 +5,7 @@ implementation("com.cleveradssolutions:applovin:13.5.1.1")
 
 ### 13.5.1.1
 - Fixed an issue with Waterfall banner and interstitial loading when the Unit ID was empty.
+- Requires CAS 4.5.4+ due to a known issue.
 
 ### 13.5.1.0
 - Certified with AppLovin - 13.5.1

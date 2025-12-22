@@ -9,9 +9,11 @@ maven { url = uri("https://dl-maven-android.mintegral.com/repository/mbridge_and
 
 ### 17.0.51.0
 - Certified with Mintegral - 17.0.51
+- Restored compatibility with all CAS 4+ versions.
 
 ### 17.0.41.0
 - Certified with Mintegral - 17.0.41
+- Requires CAS 4.5.4+ due to a known issue.
 
 ### 17.0.31.0
 - Certified with Mintegral - 17.0.31
