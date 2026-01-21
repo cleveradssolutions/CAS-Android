@@ -13,6 +13,7 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.compose.ui.viewinterop.AndroidView
 import com.cleveradssolutions.sdk.nativead.CASMediaView
 import com.cleveradssolutions.sdk.nativead.CASNativeView
@@ -46,6 +47,14 @@ fun NativeAdView(
             )
         }
     }
+    // IMPORTANT:
+    // CAS mediation may temporarily detach/re-parent this view hierarchy while rendering
+    // (e.g., wrapping the container into NativeAdContentView).
+    // Default ComposeView behavior can dispose composition on detach, clearing AndroidView assets.
+    // Keep composition alive until the ViewTree lifecycle is destroyed to avoid blank native ads.
+    composeView.setViewCompositionStrategy(
+        ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed
+    )
 
     AndroidView(
         modifier = modifier,
