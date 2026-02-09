@@ -70,7 +70,7 @@ public class NativeAdTemplateActivity extends BackNavigationActivity {
 
     private void registerNativeAdContent(NativeAdContent nativeAd) {
         if (adView != null) {
-            adView.setNativeAd(nativeAd);
+            adView.bindAdContent(nativeAd);
         }
     }
 
@@ -87,15 +87,15 @@ public class NativeAdTemplateActivity extends BackNavigationActivity {
 
     private void customizeAdViewAppearance(CASNativeView adView) {
         // Default values are shown below:
-        adView.setBackgroundColor(Color.WHITE);
+//        adView.setBackgroundColor(Color.WHITE);
 
-        if (adView.getCallToActionView() != null) {
-            adView.getCallToActionView().setBackgroundResource(com.cleveradssolutions.sdk.android.R.drawable.cas_rounded_button);
-        }
+//        if (adView.getCallToActionView() != null) {
+//            adView.getCallToActionView().setBackgroundColor(Color.BLUE);
+//        }
 
-        if (adView.getHeadlineView() != null) {
-            adView.getHeadlineView().setTextColor(Color.parseColor("#80000000"));
-        }
+//        if (adView.getHeadlineView() != null) {
+//            adView.getHeadlineView().setTextColor(Color.parseColor("#80000000"));
+//        }
     }
 
 }

@@ -68,7 +68,7 @@ public class NativeAdActivity extends BackNavigationActivity {
 
     private void registerNativeAdContent(NativeAdContent nativeAd) {
         if (adView != null) {
-            adView.setNativeAd(nativeAd);
+            adView.bindAdContent(nativeAd);
         }
     }
 

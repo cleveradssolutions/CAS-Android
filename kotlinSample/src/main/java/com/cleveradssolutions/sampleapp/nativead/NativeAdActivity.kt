@@ -59,7 +59,7 @@ class NativeAdActivity : BackNavigationActivity() {
     }
 
     private fun registerNativeAdContent(nativeAd: NativeAdContent) {
-        adView?.setNativeAd(nativeAd)
+        adView?.bindAdContent(nativeAd)
     }
 
     private fun inflateNativeAdView(container: FrameLayout) {

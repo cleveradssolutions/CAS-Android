@@ -84,7 +84,7 @@ class MultipleNativeAdActivity : BackNavigationActivity() {
         val nativeAd = loadedNativeAds.poll()
         if (nativeAd != null) {
             if (!nativeAd.isExpired) {
-                getAdView().setNativeAd(nativeAd)
+                getAdView().bindAdContent(nativeAd)
                 toast("Native Ad shown: ${loadedNativeAds.size} left")
             } else {
                 showNextNativeAdContent()

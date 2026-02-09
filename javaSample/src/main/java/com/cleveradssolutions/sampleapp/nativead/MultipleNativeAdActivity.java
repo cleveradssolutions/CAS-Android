@@ -86,7 +86,7 @@ public class MultipleNativeAdActivity extends BackNavigationActivity {
         NativeAdContent nativeAd = loadedNativeAds.poll();
         if (nativeAd != null) {
             if (!nativeAd.isExpired()) {
-                getAdView().setNativeAd(nativeAd);
+                getAdView().bindAdContent(nativeAd);
                 Util.toast(MultipleNativeAdActivity.this, "Native Ad shown: " + loadedNativeAds.size() + " left");
             } else {
                 showNextNativeAdContent();

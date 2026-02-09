@@ -61,7 +61,7 @@ class NativeAdTemplateActivity : BackNavigationActivity() {
     }
 
     private fun registerNativeAdContent(nativeAd: NativeAdContent) {
-        adView?.setNativeAd(nativeAd)
+        adView?.bindAdContent(nativeAd)
     }
 
     private fun inflateNativeAdView(container: ViewGroup) {
@@ -77,9 +77,9 @@ class NativeAdTemplateActivity : BackNavigationActivity() {
 
     private fun customizeAdViewAppearance(adView: CASNativeView) {
         // Default values are shown below:
-        adView.setBackgroundColor(Color.WHITE)
+        //adView.setBackgroundColor(Color.WHITE)
 
-        //adView.callToActionView?.setBackgroundResource(com.cleveradssolutions.sdk.android.R.drawable.cas_rounded_button)
+        //adView.callToActionView?.setBackgroundColor(Color.BLUE)
         //adView.headlineView?.setTextColor(Color.parseColor("#80000000"))
     }
 
