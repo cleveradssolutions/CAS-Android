@@ -1,7 +1,10 @@
 ## InMobi Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:inmobi:11.1.0.0")
+implementation("com.cleveradssolutions:inmobi:11.1.1.0")
 ```
+
+### 11.1.1.0
+- Certified with InMobi - 11.1.1
 
 ### 11.1.0.0
 - Certified with InMobi - 11.1.0

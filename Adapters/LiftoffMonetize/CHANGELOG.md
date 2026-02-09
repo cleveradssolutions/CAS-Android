@@ -1,7 +1,11 @@
 ## LiftoffMonetize Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:vungle:7.6.2.0")
+implementation("com.cleveradssolutions:vungle:7.7.0.0")
 ``` 
+
+### 7.7.0.0
+- Certified with Liftoff Monetize - 7.7.0
+- Added support for video in Native Ads.
 
 ### 7.6.2.0
 - Certified with Liftoff Monetize - 7.6.2

@@ -1,11 +1,14 @@
 ## Ogury Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:ogury:6.2.0.0")
+implementation("com.cleveradssolutions:ogury:6.2.1.0")
 ```
 Required repository:
 ```kotlin
 maven { url = uri("https://maven.ogury.co") }
 ```
+
+### 6.2.1.0
+- Certified with Ogury - 6.2.1
 
 ### 6.2.0.0
 - Certified with Ogury - 6.2.0

@@ -1,7 +1,13 @@
 ## IronSource Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:ironsource:9.2.0.0")
+implementation("com.cleveradssolutions:ironsource:9.3.0.0")
 ```
+
+### 9.3.0.0
+- Certified with Iron Source - 9.3.0
+- Fixed banner loading issues.
+- Fixed issues caused by timeouts.
+- Fixed issues with certain configurations for loading native ads for banner.
 
 ### 9.2.0.0
 - Certified with IronSource - 9.2.0

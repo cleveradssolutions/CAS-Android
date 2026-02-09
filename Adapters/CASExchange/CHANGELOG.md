@@ -1,7 +1,11 @@
 ## CASExchange Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:cas-exchange:4.5.2")
+implementation("com.cleveradssolutions:cas-exchange:4.6.0")
 ```
+
+### 4.6.0
+- Improved banner impression tracking.
+- Added support for the `[ERRORCODE]` macro for the VAST error URL.
 
 ### 4.5.2
 - Fixed a rare issue with impression event URL for Interstitial.

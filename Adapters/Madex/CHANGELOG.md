@@ -1,11 +1,14 @@
 ## Madex Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:madex:1.7.7.0")
+implementation("com.cleveradssolutions:madex:1.7.7.1")
 ```
 Required repository:
 ```kotlin
 maven { url = uri("https://repo.repsy.io/mvn/cleveradssolutions/proxy") }
 ```
+
+### 1.7.7.1
+- Fixed the banner position on the screen.
 
 ### 1.7.7.0
 - Certified with Madex - 1.7.7
