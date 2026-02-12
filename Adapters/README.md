@@ -6,10 +6,10 @@ The adapters in the table are listed in alphabetical order.
 | applovin | `applovin` | `13.5.1.2` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | [view](AppLovin/CHANGELOG.md) | [link](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases) |
 | audienceNetwork | `facebook` | `6.21.0.0` | Banner, Interstitial, Rewarded, Native | **✓** | **✗** | [view](AudienceNetwork/CHANGELOG.md) | [link](https://developers.facebook.com/docs/audience-network/setting-up/platform-setup/android/changelog) |
 | bigoAds | `bigo` | `5.7.0.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | [view](BigoAds/CHANGELOG.md) | [link](https://www.bigossp.com/guide/sdk/android/version) |
-| casExchange | `cas-exchange` | `4.6.0` | Banner, Interstitial, Rewarded | **✓** | **✗** | [view](CASExchange/CHANGELOG.md) | **✗** |
+| casExchange | `cas-exchange` | `4.6.2` | Banner, Interstitial, Rewarded | **✓** | **✗** | [view](CASExchange/CHANGELOG.md) | **✗** |
 | chartboost | `chartboost` | `9.11.1.0` | Banner, Interstitial, Rewarded | **✓** | **✓** | [view](Chartboost/CHANGELOG.md) | [link](https://docs.chartboost.com/en/monetization/integrate/android/changelog/) |
 | crossPromo | `cas-promo` | `4.0.2` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](CrossPromo/CHANGELOG.md) | **✗** |
-| dtExchange | `fyber` | `8.4.2.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](DTExchange/CHANGELOG.md) | [link](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog) |
+| dtExchange | `fyber` | `8.4.3.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](DTExchange/CHANGELOG.md) | [link](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog) |
 | googleAds | `google` | `24.9.0.1` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✓** | [view](GoogleMobileAds/CHANGELOG.md) | [link](https://developers.google.com/admob/android/rel-notes) |
 | hyprMX | `hyprmx` | `6.4.3.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](HyprMX/CHANGELOG.md) | [link](https://documentation.hyprmx.com/android-sdk/downloads-change-log/change-log/android-sdk-change-log) |
 | inmobi | `inmobi` | `11.1.1.0` | Banner, Interstitial, Rewarded, Native | **✓** | **✓** | [view](InMobi/CHANGELOG.md) | [link](https://support.inmobi.com/monetize/sdk-documentation/android-guidelines/changelogs-android/android-changelogs-kotlin) |
@@ -18,7 +18,7 @@ The adapters in the table are listed in alphabetical order.
 | liftoffMonetize | `vungle` | `7.7.0.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✓** | [view](LiftoffMonetize/CHANGELOG.md) | [link](https://support.vungle.com/hc/en-us/articles/15722228922395-Download-Vungle-SDK-for-Android-Amazon) |
 | madex 🧪 | `madex` | `1.7.7.1` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](Madex/CHANGELOG.md) | [link](https://madex.gitbook.io/madex-documentation/android-sdk/change-log) |
 | maticoo | `maticoo` | `1.8.6.3` | Banner, Interstitial, Rewarded, AppOpen, Native | **✗** | **✗** | [view](Maticoo/CHANGELOG.md) | [link](https://www.yuque.com/maticoo/ivzbqi/qoothshaokc75cl7) |
-| mintegral | `mintegral` | `17.0.81.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | [view](Mintegral/CHANGELOG.md) | [link](https://dev.mintegral.com/doc/index.html?file=sdk-m_sdk-android&lang=en) |
+| mintegral | `mintegral` | `17.0.91.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | [view](Mintegral/CHANGELOG.md) | [link](https://dev.mintegral.com/doc/index.html?file=sdk-m_sdk-android&lang=en) |
 | monetrix 🧪 | `monetrix` | `1.2.0.2` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](MonetriX/CHANGELOG.md) | **✗** |
 | ogury | `ogury` | `6.2.1.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | [view](Ogury/CHANGELOG.md) | [link](https://support.ogury.com/inapp/release-notes/ogury-sdk/android) |
 | pangle | `pangle` | `7.8.6.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | [view](Pangle/CHANGELOG.md) | [link](https://www.pangleglobal.com/publisher/integration) |

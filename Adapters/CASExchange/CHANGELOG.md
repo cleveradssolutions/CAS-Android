@@ -1,7 +1,10 @@
 ## CASExchange Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:cas-exchange:4.6.0")
+implementation("com.cleveradssolutions:cas-exchange:4.6.2")
 ```
+
+### 4.6.2
+- Improved VAST media file selection.
 
 ### 4.6.0
 - Improved banner impression tracking.

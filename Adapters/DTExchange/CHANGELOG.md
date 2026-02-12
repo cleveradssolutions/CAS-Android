@@ -1,7 +1,10 @@
 ## DT Exchange Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:fyber:8.4.2.0")
+implementation("com.cleveradssolutions:fyber:8.4.3.0")
 ```
+
+### 8.4.3.0
+- Certified with DT Exchange - 8.4.3
 
 ### 8.4.2.0
 - Certified with DT Exchange - 8.4.2
