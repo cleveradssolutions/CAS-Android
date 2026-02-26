@@ -5,7 +5,7 @@ The adapters in the table are listed in alphabetical order.
 |---------|:--------:|:-------:|:-----------------:|:-------:|:--------:|:---:|:---------:| :-: |
 | applovin | `applovin` | `13.6.0.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✗** | [view](AppLovin/CHANGELOG.md) | [link](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases) |
 | audienceNetwork | `facebook` | `6.21.0.1` | Banner, Interstitial, Rewarded, Native | **✓** | **✗** | **✗** | [view](AudienceNetwork/CHANGELOG.md) | [link](https://developers.facebook.com/docs/audience-network/setting-up/platform-setup/android/changelog) |
-| bigoAds | `bigo` | `5.7.1.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✗** | [view](BigoAds/CHANGELOG.md) | [link](https://www.bigossp.com/guide/sdk/android/version) |
+| bigoAds | `bigo` | `5.7.1.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✓** | [view](BigoAds/CHANGELOG.md) | [link](https://www.bigossp.com/guide/sdk/android/version) |
 | casExchange | `cas-exchange` | `4.6.2` | Banner, Interstitial, Rewarded | **✓** | **✗** | **✗** | [view](CASExchange/CHANGELOG.md) | **✗** |
 | chartboost | `chartboost` | `9.11.1.0` | Banner, Interstitial, Rewarded | **✓** | **✓** | **✓** | [view](Chartboost/CHANGELOG.md) | [link](https://docs.chartboost.com/en/monetization/integrate/android/changelog/) |
 | crossPromo | `cas-promo` | `4.0.2` | Banner, Interstitial, Rewarded | **✗** | **✗** | **✗** | [view](CrossPromo/CHANGELOG.md) | **✗** |
@@ -36,16 +36,12 @@ The adapters in the table are listed in alphabetical order.
 > [!NOTE]  
 > Adapters marked with 🧪 are currently in closed beta. These adapters are not recommended for use in all applications. For more information, contact your account manager.
 
-<details>
-<summary>**Columns description**</summary>
-
+#### Columns description
 - **Optimal** — The adapter is included in the Optimal Ads Solutions bundle.
 - **Families** — The adapter is included in the Families Ads Solutions bundle.
 - **VPN** — The adapter is included in the VPN-compliant Ads Solutions bundle.
 - **Changelog** — Link to the adapter changelog.
 - **SDK** — Link to the ad framework release notes.
-
-</details>
 
 ## Adapter versioning
 The adapter versioning scheme for versioned adapters is `<third-party SDK version>.<adapter patch version>`. For example, if an ad network releases a new SDK version `1.2.3`, a new adapter version `1.2.3.0` will be released to Bintray after being tested against that new SDK.
