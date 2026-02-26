@@ -1,7 +1,11 @@
 ## LiftoffMonetize Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:vungle:7.7.0.0")
+implementation("com.cleveradssolutions:vungle:7.7.1.0")
 ``` 
+
+### 7.7.1.0
+- Certified with Liftoff Monetize - 7.7.1
+- Fixed `android.view.ViewRootImpl$CalledFromWrongThreadException` from destroy Native Ad.
 
 ### 7.7.0.0
 - Certified with Liftoff Monetize - 7.7.0

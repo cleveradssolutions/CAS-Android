@@ -1,7 +1,11 @@
 ## Bigo Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:bigo:5.7.0.0")
+implementation("com.cleveradssolutions:bigo:5.7.1.0")
 ```
+
+### 5.7.1.0
+- Certified with Bigo Ads - 5.7.1
+- Added support alternative Bidding system with CAS 4.6.3. (Closed beta)
 
 ### 5.7.0.0
 - Certified with Bigo Ads - 5.7.0
