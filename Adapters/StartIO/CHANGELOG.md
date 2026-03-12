@@ -1,7 +1,10 @@
 ## StartIO Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:startio:5.2.6.0")
+implementation("com.cleveradssolutions:startio:5.3.0.0")
 ```  
+
+### 5.3.0.0
+- Certified with Start IO - 5.3.0
 
 ### 5.2.6.0
 - Certified with Start IO - 5.2.6
