@@ -1,7 +1,10 @@
 ## Yango Ads Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:yango:7.18.2.0")
+implementation("com.cleveradssolutions:yango:7.18.3.0")
 ``` 
+
+### 7.18.3.0
+- Certified with Yango Ads - 7.18.3
 
 ### 7.18.2.0
 - Certified with Yango Ads - 7.18.2
