@@ -1,4 +1,4 @@
-## Bigo Android Mediation Adapter Changelog
+## Bigo Ads Android Mediation Adapter Changelog
 ```kotlin
 implementation("com.cleveradssolutions:bigo:5.8.0.0")
 ```

@@ -55,7 +55,10 @@ dependencyResolutionManagement {
         maven {
             name = "SmaatoAdsRepo"
             url = uri("https://s3.amazonaws.com/smaato-sdk-releases/")
-            content { includeGroup("com.smaato.android.sdk") }
+            content {
+                includeGroup("com.smaato.android.sdk")
+                includeGroup("com.verve")
+            }
         }
         maven {
             name = "VerveAdsRepo"

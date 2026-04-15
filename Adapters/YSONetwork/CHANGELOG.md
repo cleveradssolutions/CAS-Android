@@ -1,7 +1,10 @@
 ## Yso Network Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:ysonetwork:1.3.3.0")
+implementation("com.cleveradssolutions:ysonetwork:1.3.6.0")
 ```
+
+### 1.3.6.0
+- Certified with Yso Network - 1.3.6
 
 ### 1.3.3.0
 - Certified with Yso Network - 1.3.3
