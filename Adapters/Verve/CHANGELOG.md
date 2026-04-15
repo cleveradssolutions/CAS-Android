@@ -1,7 +1,10 @@
 ## Verve Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:verve:3.7.1.0")
+implementation("com.cleveradssolutions:verve:3.8.1.0")
 ```
+
+### 3.8.1.0
+- Certified with Verve - 3.8.1
 
 ### 3.7.1.0
 - Certified with Verve - 3.7.1
