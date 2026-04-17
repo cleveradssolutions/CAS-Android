@@ -1,7 +1,10 @@
 ## CASExchange Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:cas-exchange:4.6.2")
+implementation("com.cleveradssolutions:cas-exchange:4.6.6")
 ```
+
+### 4.6.6
+- Migrated from `com.google.android.exoplayer:exoplayer-ui` to `androidx.media3:media3-exoplayer`.
 
 ### 4.6.2
 - Improved VAST media file selection.
