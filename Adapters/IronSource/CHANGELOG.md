@@ -1,7 +1,13 @@
 ## IronSource Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:ironsource:9.4.0.1")
+implementation("com.cleveradssolutions:ironsource:9.4.2.0")
 ```
+
+### 9.4.2.0
+- Fixed a rare issue with BURL being called for the wrong ad source.
+
+### 9.4.0.1
+- Fixed a rare issue with BURL being called for the wrong ad source.
 
 ### 9.4.0.1
 - Fixed a rare issue with BURL being called for the wrong ad source.
