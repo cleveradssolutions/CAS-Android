@@ -1,7 +1,11 @@
 ## Kidoz Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:kidoz:10.1.6.0")
+implementation("com.cleveradssolutions:kidoz:10.1.7.0")
 ```
+
+### 10.1.7.0
+- Certified with Kidoz - 10.1.7
+- Fixed Banner ads loading.
 
 ### 10.1.6.0
 - Certified with Kidoz - 10.1.6

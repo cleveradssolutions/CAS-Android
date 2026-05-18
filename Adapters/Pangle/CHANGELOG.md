@@ -1,7 +1,10 @@
 ## Pangle Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:pangle:7.9.1.3")
+implementation("com.cleveradssolutions:pangle:8.0.0.5")
 ```
+
+### 8.0.0.5
+- Certified with Pangle - 8.0.0.5
 
 ### 7.9.1.3
 - Certified with Pangle - 7.9.1.3

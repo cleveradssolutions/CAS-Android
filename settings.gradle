@@ -1,6 +1,6 @@
 include ':kotlinSample'
 include ':javaSample'
-//include ':composeSample'
+include ':composeSample'
 
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -40,19 +40,6 @@ dependencyResolutionManagement {
             }
         }
         maven {
-            name = "SuperAwesomeRepo"
-            url = uri("https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo")
-            content { includeGroup("tv.superawesome.sdk.publisher") }
-        }
-        maven {
-            name = "MadexAdsRepo"
-            url = uri("https://sdkpkg.sspnet.tech")
-            content {
-                includeGroup("sspnet.tech")
-                includeGroup("sspnet.tech.adapters")
-            }
-        }
-        maven {
             name = "SmaatoAdsRepo"
             url = uri("https://s3.amazonaws.com/smaato-sdk-releases/")
             content {
@@ -66,7 +53,26 @@ dependencyResolutionManagement {
             content {
                 includeGroup("net.pubnative")
                 includeGroup("com.verve")
+                includeGroup("com.smaato.android.sdk")
             }
+        }
+        maven {
+            name = "SuperAwesomeRepo"
+            url = uri("https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo/")
+            content { includeGroup("tv.superawesome.sdk.publisher") }
+        }
+        maven {
+            name = "MadexAdsRepo"
+            url = uri("https://sdkpkg.sspnet.tech")
+            content {
+                includeGroup("sspnet.tech")
+                includeGroup("sspnet.tech.adapters")
+            }
+        }
+        maven {
+            name = "PubmaticAdsRepo"
+            url = uri("https://repo.pubmatic.com/artifactory/public-repos")
+            content { includeGroup("com.pubmatic.sdk") }
         }
     }
 }

@@ -4,10 +4,8 @@ implementation("com.cleveradssolutions:ironsource:9.4.2.0")
 ```
 
 ### 9.4.2.0
-- Fixed a rare issue with BURL being called for the wrong ad source.
-
-### 9.4.0.1
-- Fixed a rare issue with BURL being called for the wrong ad source.
+- Certified with Iron Source - 9.4.2
+- Compatibility improvements for CAS 4.7.0.
 
 ### 9.4.0.1
 - Fixed a rare issue with BURL being called for the wrong ad source.

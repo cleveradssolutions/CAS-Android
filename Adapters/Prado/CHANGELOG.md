@@ -1,7 +1,11 @@
 ## Prado Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:prado:10.1.6.0")
+implementation("com.cleveradssolutions:prado:10.1.7.0")
 ```
+
+### 10.1.7.0
+- Certified with Prado - 10.1.7
+- Fixed Banner ads loading.
 
 ### 10.1.6.0
 - Certified with Prado - 10.1.6
