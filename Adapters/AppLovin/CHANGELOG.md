@@ -1,7 +1,10 @@
 ## AppLovin Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:applovin:13.6.3.0")
+implementation("com.cleveradssolutions:applovin:13.6.3.1")
 ```
+
+### 13.6.3.1
+- Improved performance.
 
 ### 13.6.3.0
 - Certified with AppLovin - 13.6.3
