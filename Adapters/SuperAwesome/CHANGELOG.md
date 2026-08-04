@@ -1,11 +1,14 @@
 ## SuperAwesome Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:superawesome:10.1.0.0")
+implementation("com.cleveradssolutions:superawesome:10.3.1.0")
 ```
 Required repository:
 ```kotlin
 maven { url = uri("https://aa-sdk.s3-eu-west-1.amazonaws.com/android_repo") }
 ```
+
+### 10.3.1.0
+- Certified with Super Awesome - 10.3.1
 
 ### 10.1.0.0
 - Certified with Super Awesome - 10.1.0

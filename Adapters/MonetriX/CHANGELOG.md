@@ -1,7 +1,10 @@
 ## MonetriX Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:monetrix:1.2.0.3")
+implementation("com.cleveradssolutions:monetrix:1.2.0.7")
 ```
+
+### 1.2.0.7
+- Certified with MonetriX - 1.2.0.7
 
 ### 1.2.0.3
 - Certified with MonetriX - 1.2.0.3

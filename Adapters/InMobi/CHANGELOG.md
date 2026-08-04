@@ -1,7 +1,11 @@
 ## InMobi Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:inmobi:11.3.0.2")
+implementation("com.cleveradssolutions:inmobi:11.4.0.0")
 ```
+
+### 11.4.0.0
+- Certified with InMobi - 11.4.0
+- Added Adaptive banner size support.
 
 ### 11.3.0.2
 - Compatibility improvements for CAS 4.7.4.

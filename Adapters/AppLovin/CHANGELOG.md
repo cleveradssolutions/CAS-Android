@@ -1,7 +1,10 @@
 ## AppLovin Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:applovin:13.6.3.1")
+implementation("com.cleveradssolutions:applovin:13.6.3.2")
 ```
+
+### 13.6.3.2
+- Fixed a rare loading freeze that occurred in some configurations.
 
 ### 13.6.3.1
 - Improved performance.

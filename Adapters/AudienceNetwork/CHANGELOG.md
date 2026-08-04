@@ -1,7 +1,10 @@
 ## Meta Audience Network Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:facebook:6.21.0.1")
+implementation("com.cleveradssolutions:facebook:6.22.0.0")
 ``` 
+
+### 6.22.0.0
+- Certified with Audience Network - 6.22.0
 
 ### 6.21.0.1
 - Removed deprecated integration error.

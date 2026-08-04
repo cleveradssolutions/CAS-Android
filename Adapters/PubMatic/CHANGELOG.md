@@ -1,11 +1,14 @@
 ## PubMatic Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:pubmatic:5.1.2.0")
+implementation("com.cleveradssolutions:pubmatic:5.2.0.0")
 ```
 Required repository:
 ```kotlin
 maven { url = uri("https://repo.pubmatic.com/artifactory/public-repos") }
 ```
+
+### 5.2.0.0
+- Certified with PubMatic - 5.2.0
 
 ### 5.1.2.0
 - Certified with PubMatic - 5.1.2

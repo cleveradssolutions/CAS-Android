@@ -1,7 +1,10 @@
 ## Google Ads Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:google:25.4.0.0")
+implementation("com.cleveradssolutions:google:25.4.0.1")
 ```
+
+### 25.4.0.1
+- Fixed a rare exception thrown during adapter initialization.
 
 ### 25.4.0.0
 - Certified with Google Mobile Ads - 25.4.0
