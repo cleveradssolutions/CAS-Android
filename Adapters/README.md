@@ -3,7 +3,7 @@ The adapters in the table are listed in alphabetical order.
 
 | Adapter | Artifact | Version | Supported Formats | Optimal | Families | VPN | Changelog | SDK |
 |---------|:--------:|:-------:|:-----------------:|:-------:|:--------:|:---:|:---------:| :-: |
-| applovin | `applovin` | `13.6.3.2` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✗** | [view](AppLovin/CHANGELOG.md) | [link](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases) |
+| applovin | `applovin` | `13.6.3.3` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✗** | [view](AppLovin/CHANGELOG.md) | [link](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases) |
 | audienceNetwork | `facebook` | `6.22.0.0` | Banner, Interstitial, Rewarded, Native | **✓** | **✗** | **✗** | [view](AudienceNetwork/CHANGELOG.md) | [link](https://developers.facebook.com/docs/audience-network/setting-up/platform-setup/android/changelog) |
 | bidease 🧪 | `bidease` | `2.2.7.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | **✗** | [view](Bidease/CHANGELOG.md) | [link](https://devs.bidease.com/docs/changelogs/android) |
 | bigoAds | `bigo` | `5.10.1.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✓** | [view](BigoAds/CHANGELOG.md) | [link](https://www.bigossp.com/guide/sdk/android/version) |
@@ -12,8 +12,8 @@ The adapters in the table are listed in alphabetical order.
 | crossPromo | `cas-promo` | `4.7.1` | Banner, Interstitial, Rewarded | **✗** | **✗** | **✗** | [view](CrossPromo/CHANGELOG.md) | **✗** |
 | displayIO 🧪 | `displayio` | `5.7.4.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | **✗** | [view](DisplayIO/CHANGELOG.md) | [link](https://www.display.io/documentation/android-changelog/) |
 | dtExchange | `fyber` | `8.4.7.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | **✗** | [view](DTExchange/CHANGELOG.md) | [link](https://developer.digitalturbine.com/hc/en-us/articles/360010834177-DT-Exchange-Android-Changelog) |
-| googleAds | `google` | `25.4.0.1` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✓** | **✓** | [view](GoogleMobileAds/CHANGELOG.md) | [link](https://developers.google.com/admob/android/rel-notes) |
-| googleAdsNext 🧪 | `googlenext` | `1.3.1.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✗** | **✗** | **✗** | [view](GoogleMobileAdsNext/CHANGELOG.md) | [link](https://developers.google.com/admob/android/next-gen/rel-notes) |
+| googleAds | `google` | `25.4.0.2` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✓** | **✓** | [view](GoogleMobileAds/CHANGELOG.md) | [link](https://developers.google.com/admob/android/rel-notes) |
+| googleAdsNext 🧪 | `googlenext` | `1.3.1.1` | Banner, Interstitial, Rewarded, AppOpen, Native | **✗** | **✗** | **✗** | [view](GoogleMobileAdsNext/CHANGELOG.md) | [link](https://developers.google.com/admob/android/next-gen/rel-notes) |
 | hyprMX | `hyprmx` | `6.4.6.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | **✗** | [view](HyprMX/CHANGELOG.md) | [link](https://documentation.hyprmx.com/android-sdk/downloads-change-log/change-log/android-sdk-change-log) |
 | inmobi | `inmobi` | `11.4.0.0` | Banner, Interstitial, Rewarded, Native | **✓** | **✓** | **✓** | [view](InMobi/CHANGELOG.md) | [link](https://support.inmobi.com/monetize/sdk-documentation/android-guidelines/changelogs-android/android-changelogs-kotlin) |
 | ironSource | `ironsource` | `9.5.0.1` | Banner, Interstitial, Rewarded | **✓** | **✓** | **✓** | [view](IronSource/CHANGELOG.md) | [link](https://docs.unity.com/en-us/grow/levelplay/sdk/android/changelog) |
