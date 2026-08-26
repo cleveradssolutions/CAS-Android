@@ -62,14 +62,6 @@ dependencyResolutionManagement {
             content { includeGroup("tv.superawesome.sdk.publisher") }
         }
         maven {
-            name = "MadexAdsRepo"
-            url = uri("https://sdkpkg.sspnet.tech")
-            content {
-                includeGroup("sspnet.tech")
-                includeGroup("sspnet.tech.adapters")
-            }
-        }
-        maven {
             name = "PubmaticAdsRepo"
             url = uri("https://repo.pubmatic.com/artifactory/public-repos")
             content { includeGroup("com.pubmatic.sdk") }
