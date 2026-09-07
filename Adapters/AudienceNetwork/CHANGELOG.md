@@ -1,7 +1,10 @@
 ## Meta Audience Network Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:facebook:6.22.0.0")
+implementation("com.cleveradssolutions:facebook:6.22.0.1")
 ``` 
+
+### 6.22.0.1
+- Migrated native AdOptions rendering to Facebook's preferred position API using AdChoicesPlacement.
 
 ### 6.22.0.0
 - Certified with Audience Network - 6.22.0

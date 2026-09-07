@@ -1,11 +1,14 @@
 ## Smaato Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:smaato:23.2.0.0")
+implementation("com.cleveradssolutions:smaato:23.2.2.0")
 ```
 Required repository:
 ```kotlin
 maven { url = uri("https://s3.amazonaws.com/smaato-sdk-releases/") }
 ```
+
+### 23.2.2.0
+- Certified with Smaato - 23.2.2
 
 ### 23.2.0.0
 - Certified with Smaato - 23.2.0

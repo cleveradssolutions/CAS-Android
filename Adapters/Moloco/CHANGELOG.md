@@ -1,7 +1,10 @@
 ## Moloco Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:moloco:4.11.0.0")
+implementation("com.cleveradssolutions:moloco:4.12.0.0")
 ```
+
+### 4.12.0.0
+- Certified with Moloco - 4.12.0
 
 ### 4.11.0.0
 - Certified with Moloco - 4.11.0

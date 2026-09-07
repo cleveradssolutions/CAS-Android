@@ -1,7 +1,11 @@
 ## Maticoo Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:maticoo:2.0.6.0")
+implementation("com.cleveradssolutions:maticoo:2.0.7.0")
 ```
+
+### 2.0.7.0
+- Certified with Maticoo - 2.0.7.0
+- Add setMute support for interstitial and rewarded ads.
 
 ### 2.0.6.0
 - Certified with Maticoo - 2.0.6.0

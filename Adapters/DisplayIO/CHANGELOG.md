@@ -1,11 +1,15 @@
 ## Display IO Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:displayio:5.7.4.0")
+implementation("com.cleveradssolutions:displayio:5.8.0.0")
 ```
 Required repository:
 ```kotlin
 maven { url = uri("https://maven.display.io/") }
 ```
+
+### 5.8.0.0
+- Certified with Display IO - 5.8.0
+- Added Native Ads format support.
 
 ### 5.7.4.0
 - Certified with Display IO - 5.7.4

@@ -1,7 +1,11 @@
 ## InMobi Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:inmobi:11.4.0.0")
+implementation("com.cleveradssolutions:inmobi:11.4.1.0")
 ```
+
+### 11.4.1.0
+- Certified with InMobi - 11.4.1
+- Fixed adaptive banner layout to use the standard banner size while continuing to pass adaptive dimensions through extras.
 
 ### 11.4.0.0
 - Certified with InMobi - 11.4.0

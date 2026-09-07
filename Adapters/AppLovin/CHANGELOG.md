@@ -1,7 +1,10 @@
 ## AppLovin Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:applovin:13.6.3.3")
+implementation("com.cleveradssolutions:applovin:13.6.4.0")
 ```
+
+### 13.6.4.0
+- Certified with AppLovin - 13.6.4
 
 ### 13.6.3.3
 - Fixed an issue where Banner ad impressions occasionally failed to register.
