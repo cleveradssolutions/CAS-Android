@@ -1,7 +1,11 @@
 ## Bidease Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:bidease:2.2.8.0")
+implementation("com.cleveradssolutions:bidease:3.0.0.0")
 ```
+
+### 3.0.0.0
+- Certified with Bidease - 3.0.0
+- Removed the `android:networkSecurityConfig` declaration from the SDK manifest.
 
 ### 2.2.8.0
 - Certified with Bidease - 2.2.8

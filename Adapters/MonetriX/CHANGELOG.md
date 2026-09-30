@@ -1,7 +1,11 @@
 ## MonetriX Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:monetrix:1.3.0.0")
+implementation("com.cleveradssolutions:monetrix:1.4.0.2")
 ```
+
+### 1.4.0.2
+- Certified with Monetrix - 1.4.0.2
+- Added Native Ads support.
 
 ### 1.3.0.0
 - Certified with Monetrix - 1.3.0.0

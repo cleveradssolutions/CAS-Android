@@ -1,7 +1,12 @@
 ## LiftoffMonetize Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:vungle:7.7.8.0")
+implementation("com.cleveradssolutions:vungle:7.7.9.0")
 ``` 
+
+### 7.7.9.0
+- Certified with Liftoff Monetize - 7.7.9
+- Migrated native AdChoices rendering to LiftoffMonetize's preferred position API using AdChoicesPlacement.
+- Fixed an impression issues of Native Ads.
 
 ### 7.7.8.0
 - Certified with Liftoff Monetize - 7.7.8

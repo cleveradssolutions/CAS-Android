@@ -1,7 +1,10 @@
 ## HyprMX Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:hyprmx:6.4.6.1")
+implementation("com.cleveradssolutions:hyprmx:6.4.7.0")
 ```
+
+### 6.4.7.0
+- Certified with Hypr MX - 6.4.7
 
 ### 6.4.6.1
 - Internal improvements for Bidding integration.

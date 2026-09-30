@@ -1,7 +1,10 @@
 ## Maticoo Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:maticoo:2.0.7.0")
+implementation("com.cleveradssolutions:maticoo:2.0.7.1")
 ```
+
+### 2.0.7.1
+- Certified with Maticoo - 2.0.7.1
 
 ### 2.0.7.0
 - Certified with Maticoo - 2.0.7.0
