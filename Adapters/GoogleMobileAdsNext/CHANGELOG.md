@@ -1,7 +1,10 @@
 ## Google Mobile Ads Next Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:googlenext:1.5.0.0")
+implementation("com.cleveradssolutions:googlenext:1.6.0.0")
 ```
+
+### 1.6.0.0
+- Certified with Google Mobile Ads Next - 1.6.0
 
 ### 1.5.0.0
 - Certified with Google Mobile Ads Next - 1.5.0

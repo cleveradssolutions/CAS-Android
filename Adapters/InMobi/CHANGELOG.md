@@ -1,7 +1,10 @@
 ## InMobi Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:inmobi:11.4.1.0")
+implementation("com.cleveradssolutions:inmobi:11.5.0.1")
 ```
+
+### 11.5.0.1
+- Fixed an issue where banner ads were sometimes not visible
 
 ### 11.4.1.0
 - Certified with InMobi - 11.4.1

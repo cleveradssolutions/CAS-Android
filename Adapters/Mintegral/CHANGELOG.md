@@ -1,11 +1,14 @@
 ## Mintegral Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:mintegral:17.1.81.1")
+implementation("com.cleveradssolutions:mintegral:17.1.91.0")
 ```  
 Required repository:
 ```kotlin
 maven { url = uri("https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea") }
 ```
+
+### 17.1.91.0
+- Certified with Mintegral - 17.1.91
 
 ### 17.1.81.1
 - Added Waterfall loading support.

@@ -1,7 +1,10 @@
 ## Bidease Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:bidease:3.0.0.0")
+implementation("com.cleveradssolutions:bidease:3.0.2.0")
 ```
+
+### 3.0.2.0
+- Certified with Bidease - 3.0.2
 
 ### 3.0.0.0
 - Certified with Bidease - 3.0.0

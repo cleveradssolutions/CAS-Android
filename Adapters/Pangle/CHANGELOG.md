@@ -1,7 +1,11 @@
 ## Pangle Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:pangle:8.3.0.4")
+implementation("com.cleveradssolutions:pangle:8.3.0.5")
 ```
+
+### 8.3.0.5
+- Certified with Pangle - 8.2.0.5
+- Added `keep.xml` to preserve Pangle SDK resources when resource shrinking is enabled
 
 ### 8.3.0.4
 - Certified with Pangle - 8.2.0.4

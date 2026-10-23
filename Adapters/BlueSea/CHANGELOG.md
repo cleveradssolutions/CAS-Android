@@ -1,7 +1,10 @@
 ## Bluesea Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:bluesea:1.9.0.0")
+implementation("com.cleveradssolutions:bluesea:1.9.0.1")
 ```
+
+### 1.9.0.1
+- Update load functions for Bluesea 1.9.0
 
 ### 1.9.0.0
 - Certified with Bluesea - 1.9.0
