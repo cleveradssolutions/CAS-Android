@@ -1,7 +1,10 @@
 ## CASExchange Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:cas-exchange:4.6.6")
+implementation("com.cleveradssolutions:cas-exchange:4.9.0")
 ```
+
+### 4.9.0
+- Certified with CAS Exchange - 4.9.0
 
 ### 4.6.6
 - Migrated from `com.google.android.exoplayer:exoplayer-ui` to `androidx.media3:media3-exoplayer`.
