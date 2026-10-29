@@ -1,0 +1,1 @@
+-keeppackagenames com.ysocorp.ysonetwork

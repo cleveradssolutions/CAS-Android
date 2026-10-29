@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@layout/tt_*,
+                @anim/tt_*,
+                @drawable/tt_*,
+                @string/tt_*,
+                @color/tt_*,
+                @dimen/tt_*,
+                @integer/tt_*,
+                @style/tt_*,
+                @attr/tt_*" />

@@ -1,0 +1,1 @@
+-keeppackagenames com.vungle.ads

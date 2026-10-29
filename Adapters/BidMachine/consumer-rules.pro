@@ -1,0 +1,1 @@
+-keeppackagenames io.bidmachine

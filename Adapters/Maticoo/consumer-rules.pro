@@ -1,0 +1,2 @@
+-keeppackagenames com.maticoo.sdk
+-keeppackagenames com.zmaticoo.sdk

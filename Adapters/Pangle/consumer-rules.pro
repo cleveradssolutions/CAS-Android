@@ -1,0 +1,1 @@
+-keeppackagenames com.bytedance.sdk
