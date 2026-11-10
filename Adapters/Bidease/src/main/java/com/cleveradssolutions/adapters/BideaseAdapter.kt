@@ -2,11 +2,11 @@ package com.cleveradssolutions.adapters
 
 import android.annotation.SuppressLint
 import androidx.annotation.MainThread
-import com.bidease.ads.adapter.applovin.BideaseMediationAdapter
 import com.bidease.mobile.BideaseMobile
 import com.bidease.mobile.ForegroundActivityTracker
 import com.bidease.mobile.InitFailure
 import com.bidease.mobile.InitParams
+import com.bidease.mobile.InitResult
 import com.bidease.mobile.InitSuccess
 import com.bidease.mobile.LoadParams
 import com.bidease.mobile.PrivacyParams
@@ -35,19 +35,18 @@ import com.cleveradssolutions.sdk.AdFormat
 import com.cleversolutions.ads.AdError
 import com.cleversolutions.ads.android.CAS
 
-class BideaseAdapter : MediationRtbAdapter() {
+class BideaseAdapter : MediationRtbAdapter(), (InitResult) -> Unit {
     override fun getSDKVersion(): String = BideaseMobile.VERSION
     override fun getMinSDKVersion(): String = BuildConfig.VERSION_SDK
     override fun getAdapterVersion(): String = BuildConfig.VERSION
     override fun getActivityClass(): Class<*> = InterstitialAdActivity::class.java
-
-    override fun supportBidding(): Int = AdapterSupport.simple or AdapterSupport.max
+    override fun supportBidding(): Int = AdapterSupport.simple
 
     override val isInitialized: Boolean
         get() = BideaseMobile.isInitialized
 
     override fun initAds(request: MediationInitAdRequest) {
-        if (request.requireAppID() == null) return
+        val appID = request.requireAppID() ?: return
 
         if (request.privacy.isAppliesCOPPA() == true) {
             request.onFailure(
@@ -59,22 +58,28 @@ class BideaseAdapter : MediationRtbAdapter() {
             return
         }
 
-        request.contextService.getActivityOrNull()?.let {
+        request.uiContext?.let {
             ForegroundActivityTracker.onActivityResumed(it)
         }
 
         BideaseMobile.initialize(
             request.context,
-            createInitParams(request)
-        ) { result ->
-            when (result) {
-                is InitSuccess -> {
-                    request.onSuccess()
-                }
+            InitParams(
+                key = appID,
+                privacyParams = createPrivacyParams(request.privacy)
+            ),
+            this
+        )
+    }
 
-                is InitFailure -> {
-                    request.onFailure(AdError(result.error))
-                }
+    override fun invoke(result: InitResult) {
+        when (result) {
+            is InitSuccess -> {
+                initRequest.onSuccess()
+            }
+
+            is InitFailure -> {
+                initRequest.onFailure(AdError(result.error))
             }
         }
     }
@@ -150,26 +155,11 @@ class BideaseAdapter : MediationRtbAdapter() {
         }
     }
 
-    override fun migrateToMediation(sourceId: Int) {
-        //super.migrateToMediation(sourceId)
-
-        BideaseMediationAdapter.setInitParams(
-            createInitParams(initRequest)
-        )
-    }
-
     override fun onUserPrivacyChanged(privacy: MediationUserPrivacy) {
         BideaseMobile.setPrivacyParams(
             createPrivacyParams(privacy)
         )
     }
-
-    private fun createInitParams(
-        request: MediationInitAdRequest
-    ) = InitParams(
-        key = request.appID,
-        privacyParams = createPrivacyParams(request.privacy)
-    )
 
     private fun createPrivacyParams(
         privacy: MediationUserPrivacy

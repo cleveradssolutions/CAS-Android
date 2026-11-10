@@ -44,17 +44,13 @@ internal class MolocoNativeAd(
         listener: MediationAdListener
     ) {
         overrideClickHandling(assets.clickableViews)
-        overrideImpressionHandling(view)
+        nativeAd.handleImpression()
     }
 
     override fun onClick(v: View?) {
         nativeAd.handleGeneralAdClick()
     }
-
-    override fun onViewImpression(view: View) {
-        nativeAd.handleImpression()
-    }
-
+    
     override fun destroy() {
         super.destroy()
         sdkMediaView = null

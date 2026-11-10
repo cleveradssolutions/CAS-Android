@@ -1,7 +1,10 @@
 ## AppLovin Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:applovin:13.6.4.1")
+implementation("com.cleveradssolutions:applovin:13.6.4.2")
 ```
+
+### 13.6.4.2
+- Minor improvements
 
 ### 13.6.4.1
 - Compatibility improvements for CAS 4.8.3.
