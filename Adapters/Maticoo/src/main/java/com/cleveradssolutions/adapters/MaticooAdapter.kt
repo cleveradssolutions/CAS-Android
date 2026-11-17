@@ -17,6 +17,7 @@ import com.cleveradssolutions.mediation.core.MediationInterstitialAdRequest
 import com.cleveradssolutions.mediation.core.MediationNativeAdRequest
 import com.cleveradssolutions.mediation.core.MediationRewardedAdRequest
 import com.cleveradssolutions.sdk.AdErrorCode
+import com.cleveradssolutions.sdk.AdFormat
 import com.cleveradssolutions.sdk.AdSourceId
 import com.cleversolutions.ads.AdError
 import com.cleversolutions.ads.android.CAS
@@ -53,10 +54,11 @@ class MaticooAdapter : MediationAdapterBase(), InitCallback {
         val configuration = InitConfiguration.Builder()
             .appKey(appKey)
             .logEnable(request.isDebugLogsEnabled)
+            .setMuted(CAS.settings.mutedAdSounds)
             .localExtra(localExtras)
             .build()
         MaticooAds.init(
-            request.contextService.getActivityOrNull(),
+            request.uiContext,
             configuration,
             this
         )
@@ -78,11 +80,16 @@ class MaticooAdapter : MediationAdapterBase(), InitCallback {
             request.onFailure(AdError(AdErrorCode.CONFIGURATION_ERROR, "Invalid AdUnit id"))
             return
         }
+        if (request.format == AdFormat.APP_OPEN) {
+            request.onFailure(AdError(AdErrorCode.REJECTED, "AppOpen format not supported"))
+            return
+        }
 
-        request.onSuccess(
-            ZMaticooAds.getBiddingToken(request.unitId, request.timestamp)
-                .orEmpty()
-        )
+        ZMaticooAds.getBiddingToken(request.unitId, request.timestamp)?.let {
+            request.onSuccess(it)
+            return
+        }
+        request.onFailure(AdError(AdErrorCode.INTERNAL_ERROR))
     }
 
     override fun loadAd(request: MediationBannerAdRequest): MediationAdLoader? {
@@ -118,6 +125,10 @@ class MaticooAdapter : MediationAdapterBase(), InitCallback {
         privacy.isAppliesCOPPA()?.let {
             MaticooAds.setCoppa(initRequest.context, if (it) 1 else 0)
         }
+
+        CAS.targetingOptions.contentUrl?.let {
+            localExtras["contentUrl"] = it
+        } ?: localExtras.remove("contentUrl")
     }
 
     override fun onMuteAdSoundsChanged(muted: Boolean) {

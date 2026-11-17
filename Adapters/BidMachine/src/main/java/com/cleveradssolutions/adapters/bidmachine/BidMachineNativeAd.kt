@@ -17,17 +17,12 @@ import io.bidmachine.nativead.NativeRequest
 import io.bidmachine.nativead.view.NativeMediaView
 import io.bidmachine.utils.BMError
 
-internal class BMNativeAd(
+internal class BidMachineNativeAd(
     request: MediationNativeAdRequest
 ) : MediationNativeAdContent(), MediationAdLoader, NativeListener {
-
     private var request: MediationNativeAdRequest? = request
     private val ad = NativeAd(request.context).also { it.setListener(this) }
     private var mediaView: NativeMediaView? = null
-
-    fun load(request: MediationNativeAdRequest) {
-        ad.load(request.buildBMNativeRequest().build())
-    }
 
     fun load(adRequest: NativeRequest) {
         ad.load(adRequest)

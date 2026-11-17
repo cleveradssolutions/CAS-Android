@@ -1,7 +1,12 @@
 ## Maticoo Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:maticoo:2.0.7.1")
+implementation("com.cleveradssolutions:maticoo:2.0.7.2")
 ```
+
+### 2.0.7.2
+- Certified with Maticoo - 2.0.7.2
+- Fixed the `isExpired` check for native ads
+- Added app `contentUrl` to ad requests
 
 ### 2.0.7.1
 - Certified with Maticoo - 2.0.7.1

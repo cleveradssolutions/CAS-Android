@@ -3,6 +3,7 @@ package com.cleveradssolutions.adapters
 import com.cleveradssolutions.adapters.verve.BuildConfig
 import com.cleveradssolutions.adapters.verve.VerveBannerAd
 import com.cleveradssolutions.adapters.verve.VerveInterstitialAd
+import com.cleveradssolutions.adapters.verve.VerveNativeLoader
 import com.cleveradssolutions.adapters.verve.VerveRewardedAd
 import com.cleveradssolutions.internal.AdSizeId
 import com.cleveradssolutions.internal.mediation.AdapterSupport
@@ -13,6 +14,7 @@ import com.cleveradssolutions.mediation.core.MediationAdapterBase
 import com.cleveradssolutions.mediation.core.MediationBannerAdRequest
 import com.cleveradssolutions.mediation.core.MediationInitAdRequest
 import com.cleveradssolutions.mediation.core.MediationInterstitialAdRequest
+import com.cleveradssolutions.mediation.core.MediationNativeAdRequest
 import com.cleveradssolutions.mediation.core.MediationRewardedAdRequest
 import com.cleveradssolutions.sdk.AdErrorCode
 import com.cleveradssolutions.sdk.AdSourceId
@@ -91,6 +93,10 @@ class VerveAdapter : MediationAdapterBase(), HyBid.InitialisationListener {
 
     override fun loadAd(request: MediationRewardedAdRequest): MediationAdLoader {
         return VerveRewardedAd(request)
+    }
+
+    override fun loadAd(request: MediationNativeAdRequest): MediationAdLoader {
+        return VerveNativeLoader(request)
     }
 
     override fun onUserPrivacyChanged(privacy: MediationUserPrivacy) {

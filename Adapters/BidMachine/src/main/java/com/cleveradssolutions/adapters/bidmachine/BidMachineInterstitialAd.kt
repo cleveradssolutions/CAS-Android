@@ -3,7 +3,6 @@ package com.cleveradssolutions.adapters.bidmachine
 import com.cleveradssolutions.mediation.api.MediationAdListener
 import com.cleveradssolutions.mediation.core.MediationAdBase
 import com.cleveradssolutions.mediation.core.MediationAdLoader
-import com.cleveradssolutions.mediation.core.MediationInterstitialAdRequest
 import com.cleveradssolutions.mediation.core.MediationScreenAd
 import com.cleveradssolutions.mediation.core.MediationScreenAdRequest
 import com.cleversolutions.ads.AdError
@@ -17,16 +16,11 @@ import io.bidmachine.utils.BMError
  * won a client auction, or with a fresh one built for a Waterfall or Server Bidding
  * request.
  */
-internal class BMInterstitialAd(
+internal class BidMachineInterstitialAd(
     request: MediationScreenAdRequest
 ) : MediationAdBase(), MediationScreenAd, MediationAdLoader, InterstitialListener {
-
     private var request: MediationScreenAdRequest? = request
     private val ad = InterstitialAd(request.context).also { it.setListener(this) }
-
-    fun load(request: MediationInterstitialAdRequest){
-        ad.load(request.buildBMInterstitialRequest().build())
-    }
 
     fun load(bidRequest: InterstitialRequest) {
         ad.load(bidRequest)

@@ -27,24 +27,24 @@ internal class MaticooRewardedAd(
             this.request = null
         }
 
-        override fun onRewardedVideoAdLoadFailed(p0: MaticooIds?, error: ComponentError) {
+        override fun onRewardedVideoAdLoadFailed(ids: MaticooIds?, error: ComponentError) {
             this.request?.onFailure(error.toCASError())
             this.request = null
         }
 
-        override fun onRewardedVideoAdShowed(p0: MaticooIds?) {
+        override fun onRewardedVideoAdShowed(ids: MaticooIds?) {
             listener?.onAdImpression(this@MaticooRewardedAd)
         }
 
-        override fun onRewardedVideoAdShowFailed(p0: MaticooIds?, error: ComponentError) {
+        override fun onRewardedVideoAdShowFailed(ids: MaticooIds?, error: ComponentError) {
             listener?.onAdFailedToShow(this@MaticooRewardedAd, error.toCASError())
         }
 
-        override fun onRewardedVideoAdRewarded(p0: MaticooIds?, p1: MaticooRewardInfo?) {
+        override fun onRewardedVideoAdRewarded(ids: MaticooIds?, info: MaticooRewardInfo?) {
             listener?.onUserEarnedReward(this@MaticooRewardedAd)
         }
 
-        override fun onRewardedVideoAdClicked(p0: MaticooIds?) {
+        override fun onRewardedVideoAdClicked(ids: MaticooIds?) {
             listener?.onAdClicked(this@MaticooRewardedAd)
         }
 

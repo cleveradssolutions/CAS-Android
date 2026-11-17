@@ -6,8 +6,11 @@ import com.cleveradssolutions.mediation.core.MediationBannerAdRequest
 import com.cleveradssolutions.mediation.core.MediationNativeAdRequest
 import com.cleveradssolutions.mediation.core.MediationScreenAdRequest
 import com.cleversolutions.ads.AdError
+import io.bidmachine.AdContentType
+import io.bidmachine.AdFormat
 import io.bidmachine.AdPlacementConfig
 import io.bidmachine.BannerAdSize
+import io.bidmachine.CustomParams
 import io.bidmachine.MediaAssetType
 import io.bidmachine.PriceFloorParams
 import io.bidmachine.TargetingParams
@@ -19,12 +22,39 @@ import io.bidmachine.rewarded.RewardedRequest
 import io.bidmachine.utils.BMError
 
 internal fun BMError.toCASError(): AdError = when (code) {
-    BMError.NO_CONNECTION, BMError.TIMEOUT -> AdError.NO_CONNECTION
+    BMError.NO_CONNECTION -> AdError.NO_CONNECTION
     BMError.NO_CONTENT -> AdError.NO_FILL
     BMError.EXPIRED -> AdError.EXPIRED
     BMError.DESTROYED, BMError.DUPLICATED -> AdError.NOT_READY
     else -> AdError("$message (c$code)")
 }
+
+/**
+ * The key of the ad unit parameter that carries [MEDIATION_MODE] to BidMachine.
+ */
+private const val MEDIATION_MODE = "mediation_mode"
+
+/**
+ * The placement id is optional for BidMachine, and a real one is usually 74 characters long.
+ * CAS always requires a unit id, so the field can hold any non-empty value that is not
+ * a BidMachine placement id. Only a value long enough to be a placement id is passed on.
+ *
+ * [MEDIATION_MODE] tells BidMachine which kind of integration the request comes
+ * from, so its auction can adapt: "prebid" for a round that runs before the other
+ * networks, "bidding" for a round that runs with them, "postbid" for a call after
+ * the main auction with the winner's eCPM as the floor. The value is passed
+ * through as it is configured; an unset parameter sends no custom params at all.
+ */
+private fun buildAdPlacement(request: MediationAdUnitRequest, format: AdFormat) =
+    with(AdPlacementConfig.Builder(format)) {
+        if (request.unitId.length > 70) {
+            withPlacementId(request.unitId)
+        }
+        request.getStrParameter(MEDIATION_MODE)?.let {
+            withCustomParams(CustomParams().addParam(MEDIATION_MODE, it))
+        }
+        build()
+    }
 
 /**
  * The publisher asks for the largest banner they can place and BidMachine fills it
@@ -34,53 +64,38 @@ internal fun BMError.toCASError(): AdError = when (code) {
  * served as adaptive, except for the medium rectangle, which has a fixed size of
  * its own. A thin banner never gets here, the adapter leaves it to the SDK.
  */
-internal fun MediationBannerAdRequest.bannerSize(): BannerAdSize {
+internal fun MediationBannerAdRequest.buildBidMachineBannerPlacement(): AdPlacementConfig {
     val size = adSize
-    if (size.isAdaptive || (size.isInline && adSizeId != AdSizeId.MREC)) {
-        return BannerAdSize.adaptive(size.width, size.height)
-    }
-    return when (adSizeId) {
+    val bidSize = if (size.isAdaptive || (size.isInline && adSizeId != AdSizeId.MREC)) {
+        BannerAdSize.adaptive(size.width, size.height)
+    } else when (adSizeId) {
         AdSizeId.LARGE -> BannerAdSize.Leaderboard
         AdSizeId.MREC -> BannerAdSize.MediumRectangle
         else -> BannerAdSize.Banner
     }
+    return buildAdPlacement(this, AdFormat.createBanner(bidSize))
 }
 
-internal fun MediationBannerAdRequest.buildBMBannerRequest(): BannerRequest.Builder =
-    BannerRequest.Builder(
-        AdPlacementConfig.bannerBuilder(bannerSize())
-            .setPlacementIdFromCAS(this)
-            .build()
-    ).setCASParameters(this)
+internal fun MediationAdUnitRequest.buildBidMachineInterstitialPlacement() =
+    buildAdPlacement(this, AdFormat.createInterstitial(AdContentType.All))
 
-internal fun MediationScreenAdRequest.buildBMInterstitialRequest() = InterstitialRequest.Builder(
-    AdPlacementConfig.interstitialBuilder()
-        .setPlacementIdFromCAS(this)
-        .build()
-).setCASParameters(this)
+internal fun MediationAdUnitRequest.buildBidMachineRewardedPlacement() =
+    buildAdPlacement(this, AdFormat.createRewarded(AdContentType.All))
 
-internal fun MediationScreenAdRequest.buildBMRewardedRequest() = RewardedRequest.Builder(
-    AdPlacementConfig.rewardedBuilder()
-        .setPlacementIdFromCAS(this)
-        .build()
-).setCASParameters(this)
+internal fun MediationAdUnitRequest.buildBidMachineNativePlacement() =
+    buildAdPlacement(this, AdFormat.createNative(MediaAssetType.DEFAULT))
 
-internal fun MediationNativeAdRequest.buildBMNativeRequest() = NativeRequest.Builder(
-    AdPlacementConfig.nativeBuilder(MediaAssetType.DEFAULT)
-        .setPlacementIdFromCAS(this)
-        .build()
-).setCASParameters(this)
+internal fun MediationBannerAdRequest.buildBidMachineBannerRequest() =
+    BannerRequest.Builder(buildBidMachineBannerPlacement()).setCASParameters(this)
 
+internal fun MediationScreenAdRequest.buildBidMachineInterstitialRequest() =
+    InterstitialRequest.Builder(buildBidMachineInterstitialPlacement()).setCASParameters(this)
 
-/**
- * The placement is optional for BidMachine: a source with no placements of its own
- * serves ads on the source id alone, and a blank placement is not a valid value.
- */
-internal fun AdPlacementConfig.Builder.setPlacementIdFromCAS(
-    request: MediationAdUnitRequest
-): AdPlacementConfig.Builder =
-    if (request.unitId.isNotEmpty()) withPlacementId(request.unitId)
-    else this
+internal fun MediationScreenAdRequest.buildBidMachineRewardedRequest() =
+    RewardedRequest.Builder(buildBidMachineRewardedPlacement()).setCASParameters(this)
+
+internal fun MediationNativeAdRequest.buildBidMachineNativeRequest() =
+    NativeRequest.Builder(buildBidMachineNativePlacement()).setCASParameters(this)
 
 /**
  * A Server Bidding request carries the markup of an auction that already ran on our

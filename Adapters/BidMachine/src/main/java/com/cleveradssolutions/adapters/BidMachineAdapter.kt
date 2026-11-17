@@ -1,16 +1,23 @@
 package com.cleveradssolutions.adapters
 
 import androidx.annotation.WorkerThread
-import com.cleveradssolutions.adapters.bidmachine.BMBannerAd
-import com.cleveradssolutions.adapters.bidmachine.BMBannerBidLoader
-import com.cleveradssolutions.adapters.bidmachine.BMInterstitialAd
-import com.cleveradssolutions.adapters.bidmachine.BMInterstitialBidLoader
-import com.cleveradssolutions.adapters.bidmachine.BMNativeAd
-import com.cleveradssolutions.adapters.bidmachine.BMNativeBidLoader
-import com.cleveradssolutions.adapters.bidmachine.BMRewardedAd
-import com.cleveradssolutions.adapters.bidmachine.BMRewardedBidLoader
+import com.cleveradssolutions.adapters.bidmachine.BidMachineBannerAd
+import com.cleveradssolutions.adapters.bidmachine.BidMachineBannerBidLoader
+import com.cleveradssolutions.adapters.bidmachine.BidMachineInterstitialAd
+import com.cleveradssolutions.adapters.bidmachine.BidMachineInterstitialBidLoader
+import com.cleveradssolutions.adapters.bidmachine.BidMachineNativeAd
+import com.cleveradssolutions.adapters.bidmachine.BidMachineNativeBidLoader
+import com.cleveradssolutions.adapters.bidmachine.BidMachineRewardedAd
+import com.cleveradssolutions.adapters.bidmachine.BidMachineRewardedBidLoader
 import com.cleveradssolutions.adapters.bidmachine.BuildConfig
-import com.cleveradssolutions.adapters.bidmachine.bannerSize
+import com.cleveradssolutions.adapters.bidmachine.buildBidMachineBannerPlacement
+import com.cleveradssolutions.adapters.bidmachine.buildBidMachineBannerRequest
+import com.cleveradssolutions.adapters.bidmachine.buildBidMachineInterstitialPlacement
+import com.cleveradssolutions.adapters.bidmachine.buildBidMachineInterstitialRequest
+import com.cleveradssolutions.adapters.bidmachine.buildBidMachineNativePlacement
+import com.cleveradssolutions.adapters.bidmachine.buildBidMachineNativeRequest
+import com.cleveradssolutions.adapters.bidmachine.buildBidMachineRewardedPlacement
+import com.cleveradssolutions.adapters.bidmachine.buildBidMachineRewardedRequest
 import com.cleveradssolutions.internal.AdFormatId
 import com.cleveradssolutions.internal.AdSizeId
 import com.cleveradssolutions.internal.mediation.AdapterSupport
@@ -24,22 +31,18 @@ import com.cleveradssolutions.mediation.core.MediationInterstitialAdRequest
 import com.cleveradssolutions.mediation.core.MediationNativeAdRequest
 import com.cleveradssolutions.mediation.core.MediationRewardedAdRequest
 import com.cleveradssolutions.mediation.core.MediationRtbAdapter
-import com.cleveradssolutions.sdk.AdFormat
 import com.cleveradssolutions.sdk.AdSourceId
 import com.cleversolutions.ads.AdError
 import com.cleversolutions.ads.TargetingOptions
 import com.cleversolutions.ads.android.CAS
-import io.bidmachine.AdPlacementConfig
 import io.bidmachine.BidMachine
 import io.bidmachine.InitializationCallback
-import io.bidmachine.MediaAssetType
 import io.bidmachine.TargetingParams
 import io.bidmachine.nativead.view.VideoPlayerActivity
 import io.bidmachine.utils.Gender
 import java.util.Calendar
 
 class BidMachineAdapter : MediationRtbAdapter(), InitializationCallback {
-
     override fun getSDKVersion(): String = getConstValue(BidMachine::class.java, "VERSION")
     override fun getMinSDKVersion(): String = BidMachine.VERSION
     override fun getAdapterVersion(): String = BuildConfig.VERSION
@@ -54,9 +57,9 @@ class BidMachineAdapter : MediationRtbAdapter(), InitializationCallback {
         val sourceId = request.requireAppID() ?: return
 
         BidMachine.setLoggingEnabled(request.isDebugLogsEnabled)
-        if (request.isTestRequest) {
-            BidMachine.setTestMode(true)
-        }
+        // Assigned, not only raised: the flag outlives the request that set it
+        // and would leave the SDK in test mode for the rest of the process.
+        BidMachine.setTestMode(request.isTestRequest)
 
         // BidMachine applies the privacy flags of the session it was initialized in,
         // so they are set before initialize() and refreshed on every change.
@@ -95,25 +98,20 @@ class BidMachineAdapter : MediationRtbAdapter(), InitializationCallback {
 
     @WorkerThread
     override fun collectSignals(request: MediationAdSignalRequest) {
-        val configBuilder = when {
-            request.format.isAdView ->
-                AdPlacementConfig.bannerBuilder(request.forBannerAd().bannerSize())
-
+        val placement = when {
+            request.format.isAdView -> request.forBannerAd().buildBidMachineBannerPlacement()
             else -> when (request.format.value) {
-                AdFormatId.INTERSTITIAL -> AdPlacementConfig.interstitialBuilder()
-                AdFormatId.REWARDED -> AdPlacementConfig.rewardedBuilder()
-                AdFormatId.NATIVE -> AdPlacementConfig.nativeBuilder(MediaAssetType.DEFAULT)
+                AdFormatId.INTERSTITIAL -> request.buildBidMachineInterstitialPlacement()
+                AdFormatId.REWARDED -> request.buildBidMachineRewardedPlacement()
+                AdFormatId.NATIVE -> request.buildBidMachineNativePlacement()
                 else -> null
             }
         }
-        if (configBuilder == null) {
+        if (placement == null) {
             request.onFailure(AdError("${request.format} not supported"))
             return
         }
-        if (request.unitId.isNotEmpty()) {
-            configBuilder.withPlacementId(request.unitId)
-        }
-        val token = BidMachine.getBidToken(request.context, configBuilder.build())
+        val token = BidMachine.getBidToken(request.context, placement)
         request.onSuccess(token)
     }
 
@@ -124,11 +122,11 @@ class BidMachineAdapter : MediationRtbAdapter(), InitializationCallback {
                 // Not supported banner size
                 return super.fetchAdBid(request)
             }
-            BMBannerBidLoader()
-        } else when (request.format) {
-            AdFormat.INTERSTITIAL -> BMInterstitialBidLoader()
-            AdFormat.REWARDED -> BMRewardedBidLoader()
-            AdFormat.NATIVE -> BMNativeBidLoader()
+            BidMachineBannerBidLoader()
+        } else when (request.format.value) {
+            AdFormatId.INTERSTITIAL -> BidMachineInterstitialBidLoader()
+            AdFormatId.REWARDED -> BidMachineRewardedBidLoader()
+            AdFormatId.NATIVE -> BidMachineNativeBidLoader()
             else -> {
                 // Not supported format
                 return super.fetchAdBid(request)
@@ -143,26 +141,30 @@ class BidMachineAdapter : MediationRtbAdapter(), InitializationCallback {
             // Not supported banner size
             super.loadAd(request)
         } else {
-            BMBannerAd(request).also { it.load(request) }
+            BidMachineBannerAd(request).also {
+                it.load(request.buildBidMachineBannerRequest().build())
+            }
         }
 
     override fun loadAd(request: MediationInterstitialAdRequest): MediationAdLoader =
-        BMInterstitialAd(request).also { it.load(request) }
+        BidMachineInterstitialAd(request).also {
+            it.load(request.buildBidMachineInterstitialRequest().build())
+        }
 
     override fun loadAd(request: MediationRewardedAdRequest): MediationAdLoader =
-        BMRewardedAd(request).also { it.load(request) }
+        BidMachineRewardedAd(request).also {
+            it.load(request.buildBidMachineRewardedRequest().build())
+        }
 
     override fun loadAd(request: MediationNativeAdRequest): MediationAdLoader =
-        BMNativeAd(request).also { it.load(request) }
+        BidMachineNativeAd(request).also {
+            it.load(request.buildBidMachineNativeRequest().build())
+        }
 
     override fun onUserPrivacyChanged(privacy: MediationUserPrivacy) {
         privacy.isAppliesCOPPA()?.let {
             BidMachine.setCoppa(it)
         }
-
-        // The Android SDK reads the TCF string from the shared preferences itself,
-        // only the consent decision is passed here.
-        BidMachine.setSubjectToGDPR(privacy.isAppliesGDPR())
         privacy.hasConsent(AdSourceId.BIDMACHINE)?.let {
             BidMachine.setConsentStatus(it)
         }

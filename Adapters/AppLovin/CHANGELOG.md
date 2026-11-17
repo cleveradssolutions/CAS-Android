@@ -1,7 +1,10 @@
 ## AppLovin Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:applovin:13.6.4.2")
+implementation("com.cleveradssolutions:applovin:13.6.4.3")
 ```
+
+### 13.6.4.3
+- Fixed impression callbacks for Native Ads.
 
 ### 13.6.4.2
 - Minor improvements

@@ -23,10 +23,11 @@ import io.bidmachine.utils.BMError
  * The Waterfall and Server Bidding flows never reach here, they load a creative at once.
  */
 @Suppress("FINITE_BOUNDS_VIOLATION_IN_JAVA")
-internal abstract class BMBidLoader<BMRequest : AdRequest<BMRequest, *, *>>() : MediationAdBase(),
+internal abstract class BidMachineBidLoader<AdRequestType : AdRequest<AdRequestType, *, *>>() :
+    MediationAdBase(),
     MediationAdBid, MediationAdLoader,
-    AdRequest.AdRequestListener<BMRequest> {
-    protected var bidRequest: BMRequest? = null
+    AdRequest.AdRequestListener<AdRequestType> {
+    protected var bidRequest: AdRequestType? = null
     protected var request: MediationAdBidRequest? = null
     private var contentAd: MediationAdBase? = null
 
@@ -40,10 +41,10 @@ internal abstract class BMBidLoader<BMRequest : AdRequest<BMRequest, *, *>>() : 
      */
     abstract fun loadAdContent(
         contentRequest: MediationAdContentRequest,
-        bidRequest: BMRequest
+        bidRequest: AdRequestType
     ): MediationAdBase
 
-    override fun onRequestSuccess(request: BMRequest, result: AuctionResult) {
+    override fun onRequestSuccess(request: AdRequestType, result: AuctionResult) {
         val request = this.request ?: return
         this.request = null
 
@@ -53,14 +54,14 @@ internal abstract class BMBidLoader<BMRequest : AdRequest<BMRequest, *, *>>() : 
         request.onSuccess(this)
     }
 
-    override fun onRequestFailed(request: BMRequest, error: BMError) {
+    override fun onRequestFailed(request: AdRequestType, error: BMError) {
         // Support comment: a failed request has to be destroyed and built anew.
         request.destroy()
         this.request?.onFailure(error.toCASError())
         this.request = null
     }
 
-    override fun onRequestExpired(request: BMRequest) {
+    override fun onRequestExpired(request: AdRequestType) {
         request.destroy()
         this.request?.onFailure(AdError.EXPIRED)
         this.request = null
@@ -99,50 +100,58 @@ internal abstract class BMBidLoader<BMRequest : AdRequest<BMRequest, *, *>>() : 
     override fun destroy() {
         super.destroy()
         request = null
+
+        // Destroying the BidMachine request destroys the ad loaded from it:
+        // AdRequest.destroy() reaches the ad through onRequestDestroyed, and a
+        // later show() then fails with BMError.Destroyed. So the request is only
+        // destroyed while no ad has taken it over; once one has, that ad owns it
+        // and destroys it in its own destroy().
+        if (contentAd == null) {
+            bidRequest?.destroy()
+        }
         // The ad is destroyed by CAS once it has been handed over, and goes away
         // with this loader while it has not.
         contentAd = null
-        bidRequest?.destroy()
         bidRequest = null
     }
 }
 
-internal class BMInterstitialBidLoader() : BMBidLoader<InterstitialRequest>() {
+internal class BidMachineInterstitialBidLoader() : BidMachineBidLoader<InterstitialRequest>() {
     override fun fetchBid(request: MediationAdBidRequest) {
         this.request = request
         val bidRequest = request.forScreenAd()
-            .buildBMInterstitialRequest()
+            .buildBidMachineInterstitialRequest()
             .setListener(this)
             .build()
-        this@BMInterstitialBidLoader.bidRequest = bidRequest
+        this.bidRequest = bidRequest
         bidRequest.request(request.context)
     }
 
     override fun loadAdContent(
         contentRequest: MediationAdContentRequest,
         bidRequest: InterstitialRequest
-    ) = BMInterstitialAd(contentRequest.forScreenAd()).also {
+    ) = BidMachineInterstitialAd(contentRequest.forScreenAd()).also {
         it.costPerMille = costPerMille
         it.revenuePrecision = revenuePrecision
         it.load(bidRequest)
     }
 }
 
-internal class BMRewardedBidLoader() : BMBidLoader<RewardedRequest>() {
+internal class BidMachineRewardedBidLoader() : BidMachineBidLoader<RewardedRequest>() {
     override fun fetchBid(request: MediationAdBidRequest) {
         this.request = request
         val bidRequest = request.forScreenAd()
-            .buildBMRewardedRequest()
+            .buildBidMachineRewardedRequest()
             .setListener(this)
             .build()
-        this@BMRewardedBidLoader.bidRequest = bidRequest
+        this.bidRequest = bidRequest
         bidRequest.request(request.context)
     }
 
     override fun loadAdContent(
         contentRequest: MediationAdContentRequest,
         bidRequest: RewardedRequest
-    ) = BMRewardedAd(contentRequest.forScreenAd()).also {
+    ) = BidMachineRewardedAd(contentRequest.forScreenAd()).also {
         it.costPerMille = costPerMille
         it.revenuePrecision = revenuePrecision
         it.load(bidRequest)
@@ -150,42 +159,42 @@ internal class BMRewardedBidLoader() : BMBidLoader<RewardedRequest>() {
 }
 
 
-internal class BMBannerBidLoader() : BMBidLoader<BannerRequest>() {
+internal class BidMachineBannerBidLoader() : BidMachineBidLoader<BannerRequest>() {
     override fun fetchBid(request: MediationAdBidRequest) {
         this.request = request
         val bidRequest = request.forBannerAd()
-            .buildBMBannerRequest()
+            .buildBidMachineBannerRequest()
             .setListener(this)
             .build()
-        this@BMBannerBidLoader.bidRequest = bidRequest
+        this.bidRequest = bidRequest
         bidRequest.request(request.context)
     }
 
     override fun loadAdContent(
         contentRequest: MediationAdContentRequest,
         bidRequest: BannerRequest
-    ) = BMBannerAd(contentRequest.forBannerAd()).also {
+    ) = BidMachineBannerAd(contentRequest.forBannerAd()).also {
         it.costPerMille = costPerMille
         it.revenuePrecision = revenuePrecision
         it.load(bidRequest)
     }
 }
 
-internal class BMNativeBidLoader() : BMBidLoader<NativeRequest>() {
+internal class BidMachineNativeBidLoader() : BidMachineBidLoader<NativeRequest>() {
     override fun fetchBid(request: MediationAdBidRequest) {
         this.request = request
         val bidRequest = request.forNativeAd()
-            .buildBMNativeRequest()
+            .buildBidMachineNativeRequest()
             .setListener(this)
             .build()
-        this@BMNativeBidLoader.bidRequest = bidRequest
+        this.bidRequest = bidRequest
         bidRequest.request(request.context)
     }
 
     override fun loadAdContent(
         contentRequest: MediationAdContentRequest,
         bidRequest: NativeRequest
-    ) = BMNativeAd(contentRequest.forNativeAd()).also {
+    ) = BidMachineNativeAd(contentRequest.forNativeAd()).also {
         it.costPerMille = costPerMille
         it.revenuePrecision = revenuePrecision
         it.load(bidRequest)

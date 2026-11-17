@@ -3,10 +3,11 @@ The adapters in the table are listed in alphabetical order.
 
 | Adapter | Artifact | Version | Supported Formats | Optimal | Families | VPN | Changelog | SDK |
 |---------|:--------:|:-------:|:-----------------:|:-------:|:--------:|:---:|:---------:| :-: |
-| applovin | `applovin` | `13.6.4.2` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✗** | [view](AppLovin/CHANGELOG.md) | [link](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases) |
+| applovin | `applovin` | `13.6.4.3` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✗** | [view](AppLovin/CHANGELOG.md) | [link](https://github.com/AppLovin/AppLovin-MAX-SDK-Android/releases) |
+| apptimism 🧪 | `apptimism` | `0.2.3.0` | Interstitial, Rewarded | **✗** | **✗** | **✗** | [view](Apptimism/CHANGELOG.md) | **✗** |
 | audienceNetwork | `facebook` | `6.22.0.1` | Banner, Interstitial, Rewarded, Native | **✓** | **✗** | **✗** | [view](AudienceNetwork/CHANGELOG.md) | [link](https://developers.facebook.com/docs/audience-network/setting-up/platform-setup/android/changelog) |
 | bidease 🧪 | `bidease` | `3.0.3.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | **✓** | [view](Bidease/CHANGELOG.md) | [link](https://devs.bidease.com/docs/changelogs/android) |
-| bidmachine 🧪 | `bidmachine` | `3.8.0.0` | Banner, Interstitial, Rewarded | **✗** | **✗** | **✗** | [view](BidMachine/CHANGELOG.md) | [link](https://developers.bidmachine.io/sdk/general/android/android-changelog) |
+| bidmachine 🧪 | `bidmachine` | `3.8.0.1` | Banner, Interstitial, Rewarded | **✗** | **✗** | **✗** | [view](BidMachine/CHANGELOG.md) | [link](https://developers.bidmachine.io/sdk/general/android/android-changelog) |
 | bigoAds | `bigo` | `6.1.0.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✓** | [view](BigoAds/CHANGELOG.md) | [link](https://www.bigossp.com/guide/sdk/android/version) |
 | bluesea 🧪 | `bluesea` | `1.9.0.1` | Banner, Interstitial, Rewarded | **✗** | **✗** | **✓** | [view](Bluesea/CHANGELOG.md) | [link](https://docs.blueseasx.com) |
 | casExchange | `cas-exchange` | `4.9.1` | Banner, Interstitial, Rewarded, Native | **✓** | **✗** | **✗** | [view](CASExchange/CHANGELOG.md) | **✗** |
@@ -21,7 +22,7 @@ The adapters in the table are listed in alphabetical order.
 | ironSource | `ironsource` | `9.6.0.1` | Banner, Interstitial, Rewarded | **✓** | **✓** | **✓** | [view](IronSource/CHANGELOG.md) | [link](https://docs.unity.com/en-us/grow/levelplay/sdk/android/changelog) |
 | kidoz | `kidoz` | `10.1.9.0` | Banner, Interstitial, Rewarded | **✗** | **✓** | **✗** | [view](Kidoz/CHANGELOG.md) | [link](https://github.com/Kidoz-SDK/kidoz-mobile-sdk/tree/main/Direct/Android) |
 | liftoffMonetize | `vungle` | `7.7.9.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✓** | **✓** | [view](LiftoffMonetize/CHANGELOG.md) | [link](https://support.vungle.com/hc/en-us/articles/15722228922395-Download-Vungle-SDK-for-Android-Amazon) |
-| maticoo | `maticoo` | `2.0.7.1` | Banner, Interstitial, Rewarded, AppOpen, Native | **✗** | **✗** | **✗** | [view](Maticoo/CHANGELOG.md) | [link](https://doc.zmaticoo.com/#/help/en/1801/) |
+| maticoo | `maticoo` | `2.0.7.2` | Banner, Interstitial, Rewarded, AppOpen, Native | **✗** | **✗** | **✗** | [view](Maticoo/CHANGELOG.md) | [link](https://doc.zmaticoo.com/#/help/en/1801/) |
 | mintegral | `mintegral` | `17.1.81.1` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✓** | [view](Mintegral/CHANGELOG.md) | [link](https://dev.mintegral.com/doc/index.html?file=sdk-m_sdk-android&lang=en) |
 | moloco 🧪 | `moloco` | `4.14.1.0` | Banner, Interstitial, Rewarded, Native | **✓** | **✗** | **✗** | [view](Moloco/CHANGELOG.md) | [link](https://moloco.github.io/android-sdk-docs/) |
 | monetrix | `monetrix` | `1.4.0.5` | Banner, Interstitial, Rewarded, Native | **✓** | **✗** | **✓** | [view](Monetrix/CHANGELOG.md) | [link](https://docs.google.com/document/d/1vwvV9Fr-rv6SpFtbGHt3CzbVB_SjI88GgQwlnrXCAwo/edit?tab=t.avvqxj9bjp94) |
@@ -34,8 +35,8 @@ The adapters in the table are listed in alphabetical order.
 | startIO | `startio` | `5.3.1.0` | Banner, Interstitial, Rewarded, Native | **✗** | **✗** | **✗** | [view](StartIO/CHANGELOG.md) | [link](https://support.start.io/hc/en-us/articles/5813405015442-Android-SDK-Change-Log) |
 | superAwesome | `superawesome` | `10.3.2.0` | Interstitial, Rewarded | **✗** | **✗** | **✗** | [view](SuperAwesome/CHANGELOG.md) | [link](https://sdks.superawesome.com/docs/android/releases) |
 | unityAds | `unity` | `4.20.1.0` | Banner, Interstitial, Rewarded | **✓** | **✓** | **✓** | [view](UnityAds/CHANGELOG.md) | [link](https://docs.unity.com/ads/en-us/manual/Changelog) |
-| verve | `verve` | `3.9.2.0` | Banner, Interstitial, Rewarded, Native | **✗** | **✗** | **✗** | [view](Verve/CHANGELOG.md) | [link](https://github.com/pubnative/pubnative-hybid-android-sdk/releases) |
-| yangoAds | `yango` | `8.5.0.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✓** | [view](YangoAds/CHANGELOG.md) | [link](https://github.com/yandexmobile/yandex-ads-sdk-android/blob/master/changelogs/mobileads/CHANGELOG.md) |
+| verve | `verve` | `3.9.3.1` | Banner, Interstitial, Rewarded, Native | **✗** | **✗** | **✗** | [view](Verve/CHANGELOG.md) | [link](https://github.com/pubnative/pubnative-hybid-android-sdk/releases) |
+| yangoAds | `yango` | `8.6.0.0` | Banner, Interstitial, Rewarded, AppOpen, Native | **✓** | **✗** | **✓** | [view](YangoAds/CHANGELOG.md) | [link](https://github.com/yandexmobile/yandex-ads-sdk-android/blob/master/changelogs/mobileads/CHANGELOG.md) |
 | ysoNetwork | `ysonetwork` | `1.3.9.0` | Banner, Interstitial, Rewarded | **✓** | **✗** | **✓** | [view](YsoNetwork/CHANGELOG.md) | [link](https://mediation-doc.ysonetwork.com/android/changelog) |
 
 > [!NOTE]  

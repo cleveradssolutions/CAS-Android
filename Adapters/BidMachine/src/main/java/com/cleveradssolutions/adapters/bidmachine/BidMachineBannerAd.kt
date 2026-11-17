@@ -13,18 +13,13 @@ import io.bidmachine.banner.BannerView
 import io.bidmachine.utils.BMError
 import com.cleversolutions.ads.AdError as CASError
 
-internal class BMBannerAd(
+internal class BidMachineBannerAd(
     request: MediationBannerAdRequest
 ) : MediationAdBase(), MediationBannerAd, MediationAdLoader, BannerListener {
-
     private var request: MediationBannerAdRequest? = request
     private val view = BannerView(request.context).also {
         it.layoutParams = request.createAdaptiveAdLayout()
         it.setListener(this)
-    }
-
-    fun load(request: MediationBannerAdRequest) {
-        load(request.buildBMBannerRequest().build())
     }
 
     fun load(adRequest: BannerRequest) {

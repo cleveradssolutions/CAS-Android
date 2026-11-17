@@ -42,10 +42,11 @@ internal class MaticooNativeAdLoader(
     }
 
     override fun onAdLoaded(ids: MaticooIds, nativeAd: NativeAd) {
-        request?.onSuccess(MaticooNativeAd(nativeAd).also {
-            loadedAd = it
-        })
-        request = null
+        val request = request ?: return
+        loadedAd = MaticooNativeAd(nativeAd, request.getIntParameter("cas_exp_imp", 60)).also {
+            request.onSuccess(it)
+        }
+        this.request = null
     }
 
     override fun onAdFailedToLoad(p0: MaticooIds?, error: ComponentError) {
