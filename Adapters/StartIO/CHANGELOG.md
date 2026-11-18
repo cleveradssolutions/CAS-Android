@@ -1,7 +1,11 @@
 ## StartIO Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:startio:5.3.1.0")
+implementation("com.cleveradssolutions:startio:5.5.1.0")
 ```  
+
+### 5.5.1.0
+- Certified with Start IO - 5.5.1
+- Pinned `kotlin-stdlib` to 2.2.0 and `kotlinx-coroutines-core` to 1.6.4, because the Start.io SDK requests them by version range
 
 ### 5.3.1.0
 - Certified with Start IO - 5.3.1

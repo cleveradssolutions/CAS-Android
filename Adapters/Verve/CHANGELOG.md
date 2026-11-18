@@ -1,7 +1,10 @@
 ## Verve Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:verve:3.9.3.1")
+implementation("com.cleveradssolutions:verve:3.10.0.0")
 ```
+
+### 3.10.0.0
+- Certified with Verve - 3.10.0
 
 ### 3.9.3.1
 - Added support Native Ads format.
