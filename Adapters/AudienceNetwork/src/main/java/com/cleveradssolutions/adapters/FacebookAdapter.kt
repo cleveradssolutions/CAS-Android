@@ -24,7 +24,6 @@ import com.cleveradssolutions.mediation.core.MediationRewardedAdRequest
 import com.cleveradssolutions.mediation.debug
 import com.cleveradssolutions.sdk.AdErrorCode
 import com.cleversolutions.ads.AdError
-import com.cleversolutions.ads.AdNetwork
 import com.facebook.ads.AdSettings
 import com.facebook.ads.AdSize
 import com.facebook.ads.AudienceNetworkActivity
@@ -37,6 +36,18 @@ import com.facebook.ads.internal.settings.AdInternalSettings
 
 private const val pleaseReadDocsPage =
     "\nPlease read the Additional Meta AudienceNetwork steps page in docs."
+
+/** Facebook Data Processing Options for Users in California
+ * Set the `FBAdSettings.setDataProcessingOptions` flag.
+ * Values:
+ * - ""  - To explicitly not enable Limited Data Use (LDU) mode
+ * - "LDU"  - To enable LDU mode using geolocation
+ * - "LDU_1_1000"  - To enable LDU for users and specify user geography
+ *
+ * For information about how to implement Facebook’s Limited Data Use flag in California,
+ * visit [Facebook’s developer documentation](https://developers.facebook.com/docs/marketing-apis/data-processing-options).
+ */
+private const val DATA_PROCESSING = "FB_dp"
 
 class FacebookAdapter : MediationAdapterBase(), AudienceNetworkAds.InitListener {
     override fun getSDKVersion(): String =
@@ -56,7 +67,7 @@ class FacebookAdapter : MediationAdapterBase(), AudienceNetworkAds.InitListener 
     private fun getIntegrationError(): String? {
         synchronized(AdInternalSettings.sSettingsBundle) {
             if (!AdInternalSettings.sDataProcessingOptionsUpdate.get()) {
-                if (getMetaData(AdNetwork.FACEBOOK_DATA_PROCESSING) == null) {
+                if (getMetaData(DATA_PROCESSING) == null) {
                     return "Audience Network Data Processing Options for US Users is not implemented." + pleaseReadDocsPage
                 }
             }
@@ -171,7 +182,7 @@ class FacebookAdapter : MediationAdapterBase(), AudienceNetworkAds.InitListener 
             AdSettings.setMixedAudience(it)
         }
 
-        getMetaData(AdNetwork.FACEBOOK_DATA_PROCESSING)?.let {
+        getMetaData(DATA_PROCESSING)?.let {
             if (it.isEmpty()) {
                 AdSettings.setDataProcessingOptions(arrayOf())
             } else if (it == "LDU") {

@@ -43,9 +43,9 @@ internal fun getCASError(message: String?, isBelowFloor: Boolean?): AdError =
         AdError(AdErrorCode.INTERNAL_ERROR, message)
 
 internal fun disableAutoRetries() {
-    val data: MetaData = MetaData.E() // return k; where k is MetaData
-    val stopAutoLoadAmount: Int = data.X() // return this.stopAutoLoadAmount;
-    val stopAutoLoadPreCacheAmount: Int = data.Y() // return this.stopAutoLoadPreCacheAmount;
+    val data: MetaData = MetaData.A()
+    val stopAutoLoadAmount: Int = data.V()
+    val stopAutoLoadPreCacheAmount: Int = data.W()
 
     if (stopAutoLoadAmount > 0)
         setZeroMetaData(data, "stopAutoLoadAmount")

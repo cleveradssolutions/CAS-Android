@@ -77,14 +77,13 @@ class MolocoAdapter : MediationAdapterBase() {
 
     override fun loadAd(request: MediationBannerAdRequest): MediationAdLoader? {
         val adSize = request.adSize
-        val kind = request.adSizeId
         val bidResponse = request.requireBidResponse() ?: return null
         val bannerSize = when {
-            kind == AdSizeId.THIN -> return super.loadAd(request)
-            kind == AdSizeId.MREC -> BannerAdSize.MREC
+            request.adSizeId == AdSizeId.THIN -> return super.loadAd(request)
+            request.adSizeId == AdSizeId.MREC -> BannerAdSize.MREC
             adSize.isAdaptive -> BannerAdSize.AnchoredAdaptive(adSize.width)
             adSize.isInline -> BannerAdSize.InlineAdaptive(adSize.width)
-            kind == AdSizeId.LARGE -> BannerAdSize.Tablet
+            request.adSizeId == AdSizeId.LARGE -> BannerAdSize.Tablet
             else -> BannerAdSize.Standard
         }
 

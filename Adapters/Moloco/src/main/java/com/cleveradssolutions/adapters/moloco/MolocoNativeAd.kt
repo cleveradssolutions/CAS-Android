@@ -50,7 +50,7 @@ internal class MolocoNativeAd(
     override fun onClick(v: View?) {
         nativeAd.handleGeneralAdClick()
     }
-    
+
     override fun destroy() {
         super.destroy()
         sdkMediaView = null

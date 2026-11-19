@@ -1,7 +1,10 @@
 ## CASExchange Android Mediation Adapter Changelog
 ```kotlin
-implementation("com.cleveradssolutions:cas-exchange:4.9.1")
+implementation("com.cleveradssolutions:cas-exchange:4.6.6")
 ```
+
+### 4.6.6
+
 
 ### 4.9.1
 - Handle redirects on background
